@@ -1,0 +1,10 @@
+.footer {
+    margin-top: -126px;
+}
+
+@media (max-width: 767px){
+    .footer{
+        margin-top: 0;
+        background-color: #121419;
+    }
+}

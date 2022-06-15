@@ -1,0 +1,30 @@
+
+/* Стили анимации пульсации кругов */
+@keyframes pulse {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+}
+/* Стили кроссбраузерной анимации пульсации кругов */
+@-webkit-keyframes pulse {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+}
+
