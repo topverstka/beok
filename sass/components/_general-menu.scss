@@ -1,56 +1,117 @@
-.general-menu{
-    background: rgba(237, 106, 83, 1);
-    width: 290px;
-    padding-right: 15px;
-    padding-top: 41px;
-    //height: 100%;
-    margin-right: 20px;
-}
-
-.general-menu__logo{
-    width: 110px;
-    margin-left: 30px;
-    margin-bottom: 45px;
-}
-
-.general-menu__nav-elem{
-    width: 100%;
-    a{
-        display: flex;
-        padding: 18px 32px;
-        align-items: center;
-        transition: all 0.2s;
-        border-radius: 0px 12px 12px 0px;
-        color: #fff;
-        svg{
-            width: 24px;
-            height: 24px;
-            margin-right: 15px;
-            fill: #fff;
-            transition: all 0.2s;
-        }
-
-        &:hover{
-            background-color: #fff;
-            color: var(--black);
-            svg{
-                fill: var(--black);
+    .general-menu {
+        background: rgba(237, 106, 83, 1);
+        width: 290px;
+        padding-right: 15px;
+        padding-top: 41px;
+        //height: 100%;
+        margin-right: 20px;
+        @media (max-width: $tablet) {
+            position: fixed;
+            bottom: 19px;
+            padding-top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #FFFFFF;
+            box-shadow: 3px 3px 10px rgb(83 57 39 / 18%);
+            border-radius: 50px;
+            height: 61px;
+            width: 96%;
+            z-index: 99999;
+            left: 0;
+            right: 0;
+            margin: auto;
+            padding-right: 0;
+            .general-menu__nav-list {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+            }
+            .general-menu__nav {
+                width: 100%;
+                padding: 0 15px;
+            }
+            .general-menu__nav-elem {
+                width: auto;
+                a {
+                    padding: 0;
+                    color: #000;
+                    display: flex;
+                    flex-direction: column;
+                    font-weight: 600;
+                    font-size: 14px;
+                    line-height: 130%;
+                    svg {
+                        fill: rgba(121, 126, 135, 0.15);
+                        margin: 0 0 6px 0;
+                        width: 24px;
+                        height: 26px;
+                    }
+                }
+                &:nth-of-type(1) {
+                    order: 1
+                }
+                &:nth-of-type(2) {
+                    order: 3
+                }
+                &:nth-of-type(3) {
+                    order: 4
+                }
+                &:nth-of-type(4) {
+                    order: 2
+                }
             }
         }
     }
-}
-
-.general-menu__support{
-    margin-left: 30px;
-    margin-top: 527px;
-    a{
-        display: flex;
-        align-items: center;
-        color: #fff;
-        svg{
-            width: 16px;
-            height: 20px;
-            margin-right: 15px;
+    
+    .general-menu__logo {
+        width: 110px;
+        margin-left: 30px;
+        margin-bottom: 45px;
+        @media (max-width: $tablet) {
+            display: none
         }
     }
-}
+    
+    .general-menu__nav-elem {
+        width: 100%;
+        a {
+            display: flex;
+            padding: 18px 32px;
+            align-items: center;
+            transition: all 0.2s;
+            border-radius: 0px 12px 12px 0px;
+            color: #fff;
+            svg {
+                width: 24px;
+                height: 24px;
+                margin-right: 15px;
+                fill: #fff;
+                transition: all 0.2s;
+            }
+            &:hover {
+                background-color: #fff;
+                color: var(--black);
+                svg {
+                    fill: var(--black);
+                }
+            }
+        }
+    }
+    
+    .general-menu__support {
+        margin-left: 30px;
+        margin-top: 527px;
+        a {
+            display: flex;
+            align-items: center;
+            color: #fff;
+            svg {
+                width: 16px;
+                height: 20px;
+                margin-right: 15px;
+            }
+        }
+        @media(max-width: $tablet) {
+            display: none;
+        }
+    }

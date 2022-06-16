@@ -1,13 +1,12 @@
 @import '_fonts'; // Шрифты
 @import '_variables'; // Переменные
 @import '_reset'; // Сброс css
-
 // Миксин для перевода px в vw
 @function vw($px) {
     @return $px/(1920 / 100vw);
 }
 
-html{
+html {
     padding: 0;
     margin: 0;
 }
@@ -20,51 +19,57 @@ body {
     font-style: normal;
     line-height: 1.5;
     overflow-x: hidden;
-    
+    font-feature-settings: "pnum" on, "lnum" on;
     &._lock {
         overflow: hidden;
     }
 }
 
-main{
+main {
     display: flex;
 }
 
-.page-content{
+.page-content {
     width: 100%;
+    overflow-x: hidden;
+    @media (max-width: $tablet) {
+        padding: 0 12px;
+        margin-top: 24px;
+    }
 }
 
-h1,h2,h3{
-    font-family: 'Montserrat-bold'; 
-    color: #fff;
+h1,
+h2,
+h3 {
+    color: $main;
 }
 
-img{
+img {
     max-width: 100%;
 }
-
 
 @import '_grid'; // Сетка
 @import './header';
 @import './footer';
-
 // Анимация
 @import './_animation';
-
 // Компоненты
 @import './components/_buttons';
 @import './components/_forms';
 @import './components/_modal';
 @import './components/cookie';
 @import './components/_general-menu';
- 
 // Текстовые компоненты
 @import './components/text/_text';
 @import './components/text/_titles';
-
-
 // Страницы
-
-// Библиотеки
+@import './pages/_home-page';
+// Секции 
+@import './sections/_varios-report';
+@import './sections/_your-reports';
+@import './sections/_section-information';
+@import './sections/_stories';
+@import './sections/_check-list';
+// Библиотек
 @import './libs/lightgallery';
 @import './libs/swiper';

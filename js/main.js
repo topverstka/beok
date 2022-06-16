@@ -1,4 +1,3 @@
-
 // Служебные переменные
 const d = document;
 const body = document.querySelector('body');
@@ -6,21 +5,21 @@ const body = document.querySelector('body');
 // Служебные функции
 
 function find(selector) {
-	return document.querySelector(selector)
+    return document.querySelector(selector)
 }
 
 function findAll(selectors) {
-	return document.querySelectorAll(selectors)
+    return document.querySelectorAll(selectors)
 }
 
 // Удаляет у всех элементов items класс itemClass
-function removeAll(items,itemClass) {   
+function removeAll(items, itemClass) {
     if (typeof items == 'string') {
-      items = document.querySelectorAll(items)
+        items = document.querySelectorAll(items)
     }
     for (let i = 0; i < items.length; i++) {
-      const item = items[i]
-      item.classList.remove(itemClass)
+        const item = items[i]
+        item.classList.remove(itemClass)
     }
 }
 
@@ -30,26 +29,25 @@ function bodyLock(con) {
     } else if (con === false) {
         body.classList.remove('_lock');
     } else if (con === undefined) {
-		if (!body.classList.contains('_lock')) {
-			body.classList.add('_lock');
-		}
-		else {
-			body.classList.remove('_lock')
-		}
-	} else {
-		console.error('Неопределенный аргумент у функции bodyLock()')
-	}
+        if (!body.classList.contains('_lock')) {
+            body.classList.add('_lock');
+        } else {
+            body.classList.remove('_lock')
+        }
+    } else {
+        console.error('Неопределенный аргумент у функции bodyLock()')
+    }
 }
 
-function faq(){
+function faq() {
     let faqElements = d.querySelectorAll('.faq__questions-item');
 
-    for( let i = 0; i < faqElements.length; i++){
-        faqElements[i].addEventListener('click', function(){
-            if(this.classList.contains('active')){
+    for (let i = 0; i < faqElements.length; i++) {
+        faqElements[i].addEventListener('click', function() {
+            if (this.classList.contains('active')) {
                 this.classList.remove('active');
-            }else{
-                if(d.querySelector('.faq__questions-item.active')){
+            } else {
+                if (d.querySelector('.faq__questions-item.active')) {
                     d.querySelector('.faq__questions-item.active').classList.remove('active');
                 }
                 this.classList.add('active');
@@ -63,7 +61,7 @@ faq();
 
 
 // When the user scrolls the page, execute myFunction
-window.onscroll = function() {myFunction()};
+window.onscroll = function() { myFunction() };
 
 // Get the header
 var header = document.querySelector(".header");
@@ -73,11 +71,11 @@ var sticky = 1000;
 
 // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
 function myFunction() {
-  if (window.pageYOffset > sticky) {
-    header.classList.add("sticky");
-  } else {
-    header.classList.remove("sticky");
-  }
+    if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+    } else {
+        header.classList.remove("sticky");
+    }
 }
 
 
@@ -134,7 +132,8 @@ function elmYPosition(eID) {
     while (node.offsetParent && node.offsetParent != document.body) {
         node = node.offsetParent;
         y += node.offsetTop;
-    } return y;
+    }
+    return y;
 }
 
 
@@ -143,7 +142,8 @@ function smoothScroll(eID) {
     var stopY = elmYPosition(eID);
     var distance = stopY > startY ? stopY - startY : startY - stopY;
     if (distance < 100) {
-        scrollTo(0, stopY); return;
+        scrollTo(0, stopY);
+        return;
     }
     var speed = Math.round(distance / 100);
     if (speed >= 20) speed = 20;
@@ -151,26 +151,31 @@ function smoothScroll(eID) {
     var leapY = stopY > startY ? startY + step : startY - step;
     var timer = 0;
     if (stopY > startY) {
-        for ( var i=startY; i<stopY; i+=step ) {
-            setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
-            leapY += step; if (leapY > stopY) leapY = stopY; timer++;
-        } return;
+        for (var i = startY; i < stopY; i += step) {
+            setTimeout("window.scrollTo(0, " + leapY + ")", timer * speed);
+            leapY += step;
+            if (leapY > stopY) leapY = stopY;
+            timer++;
+        }
+        return;
     }
-    for ( var i=startY; i>stopY; i-=step ) {
-        setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
-        leapY -= step; if (leapY < stopY) leapY = stopY; timer++;
+    for (var i = startY; i > stopY; i -= step) {
+        setTimeout("window.scrollTo(0, " + leapY + ")", timer * speed);
+        leapY -= step;
+        if (leapY < stopY) leapY = stopY;
+        timer++;
     }
 }
 
 
 
 let anchors = d.querySelectorAll('.anchor');
-for(let i = 0; i < anchors.length; i++){
-    anchors[i].addEventListener('click', function(){
+for (let i = 0; i < anchors.length; i++) {
+    anchors[i].addEventListener('click', function() {
         let anchor = this.getAttribute('href');
         console.log(anchor)
         smoothScroll(anchor);
-        if(this.closest('.header__nav--mobile')){
+        if (this.closest('.header__nav--mobile')) {
             d.querySelector('.header__nav-burger').click();
         }
     });
@@ -180,17 +185,17 @@ for(let i = 0; i < anchors.length; i++){
 
 // Функции для модальных окон
 function modal() {
-    
-    
+
+
     // Открытие модальных окон при клике по кнопке
-    
+
     function openModalWhenClickingOnBtn() {
         const btnsOpenModal = document.querySelectorAll('[data-modal-open]');
-        
-        
+
+
         for (let i = 0; i < btnsOpenModal.length; i++) {
             const btn = btnsOpenModal[i];
-    
+
             btn.addEventListener('click', (e) => {
                 const dataBtn = btn.dataset.modalOpen;
                 const modal = document.querySelector(`#${dataBtn}`)
@@ -202,12 +207,12 @@ function modal() {
     openModalWhenClickingOnBtn();
 
     // Открытие модального окна, если в url указан его id
-    
+
     function openModalHash() {
         if (window.location.hash) {
             const hash = window.location.hash.substring(1)
             const modal = document.querySelector(`.modal#${hash}`)
-    
+
             if (modal) openModal(modal)
         }
     }
@@ -242,7 +247,7 @@ function modal() {
         for (let i = 0; i < modalElems.length; i++) {
             const modal = modalElems[i];
             const closeThisModal = modal.querySelector('.modal__close')
-    
+
             closeThisModal.addEventListener('click', () => {
                 closeModal(modal)
             })
@@ -255,7 +260,7 @@ function modal() {
         const modalElems = document.querySelectorAll('.modal')
         for (let i = 0; i < modalElems.length; i++) {
             const modal = modalElems[i];
-    
+
             document.addEventListener('keydown', e => {
                 if (e.key === 'Escape') closeModal(modal)
             })
@@ -290,17 +295,17 @@ modal();
 
 
 // Куки
-function setCookie(c_name,value,exdays){
-    var exdate=new Date();
-           exdate.setDate(exdate.getDate() + exdays);
-    var c_value = escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString()) + "; path=/";
-    document.cookie=c_name + "=" + c_value;
+function setCookie(c_name, value, exdays) {
+    var exdate = new Date();
+    exdate.setDate(exdate.getDate() + exdays);
+    var c_value = escape(value) + ((exdays == null) ? "" : "; expires=" + exdate.toUTCString()) + "; path=/";
+    document.cookie = c_name + "=" + c_value;
 }
 
 function getMyCookie(name) {
     var c = document.cookie.match("(^|;) ?" + name + "=([^;]*)(;|$)");
-        if (c) return c[2];
-        else return "";
+    if (c) return c[2];
+    else return "";
 }
 
 let cookieBtn = d.querySelector('#cookie-btn');
@@ -313,11 +318,49 @@ let cookieBtn = d.querySelector('#cookie-btn');
 
 
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
     var cookieCheck = getMyCookie("Cookie");
-	if (cookieCheck != 'yes') {
+    if (cookieCheck != 'yes') {
         d.querySelector('.cookie').classList.add('active');
         setCookie("Cookie", 'yes', 1);
-	}
+    }
 
+});
+
+findAll('.section-information__tasks-slider-text').forEach(i => {
+    if (i.scrollHeight > i.offsetHeight) {
+        i.insertAdjacentHTML('beforeend', '<div class="section-information__tasks-slider-field-btn"><button class="section-information__tasks-slider-btn">Подробнее</button></div>');
+    }
+});
+
+if (window.innerWidth > 768) {
+    let swiperCalendar = new Swiper(".mySwiper", {
+        slidesPerView: 'auto',
+        spaceBetween: 16,
+        navigation: {
+            nextEl: ".varios-report .swiper-button-next",
+            prevEl: ".varios-report .swiper-button-prev",
+        },
+    });
+}
+
+
+let swiperTasks = new Swiper(".swiperTasks", {
+    slidesPerView: 'auto',
+    spaceBetween: 12,
+    navigation: {
+        nextEl: ".section-information__tasks-slider .swiper-button-next",
+        prevEl: ".section-information__tasks-slider .swiper-button-prev",
+    },
+});
+
+
+let swiperStories = new Swiper(".swiperStories", {
+    slidesPerView: 'auto',
+    spaceBetween: 12,
+    breakpoints: {
+        768: {
+            spaceBetween: 24,
+        }
+    }
 });

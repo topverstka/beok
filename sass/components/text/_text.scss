@@ -1,4 +1,4 @@
-.hello-motivation{
+.hello-motivation {
     font-family: Raleway;
     font-size: 16px;
     font-weight: 500;
@@ -6,4 +6,9 @@
     letter-spacing: 0em;
     text-align: left;
     margin-bottom: 20px;
+    @media (max-width: $tablet) {
+        font-size: 14px;
+        line-height: 130%;
+        margin-bottom: 12px;
+    }
 }

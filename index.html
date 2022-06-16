@@ -2,14 +2,15 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width">
-	<link rel="icon" href="./img/favicon.ico"> <!-- Генератор фавикон - https://realfavicongenerator.net/ -->
-	<title>BeOK</title>
-	<meta name="description" content="BeOK">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" href="./img/favicon.ico">
+    <!-- Генератор фавикон - https://realfavicongenerator.net/ -->
+    <title>BeOK</title>
+    <meta name="description" content="BeOK">
 
     <link rel="stylesheet" href="./css/swiper-bundle.min.css">
-	<link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
@@ -19,62 +20,57 @@
             <div class="general-menu__logo">
                 <img src="./img/logo.svg" alt="">
             </div>
-    
+
             <nav class="general-menu__nav">
                 <ul class="general-menu__nav-list">
                     <li class="general-menu__nav-elem">
                         <a href="#">
                             <svg>
                                 <use xlink:href="./img/icons-sprite.svg#home"></use>
-                            </svg>
-                            Главная
+                            </svg> Главная
                         </a>
                     </li>
                     <li class="general-menu__nav-elem">
                         <a href="#">
                             <svg>
                                 <use xlink:href="./img/icons-sprite.svg#star"></use>
-                            </svg>
-                            Прогресс
+                            </svg> Прогресс
                         </a>
                     </li>
                     <li class="general-menu__nav-elem">
                         <a href="#">
                             <svg>
                                 <use xlink:href="./img/icons-sprite.svg#blank"></use>
-                            </svg>
-                            Отчеты
+                            </svg> Отчеты
                         </a>
                     </li>
                     <li class="general-menu__nav-elem">
                         <a href="#">
                             <svg>
                                 <use xlink:href="./img/icons-sprite.svg#dialog"></use>
-                            </svg>
-                            Чат
+                            </svg> Чат
                         </a>
                     </li>
                 </ul>
             </nav>
-    
+
             <div class="general-menu__support">
                 <a href="#">
                     <svg>
                         <use xlink:href="./img/icons-sprite.svg#support"></use>
-                    </svg>
-                    Техподдержка
+                    </svg> Техподдержка
                 </a>
             </div>
         </div>
-    
-    
+
+
         <div class="page-content">
             <div class="header">
                 <div class="wrap header__wrap">
                     <div class="header__logo">
                         <img src="./img/header-logo.svg" alt="">
                     </div>
-    
+
                     <nav class="header__nav">
                         <ul class="header__nav-list">
                             <li class="header__nav-elem">
@@ -84,7 +80,7 @@
                                     </svg>
                                 </a>
                             </li>
-    
+
                             <li class="header__nav-elem">
                                 <a href="#">
                                     <svg>
@@ -92,7 +88,7 @@
                                     </svg>
                                 </a>
                             </li>
-    
+
                             <li class="header__nav-elem">
                                 <a href="#">
                                     <svg>
@@ -100,8 +96,46 @@
                                     </svg>
                                 </a>
                             </li>
-    
+
                             <li class="header__nav-elem">
+                                <a href="#">
+                                    <svg>
+                                        <use xlink:href="./img/icons-sprite.svg#user"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <nav class="header__nav--mobile">
+                        <ul class="header__nav-list--mobile">
+                            <li class="header__nav-elem--mobile">
+                                <a href="#">
+                                    <svg>
+                                        <use xlink:href="./img/icons-sprite.svg#info"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="header__nav-elem--mobile header__nav-elem--mobile--logo">
+                                <a href="#">
+                                    <img src="./img/logo.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="header__nav-elem--mobile">
+                                <a href="#">
+                                    <svg>
+                                        <use xlink:href="./img/icons-sprite.svg#bell"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="header__nav-elem--mobile">
+                                <a href="#">
+                                    <svg>
+                                        <use xlink:href="./img/icons-sprite.svg#vk"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="header__nav-elem--mobile">
                                 <a href="#">
                                     <svg>
                                         <use xlink:href="./img/icons-sprite.svg#user"></use>
@@ -118,21 +152,461 @@
 
             <div class="fast-progress">
                 <div class="fast-progress__box fast-progress__box--general">
-                    <h2 class="fast-progress__title">Прогресс по текущей неделе</h2>
+                    <h2 class="fast-progress__title">Прогресс по текущей неделе
+                        <svg>
+                            <use xlink:href="./img/icons-sprite.svg#arr-bottom"></use>
+                        </svg>
+                    </h2>
                     <div class="fast-progress__bar">
-                        <div class="fast-progress__bar-line"></div>
-                        <div class="fast-progress__bar-count"></div>
+                        <div class="fast-progress__bar-line" style="--width-line:25%"></div>
+                        <div class="fast-progress__bar-count">25%</div>
                     </div>
                 </div>
-                <div class="fast-progress__box"></div>
-                <div class="fast-progress__box"></div>
-                <div class="fast-progress__box"></div>
+                <div class="fast-progress__box">
+                    <div class="fast-progress__box-icon">
+                        <svg>
+                            <use xlink:href="./img/icons-sprite.svg#scales"></use>
+                        </svg>
+                    </div>
+                    <div class="fast-progress__box-result">
+                        <span class="fast-progress__box-result-number">-23</span>
+                        <p class="fast-progress__box-result-text">кг</p>
+                    </div>
+                </div>
+                <div class="fast-progress__box">
+                    <div class="fast-progress__box-icon">
+                        <svg>
+                            <use xlink:href="./img/icons-sprite.svg#body-icon"></use>
+                        </svg>
+                    </div>
+                    <div class="fast-progress__box-result">
+                        <span class="fast-progress__box-result-number">-2</span>
+                        <p class="fast-progress__box-result-text">кг</p>
+                    </div>
+                </div>
+                <div class="fast-progress__box">
+                    <div class="fast-progress__box-icon">
+                        <svg>
+                            <use xlink:href="./img/icons-sprite.svg#fire-icon"></use>
+                        </svg>
+                    </div>
+                    <div class="fast-progress__box-result">
+                        <span class="fast-progress__box-result-number">-11%</span>
+                        <p class="fast-progress__box-result-text">жира</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="varios-report">
+                <div class="varios-report__top">
+                    <div class="varios-report__top-calendar">
+                        <div class="varios-report__top-calendar">
+                            <button class="varios-report__top-calendar-left">
+                                <svg>
+                                    <use xlink:href="./img/icons-sprite.svg#left-arr-icon"></use>
+                                </svg>
+                            </button>
+                            <p class="varios-report__top-calendar-text">Сегодня, 4 мая</p>
+                            <button class="varios-report__top-calendar-right">
+                                <svg>
+                                    <use xlink:href="./img/icons-sprite.svg#right-arr-icon"></use>
+                                </svg>
+                            </button>
+                            <span class="varios-report__top-calendar-icon">
+                                <svg>
+                                    <use xlink:href="./img/icons-sprite.svg#calendar-icon"></use>
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="varios-report__top-arrow">
+                        <div class="swiper-button-prev">
+                            <svg>
+                                <use xlink:href="./img/icons-sprite.svg#arr-slide-left"></use>
+                            </svg>
+                        </div>
+                        <div class="swiper-button-next">
+                            <svg>
+                                <use xlink:href="./img/icons-sprite.svg#arr-slide-right"></use>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="varios-report__bottom">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="varios-report__bottom-element">
+                                    <div class="varios-report__bottom-element-info">
+                                        <p class="varios-report__bottom-element-info-sign">!</p>
+                                    </div>
+                                    <svg class="varios-report__bottom-element-icon">
+                                        <use xlink:href="./img/icons-sprite.svg#calendar-icon-element"></use>
+                                    </svg>
+                                    <p class="varios-report__bottom-element-title">
+                                        Еженедельный отчет
+                                    </p>
+                                    <button class="varios-report__bottom-element-btn">
+                                        Сдать отчет
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="varios-report__bottom-element">
+                                    <svg class="varios-report__bottom-element-icon">
+                                        <use xlink:href="./img/icons-sprite.svg#photo-icon-element"></use>
+                                    </svg>
+                                    <p class="varios-report__bottom-element-title">
+                                        Ежемесячный фотоотчет
+                                    </p>
+                                    <button class="varios-report__bottom-element-btn">
+                                        Сдать фото
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="varios-report__bottom-element" data-background>
+                                    <svg class="varios-report__bottom-element-icon">
+                                        <use xlink:href="./img/icons-sprite.svg#apple-icon-element"></use>
+                                    </svg>
+                                    <p class="varios-report__bottom-element-title">
+                                        Пищевой дневник из FatSecret*
+                                    </p>
+                                    <button class="varios-report__bottom-element-btn">
+                                        Сдать дневник
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="varios-report__bottom-element" data-background>
+                                    <svg class="varios-report__bottom-element-icon">
+                                        <use xlink:href="./img/icons-sprite.svg#scales"></use>
+                                    </svg>
+                                    <p class="varios-report__bottom-element-title">
+                                        Утренний вес*
+                                    </p>
+                                    <div class="varios-report__bottom-element-field">
+                                        <input type="number" class="varios-report__bottom-element-input" placeholder="-">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="varios-report__bottom-element" data-background>
+                                    <svg class="varios-report__bottom-element-icon">
+                                        <use xlink:href="./img/icons-sprite.svg#step-icon-element"></use>
+                                    </svg>
+                                    <p class="varios-report__bottom-element-title">
+                                        Шаги*
+                                    </p>
+                                    <div class="varios-report__bottom-element-field">
+                                        <input type="number" class="varios-report__bottom-element-input" placeholder="-">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="varios-report__bottom-element" data-background>
+                                    <svg class="varios-report__bottom-element-icon">
+                                        <use xlink:href="./img/icons-sprite.svg#workout-icon-element"></use>
+                                    </svg>
+                                    <p class="varios-report__bottom-element-title">
+                                        Тренировка*
+                                    </p>
+                                    <div class="varios-report__bottom-element-field">
+                                        <input type="number" class="varios-report__bottom-element-input" placeholder="-">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="varios-report__bottom-element" data-background>
+                                    <svg class="varios-report__bottom-element-icon">
+                                        <use xlink:href="./img/icons-sprite.svg#period-icon-element"></use>
+                                    </svg>
+                                    <p class="varios-report__bottom-element-title">
+                                        Месячные*
+                                    </p>
+                                    <div class="varios-report__bottom-element-field" data-checkbox>
+                                        <div class="varios-report__bottom-element-field--info">
+                                            <svg class="varios-report__bottom-element-field--info-icon">
+                                                <use xlink:href="./img/icons-sprite.svg#info"></use>
+                                            </svg>
+                                            <p>
+                                                Для чего нужны эти данные?
+                                            </p>
+                                        </div>
+                                        <label class="varios-report__bottom-element-checkbox">
+                                            <input type="checkbox" class="varios-report__bottom-element-checkbox--input">
+                                            <span class="varios-report__bottom-element-checkbox-switch"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="your-reports">
+                <div class="your-reports__top">
+                    <p class="your-reports__top-title">Твои отчеты</p>
+                    <a class="your-reports__top-link" href="">Смотреть предыдущие недели</a>
+                    <a class="your-reports__top-link your-reports__top-link--mobile" href="">Смотреть все</a>
+                </div>
+                <div class="your-reports__bottom">
+                    <div class="your-reports__bottom-element">
+                        <p class="your-reports__bottom-element-date">12 апреля</p>
+                        <ul class="your-reports__bottom-element-list">
+                            <li class="your-reports__bottom-element-list-line" data-info="weight">55.0 кг</li>
+                            <li class="your-reports__bottom-element-list-line" data-info="power">1 силовая</li>
+                            <li class="your-reports__bottom-element-list-line" data-info="step">10 434</li>
+                            <li class="your-reports__bottom-element-list-line" data-info="calories">1600 ккал</li>
+                        </ul>
+                        <button class="your-reports__bottom-element-edit">
+                            <svg>
+                                <use xlink:href="./img/icons-sprite.svg#edit-icon"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="your-reports__bottom-element">
+                        <p class="your-reports__bottom-element-date">13 апреля</p>
+                        <ul class="your-reports__bottom-element-list">
+                            <li class="your-reports__bottom-element-list-line" data-info="weight">55.0 кг</li>
+                            <li class="your-reports__bottom-element-list-line" data-info="power">1 силовая</li>
+                            <li class="your-reports__bottom-element-list-line" data-info="step">10 434</li>
+                            <li class="your-reports__bottom-element-list-line" data-info="calories">1600 ккал</li>
+                        </ul>
+                        <button class="your-reports__bottom-element-edit">
+                            <svg>
+                                <use xlink:href="./img/icons-sprite.svg#edit-icon"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="your-reports__bottom-element">
+                        <p class="your-reports__bottom-element-date">14 апреля</p>
+                        <ul class="your-reports__bottom-element-list">
+                            <li class="your-reports__bottom-element-list-line" data-info="weight">55.0 кг</li>
+                            <li class="your-reports__bottom-element-list-line" data-info="power">1 силовая</li>
+                            <li class="your-reports__bottom-element-list-line" data-info="step">10 434</li>
+                            <li class="your-reports__bottom-element-list-line" data-info="calories">1600 ккал</li>
+                        </ul>
+                        <button class="your-reports__bottom-element-edit">
+                            <svg>
+                                <use xlink:href="./img/icons-sprite.svg#edit-icon"></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-information">
+                <div class="section-information__goal">
+                    <p class="section-information-title">Цель 4-ой недели</p>
+                    <div class="section-information__billboard">
+                        <ul class="section-information__billboard-list">
+                            <li class="section-information__billboard-list-element">
+                                <span class="section-information__billboard-list-title">Калории</span>
+                                <p class="section-information__billboard-list-text">1 600</p>
+                            </li>
+                            <li class="section-information__billboard-list-element">
+                                <span class="section-information__billboard-list-title">Белок</span>
+                                <p class="section-information__billboard-list-text">100</p>
+                            </li>
+                            <li class="section-information__billboard-list-element">
+                                <span class="section-information__billboard-list-title">Шаги</span>
+                                <p class="section-information__billboard-list-text">10 000</p>
+                            </li>
+                        </ul>
+                        <div class="section-information__billboard-comments">
+                            <span class="section-information__billboard-comments-title">Комментарий куратора</span>
+                            <p class="section-information__billboard-comments-text">
+                                Питайся в рамках выданного значения по калориям, следи за своей активностью и не забывай заполнять показатели. Питайся в рамках выданного значения. Ты молодец! Так держать!
+                            </p>
+                        </div>
+                    </div>
+                    <a href="" class="section-information__link">Смотреть предыдущие недели</a>
+                </div>
+
+                <div class="section-information__tasks">
+                    <p class="section-information-title">Задания 4-ой недели</p>
+                    <div class="section-information__tasks-slider">
+                        <div class="swiper swiperTasks">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="section-information__tasks-slider-element">
+                                        <div class="section-information__tasks-slider-sing" data-info="advise">
+                                            Советуем
+                                        </div>
+                                        <p class="section-information__tasks-slider-text">
+                                            Начинай тренироваться, если не нравится - выбирай любое активное хобби. Тренироваться, если не нравится - выбирай любое. Начинай тренироваться, если не нравится - выбирай любое активное хобби. Тренироваться, если не нравится - выбирай любое активнное
+                                            хобби
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="section-information__tasks-slider-element">
+                                        <div class="section-information__tasks-slider-sing" data-info="necessarily">
+                                            Обязательно
+                                        </div>
+                                        <p class="section-information__tasks-slider-text">
+                                            Начинай тренироваться, если не нравится - выбирай любое активное хобби. Тренироваться, если не нравится - выбирай любое.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="section-information__tasks-slider-element">
+                                        <div class="section-information__tasks-slider-sing" data-info="necessarily">
+                                            Обязательно
+                                        </div>
+                                        <p class="section-information__tasks-slider-text">
+                                            Начинай тренироваться, если не нравится - выбирай любое активное хобби. Тренироваться, если не нравится - выбирай любое.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="section-information__tasks-slider-element">
+                                        <div class="section-information__tasks-slider-sing" data-info="necessarily">
+                                            Обязательно
+                                        </div>
+                                        <p class="section-information__tasks-slider-text">
+                                            Начинай тренироваться, если не нравится - выбирай любое активное хобби. Тренироваться, если не нравится - выбирай любое.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="varios-report__top-arrow">
+                            <div class="swiper-button-prev">
+                                <svg>
+                                    <use xlink:href="./img/icons-sprite.svg#arr-slide-left"></use>
+                                </svg>
+                            </div>
+                            <div class="swiper-button-next">
+                                <svg>
+                                    <use xlink:href="./img/icons-sprite.svg#arr-slide-right"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <a href="" class="section-information__link section-information__tasks-mobile">Смотреть предыдущие недели</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="stories">
+                <div class="stories-container">
+                    <div class="swiper swiperStories">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="stories-element">
+                                    <img class="stories-element__picture" src="./img/strories/stories-1.jpg" alt="">
+                                    <p class="stories-element__title">Ваши достижения</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="stories-element">
+                                    <img class="stories-element__picture" src="./img/strories/stories-1.jpg" alt="">
+                                    <p class="stories-element__title">Ваши достижения</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="stories-element">
+                                    <img class="stories-element__picture" src="./img/strories/stories-1.jpg" alt="">
+                                    <p class="stories-element__title">Приложения для тренировок</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="stories-element">
+                                    <img class="stories-element__picture" src="./img/strories/stories-1.jpg" alt="">
+                                    <p class="stories-element__title">Ваши достижения</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="stories-element">
+                                    <img class="stories-element__picture" src="./img/strories/stories-1.jpg" alt="">
+                                    <p class="stories-element__title">Ваши достижения</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="stories-element">
+                                    <img class="stories-element__picture" src="./img/strories/stories-1.jpg" alt="">
+                                    <p class="stories-element__title">Ваши достижения</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="stories-element">
+                                    <img class="stories-element__picture" src="./img/strories/stories-1.jpg" alt="">
+                                    <p class="stories-element__title">Ваши достижения</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="stories-element">
+                                    <img class="stories-element__picture" src="./img/strories/stories-1.jpg" alt="">
+                                    <p class="stories-element__title">Ваши достижения</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="stories-element">
+                                    <img class="stories-element__picture" src="./img/strories/stories-1.jpg" alt="">
+                                    <p class="stories-element__title">Ваши достижения</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="stories-element">
+                                    <img class="stories-element__picture" src="./img/strories/stories-1.jpg" alt="">
+                                    <p class="stories-element__title">Ваши достижения</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+            <div class="check-list">
+                <div class="check-list__container">
+                    <div class="check-list__left">
+                        <p class="check-list__left-text">Чек-лист дня </p>
+                    </div>
+                    <div class="check-list__form">
+                        <form action="">
+                            <div class="check-list__form-field">
+                                <input type="checkbox" class="check-list__form-field--input">
+                                <label for=""></label>
+                                <p class="check-list__form-field--text">Сдал отчет</p>
+                            </div>
+                            <div class="check-list__form-field">
+                                <input type="checkbox" class="check-list__form-field--input">
+                                <label for=""></label>
+                                <p class="check-list__form-field--text">Ел фрукты/овощи/зелень</p>
+                            </div>
+                            <div class="check-list__form-field">
+                                <input type="checkbox" class="check-list__form-field--input">
+                                <label for=""></label>
+                                <p class="check-list__form-field--text">Следил за калориями</p>
+                            </div>
+                            <div class="check-list__form-field">
+                                <input type="checkbox" class="check-list__form-field--input">
+                                <label for=""></label>
+                                <p class="check-list__form-field--text">Следил за количеством масла</p>
+                            </div>
+                            <div class="check-list__form-field">
+                                <input type="checkbox" class="check-list__form-field--input">
+                                <label for=""></label>
+                                <p class="check-list__form-field--text">Добавил активность в свой день</p>
+                            </div>
+
+
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
-    
 
-   
+
+
 
     <!-- <nav class="header__nav header__nav--mobile">
         <div class="container">
@@ -156,14 +630,14 @@
         </div>
     </nav> -->
 
-    
 
-	<!-- Модальные окна -->
-	<div class="modal" id="telegram">
-		<div class="modal__body">
-			<div class="modal__content">
-				<h2 class="modal__title">Welcome to telegram</h2>
-				<div class="modal__telegram-list">
+
+    <!-- Модальные окна -->
+    <div class="modal" id="telegram">
+        <div class="modal__body">
+            <div class="modal__content">
+                <h2 class="modal__title">Welcome to telegram</h2>
+                <div class="modal__telegram-list">
 
                     <a class="modal__telegram-item" href="https://t.me/formacarcrypto" target="_blank">
                         <div class="contacts-item">
@@ -193,32 +667,31 @@
                     </a>
 
                 </div>
-				<button class="modal__close">
+                <button class="modal__close">
 					<span></span>
 					<span></span>
 				</button>
-			</div>
-		</div>
-	</div>
-	
+            </div>
+        </div>
+    </div>
 
-	<!-- Подключение скриптов -->
-	<script src="./js/libs/swiper-bundle.min.js"></script>
+
+    <!-- Подключение скриптов -->
+    <script src="./js/libs/swiper-bundle.min.js"></script>
 
     <script src="./js/libs/lightGallary/lightgallery.min.js"></script>
-	<script src="./js/libs/lightGallary/lg-thumbnails.js"></script>
+    <script src="./js/libs/lightGallary/lg-thumbnails.js"></script>
 
 
-	<script src="./js/main.js"></script>
+    <script src="./js/main.js"></script>
 
     <script>
-
         //lightGallery(document.querySelector('.lightgallery'));
-      </script> 
+    </script>
 
 
 
-    
+
 </body>
 
 </html>

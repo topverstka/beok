@@ -1,5 +1,5 @@
-.hello{
-    //font-family: RoadRadio;
+.hello {
+    font-family: 'RoadRadio';
     font-size: 32px;
     font-weight: 400;
     line-height: 32px;
@@ -8,4 +8,9 @@
     color: var(--black);
     text-align: left;
     margin-bottom: 8px;
+    @media(max-width: $tablet) {
+        font-size: 26px;
+        line-height: 26px;
+        margin-bottom: 2px;
+    }
 }

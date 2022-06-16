@@ -1,8 +1,8 @@
 // Пользовательские переменные
 :root {
-    --ffMain: 'Noto Sans', sans-serif;
+    --ffMain: 'Raleway', sans-serif;
     --ffHeader: sans-serif;
-    --tr: .3s;  // Плавность перехода
+    --tr: .3s; // Плавность перехода
     --radius: 16px; // border-radius
 }
 
@@ -12,24 +12,22 @@ $tr: var(--tr);
 $minHover: 769px; // Минимальное разрешения экрана для hover-эффекта
 $container: 1240px;
 $radius: var(--radius);
-
 $laptop-l: 1440px;
 $laptop: 1024px;
 $tablet: 768px;
 $mobile-l: 425px;
 $mobile-m: 375px;
 $mobile-s: 320px;
-
 // Цвета
 :root {
-    --main: #242424;
-    --second: #747474;
-    --accent: #399478;
+    --main: #0E0E0E;
+    --second: #D2FADF;
+    --accent: #2CA869;
+    --accent2: #FAEFDD;
     --accent-hover: #44BD99;
     --accent-active: #37866E;
-    --accent2: #DC8B2D;
     --accent2-active: #C27B29;
-    --outline: #C0C0C0;
+    --outline: #ED6A53;
     --bg-page: #FFF;
     --bg-block: #F8F8F8;
     --error: #E83D3D;

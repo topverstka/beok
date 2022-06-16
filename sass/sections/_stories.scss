@@ -1,0 +1,90 @@
+.stories {
+    margin-top: 70px;
+    background: rgba(121, 126, 135, 0.1);
+    border-radius: 10px 0 0 10px;
+    padding: 20px;
+    overflow: hidden;
+    .swiper {
+        overflow: visible;
+    }
+    .swiper-slide {
+        width: 120px;
+        height: 120px
+    }
+    @media (max-width:$tablet) {
+        margin-top: 56px;
+        background: transparent;
+        padding: 0;
+        margin-right: -12px;
+        .swiper-slide {
+            width: 100px;
+            height: 100px
+        }
+    }
+}
+
+.stories-element {
+    border-radius: 18px;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border: 2px solid rgb(237, 106, 83);
+        border-radius: 18px;
+    }
+    &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        width: 112px;
+        height: 113px;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 11.36%, rgba(0, 0, 0, 0.5) 98.91%);
+        z-index: 2;
+        border-radius: 14px;
+    }
+    @media (max-width:$tablet) {
+        &:before {
+            width: 92px;
+            height: 91px
+        }
+    }
+}
+
+.stories-element__picture {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 18px;
+    padding: 4px;
+    object-position: 86%;
+}
+
+.stories-element__title {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 110%;
+    color: #fff;
+    z-index: 3;
+    position: relative;
+    padding: 0 12px 10px 12px;
+    @media (max-width: $tablet) {
+        font-weight: 600;
+        font-size: 10px;
+        line-height: 110%;
+        padding-bottom: 14px;
+    }
+}
