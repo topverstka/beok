@@ -1377,7 +1377,7 @@ img {
 @media (max-width: 768px) {
   .varios-report__bottom .swiper-wrapper {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 48%);
     grid-gap: 11px;
   }
   .varios-report__bottom .swiper-slide {
@@ -1683,6 +1683,11 @@ img {
   .varios-report__bottom-element-field--info svg {
     width: 13px;
     height: 13px;
+  }
+}
+@media (max-width: 350px) {
+  .varios-report__bottom-element-field--info {
+    margin-right: 10px;
   }
 }
 

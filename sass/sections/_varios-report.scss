@@ -68,7 +68,7 @@
     @media (max-width:$tablet) {
         .swiper-wrapper {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(2, 48%);
             grid-gap: 11px;
         }
         .swiper-slide {
@@ -372,6 +372,9 @@
             width: 13px;
             height: 13px;
         }
+    }
+    @media (max-width: 350px) {
+        margin-right: 10px
     }
 }
 
