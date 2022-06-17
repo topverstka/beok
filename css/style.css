@@ -255,7 +255,17 @@ img {
   height: 100px;
   position: fixed;
   top: 0;
-  left: 0;
+  background: #fff;
+  width: calc(100% - 242px);
+  right: 0;
+  animation: header 1s;
+}
+@media (max-width: 768px) {
+  .header.sticky {
+    left: 0;
+    width: 100%;
+    height: auto;
+  }
 }
 
 .header__wrap {
@@ -519,6 +529,14 @@ img {
   100% {
     transform: scale(0.9);
     opacity: 0;
+  }
+}
+@keyframes header {
+  0% {
+    transform: translate3d(0, -101px, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
   }
 }
 /*
@@ -1001,6 +1019,7 @@ img {
   padding-right: 15px;
   padding-top: 41px;
   margin-right: 20px;
+  z-index: 1000;
 }
 @media (max-width: 768px) {
   .general-menu {

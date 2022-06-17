@@ -58,8 +58,7 @@ function faq() {
 
 faq();
 
-
-
+let previousPosition = window.pageYOffset || document.documentElement.scrollTop;
 // When the user scrolls the page, execute myFunction
 window.onscroll = function() { myFunction() };
 
@@ -67,16 +66,38 @@ window.onscroll = function() { myFunction() };
 var header = document.querySelector(".header");
 
 // Get the offset position of the navbar
-var sticky = 1000;
+var sticky = 250;
 
 // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
 function myFunction() {
+    let currentPosition = window.pageYOffset || document.documentElement.scrollTop;
     if (window.pageYOffset > sticky) {
         header.classList.add("sticky");
+        if (previousPosition > currentPosition) {
+            header.classList.add("sticky");
+        } else {
+            header.classList.remove("sticky");
+        }
     } else {
         header.classList.remove("sticky");
     }
+    previousPosition = currentPosition;
 }
+
+
+
+// window.onscroll = function() {
+//     var currentPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+//     if (previousPosition > currentPosition) {
+//         header.classList.add("sticky");
+//     } else {
+//         header.classList.remove("sticky");
+//     }
+
+//     previousPosition = currentPosition;
+// };
+
 
 
 

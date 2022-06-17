@@ -1,5 +1,5 @@
-
 /* Стили анимации пульсации кругов */
+
 @keyframes pulse {
     0% {
         transform: scale(0.5);
@@ -13,7 +13,10 @@
         opacity: 0;
     }
 }
+
+
 /* Стили кроссбраузерной анимации пульсации кругов */
+
 @-webkit-keyframes pulse {
     0% {
         transform: scale(0.5);
@@ -28,3 +31,11 @@
     }
 }
 
+@keyframes header {
+    0% {
+        transform: translate3d(0, -101px, 0);
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
