@@ -1,0 +1,21 @@
+:root {
+  --ffMain: 'Raleway', sans-serif;
+  --ffHeader: sans-serif;
+  --tr: .3s;
+  --radius: 16px;
+}
+
+:root {
+  --main: #0E0E0E;
+  --second: #D2FADF;
+  --accent: #2CA869;
+  --accent2: #FAEFDD;
+  --accent-hover: #44BD99;
+  --accent-active: #D13F1C;
+  --accent2-active: #C27B29;
+  --outline: #ED6A53;
+  --bg-page: #FFF;
+  --bg-block: #F8F8F8;
+  --error: #E83D3D;
+  --black: rgba(14, 14, 14, 1);
+}

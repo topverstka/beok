@@ -56,10 +56,20 @@
 
 .swiper-button-next {
     right: -65px;
+    &:hover {
+        svg path {
+            fill: $outline
+        }
+    }
 }
 
 .swiper-button-prev {
     left: -65px;
+    &:hover {
+        svg path {
+            fill: $outline
+        }
+    }
 }
 
 .swiper-pagination {

@@ -65,6 +65,9 @@
         height: 176px;
         //  margin-right: 16px;
     }
+    .swiper {
+        overflow: visible;
+    }
     @media (max-width:$tablet) {
         .swiper-wrapper {
             display: grid;
@@ -103,6 +106,9 @@
                     margin-top: 0;
                     position: relative;
                     color: transparent;
+                    &:active {
+                        background: $accent-active;
+                    }
                     &:after {
                         content: '';
                         position: absolute;
@@ -205,6 +211,25 @@
         background: $accent2;
         border: 2px solid transparent;
     }
+    &[data-update] {
+        .varios-report__bottom-element-btn {
+            background: $accent;
+            color: transparent;
+            position: relative;
+            &:after {
+                content: 'Обновить дневник';
+                color: #fff;
+                width: 100%;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 130%;
+            }
+        }
+    }
     &[disabled] {
         opacity: 0.4;
         input {
@@ -274,6 +299,13 @@
     margin-top: 10px;
     width: 100%;
     border-radius: 5px;
+    &:hover {
+        background: #F29D8E;
+    }
+    &:focus,
+    &:active {
+        background: #D13F1C
+    }
     @media (max-width: $tablet) {
         margin-top: 14px
     }
@@ -291,6 +323,43 @@
     top: 12px;
     right: 12px;
     cursor: pointer;
+    &:hover {
+        .varios-report__bottom-element--toltip {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+            z-index: 9;
+            pointer-events: all;
+        }
+    }
+}
+
+.varios-report__bottom-element--toltip {
+    position: absolute;
+    width: 169px;
+    padding: 6px 9px;
+    background: #FFC171;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 130%;
+    right: 42%;
+    left: auto;
+    bottom: 28px;
+    opacity: 0;
+    z-index: -2;
+    transform: translate3d(0, -10px, 0);
+    transition: .4s;
+    pointer-events: none;
+    &:after {
+        content: '';
+        position: absolute;
+        background-image: url("data:image/svg+xml,%3Csvg width='16' height='14' viewBox='0 0 16 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.66268 12.5129C8.87074 13.6975 7.12926 13.6975 6.33732 12.5129L0.553807 3.86152C-0.334603 2.53259 0.617944 0.75 2.21649 0.75L13.7835 0.750001C15.3821 0.750002 16.3346 2.53258 15.4462 3.86152L9.66268 12.5129Z' fill='%23FFC171'/%3E%3C/svg%3E%0A");
+        background-repeat: no-repeat;
+        width: 20px;
+        height: 20px;
+        bottom: -12px;
+        right: 8px;
+    }
 }
 
 .varios-report__top-arrow {
@@ -386,7 +455,7 @@
 
 .varios-report__bottom-element-checkbox {
     display: inline-block;
-    height: 18px;
+    height: 16px;
     line-height: 28px;
     margin-right: 10px;
     position: relative;
@@ -408,7 +477,7 @@
             background: $outline;
         }
         &:checked+.varios-report__bottom-element-checkbox-switch:before {
-            transform: translateX(23px);
+            transform: translateX(16px);
             background: #fff;
             left: 0px
         }
@@ -418,26 +487,27 @@
     }
     &-switch {
         position: relative;
-        display: inline-block;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
         box-sizing: border-box;
-        height: 20px;
-        width: 41px;
+        height: 17px;
+        width: 32px;
         border-radius: 25%/50%;
-        vertical-align: top;
         background: transparent;
         border: 1px solid $outline;
         transition: .2s;
         &:before {
             content: '';
-            position: absolute;
-            left: 2px;
-            top: 1.4px;
-            width: 15.4px;
-            height: 15.4px;
-            display: inline-block;
+            width: 12px;
+            height: 12px;
+            margin-left: 1.5px;
+            display: flex;
+            align-items: center;
             border-radius: 50%;
             background: $outline;
-            transition: .15s;
+            transition: .2s linear;
         }
     }
 }

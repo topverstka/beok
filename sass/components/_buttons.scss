@@ -11,21 +11,18 @@
     --btn-primary-default: #467EF3;
     --btn-primary-pressed: #3865C2;
     --btn-primary-disabled: #B5CBFA;
-
     // -Вторичная кнопка
     --btn-second-default: #D1DFFC;
     --btn-second-pressed: #BDC9E3;
     --btn-second-disabled: #99B8F8;
 }
- 
+
 $btn-primary-default: var(--btn-primary-default);
 $btn-primary-pressed: var(--btn-primary-pressed);
 $btn-primary-disabled: var(--btn-primary-disabled);
-
 $btn-second-default: var(--btn-second-default);
 $btn-second-pressed: var(--btn-second-pressed);
 $btn-second-disabled: var(--btn-second-disabled);
-
 // Основной шаблон кнопки
 .btn {
     width: 100%;
@@ -42,14 +39,11 @@ $btn-second-disabled: var(--btn-second-disabled);
 .btn_primary {
     color: #fff;
     background: $btn-primary-default;
-
     &:hover {
-        
         @media (min-width: $minHover) {
             box-shadow: 0px 5px 20px rgba(70, 126, 243, 0.5);
         }
     }
-
     &:active {
         background: $btn-primary-pressed;
     }
@@ -59,14 +53,11 @@ $btn-second-disabled: var(--btn-second-disabled);
 .btn_second {
     color: #467EF3;
     background: $btn-second-default;
-
     &:hover {
-        
         @media (min-width: $minHover) {
             box-shadow: 0px 5px 20px rgba(70, 126, 243, 0.5);
         }
     }
-
     &:active {
         background: $btn-second-pressed;
     }
@@ -75,14 +66,11 @@ $btn-second-disabled: var(--btn-second-disabled);
 // Кнопка без заполнения и обводки
 .btn_linear {
     padding: 5px;
-
     &:hover {
-        
         @media (min-width: $minHover) {
             color: $btn-primary-pressed;
         }
     }
-
     &:active {
         color: $btn-primary-pressed;
     }
@@ -90,13 +78,11 @@ $btn-second-disabled: var(--btn-second-disabled);
 
 // Кнопка с иконкой. Иконка размещается в html после или перед текстом кнопки
 $margin-icon: 12px; // Отступ иконки от текста
-
 .btn_icon {
     display: flex;
     align-items: center;
     justify-content: space-between;
     text-align: left;
-
     & svg {
         width: 24px;
         height: 24px;
@@ -104,10 +90,8 @@ $margin-icon: 12px; // Отступ иконки от текста
     }
 }
 
-
 // Иконка будет слева. Использовать совместно с btn_icon
 .btn_icon-left {
-
     & svg {
         margin-left: 0;
         margin-right: $margin-icon;
@@ -121,14 +105,11 @@ $margin-icon: 12px; // Отступ иконки от текста
 
 // Hover-эффект у ссылки
 .link {
-    
     &:hover {
-        
         @media (min-width: $minHover) {
             color: $accent-hover;
         }
     }
-
     &:active {
         color: $accent-active;
     }
@@ -143,20 +124,16 @@ $margin-icon: 12px; // Отступ иконки от текста
     padding: 12px 24px;
     background: #F8F8F8;
     border-radius: 100px;
-
     &:hover {
-        
         @media (min-width: $minHover) {
             color: $accent;
             background: #EFF7F5;
         }
     }
-
     &:active {
         color: #fff;
         background: $accent;
     }
-
     &._active {
         color: #fff;
         background: $accent;
@@ -169,8 +146,6 @@ $margin-icon: 12px; // Отступ иконки от текста
     pointer-events: none;
 }
 
-
-
 // Стрелка в слайдерах
 .slider-arrow {
     width: 56px;
@@ -180,29 +155,47 @@ $margin-icon: 12px; // Отступ иконки от текста
     justify-content: center;
     background: $accent;
     border-radius: 50%;
-
     &:hover {
-        
         @media (min-width: $minHover) {
             background: $accent-hover;
         }
     }
-
     &:active {
         background: $accent-active;
     }
-
     &.swiper-button-disabled {
-        background: #F8F8F8; 
+        background: #F8F8F8;
         // pointer-events: none;
-
         & svg path {
             fill: $second;
         }
     }
-
     & svg {
         width: 24px;
         height: 24px;
+    }
+}
+
+.btn-link {
+    background: $outline;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    color: transparent;
+    position: relative;
+    display: block;
+    &:active {
+        background: $accent-active
+    }
+    &:after {
+        content: '';
+        background-image: url("data:image/svg+xml,%3Csvg width='26' height='16' viewBox='0 0 26 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M25.7071 8.70711C26.0976 8.31658 26.0976 7.68342 25.7071 7.29289L19.3431 0.928932C18.9526 0.538408 18.3195 0.538408 17.9289 0.928932C17.5384 1.31946 17.5384 1.95262 17.9289 2.34315L23.5858 8L17.9289 13.6569C17.5384 14.0474 17.5384 14.6805 17.9289 15.0711C18.3195 15.4616 18.9526 15.4616 19.3431 15.0711L25.7071 8.70711ZM0 9H25V7H0V9Z' fill='white'/%3E%3C/svg%3E%0A");
+        background-repeat: no-repeat;
+        left: 54%;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        width: 29px;
+        height: 15px;
+        position: absolute;
     }
 }

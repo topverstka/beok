@@ -4,7 +4,12 @@
     z-index: 12;
     padding-top: 42px;
     padding-right: 30px;
-    margin-bottom: -8px;
+    padding-bottom: 21px;
+    margin-bottom: 23px;
+    @media (max-width: $tablet) {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
 }
 
 .header.sticky {
@@ -238,6 +243,13 @@
     }
     &:last-child {
         margin-right: 0;
+    }
+    @media (max-width:$tablet) {
+        &:not(.header__nav-elem--mobile--logo) {
+            img {
+                width: 24px
+            }
+        }
     }
 }
 
