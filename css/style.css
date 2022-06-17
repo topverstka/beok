@@ -2465,6 +2465,7 @@ img {
   }
   .check-list__form-field label {
     margin-right: 15px;
+    border: 1px solid var(--accent);
   }
   .check-list__form-field label:after {
     background-position: 50% 58%;
