@@ -205,6 +205,12 @@
         background: $accent2;
         border: 2px solid transparent;
     }
+    &[disabled] {
+        opacity: 0.4;
+        input {
+            pointer-events: none;
+        }
+    }
     svg {
         width: 32px;
         height: 32px

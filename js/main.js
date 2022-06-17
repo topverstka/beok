@@ -364,3 +364,5 @@ let swiperStories = new Swiper(".swiperStories", {
         }
     }
 });
+
+const jsConfetti = new JSConfetti()

@@ -19,6 +19,13 @@
     }
 }
 
+.confetti {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
 .section-information-title {
     margin-bottom: 16px;
     font-weight: 700;
