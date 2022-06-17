@@ -1,5 +1,5 @@
 .check-list {
-    margin: 70px 0 40px 0;
+    margin: 70px 30px 40px 0;
     border: 2px solid $accent;
     border-radius: 15px;
     overflow: hidden;
@@ -96,7 +96,8 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background: #ccc;
+            background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='9' cy='10' r='1.25' fill='%232CA869' stroke='%232CA869' stroke-width='0.5' stroke-linecap='round'/%3E%3Ccircle cx='15' cy='10' r='1.25' fill='%232CA869' stroke='%232CA869' stroke-width='0.5' stroke-linecap='round'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8.62888 15C8.34911 15 8.20922 15 8.13458 15.1068C8.05995 15.2136 8.10322 15.3318 8.18976 15.5683C8.70588 16.9788 10.2167 18 12 18C13.7833 18 15.2941 16.9788 15.8102 15.5683C15.8968 15.3318 15.94 15.2136 15.8654 15.1068C15.7908 15 15.6509 15 15.3711 15H8.62888Z' fill='%232CA869'/%3E%3C/svg%3E%0A");
+            background-position: center 75%;
             transform: scale(0);
             transition: .4s ease;
         }
@@ -122,6 +123,10 @@
         }
         label {
             margin-right: 15px;
+            &:after {
+                background-position: 50% 58%;
+                background-size: 130%;
+            }
         }
     }
 }
