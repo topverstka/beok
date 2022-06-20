@@ -1,0 +1,222 @@
+.modal#edit-report {
+    .modal__content {
+        width: 630px;
+        max-width: 630px;
+    }
+    form {
+        margin-top: 28px
+    }
+    input:not([type="submit"]) {
+        border: 1px solid $main;
+        border-radius: 5px;
+        width: 100%;
+        height: 52px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 130%;
+        color: #1a1a1a
+    }
+    .modal-field {
+        &:not(:last-child) {
+            margin-bottom: 8px;
+        }
+        label {
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 130%;
+            margin-bottom: 5px;
+            display: block;
+        }
+        input:not([type="submit"]) {
+            padding: 20px 12px 20px 15px;
+            border: 1px solid $main;
+            border-radius: 5px;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 130%;
+            color: #1A1A1A;
+        }
+    }
+    input[type="submit"] {
+        width: 100%;
+        margin-top: 52px;
+        color: #fff;
+        height: 52px;
+        border-radius: 10px;
+    }
+    @media (max-width: $tablet) {
+        z-index: 999;
+        .modal__content {
+            width: 100%;
+            max-width: 100%;
+            height: 100%;
+            border-radius: 0;
+            padding: 12px 12px 60px 12px
+        }
+        .modal__body {
+            padding: 0;
+            height: 100%
+        }
+        form {
+            margin-top: 17px;
+            display: flex;
+            flex-direction: column;
+            min-height: inherit;
+            height: 100%;
+            padding-bottom: 60px;
+        }
+        .modal__title {
+            text-align: center;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 21px;
+            margin-bottom: 4px;
+            margin-left: 24px;
+        }
+        .edit-report--date {
+            text-align: center;
+            font-size: 12px;
+            line-height: 130%;
+            margin-left: 24px;
+        }
+        .modal-field {
+            &:not(:last-child) {
+                margin-bottom: 20px;
+            }
+        }
+        input[type="submit"] {
+            background: #FFE4DA;
+            color: rgba(232, 86, 51, 0.5);
+            height: 45px;
+            margin-top: auto
+        }
+        .modal__close {
+            left: 12px;
+            top: 11px;
+            right: auto;
+            span {
+                display: none;
+            }
+            &:after {
+                content: '';
+                background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19 12H5' stroke='%230E0E0E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M12 19L5 12L12 5' stroke='%230E0E0E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+                background-repeat: no-repeat;
+                width: 24px;
+                height: 24px;
+                display: block;
+            }
+        }
+    }
+}
+
+.modal-field__input {
+    position: relative;
+    &:after {
+        content: '';
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 24px;
+        height: 24px;
+        background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.6066 3.5C14.7392 3.5 14.8664 3.55268 14.9602 3.64645L17.7886 6.47487C17.9838 6.67014 17.9838 6.98672 17.7886 7.18198L8.59619 16.3744C8.53337 16.4372 8.45495 16.4821 8.369 16.5046L4.54057 17.5046C4.36883 17.5494 4.18617 17.4999 4.06066 17.3744C3.93514 17.2489 3.88558 17.0662 3.93044 16.8945L4.93044 13.066C4.95289 12.9801 4.99784 12.9017 5.06066 12.8388L14.253 3.64645C14.3468 3.55268 14.474 3.5 14.6066 3.5Z' fill='%23ED6A53'/%3E%3Cpath d='M4 19.25C3.58579 19.25 3.25 19.5858 3.25 20C3.25 20.4142 3.58579 20.75 4 20.75H19C19.4142 20.75 19.75 20.4142 19.75 20C19.75 19.5858 19.4142 19.25 19 19.25H4Z' fill='%23ED6A53'/%3E%3C/svg%3E%0A");
+        background-repeat: no-repeat;
+    }
+}
+
+.edit-report--date {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 130%;
+}
+
+.modal-box__diary-container {
+    display: flex;
+    width: calc(100% - 24px);
+    @media (max-width: $tablet) {
+        flex-direction: column;
+        align-items: flex-start;
+        .modal-box__diary-right {
+            margin: 14px auto 0 0
+        }
+        .modal-box__diary-right--update {
+            text-align: left;
+            line-height: 10px;
+            margin-bottom: 8px;
+        }
+    }
+}
+
+.modal-box__diary {
+    display: flex;
+    border: 2px solid $accent;
+    padding: 16px;
+    border-radius: 15px;
+    margin-top: 20px;
+    svg {
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
+    }
+    @media (max-width: $tablet) {
+        margin-top: 12px;
+    }
+}
+
+.modal-box__diary--text {
+    width: 260px
+}
+
+.modal-box__diary--text-title {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 21px;
+    margin-bottom: 4px;
+    @media (max-width: $tablet) {
+        font-size: 12px;
+        line-height: 16px;
+        margin-bottom: 6px;
+    }
+}
+
+.modal-box__diary--text-description {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: #90959E;
+    display: flex;
+    @media (max-width: $tablet) {
+        font-size: 12px;
+        line-height: 14px;
+    }
+}
+
+.modal-box__diary-right {
+    margin-left: auto;
+}
+
+.modal-box__diary-right--update {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    padding-top: 4px;
+    color: #90959E;
+    margin-bottom: 18px;
+    text-align: right;
+}
+
+.modal-box__diary-right--btn {
+    width: 190px;
+    height: 40px;
+    border-radius: 5px;
+    background: $accent;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 3;
+    color: #fff;
+    @media (max-width: $tablet) {
+        width: 255px;
+        font-size: 18px;
+        line-height: 21px;
+    }
+}

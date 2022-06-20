@@ -649,40 +649,45 @@
 
 
     <!-- Модальные окна -->
-    <div class="modal" id="telegram">
+    <div class="modal" id="edit-report">
         <div class="modal__body">
             <div class="modal__content">
-                <h2 class="modal__title">Welcome to telegram</h2>
-                <div class="modal__telegram-list">
-
-                    <a class="modal__telegram-item" href="https://t.me/formacarcrypto" target="_blank">
-                        <div class="contacts-item">
-                            <svg width="50" height="51">
-                                <use xlink:href="./img/icons-sprite.svg#telegram"></use>
-                            </svg>
+                <h2 class="modal__title">Редактирование отчета</h2>
+                <p class="edit-report--date">02.05.2022</p>
+                <form action="">
+                    <div class="modal-field">
+                        <label for="">
+                            Утренний вес
+                        </label>
+                        <div class="modal-field__input">
+                            <input type="number" name="weight">
                         </div>
-                        <p class="modal__telegram-name">RUS</p>
-                    </a>
-
-                    <a class="modal__telegram-item" href="https://t.me/formacarcryptoenglish" target="_blank">
-                        <div class="contacts-item">
-                            <svg width="50" height="51">
-                                <use xlink:href="./img/icons-sprite.svg#telegram"></use>
-                            </svg>
+                    </div>
+                    <div class="modal-field">
+                        <label for="">
+                            Шаги
+                        </label>
+                        <div class="modal-field__input">
+                            <input type="number" name="step">
                         </div>
-                        <p class="modal__telegram-name">ENG</p>
-                    </a>
-
-                    <a class="modal__telegram-item" href="https://t.me/formacarcryptorussian" target="_blank">
-                        <div class="contacts-item">
-                            <svg width="50" height="51">
-                                <use xlink:href="./img/icons-sprite.svg#telegram"></use>
-                            </svg>
+                    </div>
+                    <div class="modal-box__diary">
+                        <svg class="modal-box__diary--icon">
+                            <use xlink:href="./img/icons-sprite.svg#apple-icon-element"></use>
+                        </svg>
+                        <div class="modal-box__diary-container">
+                            <div class="modal-box__diary--text">
+                                <p class="modal-box__diary--text-title">Пищевой дневник из FatSecret</p>
+                                <span class="modal-box__diary--text-description">Обнови дневник, если ты съел что-то после его сдачи и записал данные в FatSecret.</span>
+                            </div>
+                            <div class="modal-box__diary-right">
+                                <p class="modal-box__diary-right--update">Обновлено 01.05.2022 в 10:51</p>
+                                <button class="modal-box__diary-right--btn">Обновить дневник</button>
+                            </div>
                         </div>
-                        <p class="modal__telegram-name">Announcement</p>
-                    </a>
-
-                </div>
+                    </div>
+                    <input class="btn" type="submit" value="Готово">
+                </form>
                 <button class="modal__close">
 					<span></span>
 					<span></span>

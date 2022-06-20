@@ -26,13 +26,19 @@ $btn-second-disabled: var(--btn-second-disabled);
 // Основной шаблон кнопки
 .btn {
     width: 100%;
-    height: 48px;
-    font-size: 14px;
-    font-weight: 600;
-    text-transform: uppercase;
-    padding: 9px;
-    border-radius: $radius;
+    border-radius: 10px;
     transition: $tr;
+    font-weight: 700;
+    font-size: 18px;
+    background: $outline;
+    color: #fff;
+    &:hover {
+        background: #F29D8E;
+    }
+    &:focus,
+    &:active {
+        background: #D13F1C
+    }
 }
 
 // Акцентная кнопка

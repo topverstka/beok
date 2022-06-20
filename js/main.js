@@ -214,16 +214,26 @@ function modal() {
         const btnsOpenModal = document.querySelectorAll('[data-modal-open]');
 
 
-        for (let i = 0; i < btnsOpenModal.length; i++) {
-            const btn = btnsOpenModal[i];
-
-            btn.addEventListener('click', (e) => {
-                const dataBtn = btn.dataset.modalOpen;
+        d.addEventListener('click', function(e) {
+            if (e.target.getAttribute('data-modal-open') || e.target.closest('[data-modal-open]')) {
+                const dataBtn = e.target.dataset.modalOpen || e.target.closest('[data-modal-open]').dataset.modalOpen;
                 const modal = document.querySelector(`#${dataBtn}`)
                 openModal(modal)
                 window.location.hash = dataBtn
-            });
-        }
+            }
+        });
+
+
+        // for (let i = 0; i < btnsOpenModal.length; i++) {
+        //     const btn = btnsOpenModal[i];
+
+        //     btn.addEventListener('click', (e) => {
+        //         const dataBtn = btn.dataset.modalOpen;
+        //         const modal = document.querySelector(`#${dataBtn}`)
+        //         openModal(modal)
+        //         window.location.hash = dataBtn
+        //     });
+        // }
     }
     openModalWhenClickingOnBtn();
 
@@ -350,7 +360,22 @@ document.addEventListener("DOMContentLoaded", function() {
 
 findAll('.section-information__tasks-slider-text').forEach(i => {
     if (i.scrollHeight > i.offsetHeight) {
-        i.insertAdjacentHTML('beforeend', '<div class="section-information__tasks-slider-field-btn"><button class="section-information__tasks-slider-btn">Подробнее</button></div>');
+        i.insertAdjacentHTML('beforeend', '<div class="section-information__tasks-slider-field-btn" data-modal-open="tasks-popup"><button class="section-information__tasks-slider-btn">Подробнее</button></div>');
+    }
+});
+
+
+document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('section-information__tasks-slider-field-btn') ||
+        e.target.closest('.section-information__tasks-slider-field-btn')) {
+        let sing = e.target.closest('.section-information__tasks-slider-element').querySelector('.section-information__tasks-slider-sing').outerHTML;
+        let text = e.target.closest('.section-information__tasks-slider-element').querySelector('.section-information__tasks-slider-text').outerHTML;
+        document.querySelector('#tasks-popup .modal__content .tasks-popup-content') ? document.querySelector('#tasks-popup .modal__content .tasks-popup-content').remove() : '';
+        document.querySelector('#tasks-popup .modal__content').insertAdjacentHTML('afterbegin', `
+            <div class="tasks-popup-content">
+                ${sing + text}
+            </div>
+        `);
     }
 });
 
@@ -370,8 +395,8 @@ let swiperTasks = new Swiper(".swiperTasks", {
     slidesPerView: 'auto',
     spaceBetween: 12,
     navigation: {
-        nextEl: ".section-information__tasks-slider .swiper-button-next",
-        prevEl: ".section-information__tasks-slider .swiper-button-prev",
+        nextEl: ".section-information__tasks .swiper-button-next",
+        prevEl: ".section-information__tasks .swiper-button-prev",
     },
 });
 
@@ -387,3 +412,33 @@ let swiperStories = new Swiper(".swiperStories", {
 });
 
 const jsConfetti = new JSConfetti()
+
+
+
+// file input add
+
+document.addEventListener('change', function(e) {
+    if (e.target.classList.contains('take-photo__upload--file')) {
+        let file = e.target.files[0];
+        let img = document.createElement('img');
+        img.src = URL.createObjectURL(file)
+        e.target.closest('.take-photo__upload--photo').style.cssText = `
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(${img.src});
+            background-position:center;
+            background-size:cover;
+        `;
+        e.target.closest('.take-photo__upload--photo').classList.add('_active');
+        e.target.closest('.take-photo__upload--photo').querySelector('.take-photo__upload-section-file').classList.add('_active-delete');
+        e.target.value = '';
+    }
+});
+
+document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('_active-delete') || e.target.closest('._active-delete')) {
+        e.target.closest('.take-photo__upload--photo').classList.remove('_active');
+        e.target.closest('.take-photo__upload--photo').style = null
+        e.target.closest('.take-photo__upload--photo').querySelector('.take-photo__upload-section-file').classList.remove('_active-delete')
+    }
+});
+
+// file input add

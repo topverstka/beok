@@ -1,0 +1,37 @@
+.weeks-section {
+  margin-bottom: 50px;
+}
+
+.weeks-section__list {
+  display: flex;
+  align-items: center;
+}
+
+.weeks-section__list--element {
+  width: 64px;
+  height: 64px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.weeks-section__list--element:not(:last-child) {
+  margin-right: 5px;
+}
+
+.weeks-section__list--number {
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 26px;
+  font-family: 'RoadRadio';
+  color: #0E0E0E;
+}
+
+.weeks-section__list--week {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 130%;
+  color: #0E0E0E;
+}

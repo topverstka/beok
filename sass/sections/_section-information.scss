@@ -160,6 +160,9 @@
 .section-information__tasks {
     width: 55%;
     position: relative;
+    &.section-information__tasks--width {
+        width: 100%
+    }
     .varios-report__top-arrow {
         position: absolute;
         bottom: 6px;
@@ -168,6 +171,9 @@
     @media (max-width: $tablet) {
         width: 100%;
         margin-left: 12px;
+        &.section-information__tasks--width {
+            margin-left: 0
+        }
     }
 }
 
@@ -188,7 +194,8 @@
 
 .section-information__tasks-slider-sing {
     border-radius: 50px;
-    padding: 3px 8px;
+    padding: 0 8px;
+    height: 24px;
     font-weight: 600;
     font-size: 12px;
     line-height: 1;
@@ -253,5 +260,9 @@
         bottom: 0;
         font-weight: 500;
         font-size: 14px;
+    }
+    @media (max-width:$tablet) {
+        bottom: 1px;
+        padding-left: 19px;
     }
 }

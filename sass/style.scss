@@ -35,6 +35,16 @@ main {
     @media (max-width: $tablet) {
         padding: 0 12px;
         margin-top: 24px;
+        .content--page {
+            margin-top: 60px;
+            .hello {
+                font-family: 'RoadRadio';
+                text-align: left;
+                font-weight: 400;
+                font-size: 26px;
+                line-height: 26px;
+            }
+        }
     }
 }
 
@@ -60,11 +70,14 @@ img {
 @import './components/cookie';
 @import './components/_general-menu';
 @import './components/_useful-information';
+@import './components/_modal__edit-report';
 // Текстовые компоненты
 @import './components/text/_text';
 @import './components/text/_titles';
 // Страницы
 @import './pages/_home-page';
+@import './pages/_photo';
+@import './pages/_tasks-weeks';
 // Секции 
 @import './sections/_varios-report';
 @import './sections/_your-reports';
