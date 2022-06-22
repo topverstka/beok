@@ -380,36 +380,47 @@ document.addEventListener('click', function(e) {
 });
 
 if (window.innerWidth > 768) {
-    let swiperCalendar = new Swiper(".mySwiper", {
-        slidesPerView: 'auto',
-        spaceBetween: 16,
-        navigation: {
-            nextEl: ".varios-report .swiper-button-next",
-            prevEl: ".varios-report .swiper-button-prev",
-        },
-    });
+    swiperCustom('auto', 16, '.mySwiper', '.varios-report');
 }
 
 
-let swiperTasks = new Swiper(".swiperTasks", {
-    slidesPerView: 'auto',
-    spaceBetween: 12,
-    navigation: {
-        nextEl: ".section-information__tasks .swiper-button-next",
-        prevEl: ".section-information__tasks .swiper-button-prev",
-    },
-});
+// let swiperTasks = new Swiper(".swiperTasks", {
+//     slidesPerView: 'auto',
+//     spaceBetween: 12,
+//     navigation: {
+//         nextEl: ".section-information__tasks .swiper-button-next",
+//         prevEl: ".section-information__tasks .swiper-button-prev",
+//     },
+// });
 
 
-let swiperStories = new Swiper(".swiperStories", {
-    slidesPerView: 'auto',
-    spaceBetween: 12,
-    breakpoints: {
-        768: {
-            spaceBetween: 24,
-        }
-    }
-});
+// let swiperStories = new Swiper(".swiperStories", {
+//     slidesPerView: 'auto',
+//     spaceBetween: 12,
+//     breakpoints: {
+//         768: {
+//             spaceBetween: 24,
+//         }
+//     }
+// });
+
+swiperCustom('auto', 12, '.swiperStories', null, { 768: { spaceBetween: 24 } });
+swiperCustom('auto', 12, '.swiperTasks', '.section-information__tasks');
+swiperCustom('auto', 10, '.swiperRecommend');
+
+
+
+function swiperCustom(slideCount, margin, element, elementParent, breakpoint = {}) {
+    new Swiper(`${element}`, {
+        slidesPerView: slideCount ? slideCount : 'auto',
+        spaceBetween: margin ? margin : 0,
+        navigation: {
+            nextEl: `${elementParent} .swiper-button-next`,
+            prevEl: `${elementParent} .swiper-button-prev`,
+        },
+        breakpoints: breakpoint
+    });
+}
 
 const jsConfetti = new JSConfetti()
 
@@ -442,3 +453,11 @@ document.addEventListener('click', function(e) {
 });
 
 // file input add
+
+
+findAll('.list-report-all__element').forEach(i => {
+    i.addEventListener('click', () => {
+        find('.list-report-all__element._active').classList.remove('_active');
+        i.classList.add('_active');
+    });
+});
