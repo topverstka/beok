@@ -147,16 +147,8 @@
                 </div>
             </div>
 
-            <h1 class="hello">Отчеты</h1>
+            <h1 class="hello">Ежедневные отчеты</h1>
 
-            <ul class="list-report-all">
-                <li class="list-report-all__element _active">
-                    Ежедневные
-                </li>
-                <li class="list-report-all__element">
-                    Еженедельные
-                </li>
-            </ul>
 
             <div class="reports-all-section">
                 <div class="reports-all-section__top">
@@ -338,7 +330,7 @@
 
                     <div class="reports-all-section__content--diet">
                         <h2>Рацион</h2>
-                        <div class="reports-all-section__content--diet__element">
+                        <div class="reports-all-section__content--diet__element" data-dropdown-parent>
                             <div class="reports-all-section__content--diet__element-top">
                                 <div class="reports-all-section__content--diet__element-left">
                                     <svg class="reports-all-section__content--diet__element-icon">
@@ -367,41 +359,411 @@
                                     </li>
                                 </ul>
                                 <div class="reports-all-section__content--diet__element--progress" style="--width-line: 60%"></div>
-                                <button class="reports-all-section__content--diet__element--btn">
+                                <button class="reports-all-section__content--diet__element--btn" data-dropdown-btn>
                                     <svg>
                                         <use xlink:href="./img/icons-sprite.svg#arrow-bottom"></use>
                                     </svg>
                                 </button>
                             </div>
-                            <div class="reports-all-section__content--dropdown">
-                                <div class="reports-all-section__content--dropdown__element">
+                            <div class="reports-all-section__content--dropdown" data-dropdown-body>
+                                <div class="reports-all-section__content--dropdown__element" data-dropdown-element>
                                     <p class="reports-all-section__content--dropdown__title">Каша гречневая</p>
                                     <span class="reports-all-section__content--dropdown__count">1 1/2 х 100 г, 150 г</span>
+
+                                    <div class="reports-all-section__content--dropdown__bottom">
+                                        <ul class="reports-all-section__content--dropdown__list">
+                                            <li class="reports-all-section__content--dropdown__list--line">
+                                                <p class="reports-all-section__content--dropdown__list--title">Жиры</p>
+                                                <span class="reports-all-section__content--dropdown__list--text">1,12</span>
+                                            </li>
+                                            <li class="reports-all-section__content--dropdown__list--line">
+                                                <p class="reports-all-section__content--dropdown__list--title">Углеводы</p>
+                                                <span class="reports-all-section__content--dropdown__list--text">27,5</span>
+                                            </li>
+                                            <li class="reports-all-section__content--dropdown__list--line">
+                                                <p class="reports-all-section__content--dropdown__list--title">Белки</p>
+                                                <span class="reports-all-section__content--dropdown__list--text">2,54</span>
+                                            </li>
+                                        </ul>
+                                        <span class="reports-all-section__content--dropdown__count-all">166,0</span>
+                                    </div>
                                 </div>
-                                <div class="reports-all-section__content--dropdown__bottom">
-                                    <ul class="reports-all-section__content--dropdown__list">
-                                        <li class="reports-all-section__content--dropdown__list--line">
-                                            <p class="reports-all-section__content--dropdown__list--title">Жиры</p>
-                                            <span class="reports-all-section__content--dropdown__list--text">1,12</span>
-                                        </li>
-                                        <li class="reports-all-section__content--dropdown__list--line">
-                                            <p class="reports-all-section__content--dropdown__list--title">Углеводы</p>
-                                            <span class="reports-all-section__content--dropdown__list--text">27,5</span>
-                                        </li>
-                                        <li class="reports-all-section__content--dropdown__list--line">
-                                            <p class="reports-all-section__content--dropdown__list--title">Белки</p>
-                                            <span class="reports-all-section__content--dropdown__list--text">2,54</span>
-                                        </li>
-                                    </ul>
-                                    <span class="reports-all-section__content--dropdown__count-all">166,0</span>
+
+                                <div class="reports-all-section__content--dropdown__element" data-dropdown-element>
+                                    <p class="reports-all-section__content--dropdown__title">Куриное филе</p>
+                                    <span class="reports-all-section__content--dropdown__count">200 г</span>
+
+                                    <div class="reports-all-section__content--dropdown__bottom">
+                                        <ul class="reports-all-section__content--dropdown__list">
+                                            <li class="reports-all-section__content--dropdown__list--line">
+                                                <p class="reports-all-section__content--dropdown__list--title">Жиры</p>
+                                                <span class="reports-all-section__content--dropdown__list--text">1,12</span>
+                                            </li>
+                                            <li class="reports-all-section__content--dropdown__list--line">
+                                                <p class="reports-all-section__content--dropdown__list--title">Углеводы</p>
+                                                <span class="reports-all-section__content--dropdown__list--text">27,5</span>
+                                            </li>
+                                            <li class="reports-all-section__content--dropdown__list--line">
+                                                <p class="reports-all-section__content--dropdown__list--title">Белки</p>
+                                                <span class="reports-all-section__content--dropdown__list--text">2,54</span>
+                                            </li>
+                                        </ul>
+                                        <span class="reports-all-section__content--dropdown__count-all">166,0</span>
+                                    </div>
+                                </div>
+
+                                <div class="reports-all-section__content--dropdown__element" data-dropdown-element>
+                                    <p class="reports-all-section__content--dropdown__title">Клубника</p>
+                                    <span class="reports-all-section__content--dropdown__count">50 г</span>
+
+                                    <div class="reports-all-section__content--dropdown__bottom">
+                                        <ul class="reports-all-section__content--dropdown__list">
+                                            <li class="reports-all-section__content--dropdown__list--line">
+                                                <p class="reports-all-section__content--dropdown__list--title">Жиры</p>
+                                                <span class="reports-all-section__content--dropdown__list--text">1,12</span>
+                                            </li>
+                                            <li class="reports-all-section__content--dropdown__list--line">
+                                                <p class="reports-all-section__content--dropdown__list--title">Углеводы</p>
+                                                <span class="reports-all-section__content--dropdown__list--text">27,5</span>
+                                            </li>
+                                            <li class="reports-all-section__content--dropdown__list--line">
+                                                <p class="reports-all-section__content--dropdown__list--title">Белки</p>
+                                                <span class="reports-all-section__content--dropdown__list--text">2,54</span>
+                                            </li>
+                                        </ul>
+                                        <span class="reports-all-section__content--dropdown__count-all">166,0</span>
+                                    </div>
                                 </div>
                             </div>
+
+                        </div>
+                        <div class="reports-all-section__content--diet__element" data-dropdown-parent>
+                            <div class="reports-all-section__content--diet__element-top">
+                                <div class="reports-all-section__content--diet__element-left">
+                                    <svg class="reports-all-section__content--diet__element-icon">
+                                        <use xlink:href="./img/icons-sprite.svg#icon-dinner"></use>
+                                    </svg>
+                                    <h3 class="reports-all-section__content--diet__element-title">Обед</h3>
+                                </div>
+                                <div class="reports-all-section__content--diet__element-right">
+                                    <h3 class="reports-all-section__content--diet__element-right--title">124</h3>
+                                    <p class="reports-all-section__content--diet__element-right--text">Калории</p>
+                                </div>
+                            </div>
+                            <div class="reports-all-section__content--diet__element-bottom">
+                                <ul class="reports-all-section__content--diet__element--list">
+                                    <li class="reports-all-section__content--diet__element--line">
+                                        <p class="reports-all-section__content--diet__element--line-title">Жиры</p>
+                                        <span class="reports-all-section__content--diet__element--line-text">1,12</span>
+                                    </li>
+                                    <li class="reports-all-section__content--diet__element--line">
+                                        <p class="reports-all-section__content--diet__element--line-title">Углеводы</p>
+                                        <span class="reports-all-section__content--diet__element--line-text">27,5</span>
+                                    </li>
+                                    <li class="reports-all-section__content--diet__element--line">
+                                        <p class="reports-all-section__content--diet__element--line-title">Белки</p>
+                                        <span class="reports-all-section__content--diet__element--line-text">2,54</span>
+                                    </li>
+                                </ul>
+                                <div class="reports-all-section__content--diet__element--progress" style="--width-line: 60%"></div>
+                                <button class="reports-all-section__content--diet__element--btn" data-dropdown-btn>
+                                    <svg>
+                                        <use xlink:href="./img/icons-sprite.svg#arrow-bottom"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="reports-all-section__content--dropdown" data-dropdown-body>
+                                <div class="reports-all-section__content--dropdown__element" data-dropdown-element>
+                                    <p class="reports-all-section__content--dropdown__title">Каша гречневая</p>
+                                    <span class="reports-all-section__content--dropdown__count">1 1/2 х 100 г, 150 г</span>
+
+                                    <div class="reports-all-section__content--dropdown__bottom">
+                                        <ul class="reports-all-section__content--dropdown__list">
+                                            <li class="reports-all-section__content--dropdown__list--line">
+                                                <p class="reports-all-section__content--dropdown__list--title">Жиры</p>
+                                                <span class="reports-all-section__content--dropdown__list--text">1,12</span>
+                                            </li>
+                                            <li class="reports-all-section__content--dropdown__list--line">
+                                                <p class="reports-all-section__content--dropdown__list--title">Углеводы</p>
+                                                <span class="reports-all-section__content--dropdown__list--text">27,5</span>
+                                            </li>
+                                            <li class="reports-all-section__content--dropdown__list--line">
+                                                <p class="reports-all-section__content--dropdown__list--title">Белки</p>
+                                                <span class="reports-all-section__content--dropdown__list--text">2,54</span>
+                                            </li>
+                                        </ul>
+                                        <span class="reports-all-section__content--dropdown__count-all">166,0</span>
+                                    </div>
+                                </div>
+
+                                <div class="reports-all-section__content--dropdown__element" data-dropdown-element>
+                                    <p class="reports-all-section__content--dropdown__title">Куриное филе</p>
+                                    <span class="reports-all-section__content--dropdown__count">200 г</span>
+
+                                    <div class="reports-all-section__content--dropdown__bottom">
+                                        <ul class="reports-all-section__content--dropdown__list">
+                                            <li class="reports-all-section__content--dropdown__list--line">
+                                                <p class="reports-all-section__content--dropdown__list--title">Жиры</p>
+                                                <span class="reports-all-section__content--dropdown__list--text">1,12</span>
+                                            </li>
+                                            <li class="reports-all-section__content--dropdown__list--line">
+                                                <p class="reports-all-section__content--dropdown__list--title">Углеводы</p>
+                                                <span class="reports-all-section__content--dropdown__list--text">27,5</span>
+                                            </li>
+                                            <li class="reports-all-section__content--dropdown__list--line">
+                                                <p class="reports-all-section__content--dropdown__list--title">Белки</p>
+                                                <span class="reports-all-section__content--dropdown__list--text">2,54</span>
+                                            </li>
+                                        </ul>
+                                        <span class="reports-all-section__content--dropdown__count-all">166,0</span>
+                                    </div>
+                                </div>
+
+                                <div class="reports-all-section__content--dropdown__element" data-dropdown-element>
+                                    <p class="reports-all-section__content--dropdown__title">Клубника</p>
+                                    <span class="reports-all-section__content--dropdown__count">50 г</span>
+
+                                    <div class="reports-all-section__content--dropdown__bottom">
+                                        <ul class="reports-all-section__content--dropdown__list">
+                                            <li class="reports-all-section__content--dropdown__list--line">
+                                                <p class="reports-all-section__content--dropdown__list--title">Жиры</p>
+                                                <span class="reports-all-section__content--dropdown__list--text">1,12</span>
+                                            </li>
+                                            <li class="reports-all-section__content--dropdown__list--line">
+                                                <p class="reports-all-section__content--dropdown__list--title">Углеводы</p>
+                                                <span class="reports-all-section__content--dropdown__list--text">27,5</span>
+                                            </li>
+                                            <li class="reports-all-section__content--dropdown__list--line">
+                                                <p class="reports-all-section__content--dropdown__list--title">Белки</p>
+                                                <span class="reports-all-section__content--dropdown__list--text">2,54</span>
+                                            </li>
+                                        </ul>
+                                        <span class="reports-all-section__content--dropdown__count-all">166,0</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="reports-all-section__content--diet__element" data-dropdown-parent>
+                            <div class="reports-all-section__content--diet__element-top">
+                                <div class="reports-all-section__content--diet__element-left">
+                                    <svg class="reports-all-section__content--diet__element-icon">
+                                        <use xlink:href="./img/icons-sprite.svg#icon-supper"></use>
+                                    </svg>
+                                    <h3 class="reports-all-section__content--diet__element-title">Ужин</h3>
+                                </div>
+                                <div class="reports-all-section__content--diet__element-right">
+                                    <h3 class="reports-all-section__content--diet__element-right--title">124</h3>
+                                    <p class="reports-all-section__content--diet__element-right--text">Калории</p>
+                                </div>
+                            </div>
+                            <div class="reports-all-section__content--diet__element-bottom">
+                                <ul class="reports-all-section__content--diet__element--list">
+                                    <li class="reports-all-section__content--diet__element--line">
+                                        <p class="reports-all-section__content--diet__element--line-title">Жиры</p>
+                                        <span class="reports-all-section__content--diet__element--line-text">1,12</span>
+                                    </li>
+                                    <li class="reports-all-section__content--diet__element--line">
+                                        <p class="reports-all-section__content--diet__element--line-title">Углеводы</p>
+                                        <span class="reports-all-section__content--diet__element--line-text">27,5</span>
+                                    </li>
+                                    <li class="reports-all-section__content--diet__element--line">
+                                        <p class="reports-all-section__content--diet__element--line-title">Белки</p>
+                                        <span class="reports-all-section__content--diet__element--line-text">2,54</span>
+                                    </li>
+                                </ul>
+                                <div class="reports-all-section__content--diet__element--progress" style="--width-line: 60%"></div>
+                                <button class="reports-all-section__content--diet__element--btn" data-dropdown-btn>
+                                    <svg>
+                                        <use xlink:href="./img/icons-sprite.svg#arrow-bottom"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="reports-all-section__content--dropdown" data-dropdown-body>
+                                <div class="reports-all-section__content--dropdown__element" data-dropdown-element>
+                                    <p class="reports-all-section__content--dropdown__title">Каша гречневая</p>
+                                    <span class="reports-all-section__content--dropdown__count">1 1/2 х 100 г, 150 г</span>
+
+                                    <div class="reports-all-section__content--dropdown__bottom">
+                                        <ul class="reports-all-section__content--dropdown__list">
+                                            <li class="reports-all-section__content--dropdown__list--line">
+                                                <p class="reports-all-section__content--dropdown__list--title">Жиры</p>
+                                                <span class="reports-all-section__content--dropdown__list--text">1,12</span>
+                                            </li>
+                                            <li class="reports-all-section__content--dropdown__list--line">
+                                                <p class="reports-all-section__content--dropdown__list--title">Углеводы</p>
+                                                <span class="reports-all-section__content--dropdown__list--text">27,5</span>
+                                            </li>
+                                            <li class="reports-all-section__content--dropdown__list--line">
+                                                <p class="reports-all-section__content--dropdown__list--title">Белки</p>
+                                                <span class="reports-all-section__content--dropdown__list--text">2,54</span>
+                                            </li>
+                                        </ul>
+                                        <span class="reports-all-section__content--dropdown__count-all">166,0</span>
+                                    </div>
+                                </div>
+
+                                <div class="reports-all-section__content--dropdown__element" data-dropdown-element>
+                                    <p class="reports-all-section__content--dropdown__title">Куриное филе</p>
+                                    <span class="reports-all-section__content--dropdown__count">200 г</span>
+
+                                    <div class="reports-all-section__content--dropdown__bottom">
+                                        <ul class="reports-all-section__content--dropdown__list">
+                                            <li class="reports-all-section__content--dropdown__list--line">
+                                                <p class="reports-all-section__content--dropdown__list--title">Жиры</p>
+                                                <span class="reports-all-section__content--dropdown__list--text">1,12</span>
+                                            </li>
+                                            <li class="reports-all-section__content--dropdown__list--line">
+                                                <p class="reports-all-section__content--dropdown__list--title">Углеводы</p>
+                                                <span class="reports-all-section__content--dropdown__list--text">27,5</span>
+                                            </li>
+                                            <li class="reports-all-section__content--dropdown__list--line">
+                                                <p class="reports-all-section__content--dropdown__list--title">Белки</p>
+                                                <span class="reports-all-section__content--dropdown__list--text">2,54</span>
+                                            </li>
+                                        </ul>
+                                        <span class="reports-all-section__content--dropdown__count-all">166,0</span>
+                                    </div>
+                                </div>
+
+                                <div class="reports-all-section__content--dropdown__element" data-dropdown-element>
+                                    <p class="reports-all-section__content--dropdown__title">Клубника</p>
+                                    <span class="reports-all-section__content--dropdown__count">50 г</span>
+
+                                    <div class="reports-all-section__content--dropdown__bottom">
+                                        <ul class="reports-all-section__content--dropdown__list">
+                                            <li class="reports-all-section__content--dropdown__list--line">
+                                                <p class="reports-all-section__content--dropdown__list--title">Жиры</p>
+                                                <span class="reports-all-section__content--dropdown__list--text">1,12</span>
+                                            </li>
+                                            <li class="reports-all-section__content--dropdown__list--line">
+                                                <p class="reports-all-section__content--dropdown__list--title">Углеводы</p>
+                                                <span class="reports-all-section__content--dropdown__list--text">27,5</span>
+                                            </li>
+                                            <li class="reports-all-section__content--dropdown__list--line">
+                                                <p class="reports-all-section__content--dropdown__list--title">Белки</p>
+                                                <span class="reports-all-section__content--dropdown__list--text">2,54</span>
+                                            </li>
+                                        </ul>
+                                        <span class="reports-all-section__content--dropdown__count-all">166,0</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="reports-all-section__content--diet__element" data-dropdown-parent>
+                            <div class="reports-all-section__content--diet__element-top">
+                                <div class="reports-all-section__content--diet__element-left">
+                                    <svg class="reports-all-section__content--diet__element-icon">
+                                        <use xlink:href="./img/icons-sprite.svg#icon-snack"></use>
+                                    </svg>
+                                    <h3 class="reports-all-section__content--diet__element-title">Перекус</h3>
+                                </div>
+                                <div class="reports-all-section__content--diet__element-right">
+                                    <h3 class="reports-all-section__content--diet__element-right--title">124</h3>
+                                    <p class="reports-all-section__content--diet__element-right--text">Калории</p>
+                                </div>
+                            </div>
+                            <div class="reports-all-section__content--diet__element-bottom">
+                                <ul class="reports-all-section__content--diet__element--list">
+                                    <li class="reports-all-section__content--diet__element--line">
+                                        <p class="reports-all-section__content--diet__element--line-title">Жиры</p>
+                                        <span class="reports-all-section__content--diet__element--line-text">1,12</span>
+                                    </li>
+                                    <li class="reports-all-section__content--diet__element--line">
+                                        <p class="reports-all-section__content--diet__element--line-title">Углеводы</p>
+                                        <span class="reports-all-section__content--diet__element--line-text">27,5</span>
+                                    </li>
+                                    <li class="reports-all-section__content--diet__element--line">
+                                        <p class="reports-all-section__content--diet__element--line-title">Белки</p>
+                                        <span class="reports-all-section__content--diet__element--line-text">2,54</span>
+                                    </li>
+                                </ul>
+                                <div class="reports-all-section__content--diet__element--progress" style="--width-line: 60%"></div>
+                                <button class="reports-all-section__content--diet__element--btn" data-dropdown-btn>
+                                    <svg>
+                                        <use xlink:href="./img/icons-sprite.svg#arrow-bottom"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="reports-all-section__content--dropdown" data-dropdown-body>
+                                <div class="reports-all-section__content--dropdown__element" data-dropdown-element>
+                                    <p class="reports-all-section__content--dropdown__title">Каша гречневая</p>
+                                    <span class="reports-all-section__content--dropdown__count">1 1/2 х 100 г, 150 г</span>
+
+                                    <div class="reports-all-section__content--dropdown__bottom">
+                                        <ul class="reports-all-section__content--dropdown__list">
+                                            <li class="reports-all-section__content--dropdown__list--line">
+                                                <p class="reports-all-section__content--dropdown__list--title">Жиры</p>
+                                                <span class="reports-all-section__content--dropdown__list--text">1,12</span>
+                                            </li>
+                                            <li class="reports-all-section__content--dropdown__list--line">
+                                                <p class="reports-all-section__content--dropdown__list--title">Углеводы</p>
+                                                <span class="reports-all-section__content--dropdown__list--text">27,5</span>
+                                            </li>
+                                            <li class="reports-all-section__content--dropdown__list--line">
+                                                <p class="reports-all-section__content--dropdown__list--title">Белки</p>
+                                                <span class="reports-all-section__content--dropdown__list--text">2,54</span>
+                                            </li>
+                                        </ul>
+                                        <span class="reports-all-section__content--dropdown__count-all">166,0</span>
+                                    </div>
+                                </div>
+
+                                <div class="reports-all-section__content--dropdown__element" data-dropdown-element>
+                                    <p class="reports-all-section__content--dropdown__title">Куриное филе</p>
+                                    <span class="reports-all-section__content--dropdown__count">200 г</span>
+
+                                    <div class="reports-all-section__content--dropdown__bottom">
+                                        <ul class="reports-all-section__content--dropdown__list">
+                                            <li class="reports-all-section__content--dropdown__list--line">
+                                                <p class="reports-all-section__content--dropdown__list--title">Жиры</p>
+                                                <span class="reports-all-section__content--dropdown__list--text">1,12</span>
+                                            </li>
+                                            <li class="reports-all-section__content--dropdown__list--line">
+                                                <p class="reports-all-section__content--dropdown__list--title">Углеводы</p>
+                                                <span class="reports-all-section__content--dropdown__list--text">27,5</span>
+                                            </li>
+                                            <li class="reports-all-section__content--dropdown__list--line">
+                                                <p class="reports-all-section__content--dropdown__list--title">Белки</p>
+                                                <span class="reports-all-section__content--dropdown__list--text">2,54</span>
+                                            </li>
+                                        </ul>
+                                        <span class="reports-all-section__content--dropdown__count-all">166,0</span>
+                                    </div>
+                                </div>
+
+                                <div class="reports-all-section__content--dropdown__element" data-dropdown-element>
+                                    <p class="reports-all-section__content--dropdown__title">Клубника</p>
+                                    <span class="reports-all-section__content--dropdown__count">50 г</span>
+
+                                    <div class="reports-all-section__content--dropdown__bottom">
+                                        <ul class="reports-all-section__content--dropdown__list">
+                                            <li class="reports-all-section__content--dropdown__list--line">
+                                                <p class="reports-all-section__content--dropdown__list--title">Жиры</p>
+                                                <span class="reports-all-section__content--dropdown__list--text">1,12</span>
+                                            </li>
+                                            <li class="reports-all-section__content--dropdown__list--line">
+                                                <p class="reports-all-section__content--dropdown__list--title">Углеводы</p>
+                                                <span class="reports-all-section__content--dropdown__list--text">27,5</span>
+                                            </li>
+                                            <li class="reports-all-section__content--dropdown__list--line">
+                                                <p class="reports-all-section__content--dropdown__list--title">Белки</p>
+                                                <span class="reports-all-section__content--dropdown__list--text">2,54</span>
+                                            </li>
+                                        </ul>
+                                        <span class="reports-all-section__content--dropdown__count-all">166,0</span>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
                 </div>
 
             </div>
+
 
 
         </div>

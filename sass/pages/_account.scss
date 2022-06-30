@@ -1,0 +1,259 @@
+.section-account {
+    width: 820px;
+    max-width: 100%;
+    position: relative;
+    margin-bottom: 40px;
+    @media (max-width: $tablet) {
+        margin: 20px 0 140px 0;
+        h1 {
+            font-family: 'RoadRadio';
+            font-weight: 400;
+            font-size: 26px;
+            line-height: 26px;
+            margin-bottom: 5px;
+        }
+    }
+}
+
+.hello-mail {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 130%;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.section-account__btn-esc {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    &:after {
+        content: '';
+        background-image: url("data:image/svg+xml,%3Csvg width='23' height='9' viewBox='0 0 23 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M22.8536 4.85356C23.0488 4.65829 23.0488 4.34171 22.8536 4.14645L19.6716 0.964468C19.4763 0.769206 19.1597 0.769206 18.9645 0.964468C18.7692 1.15973 18.7692 1.47631 18.9645 1.67157L21.7929 4.5L18.9645 7.32843C18.7692 7.52369 18.7692 7.84027 18.9645 8.03554C19.1597 8.2308 19.4763 8.2308 19.6716 8.03554L22.8536 4.85356ZM0.5 5L22.5 5L22.5 4L0.5 4L0.5 5Z' fill='%23ED6A53'/%3E%3C/svg%3E%0A");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 22px;
+        height: 8px;
+        margin-left: 11px
+    }
+    @media (max-width:$tablet) {
+        top: auto;
+        bottom: -50px;
+        left: 0;
+        &:after {
+            display: none;
+        }
+        &:before {
+            content: '';
+            background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H9' stroke='%23ED6A53' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M16 17L21 12L16 7' stroke='%23ED6A53' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M21 12H9' stroke='%23ED6A53' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+        }
+    }
+}
+
+.section-account--esc {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: -0.02em;
+    color: $outline;
+}
+
+.section-account__box {
+    border-radius: 15px;
+    background: $accent2;
+    padding: 24px 40px;
+    @media (max-width: $tablet) {
+        background: transparent;
+        padding: 0
+    }
+}
+
+.section-account--field {
+    .section-account--field-title {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 130%;
+        margin-bottom: 4px;
+    }
+    .section-account--field-input {
+        padding: 20px 12px 20px 15px;
+        width: 100%;
+        background: #fff;
+        border: 1px solid $main;
+        border-radius: 5px;
+        &.section-account--field-disabled {
+            background: #F4F4F4;
+            pointer-events: none;
+        }
+    }
+    .section-account--field-bottom {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 130%;
+        color: #595959;
+        margin-top: 8px
+    }
+    .section-account--example {
+        margin: 12px 0 32px 0
+    }
+    .section-account--example-title {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 130%;
+        margin-bottom: 4px;
+    }
+    .section-account--example-text {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 130%;
+        color: #595959;
+    }
+    @media (max-width:$tablet) {
+        .section-account--field-title {
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 130%;
+            margin-bottom: 5px;
+        }
+        .section-account--field-input {
+            padding: 20px 12px 20px 15px;
+        }
+        .section-account--field-bottom {
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 130%;
+            margin-top: 6px;
+        }
+        .section-account--example {
+            margin: 8px 0 24px 0
+        }
+    }
+}
+
+.section-account--example {
+    margin-top: 12px;
+    .section-account--example-title {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 130%;
+        margin-bottom: 4px;
+    }
+    .section-account--example-text {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 130%;
+        color: #595959;
+        word-break: break-all;
+    }
+    @media (max-width:$tablet) {
+        margin-top: 8px;
+        .section-account--example-title {
+            font-size: 14px;
+        }
+        .section-account--example-text {
+            font-size: 12px;
+        }
+    }
+}
+
+.section-account--link {
+    padding: 16px;
+    border: 2px solid $outline;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    margin-top: 14px;
+    .section-account--link-left {
+        width: 80%
+    }
+    @media (max-width: $tablet) {
+        background: $accent2;
+        border: none;
+        margin-top: 10px;
+    }
+}
+
+.section-account--link-left__title {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 130%;
+    margin-bottom: 4px;
+}
+
+.section-account__box-link {
+    margin-top: 16px;
+    @media (max-width: $tablet) {
+        margin-top: 24px
+    }
+}
+
+.section-account--link-left__text {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 130%;
+}
+
+.section-account--link-href {
+    background: $outline;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    svg {
+        width: 25px;
+        height: 17px
+    }
+}
+
+.section-account__form {
+    margin-top: 42px;
+    input[type="submit"] {
+        width: 280px;
+        height: 52px;
+        border-radius: 10px;
+        background: $outline;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 21px;
+        color: #fff;
+        margin: 24px 0 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:hover {
+            background: #F29D8E;
+        }
+        &:focus,
+        &:active {
+            background: #D13F1C
+        }
+    }
+    @media (max-width: $tablet) {
+        margin-top: 20px;
+        input[type="submit"] {
+            position: absolute;
+            top: -35px;
+            right: 0;
+            background: transparent;
+            color: #467EF3;
+            letter-spacing: 0.07px;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 20px;
+            width: max-content;
+            height: auto;
+            margin-top: 0;
+        }
+    }
+}

@@ -1,0 +1,64 @@
+.section-registation {
+  width: 940px;
+  max-width: 100%;
+  margin: 60px auto 100px;
+}
+
+.section-registation__content {
+  border: 1px solid #90959E;
+  border-radius: 20px;
+  padding: 50px 80px;
+  margin-top: 30px;
+}
+
+.section-registation__field {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.section-registation__field .section-registation__field--col {
+  display: flex;
+  flex-direction: column;
+  width: -webkit-fill-available;
+}
+
+.section-registation__field .section-registation__field--col label,
+.section-registation__field .section-registation__field--col .section-registation__field--col-title {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 130%;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.section-registation__field .section-registation__field--col input[type="text"] {
+  border: 1px solid #0E0E0E;
+  border-radius: 5px;
+  padding: 20px 12px 20px 15px;
+}
+
+.section-registation__field .section-registation__field--col:not(:last-child) {
+  margin-right: 30px;
+}
+
+.section-registation__field .section-registation__field--col .section-registation__field--bottom-text {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 130%;
+  color: #595959;
+  margin-top: 6px;
+}
+
+.section-registation__field__container {
+  display: flex;
+  align-items: center;
+}
+
+.section-registation__field__container .section-registation__field--radio {
+  display: flex;
+  align-items: center;
+}
+
+.section-registation__field__container .section-registation__field--radio:not(:last-child) {
+  margin-right: 32px;
+}

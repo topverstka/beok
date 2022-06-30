@@ -9,8 +9,10 @@
     text-align: left;
     margin-bottom: 8px;
     @media(max-width: $tablet) {
-        font-size: 26px;
-        line-height: 26px;
+        font-size: 18px;
+        line-height: 21px;
+        font-family: 'Raleway';
+        font-weight: 700;
         margin-bottom: 2px;
     }
 }

@@ -18,7 +18,7 @@
             border-radius: 50px;
             height: 61px;
             width: 96%;
-            z-index: 99;
+            z-index: 9999;
             left: 0;
             right: 0;
             margin: auto;
@@ -43,9 +43,9 @@
                     line-height: 130%;
                     svg {
                         fill: rgba(121, 126, 135, 0.15);
-                        margin: 0 0 6px 0;
-                        width: 24px;
-                        height: 26px;
+                        margin: 0 0 2px 0;
+                        height: 28px;
+                        width: 27px;
                     }
                 }
                 &:nth-of-type(1) {
@@ -94,6 +94,33 @@
                 color: var(--black);
                 svg {
                     fill: var(--black);
+                }
+                &:after {
+                    outline: 2px solid #fff !important;
+                }
+            }
+        }
+        &._active {
+            a {
+                position: relative;
+                &:after {
+                    content: '';
+                    position: absolute;
+                    left: 49px;
+                    top: 13px;
+                    outline: 2px solid #ed6a53;
+                    width: 12px;
+                    height: 12px;
+                    background: #2CA869;
+                    width: 12px;
+                    height: 12px;
+                    border-radius: 50%;
+                }
+            }
+            @media (max-width:$tablet) {
+                a:after {
+                    top: 0;
+                    outline: 2px solid #fff;
                 }
             }
         }

@@ -31,7 +31,8 @@ main {
 
 .page-content {
     width: 100%;
-    overflow-x: hidden;
+    // overflow-x: hidden;
+    overflow: hidden;
     @media (max-width: $tablet) {
         padding: 0 12px;
         margin-top: 24px;
@@ -79,6 +80,10 @@ img {
 @import './pages/_photo';
 @import './pages/_tasks-weeks';
 @import './pages/_all-reports';
+@import './pages/_week-report';
+@import './pages/_account';
+@import './pages/_registation-form';
+@import './pages/_my-progress';
 // Секции 
 @import './sections/_varios-report';
 @import './sections/_your-reports';

@@ -51,11 +51,6 @@
                 background: $outline;
                 border-radius: 1px;
             }
-            &::-webkit-scrollbar-track {
-                height: 40px // background: $outline;
-                // opacity: 0.4;
-                // border-radius: 1px;
-            }
         }
     }
 }
@@ -152,6 +147,9 @@
     align-items: center;
     justify-content: space-between;
     margin-top: 20px;
+    &:hover {
+        background: #64DEA0
+    }
     .take-photo__container--link-icon {
         width: 48px;
         height: 48px;
@@ -205,6 +203,7 @@
         }
         .take-photo__upload-section-file {
             background: $outline;
+            cursor: pointer;
         }
         .take-photo__upload--file {
             pointer-events: none;
@@ -241,7 +240,10 @@
         top: 0;
         width: 100%;
         height: 100%;
-        z-index: 2
+        z-index: 2;
+        &::-webkit-file-upload-button {
+            cursor: pointer;
+        }
     }
 }
 

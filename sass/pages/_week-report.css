@@ -1,0 +1,22 @@
+.section-questionnaire {
+  width: 940px;
+  max-width: 100%;
+  margin: 60px auto 100px auto;
+}
+
+.section-questionnaire--progress {
+  width: 100%;
+  background: #D2FADF;
+  border-radius: 100px;
+  height: 8px;
+  position: relative;
+}
+
+.section-questionnaire--progress:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: var(--width-line);
+}
