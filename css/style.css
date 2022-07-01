@@ -1316,6 +1316,16 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 .general-menu__nav-elem a:hover:after {
   outline: 2px solid #fff !important;
 }
+.general-menu__nav-elem._active-menu svg {
+  fill: var(--black);
+}
+.general-menu__nav-elem._active-menu a {
+  background-color: #fff;
+  color: var(--black);
+}
+.general-menu__nav-elem._active-menu a:after {
+  outline: 2px solid #fff !important;
+}
 .general-menu__nav-elem._active a {
   position: relative;
 }
@@ -5230,11 +5240,6 @@ body._active_dropdown main:after {
   z-index: 999;
 }
 
-@media (max-width: 768px) {
-  .line-chart:not(.line-chart__area) .section-chart {
-    width: 600px !important;
-  }
-}
 .ct-label.ct-horizontal.ct-end {
   margin-top: 24px;
 }

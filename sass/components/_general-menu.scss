@@ -112,6 +112,18 @@
                 }
             }
         }
+        &._active-menu {
+            svg {
+                fill: var(--black);
+            }
+            a {
+                background-color: #fff;
+                color: var(--black);
+                &:after {
+                    outline: 2px solid #fff !important;
+                }
+            }
+        }
         &._active {
             a {
                 position: relative;
