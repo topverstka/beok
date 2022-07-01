@@ -1385,7 +1385,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   width: 15px;
   height: 15px;
   background: #FFC171;
-  border: 3px solid #fff;
+  border: 2px solid #fff;
   border-radius: 50%;
 }
 @media (max-width: 768px) {
