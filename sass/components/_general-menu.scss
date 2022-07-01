@@ -19,6 +19,7 @@
         }
         @media (max-width: $tablet) {
             position: fixed;
+            top: auto;
             bottom: 19px;
             padding-top: 0;
             display: flex;
