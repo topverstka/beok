@@ -1,11 +1,22 @@
     .general-menu {
         background: rgba(237, 106, 83, 1);
-        width: 290px;
+        max-width: 290px;
+        width: 100%;
         padding-right: 15px;
         padding-top: 41px;
         //height: 100%;
         margin-right: 20px;
         z-index: 1000;
+        position: fixed;
+        height: 100vh;
+        left: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        @media (max-width: 992px) {
+            max-width: 100%;
+            width: auto;
+        }
         @media (max-width: $tablet) {
             position: fixed;
             bottom: 19px;
@@ -128,7 +139,8 @@
     
     .general-menu__support {
         margin-left: 30px;
-        margin-top: 527px;
+        margin-top: auto;
+        margin-bottom: 15px;
         a {
             display: flex;
             align-items: center;

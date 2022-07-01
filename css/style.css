@@ -181,7 +181,6 @@ main {
 }
 
 .page-content {
-  width: 100%;
   overflow: hidden;
 }
 @media (max-width: 768px) {
@@ -1169,11 +1168,24 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 }
 .general-menu {
   background: rgb(237, 106, 83);
-  width: 290px;
+  max-width: 290px;
+  width: 100%;
   padding-right: 15px;
   padding-top: 41px;
   margin-right: 20px;
   z-index: 1000;
+  position: fixed;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 992px) {
+  .general-menu {
+    max-width: 100%;
+    width: auto;
+  }
 }
 @media (max-width: 768px) {
   .general-menu {
@@ -1298,7 +1310,8 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 
 .general-menu__support {
   margin-left: 30px;
-  margin-top: 527px;
+  margin-top: auto;
+  margin-bottom: 15px;
 }
 .general-menu__support a {
   display: flex;
@@ -1688,6 +1701,20 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
     line-height: 21px;
     font-family: "Raleway";
     font-weight: 700;
+    margin-bottom: 2px;
+  }
+}
+
+.main-page .hello {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 38px;
+  font-family: "Raleway";
+}
+@media (max-width: 768px) {
+  .main-page .hello {
+    font-size: 18px;
+    line-height: 21px;
     margin-bottom: 2px;
   }
 }
@@ -6129,7 +6156,6 @@ body._active_dropdown main:after {
   font-size: 14px;
   line-height: 130%;
   overflow: hidden;
-  height: 162px;
   position: relative;
 }
 @media (max-width: 768px) {

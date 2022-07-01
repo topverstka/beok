@@ -60,12 +60,13 @@ faq();
 
 let previousPosition = window.pageYOffset || document.documentElement.scrollTop;
 // When the user scrolls the page, execute myFunction
+var header = document.querySelector(".header");
 if (header) {
     window.onscroll = function() { myFunction() };
 }
 
 // Get the header
-var header = document.querySelector(".header");
+
 
 // Get the offset position of the navbar
 var sticky = 250;
@@ -86,6 +87,36 @@ function myFunction() {
     previousPosition = currentPosition;
 }
 
+
+
+function defineMarginContent() {
+    if (window.innerWidth > 768 && find('.general-menu')) {
+        let paddingScrollBar = window.getComputedStyle(find('.general-menu')).paddingRight;
+        let widthScrollBar = find('.general-menu').scrollWidth + parseInt(paddingScrollBar);
+        find('.page-content').style.marginLeft = `${widthScrollBar}px`;
+    }
+}
+defineMarginContent();
+
+
+function heightSlideTasks() {
+    if (find('.section-information__tasks-slider-element')) {
+        findAll('.section-information__tasks-slider-element').forEach(i => {
+            i.style.height = find('.section-information__billboard').offsetHeight + 'px';
+            let paddingElement = parseInt(window.getComputedStyle(i).padding);
+            let plashka = i.querySelector('.section-information__tasks-slider-sing').offsetHeight;
+            let marginPlashka = parseInt(window.getComputedStyle(i.querySelector('.section-information__tasks-slider-sing')).marginBottom);
+            i.querySelector('.section-information__tasks-slider-text').style.height = (i.offsetHeight - paddingElement - plashka - marginPlashka) - paddingElement + 'px';
+        });
+    }
+}
+heightSlideTasks();
+
+
+window.addEventListener('resize', function(e) {
+    defineMarginContent();
+    heightSlideTasks();
+});
 
 
 // window.onscroll = function() {
