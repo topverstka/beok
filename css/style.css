@@ -1687,9 +1687,9 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 
 .hello {
   font-family: "RoadRadio";
-  font-size: 32px;
+  font-size: 26px;
   font-weight: 400;
-  line-height: 32px;
+  line-height: 26px;
   letter-spacing: 0em;
   text-align: center;
   color: var(--black);
@@ -5388,7 +5388,7 @@ body._active_dropdown main:after {
     position: static;
   }
   .varios-report__bottom .swiper-slide:nth-of-type(3) .varios-report__bottom-element--container {
-    width: 78%;
+    width: 82%;
     margin-left: 12px;
   }
   .varios-report__bottom .swiper-slide:nth-of-type(3) .varios-report__bottom-element-btn {
