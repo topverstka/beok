@@ -6,6 +6,26 @@
     }
 }
 
+.page-photo {
+    h1.hello {
+        display: block;
+        margin-bottom: 24px;
+    }
+    @media (max-width: $tablet) {
+        .link-pref-page {
+            transform: none;
+        }
+        h1.hello {
+            margin-top: 20px;
+            font-family: 'RoadRadio';
+            text-align: left;
+            font-weight: 400;
+            font-size: 26px;
+            line-height: 26px;
+        }
+    }
+}
+
 .take-photo__top {
     display: flex;
     justify-content: space-between;
@@ -78,14 +98,14 @@
             content: '';
             position: absolute;
             display: block;
-            left: 0;
+            left: 1px;
             top: 3px;
-            width: 16px;
-            height: 16px;
+            outline: 2px solid var(--outline);
+            width: 14px;
+            height: 14px;
+            border: 3.5px solid #fff;
             background: $outline;
             border-radius: 50%;
-            border: 4px solid #fff;
-            outline: 2px solid $outline;
         }
         &:last-child {
             .take-photo__container-list--element-box:after {

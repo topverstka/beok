@@ -2,6 +2,11 @@
     width: 940px;
     max-width: 100%;
     margin: 60px auto 100px;
+    h1 {
+        font-size: 32px;
+        line-height: 32px;
+        margin-bottom: 10px;
+    }
     @media (max-width: $tablet) {
         padding: 0 12px;
         margin: 20px 0 24px 0;
@@ -172,6 +177,7 @@
             border: 1px solid #0E0E0E;
             border-radius: 5px;
             padding: 20px 12px 20px 15px;
+            height: 52px;
         }
         &:not(:last-child) {
             margin-right: 30px;

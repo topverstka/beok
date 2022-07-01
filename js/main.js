@@ -100,7 +100,7 @@ defineMarginContent();
 
 
 function heightSlideTasks() {
-    if (find('.section-information__tasks-slider-element')) {
+    if (find('.section-information__billboard')) {
         findAll('.section-information__tasks-slider-element').forEach(i => {
             i.style.height = find('.section-information__billboard').offsetHeight + 'px';
             let paddingElement = parseInt(window.getComputedStyle(i).padding);
@@ -534,6 +534,7 @@ document.addEventListener('click', function(e) {
         let tabActive = e.target.getAttribute('data-chart-tab');
         e.target.closest('[data-chard-parent]').querySelector('.chart-tab._show').classList.remove('_show');
         e.target.closest('[data-chard-parent]').querySelector(`[data-chart-body="${tabActive}"]`).classList.add('_show');
+
     }
 
 
@@ -542,12 +543,20 @@ document.addEventListener('click', function(e) {
         textBox.innerText = e.target.innerText;
         e.target.closest('.line-chart__top--dropdown-list').querySelector('.line-chart__top--dropdown-element._active').classList.remove('_active');
         e.target.classList.add('_active');
+        e.target.closest('.line-chart__top--dropdown').classList.remove('_show');
+        window.innerWidth < 768 ? document.body.classList.remove('_active_dropdown') : '';
     }
 
 
 
     if (!e.target.classList.contains('line-chart__top--dropdown') && !e.target.closest('.line-chart__top--dropdown')) {
-        findAll('.line-chart__top--dropdown').forEach(i => i.classList.remove('_show'));
+        findAll('.line-chart__top--dropdown').forEach(i => {
+            i.classList.remove('_show');
+            setTimeout(() => {
+                i.querySelector('.line-chart__top--dropdown-list').classList.remove('_active');
+            }, 200);
+
+        });
         document.body.classList.remove('_active_dropdown');
     }
 

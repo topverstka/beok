@@ -130,8 +130,8 @@
                             </li>
                             <li class="header__nav-elem--mobile">
                                 <a href="#">
-                                    <svg width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M0 15.36C0 8.12 0 4.499 2.25 2.25 4.498 0 8.12 0 15.36 0h1.28c7.24 0 10.861 0 13.11 2.25C32 4.498 32 8.12 32 15.36v1.28c0 7.24 0 10.861-2.25 13.11C27.502 32 23.88 32 16.64 32h-1.28c-7.24 0-10.861 0-13.11-2.25C0 27.502 0 23.88 0 16.64v-1.28Z" fill="#0E0E0E"/><path d="M16.972 23.04C9.537 23.04 5.297 17.995 5.12 9.6h3.724c.123 6.161 2.868 8.771 5.043 9.31V9.6h3.506v5.314c2.148-.229 4.404-2.65 5.165-5.314h3.506c-.584 3.282-3.03 5.704-4.77 6.7 1.74.807 4.526 2.919 5.586 6.74h-3.86c-.83-2.556-2.895-4.534-5.627-4.803v4.803h-.421Z" fill="#fff"/>
+                                    <svg>
+                                        <use xlink:href="./img/icons-sprite.svg#vk-mobile"></use>
                                     </svg>
                                 </a>
                             </li>
@@ -165,7 +165,7 @@
                 
                 </defs>
               </svg>
-                <div class="line-chart" data-down>
+                <div class="line-chart line-chart__area" data-down>
                     <div class="line-chart__top">
                         <h2 class="line-chart__top-title">Результат от старта курса</h2>
                         <div class="line-chart__right">
@@ -192,6 +192,37 @@
                     <div class="chart-tabs-section">
                         <div class="ct-chart section-chart"></div>
                     </div>
+                    <p class="line-chart__area--text">На старте</p>
+                </div>
+
+                <div class="line-chart line-chart__area" data-up>
+                    <div class="line-chart__top">
+                        <h2 class="line-chart__top-title">Результат от старта курса</h2>
+                        <div class="line-chart__right">
+                            <div class="line-chart__top--dropdown">
+                                <div class="line-chart__top--dropdown--select-text">
+                                    <p class="line-chart__top--dropdown--select-p">
+                                        Вес
+                                    </p>
+                                    <svg id="arrow-btm" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 7L8 11L12 7" stroke="#0E0E0E" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                                </div>
+                                <ul class="line-chart__top--dropdown-list">
+                                    <li class="line-chart__top--dropdown-element _active">Вес</li>
+                                    <li class="line-chart__top--dropdown-element">Объемы</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line-chart__weight">
+                        <span class="line-chart__weight-number">-11</span>
+                        <p class="line-chart__weight-text">кг</p>
+                    </div>
+                    <div class="chart-tabs-section">
+                        <div class="ct-chart-up section-chart"></div>
+                    </div>
+                    <p class="line-chart__area--text">На старте</p>
                 </div>
 
                 <div class="line-chart" data-chard-parent data-value="кг">
@@ -260,7 +291,7 @@
 
 
 
-                <div class="line-chart">
+                <div class="line-chart" data-chard-parent>
                     <div class="line-chart__top">
                         <h2 class="line-chart__top-title">Шаги</h2>
                         <div class="line-chart__top--dropdown">
@@ -273,13 +304,15 @@
                             </svg>
                             </div>
                             <ul class="line-chart__top--dropdown-list">
-                                <li class="line-chart__top--dropdown-element _active">Дни</li>
-                                <li class="line-chart__top--dropdown-element">Недели</li>
+                                <li class="line-chart__top--dropdown-element _active" data-chart-tab="days">Дни</li>
+                                <li class="line-chart__top--dropdown-element" data-chart-tab="weeks">Недели</li>
                             </ul>
                         </div>
                     </div>
                     <div class="chart-tabs-section">
-                        <div class="ct-chart-bar section-chart">
+                        <div class="ct-chart-bar--day section-chart chart-tab _show" data-chart-body="days">
+                        </div>
+                        <div class="ct-chart-bar--weeks section-chart chart-tab" data-chart-body="weeks">
                         </div>
                     </div>
                 </div>
@@ -373,27 +406,9 @@
 
 
 
-
-    <!-- <svg viewbox="0 0 0 0" style="height:0; width: 0;">
-    <defs>
-        <linearGradient x1="0" x2="0" y1="0" y2="1" id="linear-gradient1">
-            <stop offset="0" stop-color="#FDF0EE" stop-opacity="0.1"></stop>
-            <stop offset="100%" stop-color="#EF7E6A"></stop>
-        </linearGradient>
-    
-    </defs>
-</svg> -->
-
-    <style>
-
-    </style>
-
     <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
     <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
     <script src="./js/libs/chartist-plugin-gradient.js"></script>
-
-
-
 
     <script>
         let rectHover = document.createElement('div');
@@ -424,7 +439,7 @@
                 let positionValue = e.target.getAttribute('ct:value');
                 let tooltipChartTarget = e.target.closest('svg').parentElement.querySelector('.tooltip-hover');
                 let targetValue = e.target.closest('[data-value]') ? e.target.closest('[data-value]').getAttribute('data-value') : false;
-                !e.target.closest('svg').parentElement.querySelector('.ct-chart-hover') ? e.target.closest('svg').parentElement.append(rectHover) : e.target.closest('svg').parentElement.querySelector('.ct-chart-hover').style.display = 'block';
+                !e.target.closest('svg').parentElement.querySelector('.ct-chart-hover') && !e.target.closest('.line-chart__area') ? e.target.closest('svg').parentElement.append(rectHover) : e.target.closest('svg').parentElement.querySelector('.ct-chart-hover').style.display = 'block';
                 e.target.closest('svg').parentElement.querySelector('.ct-chart-hover').style.left = (positionLeft - 15) + 'px';
                 tooltipChartTarget.style.top = (positionTop - 55) + 'px';
                 tooltipChartTarget.innerText = positionValue + (targetValue ? ' ' + targetValue : '');
@@ -434,14 +449,14 @@
         });
 
         document.addEventListener('mouseout', function(e) {
-            if (!e.target.classList.contains('ct-point') && e.target.closest('svg')) {
+            if (!e.target.classList.contains('ct-point') && e.target.closest('svg') && !e.target.closest('.line-chart__area')) {
                 e.target.closest('svg').parentElement.querySelector('.ct-chart-hover') ? e.target.closest('svg').parentElement.querySelector('.ct-chart-hover').style.display = 'none' : '';
                 e.target.closest('svg').parentElement.querySelector('.tooltip-hover').classList.remove('_active');
             }
         });
 
-        new Chartist.Bar('.ct-chart-bar', {
-            labels: ['10 июл', '10 июл', '10 июл', '10 июл', '10 июл', '10 июл', '10 июл', '10 июл'],
+        new Chartist.Bar('.ct-chart-bar--weeks', {
+            labels: ['2 - 10 июл', '2 - 10 июл', '2 - 10 июл', '2 - 10 июл', '2 - 10 июл', '2 - 10 июл', '2 - 10 июл', '2 - 10 июл'],
 
             series: [
                 [10000, 20000, 100000, 40000, 10000, 100000, 40000, 10000],
@@ -450,7 +465,11 @@
             stackBars: true,
             axisY: {
                 labelInterpolationFnc: function(value) {
-                    return (value / 1000) + 'k';
+                    if (value !== 0) {
+                        return (value / 1000) + 'К';
+                    } else {
+                        return value;
+                    }
                 }
             },
             axisX: {
@@ -467,6 +486,25 @@
                 i.insertAdjacentHTML('beforebegin', `<text x="${Number(i.getAttribute('x1')) - 4}" y="${Number(i.getAttribute('y2')) - 15}">${index + 1}</text>`);
             });
         });
+
+        new Chartist.Bar('.ct-chart-bar--day', {
+            labels: ['10 июл', '10 июл', '10 июл', '10 июл', '10 июл', '10 июл', '10 июл', '10 июл'],
+
+            series: [
+                [7000, 2000, 10000, 4000, 1000, 10000, 4000, 1000],
+            ]
+        }, {
+            stackBars: true,
+            axisX: {
+                showGrid: false,
+            },
+        }).on('draw', function(data) {
+            if (data.type === 'bar') {
+                data.element.attr({
+                    style: 'stroke-width: 30px;stroke: #ED6A53'
+                });
+            }
+        })
 
         new Chartist.Line('.ct-chart-4', {
             labels: ['20 июля', '20 июля', '20 июля', '20 июля', '20 июля', '20 июля', '20 июля', '20 июля'],
@@ -613,7 +651,7 @@
             //     i.insertAdjacentHTML('beforebegin', `<text x="${Number(i.getAttribute('x1')) - 4}" y="${Number(i.getAttribute('y1')) - 20}">${index + 1}</text>`);
             // });
         });
-        new Chartist.Line('.ct-chart', {
+        new Chartist.Line('.ct-chart-up', {
             labels: [90, 40, 50, 40, 50, 60, 70, 80],
             series: [
                 [40, 30, 40, 50, 60, 80, 60, 90]
@@ -626,7 +664,7 @@
             fullWidth: true,
             chartPadding: {
                 right: 5,
-                left: -20
+                left: -35
             },
 
             axisX: {
@@ -641,313 +679,59 @@
             }
 
         }).on('created', function(e) {
-            find('.ct-chart').insertAdjacentHTML('afterbegin', `<div class="tooltip-ct"></div>`);
+            !e.svg._node.closest('.section-chart').querySelector('.tooltip-ct') ? e.svg._node.closest('.section-chart').insertAdjacentHTML('afterbegin', `<div class="tooltip-ct"></div>`) : '';
             let pointPosition = find('.ct-point');
             //console.log(pointPosition);
-            find('.tooltip-ct').style.cssText = `
+            e.svg._node.closest('.section-chart').querySelector('.tooltip-ct').style.cssText = `
                 left: ${Number(pointPosition.getAttribute('x1')) - 28}px;
                 top: ${Number(pointPosition.getAttribute('y1')) - 50}px;
             `;
-            find('.tooltip-ct').innerText = pointPosition.getAttribute('ct:value') + ' кг';
+            e.svg._node.closest('.section-chart').querySelector('.tooltip-ct').innerText = pointPosition.getAttribute('ct:value') + ' кг';
             // find('.ct-chart-2').appendChild(tooltipChart);
-        });;
-    </script>
-
-
-
-
-
-    <script>
-        // google.charts.load('current', {
-        //     callback: drawChart,
-        //     packages: ['corechart']
-        // });
-        // google.charts.setOnLoadCallback(drawChart);
-
-        // function drawChart() {
-        //     // Define the chart to be drawn.
-        //     // var data = new google.visualization.DataTable();
-        //     // data.addColumn('string', 'Element');
-        //     // data.addColumn('number', 'Percentage');
-        //     // data.addRows([
-        //     //     ['Nitrogen', 20],
-        //     //     ['Oxygen', 40],
-        //     //     ['Other', 100]
-        //     // ]);
-
-        //     var data = google.visualization.arrayToDataTable([
-        //         ['Year', 'Вес'],
-        //         ['8-10 июля', 20],
-        //         ['2005', 100],
-        //         ['2006', 30],
-        //         ['2007', 80],
-        //         ['2008', 50],
-        //         ['2009', 100],
-        //         ['2010', 80]
-        //     ]);
-
-        //     var options = {
-        //         title: 'Вес',
-        //         curveType: 'function',
-        //         //  focusTarget: 'category',
-        //         // legend: {
-        //         //     position: 'right'
-        //         // },
-        //         focusTarget: 'category',
-        //         crosshair: {
-        //             orientation: 'vertical',
-        //             trigger: 'focus',
-        //             color: '#0E0E0E'
-        //         },
-        //         lineWidth: 1,
-        //         pointSize: 18,
-        //         colors: ['#0E0E0E'],
-        //         tooltip: {
-        //             isHtml: true
-        //         },
-        //         // series: {
-        //         //     0: {
-        //         //         color: '#0E0E0E'
-        //         //     }
-        //         // },
-        //         // pointShape: 'square',
-        //         // tooltip: {
-        //         //     //trigger: 'selection'
-        //         // },
-
-        //         axes: {
-        //             x: {
-        //                 0: {
-        //                     side: 'top'
-        //                 }
-        //             }
-        //         }
-        //     };
-
-        //     var chart = new google.visualization.LineChart(document.getElementById('myPieChart'));
-
-
-        //     var container = document.getElementById('myPieChart');
-
-
-        //     google.visualization.events.addOneTimeListener(chart, 'ready', function() {
-        //         var svgParent = container.getElementsByTagName('svg')[0];
-        //         // console.log(chart[0]);
-        //         // var layout = chart.getChart().getChartLayoutInterface();
-
-        //         // var lineHeight = layout.getBoundingBox('chartarea').height - 18;
-        //         // var lineTop = layout.getBoundingBox('chartarea').top;
-
-        //         svgParent.insertAdjacentHTML('afterbegin', `
-        //         <linearGradient x1="0" x2="0" y1="0" y2="1" id="linear-gradient">
-        //             <stop offset="0" stop-color="#FDF0EE" stop-opacity="0.1"></stop>
-        //             <stop offset="100%" stop-color="#EF7E6A"></stop>
-        //         </linearGradient>
-        //         `);
-
-        //         // var hoverLine = container.getElementsByTagName('rect')[0].cloneNode(true);
-        //         // hoverLine.setAttribute('y', lineTop);
-        //         // hoverLine.setAttribute('height', lineHeight);
-        //         // hoverLine.setAttribute('width', '30');
-        //         // hoverLine.setAttribute('stroke', 'none');
-        //         // hoverLine.setAttribute('stroke-width', '30');
-        //         // hoverLine.setAttribute('fill', 'url(#linear-gradient)');
-
-        //         // google.visualization.events.addListener(chart.getChart(), 'onmouseover', function(p) {
-        //         //     if (p.row !== null) {
-        //         //         var xPos = layout.getXLocation(dataTable.getValue(p.row, 0));
-        //         //         svgParent.appendChild(hoverLine);
-        //         //         hoverLine.setAttribute('x', xPos);
-        //         //     }
-        //         // });
-
-        //         // google.visualization.events.addListener(chart.getChart(), 'onmouseout', function(p) {
-        //         //     if (p.row !== null) {
-        //         //         svgParent.removeChild(hoverLine);
-        //         //     }
-        //         // });
-        //     });
-
-
-
-        //     chart.draw(data, options);
-        //     // google.visualization.events.addListener(chart, 'onmouseover', function(e) {
-        //     //     setTooltipContent(data, e.row);
-        //     // });
-
-        //     // function selectHandler() {
-        //     //     var selectedItem = chart.getSelection()[0];
-        //     //     console.log(data.getValue(selectedItem.row, selectedItem.column))
-        //     //         // if (selectedItem) {
-        //     //         //     var value = data.getValue(selectedItem.row, selectedItem.column);
-        //     //         //     alert('The user selected ' + value);
-        //     //         // }
-        //     // }
-
-        //     // google.visualization.events.addListener(chart, 'onmouseover', selectHandler);
-
-
-
-
-        //     // Instantiate and draw the chart.
-
-        // }
-
-        // function setTooltipContent(dataTable, row) {
-        //     if (row != null) {
-        //         var content = '<div class="custom-tooltip" ><h1>' + dataTable.getValue(row, 0) + '</h1><div>' + dataTable.getValue(row, 1) + '</div></div>'; //generate tooltip content
-        //         var tooltip = document.getElementsByClassName("google-visualization-tooltip")[0];
-        //         tooltip.innerHTML = content;
-        //     }
-        // }
-    </script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <script>
-        var options = {
-            chart: {
-                type: 'line',
-                id: 'fb',
-                width: '70%',
-                // animations: {
-                //     speed: 200
-                // },
-                group: 'social',
-            },
-            stroke: {
-                width: 1,
-                curve: 'smooth',
-
-            },
-            colors: ['#0E0E0E'],
-            fill: {
-                type: 'solid'
-            },
-            markers: {
-                size: 0,
-            },
-            sparkline: {
-                enabled: false,
-            },
-            annotations: {
-                yaxis: [{
-                    y: 8800,
-                    borderColor: '#00E396',
-                    label: {
-                        borderColor: '#00E396',
-                        style: {
-                            color: '#fff',
-                            background: '#00E396'
-                        },
-                        text: 'Y-axis annotation on 8800'
-                    }
-                }]
-            },
-
-            dataLabels: {
-                //  enabled: true // Включить метку данных, то есть отображать ли данные прямо на значке
-            },
-
-            tooltip: {
-                // fixed: true,
-                // position: 'topLeft',
-                // custom: function({
-                //     series,
-                //     seriesIndex,
-                //     dataPointIndex,
-                //     w
-                // }) {
-                //     return (
-                //         '<div class="arrow_box">' +
-                //         series[seriesIndex][dataPointIndex] +
-                //         "</span>" +
-                //         "</div>"
-                //     );
-                // }
-            },
-            grid: {
-                borderColor: '#DEDFE2',
-                strokeDashArray: 4,
-            },
-            series: [{
-                name: '',
-                data: [20, 70, 80, 30, 85, 55]
-            }],
-            xaxis: {
-                // type: 'category',
-
-                categories: [
-                    ['8', '10 июля'],
-                    ['8', '10 июля'],
-                    ['8', '10 июля'],
-                    ['8', '10 июля'],
-                    ['8', '10 июля'],
-                    ['8', '10 июля']
-                    // ['8', '10 июля'], '11 июля', '12 июля', '13 июля', '14 июля', '15 июля'
-
-                ]
-            },
-            yaxis: {
-                // tooltip: {
-                //     enabled: true
-                // }
-            }
-        }
-
-        var chart = new ApexCharts(document.querySelector("#chart"), options);
-
-        chart.render();
-    </script> -->
-
-
-
-
-
-    <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
-    <script src="./js/libs/chartist.min.js"></script>
-    <script src="./js/libs/chartist-plugin-tooltip.js"></script>
-
-
-    <script>
-        var chart = new Chartist.Line('.ct-chart', {
-            labels: [
-                "0-15",
-                "16-30",
-                "31-45",
-                "46-60",
-                "61-75",
-                "76-90",
-                "91-105",
-                "106-120"
-            ],
-            series: [
-                [10, 70, 30, 100, 80, 20, 10, 40]
-            ]
-        }, {
-            low: 1,
-
-
-            high: 100,
-            axisX: {
-                // Отключаем сетку для этой оси
-                showGrid: false,
-                // и не показываем метки
-                // showLabel: false
-            },
-
-
-            fullWidth: true,
-            // showArea: true,
-            // showPoint: false,
-            plugins: [
-                Chartist.plugins.tooltip()
-            ]
-        }, {
-            lineSmooth: Chartist.Interpolation.step({
-                postpone: true,
-                fillHoles: false
-            })
         });
-    </script> -->
+        new Chartist.Line('.ct-chart', {
+            labels: [90, 40, 50, 40, 50, 60, 70, 80],
+            series: [
+                [40, 30, 40, 50, 60, 80, 60, 90]
+            ]
+        }, {
+            low: 0,
+            showArea: true,
+            showGrid: false,
+            // width: '1500',
+            fullWidth: true,
+            chartPadding: {
+                right: 5,
+                left: -35
+            },
+
+            axisX: {
+                showGrid: false,
+                showLabel: false,
+
+            },
+            axisY: {
+                showGrid: false,
+                showLabel: false,
+
+            }
+
+        }).on('created', function(e) {
+            !e.svg._node.closest('.section-chart').querySelector('.tooltip-ct') ? e.svg._node.closest('.section-chart').insertAdjacentHTML('afterbegin', `<div class="tooltip-ct"></div>`) : '';
+            let pointPosition = find('.ct-point');
+            //console.log(pointPosition);
+            e.svg._node.closest('.section-chart').querySelector('.tooltip-ct').style.cssText = `
+                left: ${Number(pointPosition.getAttribute('x1')) - 28}px;
+                top: ${Number(pointPosition.getAttribute('y1')) - 50}px;
+            `;
+            e.svg._node.closest('.section-chart').querySelector('.tooltip-ct').innerText = pointPosition.getAttribute('ct:value') + ' кг';
+            // find('.ct-chart-2').appendChild(tooltipChart);
+        });
+    </script>
+
+
+
+
 
 
 

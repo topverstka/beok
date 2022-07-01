@@ -12,6 +12,7 @@
     @media (max-width: $tablet) {
         margin-bottom: 0;
         padding-bottom: 0;
+        height: 0;
     }
 }
 
@@ -24,7 +25,7 @@
         display: none
     }
     @media (max-width:$tablet) {
-        transform: translateY(23px);
+        transform: translateY(11px);
         .link-pref-page__mobile {
             display: block;
             width: 24px;
@@ -48,6 +49,9 @@
         left: 0;
         width: 100%;
         height: auto;
+        .link-pref-page {
+            display: none;
+        }
     }
 }
 

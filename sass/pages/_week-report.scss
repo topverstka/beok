@@ -4,9 +4,19 @@
     margin: 60px auto 100px auto;
     .hello {
         margin-bottom: 10px;
+        font-size: 32px;
+        line-height: 32px;
     }
     .take-photo__container--link {
-        margin-top: 0
+        margin-top: 0;
+        font-size: 14px;
+        width: 293px;
+        height: 80px;
+    }
+    .field-box__col input,
+    .field-text__input input {
+        height: 52px;
+        font-size: 14px;
     }
     @media (max-width:940px) {
         padding: 0 15px
@@ -590,6 +600,8 @@
     h1 {
         text-align: center;
         margin-bottom: 20px;
+        font-size: 32px;
+        line-height: 32px;
     }
     .field-text__input {
         svg {

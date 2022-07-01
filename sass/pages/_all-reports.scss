@@ -1,4 +1,4 @@
-.content--page {
+.content--page:not(.content--page__visible) {
     h1 {
         display: none;
     }
@@ -115,6 +115,17 @@
     padding: 24px;
     overflow: hidden;
     margin-right: 30px;
+    .your-reports__bottom-element-list-line {
+        &[data-info] {
+            &:before {
+                background-size: cover;
+                width: 24px;
+                height: 24px;
+                margin-right: 6px;
+                margin-bottom: 4px;
+            }
+        }
+    }
     @media (max-width: $tablet) {
         padding: 12px 8px;
         margin-right: 0;
@@ -238,7 +249,7 @@
 }
 
 .reports-all-section__content--recommendation {
-    margin: 26px 0 28px 0;
+    margin: 26px 0 24px 0;
     overflow: hidden;
     @media (max-width: $tablet) {
         margin: 16px 0 20px 0
@@ -588,6 +599,7 @@
     }
     @media (max-width:$tablet) {
         margin-right: 0;
+        margin-bottom: 100px;
     }
 }
 
@@ -773,6 +785,9 @@
         font-size: 12px;
         line-height: 130%;
         margin-bottom: 3px;
+        &::first-letter {
+            text-transform: uppercase;
+        }
     }
 }
 

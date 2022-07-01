@@ -46,7 +46,7 @@
         border-radius: 10px;
     }
     @media (max-width: $tablet) {
-        z-index: 999;
+        z-index: 999999;
         .modal__content {
             width: 100%;
             max-width: 100%;
@@ -72,13 +72,11 @@
             font-size: 18px;
             line-height: 21px;
             margin-bottom: 4px;
-            margin-left: 24px;
         }
         .edit-report--date {
             text-align: center;
             font-size: 12px;
             line-height: 130%;
-            margin-left: 24px;
         }
         .modal-field {
             &:not(:last-child) {
@@ -223,6 +221,12 @@
     font-size: 14px;
     line-height: 3;
     color: #fff;
+    &:hover {
+        background: #64DEA0;
+    }
+    &:active {
+        background: #217E4F
+    }
     @media (max-width: $tablet) {
         width: 255px;
         font-size: 18px;
