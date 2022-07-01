@@ -276,6 +276,22 @@ img {
   width: 32px;
   height: 32px;
 }
+.link-pref-page .link-pref-page__mobile {
+  display: none;
+}
+@media (max-width: 768px) {
+  .link-pref-page {
+    transform: translateY(23px);
+  }
+  .link-pref-page .link-pref-page__mobile {
+    display: block;
+    width: 24px;
+    height: 24px;
+  }
+  .link-pref-page .link-pref-page__desctop {
+    display: none;
+  }
+}
 
 .header.sticky {
   height: 100px;
@@ -296,6 +312,7 @@ img {
 
 .header__wrap {
   justify-content: flex-end;
+  margin-left: auto;
 }
 
 .header__logo {
@@ -1418,7 +1435,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 }
 
 .useful-information__element--text {
-  width: 90%;
+  width: calc(95% - 48px);
 }
 
 .modal#edit-report .modal__content,

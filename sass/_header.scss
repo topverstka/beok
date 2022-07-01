@@ -20,6 +20,20 @@
         width: 32px;
         height: 32px;
     }
+    .link-pref-page__mobile {
+        display: none
+    }
+    @media (max-width:$tablet) {
+        transform: translateY(23px);
+        .link-pref-page__mobile {
+            display: block;
+            width: 24px;
+            height: 24px;
+        }
+        .link-pref-page__desctop {
+            display: none;
+        }
+    }
 }
 
 .header.sticky {
@@ -39,6 +53,7 @@
 
 .header__wrap {
     justify-content: flex-end;
+    margin-left: auto;
 }
 
 .header__logo {
