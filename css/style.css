@@ -6318,12 +6318,11 @@ body._active_dropdown main:after {
 .check-list__left:after {
   content: "";
   position: absolute;
-  left: -130%;
-  top: -90px;
-  width: 722px;
-  height: 428px;
-  border-radius: 48%;
-  background: #D2FADF;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../img/cyrlce-background.svg") no-repeat;
   z-index: 1;
 }
 @media (max-width: 768px) {
