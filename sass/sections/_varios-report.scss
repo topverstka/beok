@@ -165,6 +165,7 @@
                     flex-direction: column;
                     flex-wrap: wrap;
                     position: relative;
+                    padding-top: 14px;
                 }
                 .varios-report__bottom-element--container {
                     width: 100%;
@@ -173,7 +174,7 @@
                 .varios-report__bottom-element-title {
                     position: absolute;
                     left: 48px;
-                    top: 22px;
+                    top: 19px;
                     width: auto;
                 }
             }
@@ -189,11 +190,14 @@
                 }
                 .varios-report__bottom-element--container {
                     width: 82%;
-                    margin-left: 12px;
+                    margin-left: 10px;
                 }
                 .varios-report__bottom-element-btn {
                     font-size: 18px;
                     height: 45px
+                }
+                .varios-report__bottom-element-icon {
+                    transform: translateY(-6px);
                 }
             }
         }
@@ -248,6 +252,7 @@
         padding: 16px;
         .varios-report__bottom-element-icon {
             grid-row: 4/1;
+            // transform: translateY(-6px);
         }
         svg {
             width: 24px;
@@ -419,6 +424,9 @@
         &:after {
             display: none;
         }
+    }
+    @media (max-width:$tablet) {
+        margin-top: 16px
     }
 }
 

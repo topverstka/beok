@@ -6,9 +6,19 @@
     padding-right: 30px;
     padding-bottom: 21px;
     margin-bottom: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     @media (max-width: $tablet) {
         margin-bottom: 0;
         padding-bottom: 0;
+    }
+}
+
+.link-pref-page {
+    svg {
+        width: 32px;
+        height: 32px;
     }
 }
 

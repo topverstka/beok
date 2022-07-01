@@ -181,6 +181,7 @@ main {
 }
 
 .page-content {
+  width: 100%;
   overflow: hidden;
 }
 @media (max-width: 768px) {
@@ -260,12 +261,20 @@ img {
   padding-right: 30px;
   padding-bottom: 21px;
   margin-bottom: 23px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 @media (max-width: 768px) {
   .header {
     margin-bottom: 0;
     padding-bottom: 0;
   }
+}
+
+.link-pref-page svg {
+  width: 32px;
+  height: 32px;
 }
 
 .header.sticky {
@@ -5365,6 +5374,7 @@ body._active_dropdown main:after {
     flex-direction: column;
     flex-wrap: wrap;
     position: relative;
+    padding-top: 14px;
   }
   .varios-report__bottom .swiper-slide:nth-child(n+3) .varios-report__bottom-element--container {
     width: 100%;
@@ -5373,7 +5383,7 @@ body._active_dropdown main:after {
   .varios-report__bottom .swiper-slide:nth-child(n+3) .varios-report__bottom-element-title {
     position: absolute;
     left: 48px;
-    top: 22px;
+    top: 19px;
     width: auto;
   }
   .varios-report__bottom .swiper-slide:nth-of-type(3) {
@@ -5389,11 +5399,14 @@ body._active_dropdown main:after {
   }
   .varios-report__bottom .swiper-slide:nth-of-type(3) .varios-report__bottom-element--container {
     width: 82%;
-    margin-left: 12px;
+    margin-left: 10px;
   }
   .varios-report__bottom .swiper-slide:nth-of-type(3) .varios-report__bottom-element-btn {
     font-size: 18px;
     height: 45px;
+  }
+  .varios-report__bottom .swiper-slide:nth-of-type(3) .varios-report__bottom-element-icon {
+    transform: translateY(-6px);
   }
 }
 
@@ -5617,6 +5630,11 @@ body._active_dropdown main:after {
 }
 .varios-report__bottom-element-field[data-checkbox]:after {
   display: none;
+}
+@media (max-width: 768px) {
+  .varios-report__bottom-element-field {
+    margin-top: 16px;
+  }
 }
 
 .varios-report__bottom-element-field--info {
@@ -6130,6 +6148,11 @@ body._active_dropdown main:after {
   }
   .section-information__tasks.section-information__tasks--width {
     margin-left: 0;
+  }
+  .section-information__tasks .section-information-title {
+    position: static;
+    color: var(--main);
+    margin-bottom: 12px;
   }
 }
 
