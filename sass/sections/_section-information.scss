@@ -273,7 +273,9 @@
         font-size: 14px;
     }
     @media (max-width:$tablet) {
-        bottom: 1px;
+        bottom: -2px;
+        padding-right: 12px;
+        right: 0px;
         padding-left: 19px;
     }
 }

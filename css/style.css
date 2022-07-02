@@ -1256,6 +1256,8 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
     font-weight: 600;
     font-size: 14px;
     line-height: 130%;
+    width: max-content;
+    margin: auto;
   }
   .general-menu .general-menu__nav-elem a svg {
     fill: rgba(121, 126, 135, 0.15);
@@ -1344,8 +1346,10 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 }
 @media (max-width: 768px) {
   .general-menu__nav-elem._active a:after {
-    top: 0;
+    top: -1px;
     outline: 2px solid #fff;
+    left: auto;
+    right: -3px;
   }
 }
 
@@ -4422,11 +4426,17 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   width: 940px;
   max-width: 100%;
   margin: 60px auto 100px;
+  position: relative;
 }
 .section-registation h1 {
   font-size: 32px;
   line-height: 32px;
   margin-bottom: 10px;
+}
+.section-registation .link-pref-page {
+  position: absolute;
+  top: -13px;
+  left: 15px;
 }
 @media (max-width: 768px) {
   .section-registation {
@@ -4435,6 +4445,8 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   }
   .section-registation h1 {
     text-align: center;
+    font-size: 18px;
+    line-height: 21px;
   }
   .section-registation .hello-motivation {
     margin-top: 0;
@@ -6403,7 +6415,9 @@ body._active_dropdown main:after {
 }
 @media (max-width: 768px) {
   .section-information__tasks-slider-field-btn {
-    bottom: 1px;
+    bottom: -2px;
+    padding-right: 12px;
+    right: 0px;
     padding-left: 19px;
   }
 }

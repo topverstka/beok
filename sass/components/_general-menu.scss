@@ -53,6 +53,8 @@
                     font-weight: 600;
                     font-size: 14px;
                     line-height: 130%;
+                    width: max-content;
+                    margin: auto;
                     svg {
                         fill: rgba(121, 126, 135, 0.15);
                         margin: 0 0 2px 0;
@@ -143,8 +145,10 @@
             }
             @media (max-width:$tablet) {
                 a:after {
-                    top: 0;
+                    top: -1px;
                     outline: 2px solid #fff;
+                    left: auto;
+                    right: -3px
                 }
             }
         }
