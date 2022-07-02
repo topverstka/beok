@@ -3456,9 +3456,9 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 .field-radio__line input {
   opacity: 0;
   position: absolute;
-  left: 10px;
-  width: 16px;
-  height: 16px;
+  left: 0;
+  width: 100%;
+  height: 100%;
   z-index: 2;
   cursor: pointer;
 }
@@ -4191,6 +4191,10 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   }
 }
 
+.page-account .link-pref-page {
+  transform: translateY(-4px);
+}
+
 .section-account--esc {
   display: flex;
   align-items: center;
@@ -4560,6 +4564,15 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   font-weight: 700;
   font-size: 18px;
 }
+.section-registation__partner--cabinet:hover {
+  border-color: #D13F1C;
+  color: #D13F1C;
+}
+.section-registation__partner--cabinet:active {
+  background: var(--accent2);
+  border-color: var(--outline);
+  color: var(--outline);
+}
 
 .section-registation__partner--info-text {
   font-weight: 500;
@@ -4629,7 +4642,9 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='3' y='6' width='18' height='15' rx='2' stroke='%23ED6A53' stroke-width='2'/%3E%3Cpath d='M3 10C3 8.11438 3 7.17157 3.58579 6.58579C4.17157 6 5.11438 6 7 6H17C18.8856 6 19.8284 6 20.4142 6.58579C21 7.17157 21 8.11438 21 10H3Z' fill='%23ED6A53'/%3E%3Cpath d='M7 3L7 6' stroke='%23ED6A53' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M17 3L17 6' stroke='%23ED6A53' stroke-width='2' stroke-linecap='round'/%3E%3Crect x='7' y='12' width='4' height='2' rx='0.5' fill='%23ED6A53'/%3E%3Crect x='7' y='16' width='4' height='2' rx='0.5' fill='%23ED6A53'/%3E%3Crect x='13' y='12' width='4' height='2' rx='0.5' fill='%23ED6A53'/%3E%3Crect x='13' y='16' width='4' height='2' rx='0.5' fill='%23ED6A53'/%3E%3C/svg%3E%0A");
   background-repeat: no-repeat;
   background-size: cover;
-  top: 50%;
+  top: 36px;
+  display: flex;
+  cursor: pointer;
 }
 @media (max-width: 768px) {
   .section-registation__field {
@@ -5240,6 +5255,11 @@ body._active_dropdown main:after {
   z-index: 999;
 }
 
+@media (max-width: 768px) {
+  .line-chart:not(.line-chart__area) .section-chart {
+    min-width: 350px !important;
+  }
+}
 .ct-label.ct-horizontal.ct-end {
   margin-top: 24px;
 }
@@ -5404,8 +5424,12 @@ body._active_dropdown main:after {
 }
 .varios-report__bottom .swiper {
   overflow: visible;
+  padding-right: 30px;
 }
 @media (max-width: 768px) {
+  .varios-report__bottom .swiper {
+    padding-right: 0;
+  }
   .varios-report__bottom .swiper-wrapper {
     display: grid;
     grid-template-columns: repeat(2, 48%);
@@ -5768,7 +5792,7 @@ body._active_dropdown main:after {
 .varios-report__bottom-element-field--info {
   display: flex;
   align-items: center;
-  margin-right: 23px;
+  margin-right: 0;
 }
 .varios-report__bottom-element-field--info p {
   font-weight: 600;
@@ -5800,9 +5824,11 @@ body._active_dropdown main:after {
 
 .varios-report__bottom-element-checkbox {
   display: inline-block;
-  height: 16px;
+  margin-left: auto;
+  height: 23px;
+  width: 46px;
   line-height: 28px;
-  margin-right: 10px;
+  margin-right: 0;
   position: relative;
   vertical-align: middle;
   font-size: 14px;
@@ -5824,7 +5850,7 @@ body._active_dropdown main:after {
   background: var(--outline);
 }
 .varios-report__bottom-element-checkbox input[type=checkbox]:checked + .varios-report__bottom-element-checkbox-switch:before {
-  transform: translateX(16px);
+  transform: translateX(24px);
   background: #fff;
   left: 0px;
 }
@@ -5838,18 +5864,19 @@ body._active_dropdown main:after {
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
-  height: 17px;
-  width: 32px;
+  height: 100%;
+  width: 100%;
   border-radius: 25%/50%;
   background: transparent;
   border: 1px solid var(--outline);
   transition: 0.2s;
+  padding: 2px 0 2px 2px;
 }
 .varios-report__bottom-element-checkbox-switch:before {
   content: "";
-  width: 12px;
-  height: 12px;
-  margin-left: 1.5px;
+  width: 17px;
+  height: 100%;
+  margin-left: 0;
   display: flex;
   align-items: center;
   border-radius: 50%;
@@ -6490,6 +6517,7 @@ body._active_dropdown main:after {
 
 .check-list__container {
   display: flex;
+  position: relative;
 }
 @media (max-width: 768px) {
   .check-list__container {
@@ -6559,6 +6587,22 @@ body._active_dropdown main:after {
   .check-list__form form {
     grid-template-columns: 1fr;
     grid-gap: 18px;
+  }
+}
+
+.check-list__info {
+  position: absolute;
+  right: 24px;
+  top: 25px;
+}
+.check-list__info svg {
+  width: 30px;
+  height: 30px;
+}
+@media (max-width: 768px) {
+  .check-list__info {
+    top: 18px;
+    right: 18px;
   }
 }
 

@@ -67,8 +67,12 @@
     }
     .swiper {
         overflow: visible;
+        padding-right: 30px;
     }
     @media (max-width:$tablet) {
+        .swiper {
+            padding-right: 0;
+        }
         .swiper-wrapper {
             display: grid;
             grid-template-columns: repeat(2, 48%);
@@ -433,7 +437,7 @@
 .varios-report__bottom-element-field--info {
     display: flex;
     align-items: center;
-    margin-right: 23px;
+    margin-right: 0;
     p {
         font-weight: 600;
         font-size: 12px;
@@ -463,9 +467,11 @@
 
 .varios-report__bottom-element-checkbox {
     display: inline-block;
-    height: 16px;
+    margin-left: auto;
+    height: 23px;
+    width: 46px;
     line-height: 28px;
-    margin-right: 10px;
+    margin-right: 0;
     position: relative;
     vertical-align: middle;
     font-size: 14px;
@@ -485,7 +491,7 @@
             background: $outline;
         }
         &:checked+.varios-report__bottom-element-checkbox-switch:before {
-            transform: translateX(16px);
+            transform: translateX(24px);
             background: #fff;
             left: 0px
         }
@@ -500,17 +506,18 @@
         flex-direction: column;
         justify-content: center;
         box-sizing: border-box;
-        height: 17px;
-        width: 32px;
+        height: 100%;
+        width: 100%;
         border-radius: 25%/50%;
         background: transparent;
         border: 1px solid $outline;
         transition: .2s;
+        padding: 2px 0 2px 2px;
         &:before {
             content: '';
-            width: 12px;
-            height: 12px;
-            margin-left: 1.5px;
+            width: 17px;
+            height: 100%;
+            margin-left: 0;
             display: flex;
             align-items: center;
             border-radius: 50%;

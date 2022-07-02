@@ -150,7 +150,7 @@
             <h1 class="hello">Мой прогресс</h1>
 
             <div class="section-progress">
-                <svg viewbox="0 0 0 0" style="height:0; width: 0;">
+                <svg viewbox="0 0 0 0" style="height:0; width: 0;position:absolute;opacity:0">
                 <defs>
                     <linearGradient x1="0" y1="0" x2="0" y2="1" id="linear-gradient-down">
                         <stop offset="0" stop-color="#ED6A53" stop-opacity="1"></stop>
@@ -501,7 +501,7 @@
         }).on('draw', function(data) {
             if (data.type === 'bar') {
                 data.element.attr({
-                    style: 'stroke-width: 30px;stroke: #ED6A53'
+                    style: window.innerWidth > 768 ? 'stroke-width: 30px;stroke: #ED6A53' : 'stroke-width: 24px;stroke: #ED6A53'
                 });
             }
         })
@@ -537,11 +537,13 @@
             }
 
         }).on('created', function(e) {
-            e.svg._node.closest('.section-chart').querySelectorAll('.ct-end').forEach((i, index) => {
-                if (index !== 0) {
-                    i.parentElement.setAttribute('x', Number(i.parentElement.getAttribute('x')) - 30)
-                }
-            });
+            if (window.innerWidth > 768) {
+                e.svg._node.closest('.section-chart').querySelectorAll('.ct-end').forEach((i, index) => {
+                    if (index !== 0) {
+                        i.parentElement.setAttribute('x', Number(i.parentElement.getAttribute('x')) - 30)
+                    }
+                });
+            }
 
             e.svg._node.closest('.section-chart').insertAdjacentHTML('afterbegin', '<div class="tooltip-hover"></div>');
 
@@ -585,11 +587,13 @@
             }
 
         }).on('created', function(e) {
-            e.svg._node.closest('.section-chart').querySelectorAll('.ct-end').forEach((i, index) => {
-                if (index !== 0) {
-                    i.parentElement.setAttribute('x', Number(i.parentElement.getAttribute('x')) - 30)
-                }
-            });
+            if (window.innerWidth > 768) {
+                e.svg._node.closest('.section-chart').querySelectorAll('.ct-end').forEach((i, index) => {
+                    if (index !== 0) {
+                        i.parentElement.setAttribute('x', Number(i.parentElement.getAttribute('x')) - 30)
+                    }
+                });
+            }
 
             console.log(e.svg._node.closest('.section-chart'))
 
@@ -636,11 +640,13 @@
             }
 
         }).on('created', function(e) {
-            e.svg._node.closest('.section-chart').querySelectorAll('.ct-end').forEach((i, index) => {
-                if (index !== 0) {
-                    i.parentElement.setAttribute('x', Number(i.parentElement.getAttribute('x')) - 30)
-                }
-            });
+            if (window.innerWidth > 768) {
+                e.svg._node.closest('.section-chart').querySelectorAll('.ct-end').forEach((i, index) => {
+                    if (index !== 0) {
+                        i.parentElement.setAttribute('x', Number(i.parentElement.getAttribute('x')) - 30)
+                    }
+                });
+            }
 
             e.svg._node.closest('.section-chart').insertAdjacentHTML('afterbegin', '<div class="tooltip-hover"></div>');
 

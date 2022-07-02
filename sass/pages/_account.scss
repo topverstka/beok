@@ -59,6 +59,12 @@
     }
 }
 
+.page-account {
+    .link-pref-page {
+        transform: translateY(-4px);
+    }
+}
+
 .section-account--esc {
     display: flex;
     align-items: center;

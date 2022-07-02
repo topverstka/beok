@@ -604,6 +604,14 @@ document.addEventListener('click', function(e) {
 
 
 
+if (find('[data-picker]')) {
+    new AirDatepicker('[data-picker]', {
+        minDate: new Date()
+    });
+}
+
+
+
 
 findAll('.list-report-all__element').forEach((i, index) => {
     i.addEventListener('click', () => {

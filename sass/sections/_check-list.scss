@@ -10,6 +10,7 @@
 
 .check-list__container {
     display: flex;
+    position: relative;
     @media (max-width: $tablet) {
         flex-direction: column;
         padding: 19px 0
@@ -73,6 +74,20 @@
             grid-template-columns: 1fr;
             grid-gap: 18px;
         }
+    }
+}
+
+.check-list__info {
+    position: absolute;
+    right: 24px;
+    top: 25px;
+    svg {
+        width: 30px;
+        height: 30px;
+    }
+    @media (max-width:$tablet) {
+        top: 18px;
+        right: 18px
     }
 }
 

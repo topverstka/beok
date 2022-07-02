@@ -434,9 +434,9 @@
     
     @media (max-width:$tablet) {
         .line-chart {
-            &:not(.line-chart__area):not(.line-chart__bar) {
+            &:not(.line-chart__area) {
                 .section-chart {
-                    //width: 600px !important
+                    min-width: 350px !important
                 }
             }
         }
