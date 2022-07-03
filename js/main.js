@@ -433,6 +433,7 @@ document.addEventListener('click', function(e) {
                 ${sing + text}
             </div>
         `);
+        find('#tasks-popup  .section-information__tasks-slider-text').style = null;
     }
 });
 
