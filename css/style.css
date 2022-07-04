@@ -2322,6 +2322,15 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 }
 .weeks-section__list--element[data-state-week=last] {
   background: var(--accent2);
+  cursor: pointer;
+  transition: 0.4s;
+}
+.weeks-section__list--element[data-state-week=last]:hover {
+  background: var(--outline);
+}
+.weeks-section__list--element[data-state-week=last]:hover .weeks-section__list--number,
+.weeks-section__list--element[data-state-week=last]:hover .weeks-section__list--week {
+  color: #fff;
 }
 .weeks-section__list--element[data-state-week=current] {
   background: var(--outline);
@@ -5046,6 +5055,10 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   margin-top: 50px;
 }
 @media (max-width: 768px) {
+  .line-chart__area[data-down] .section-chart, .line-chart__area[data-up] .section-chart {
+    margin-top: 0;
+    height: 70%;
+  }
   .line-chart__area .chart-tabs-section {
     overflow: visible;
     padding-left: 5px;
@@ -5305,11 +5318,18 @@ body._active_dropdown main:after {
 }
 .ct-label.ct-horizontal.ct-end {
   margin-top: 24px;
+  cursor: pointer;
+  width: max-content !important;
 }
 @media (max-width: 768px) {
   .ct-label.ct-horizontal.ct-end {
     margin-top: 13px;
   }
+}
+
+.line-chart__bar .ct-label.ct-horizontal.ct-end {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .result-line__chart {

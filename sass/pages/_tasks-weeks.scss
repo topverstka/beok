@@ -39,7 +39,16 @@
         }
     }
     &[data-state-week="last"] {
-        background: $accent2
+        background: $accent2;
+        cursor: pointer;
+        transition: .4s;
+        &:hover {
+            background: $outline;
+            .weeks-section__list--number,
+            .weeks-section__list--week {
+                color: #fff
+            }
+        }
     }
     &[data-state-week="current"] {
         background: $outline;

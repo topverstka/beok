@@ -654,6 +654,16 @@ if (find('[data-picker]')) {
     }
 }
 
+[...findAll('.weeks-section__list--element')].filter(el => {
+    if (el.getAttribute('data-state-week') !== 'next') {
+        el.addEventListener('click', (e) => {
+            find('.weeks-section__list--element[data-state-week="current"]').setAttribute('data-state-week', 'last');
+            el.setAttribute('data-state-week', 'current');
+        });
+    }
+
+});
+
 
 
 

@@ -445,6 +445,26 @@
                 tooltipChartTarget.innerText = positionValue + (targetValue ? ' ' + targetValue : '');
                 tooltipChartTarget.classList.add('_active');
                 tooltipChartTarget.style.left = (positionLeft - 25) + 'px';
+                // find('.ct-point__active') ? findAll('.ct-point__active').forEach(i => i.classList.remove('ct-point__active')) : '';
+                // e.target.classList.add('ct-point__active');
+            }
+
+
+            if (e.target.classList.contains('ct-end')) {
+                let countDate = e.target.dataset.count;
+                e.target.closest('svg').querySelectorAll('.ct-point').forEach(i => i.style = null);
+                let elementHover = e.target.closest('svg').querySelectorAll('.ct-point')[countDate];
+                elementHover.dispatchEvent(new Event('mouseover', {
+                    'bubbles': true
+                }));
+                elementHover.style.opacity = 1;
+                // let positionLeft = e.target.getAttribute('x1');
+                // let positionTop = e.target.getAttribute('y1');
+                // let positionValue = e.target.getAttribute('ct:value');
+                // tooltipChartTarget.style.top = (positionTop - 55) + 'px';
+                // tooltipChartTarget.innerText = positionValue + (targetValue ? ' ' + targetValue : '');
+                // tooltipChartTarget.classList.add('_active');
+                // tooltipChartTarget.style.left = (positionLeft - 25) + 'px';
             }
         });
 
@@ -452,6 +472,7 @@
             if (!e.target.classList.contains('ct-point') && e.target.closest('svg') && !e.target.closest('.line-chart__area')) {
                 e.target.closest('svg').parentElement.querySelector('.ct-chart-hover') ? e.target.closest('svg').parentElement.querySelector('.ct-chart-hover').style.display = 'none' : '';
                 e.target.closest('svg').parentElement.querySelector('.tooltip-hover').classList.remove('_active');
+                findAll('.ct-point').forEach(i => i.style = null);
             }
         });
 
@@ -484,6 +505,9 @@
         }).on('created', function(e) {
             e.svg._node.closest('.section-chart').querySelectorAll('.ct-bar').forEach((i, index) => {
                 i.insertAdjacentHTML('beforebegin', `<text x="${Number(i.getAttribute('x1')) - 4}" y="${Number(i.getAttribute('y2')) - 15}">${index + 1}</text>`);
+            });
+            e.svg._node.closest('.section-chart').querySelectorAll('.ct-end').forEach((i, index) => {
+                i.setAttribute('data-count', index);
             });
         });
 
@@ -545,14 +569,14 @@
                 });
             }
 
+            e.svg._node.closest('.section-chart').querySelectorAll('.ct-end').forEach((i, index) => {
+                i.setAttribute('data-count', index);
+            });
+
             e.svg._node.closest('.section-chart').insertAdjacentHTML('afterbegin', '<div class="tooltip-hover"></div>');
 
             rectHover.style.height = (e.svg._node.scrollHeight - 50) + 'px';
 
-
-            // document.querySelectorAll('.ct-chart-2 .ct-point').forEach((i, index) => {
-            //     i.insertAdjacentHTML('beforebegin', `<text x="${Number(i.getAttribute('x1')) - 4}" y="${Number(i.getAttribute('y1')) - 20}">${index + 1}</text>`);
-            // });
         });
 
 
@@ -601,6 +625,10 @@
 
 
             rectHover.style.height = (e.svg._node.scrollHeight - 50) + 'px';
+
+            e.svg._node.closest('.section-chart').querySelectorAll('.ct-end').forEach((i, index) => {
+                i.setAttribute('data-count', index);
+            });
 
 
             e.svg._node.closest('.section-chart').querySelectorAll('.ct-point').forEach((i, index) => {
@@ -651,6 +679,10 @@
             e.svg._node.closest('.section-chart').insertAdjacentHTML('afterbegin', '<div class="tooltip-hover"></div>');
 
             rectHover.style.height = (e.svg._node.scrollHeight - 50) + 'px';
+
+            e.svg._node.closest('.section-chart').querySelectorAll('.ct-end').forEach((i, index) => {
+                i.setAttribute('data-count', index);
+            });
 
 
             // document.querySelectorAll('.ct-chart-2 .ct-point').forEach((i, index) => {

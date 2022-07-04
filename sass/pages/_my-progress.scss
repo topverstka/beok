@@ -177,6 +177,13 @@
             margin-top: 50px
         }
         @media (max-width:$tablet) {
+            &[data-down],
+            &[data-up] {
+                .section-chart {
+                    margin-top: 0;
+                    height: 70%;
+                }
+            }
             .chart-tabs-section {
                 overflow: visible;
                 padding-left: 5px;
@@ -444,8 +451,17 @@
     
     .ct-label.ct-horizontal.ct-end {
         margin-top: 24px;
+        cursor: pointer;
+        width: max-content !important;
         @media (max-width: $tablet) {
             margin-top: 13px
+        }
+    }
+    
+    .line-chart__bar {
+        .ct-label.ct-horizontal.ct-end {
+            margin-left: auto;
+            margin-right: auto;
         }
     }
     
