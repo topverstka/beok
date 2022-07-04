@@ -5110,7 +5110,8 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 
 .line-chart__top--dropdown-list {
   position: absolute;
-  bottom: -128px;
+  top: 50px;
+  bottom: auto;
   padding: 12px;
   right: 0;
   width: 256px;

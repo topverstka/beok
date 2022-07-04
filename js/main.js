@@ -513,7 +513,7 @@ document.addEventListener('click', function(e) {
 
 
     if (returnElementDeligitaion(e, '.line-chart__top--dropdown') && !returnElementDeligitaion(e, '.line-chart__top--dropdown-list')) {
-
+        findAll('.line-chart__top--dropdown').forEach(i => { i.classList.remove('_show') });
         let dropdownTarget = e.target.closest('.line-chart__top--dropdown') ? e.target.closest('.line-chart__top--dropdown') : e.target.classList.contains('line-chart__top--dropdown');
         let dropdownList = dropdownTarget.querySelector('.line-chart__top--dropdown-list');
         !dropdownTarget.classList.contains('_show') ? dropdownTarget.classList.add('_show') : dropdownTarget.classList.remove('_show');
