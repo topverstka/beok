@@ -555,7 +555,7 @@ document.addEventListener('click', function(e) {
             i.classList.remove('_show');
             setTimeout(() => {
                 i.querySelector('.line-chart__top--dropdown-list').classList.remove('_active');
-            }, 200);
+            }, 10);
 
         });
         document.body.classList.remove('_active_dropdown');
