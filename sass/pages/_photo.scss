@@ -7,16 +7,16 @@
 }
 
 .page-photo {
-    h1.hello {
+    &:not(.content--page__visible) h1.hello {
         display: block;
         margin-bottom: 24px;
     }
     @media (max-width: $tablet) {
         .link-pref-page {
-            transform: none;
+            transform: translateY(5px);
         }
-        h1.hello {
-            margin-top: 20px;
+        &:not(.content--page__visible) h1.hello {
+            margin-top: 40px;
             font-family: 'RoadRadio';
             text-align: left;
             font-weight: 400;
@@ -100,12 +100,13 @@
             display: block;
             left: 1px;
             top: 3px;
-            outline: 2px solid var(--outline);
-            width: 14px;
-            height: 14px;
+            // outline: 2px solid var(--outline);
+            width: 14.5px;
+            height: 14.5px;
             border: 3.5px solid #fff;
             background: $outline;
             border-radius: 50%;
+            box-shadow: 0 0 0 1.5px $outline;
         }
         &:last-child {
             .take-photo__container-list--element-box:after {
@@ -154,6 +155,18 @@
         // border-width: 1px;
         background-image: url("data:image/svg+xml,%3Csvg width='1' height='56' viewBox='0 0 1 56' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0.5' y1='0.5' x2='0.500002' y2='55.5' stroke='%230E0E0E' stroke-linecap='round' stroke-dasharray='4 4'/%3E%3C/svg%3E%0A");
     }
+    &:before {
+        // content: '';
+        // position: absolute;
+        // display: block;
+        // left: 1px;
+        // top: 3px;
+        // width: 14px;
+        // height: 14px;
+        // border: 2px solid var(--outline);
+        // background: $outline;
+        // border-radius: 50%;
+    }
 }
 
 .take-photo__container--link {
@@ -167,6 +180,8 @@
     align-items: center;
     justify-content: space-between;
     margin-top: 20px;
+    font-weight: 700;
+    font-size: 18px;
     &:hover {
         background: #64DEA0
     }
@@ -184,6 +199,7 @@
     }
     @media (max-width:$tablet) {
         width: 100%;
+        font-size: 14px;
     }
 }
 

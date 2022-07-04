@@ -119,6 +119,9 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
     &:hover {
         color: $outline;
         &:after {
@@ -163,9 +166,12 @@
     &.section-information__tasks--width {
         width: 100%
     }
+    .swiper {
+        padding-right: 25px;
+    }
     .varios-report__top-arrow {
         position: absolute;
-        bottom: 6px;
+        bottom: 2px;
         right: 24px;
     }
     @media (max-width: $tablet) {

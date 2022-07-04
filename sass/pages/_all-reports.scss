@@ -617,6 +617,9 @@
         .reports-weeks-all__element-content {
             grid-template-columns: repeat(2, 1fr);
         }
+        .reports-weeks-all__element-content--element:last-child {
+            grid-column: 3/1;
+        }
         [data-condition="third"] {
             display: none;
         }

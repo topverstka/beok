@@ -854,6 +854,10 @@ img {
   pointer-events: none;
 }
 
+input[type=text] {
+  font-size: 14px;
+}
+
 input[type=number] {
   -moz-appearance: textfield;
 }
@@ -1318,6 +1322,10 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 .general-menu__nav-elem a:hover:after {
   outline: 2px solid #fff !important;
 }
+.general-menu__nav-elem a:active, .general-menu__nav-elem a:focus {
+  color: var(--main);
+  background-color: transparent;
+}
 .general-menu__nav-elem._active-menu svg {
   fill: var(--black);
 }
@@ -1363,10 +1371,21 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   align-items: center;
   color: #fff;
 }
+.general-menu__support a:hover {
+  opacity: 0.6;
+}
+.general-menu__support a:active, .general-menu__support a:focus {
+  color: var(--main);
+  opacity: 1;
+}
+.general-menu__support a:active svg, .general-menu__support a:focus svg {
+  filter: invert(1);
+}
 .general-menu__support a svg {
   width: 16px;
   height: 20px;
   margin-right: 15px;
+  transition: 0.3s;
 }
 @media (max-width: 768px) {
   .general-menu__support {
@@ -1380,6 +1399,9 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 }
 
 @media (max-width: 768px) {
+  .useful-information--page {
+    margin: 60px 0 100px 0;
+  }
   .useful-information--page .hello-motivation {
     display: none;
   }
@@ -1873,7 +1895,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   font-size: 16px;
   line-height: 120%;
   letter-spacing: -0.02em;
-  margin-bottom: 17px;
+  margin-bottom: 8px;
   display: flex;
   align-items: center;
 }
@@ -1962,16 +1984,16 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   }
 }
 
-.page-photo h1.hello {
+.page-photo:not(.content--page__visible) h1.hello {
   display: block;
   margin-bottom: 24px;
 }
 @media (max-width: 768px) {
   .page-photo .link-pref-page {
-    transform: none;
+    transform: translateY(5px);
   }
-  .page-photo h1.hello {
-    margin-top: 20px;
+  .page-photo:not(.content--page__visible) h1.hello {
+    margin-top: 40px;
     font-family: "RoadRadio";
     text-align: left;
     font-weight: 400;
@@ -2060,12 +2082,12 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   display: block;
   left: 1px;
   top: 3px;
-  outline: 2px solid var(--outline);
-  width: 14px;
-  height: 14px;
+  width: 14.5px;
+  height: 14.5px;
   border: 3.5px solid #fff;
   background: var(--outline);
   border-radius: 50%;
+  box-shadow: 0 0 0 1.5px var(--outline);
 }
 .take-photo__container-list > li:last-child .take-photo__container-list--element-box:after {
   display: none;
@@ -2113,7 +2135,6 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   height: 100%;
   background-image: url("data:image/svg+xml,%3Csvg width='1' height='56' viewBox='0 0 1 56' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0.5' y1='0.5' x2='0.500002' y2='55.5' stroke='%230E0E0E' stroke-linecap='round' stroke-dasharray='4 4'/%3E%3C/svg%3E%0A");
 }
-
 .take-photo__container--link {
   background: var(--accent);
   border-radius: 15px;
@@ -2125,6 +2146,8 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   align-items: center;
   justify-content: space-between;
   margin-top: 20px;
+  font-weight: 700;
+  font-size: 18px;
 }
 .take-photo__container--link:hover {
   background: #64DEA0;
@@ -2144,6 +2167,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 @media (max-width: 768px) {
   .take-photo__container--link {
     width: 100%;
+    font-size: 14px;
   }
 }
 
@@ -3080,6 +3104,9 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 }
 .reports-weeks-all__element[data-gender=men] .reports-weeks-all__element-content {
   grid-template-columns: repeat(2, 1fr);
+}
+.reports-weeks-all__element[data-gender=men] .reports-weeks-all__element-content--element:last-child {
+  grid-column: 3/1;
 }
 .reports-weeks-all__element[data-gender=men] [data-condition=third] {
   display: none;
@@ -4455,6 +4482,10 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 }
 
 @media (max-width: 768px) {
+  .section-registation__thanks {
+    height: 100vh;
+    margin-bottom: 0;
+  }
   .section-registation__thanks h1 {
     font-family: "RoadRadio";
     text-align: left;
@@ -4969,7 +5000,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   height: 16px;
   fill: transparent;
   margin-left: 4px;
-  margin-top: 2px;
+  margin-top: 0;
   transition: 0.4s;
 }
 
@@ -5428,6 +5459,17 @@ body._active_dropdown main:after {
 
 .varios-report__top-calendar-icon {
   margin-left: 15px;
+  position: relative;
+  cursor: pointer;
+}
+.varios-report__top-calendar-icon input {
+  position: absolute;
+  left: -7px;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  color: transparent;
 }
 
 .varios-report__bottom .swiper-slide {
@@ -6254,6 +6296,9 @@ body._active_dropdown main:after {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
 }
 .section-information__link:hover {
   color: var(--outline);
@@ -6303,9 +6348,12 @@ body._active_dropdown main:after {
 .section-information__tasks.section-information__tasks--width {
   width: 100%;
 }
+.section-information__tasks .swiper {
+  padding-right: 25px;
+}
 .section-information__tasks .varios-report__top-arrow {
   position: absolute;
-  bottom: 6px;
+  bottom: 2px;
   right: 24px;
 }
 @media (max-width: 768px) {

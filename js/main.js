@@ -606,9 +606,52 @@ document.addEventListener('click', function(e) {
 
 
 if (find('[data-picker]')) {
-    new AirDatepicker('[data-picker]', {
-        minDate: new Date()
+    let flage = false;
+    let dp = new AirDatepicker('[data-picker]', {
+        minDate: new Date(),
+        onShow(param) {
+            if (find('#birthday')) {
+                if (param === true) {
+                    flage = true
+                } else {
+                    flage = false
+                }
+            }
+        }
     });
+    if (find('[data-picker]')) {
+        window.addEventListener('click', function(e) {
+            if (find('.varios-report__top-calendar-icon') && !returnElementDeligitaion(e, '.varios-report__top-calendar-icon') && find('#air-datepicker-global-container').childElementCount > 0) {
+                dp.hide();
+            }
+
+            if (returnElementDeligitaion(e, '.varios-report__top-calendar-icon')) {
+                if (find('#air-datepicker-global-container').childElementCount > 0) {
+                    dp.hide();
+                } else {
+                    dp.show();
+                }
+            }
+
+
+            if (e.target.closest('[data-info]') && !e.target.hasAttribute('data-picker') && flage) {
+                if (find('#air-datepicker-global-container').childElementCount > 0) {
+                    dp.hide();
+                } else {
+                    dp.show();
+                }
+            }
+
+
+
+            if (flage && !e.target.closest('[data-info]')) {
+                if (find('#air-datepicker-global-container').childElementCount > 0) {
+                    dp.hide();
+                }
+            }
+
+        });
+    }
 }
 
 

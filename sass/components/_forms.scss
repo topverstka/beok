@@ -87,6 +87,10 @@
     pointer-events: none;
 }
 
+input[type="text"] {
+    font-size: 14px
+}
+
 input[type="number"] {
     -moz-appearance: textfield;
     &::-webkit-outer-spin-button,
