@@ -4510,6 +4510,11 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 }
 
 @media (max-width: 768px) {
+  .form-thanks-page {
+    overflow: hidden;
+  }
+}
+@media (max-width: 768px) {
   .section-registation__thanks {
     height: 100%;
     margin-bottom: 0;

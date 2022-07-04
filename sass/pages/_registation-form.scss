@@ -28,11 +28,12 @@
     }
 }
 
-// @media (max-width:$tablet) {
-//     .form-thanks-page {
-//         height: 100vh;
-//     }
-// }
+@media (max-width:$tablet) {
+    .form-thanks-page {
+        overflow: hidden;
+    }
+}
+
 .section-registation__thanks {
     @media (max-width: $tablet) {
         // height: 96vh;
