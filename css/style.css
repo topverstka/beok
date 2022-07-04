@@ -5665,10 +5665,10 @@ body._active_dropdown main:after {
   font-size: 14px;
   line-height: 130%;
 }
-.varios-report__bottom-element[disabled] {
+.varios-report__bottom-element[data-disabled] {
   opacity: 0.4;
 }
-.varios-report__bottom-element[disabled] input {
+.varios-report__bottom-element[data-disabled] input {
   pointer-events: none;
 }
 .varios-report__bottom-element svg {
