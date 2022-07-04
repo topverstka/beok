@@ -30,8 +30,9 @@
 
 .section-registation__thanks {
     @media (max-width: $tablet) {
-        height: 100vh;
+        height: 96vh;
         margin-bottom: 0;
+        overflow: hidden;
         h1 {
             font-family: 'RoadRadio';
             text-align: left;

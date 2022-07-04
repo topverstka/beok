@@ -444,7 +444,7 @@
                 tooltipChartTarget.style.top = (positionTop - 55) + 'px';
                 tooltipChartTarget.innerText = positionValue + (targetValue ? ' ' + targetValue : '');
                 tooltipChartTarget.classList.add('_active');
-                tooltipChartTarget.style.left = (positionLeft - 25) + 'px';
+                tooltipChartTarget.style.left = (positionLeft - (tooltipChartTarget.scrollWidth / 2)) + 'px';
                 // find('.ct-point__active') ? findAll('.ct-point__active').forEach(i => i.classList.remove('ct-point__active')) : '';
                 // e.target.classList.add('ct-point__active');
             }

@@ -4492,8 +4492,9 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 
 @media (max-width: 768px) {
   .section-registation__thanks {
-    height: 100vh;
+    height: 96vh;
     margin-bottom: 0;
+    overflow: hidden;
   }
   .section-registation__thanks h1 {
     font-family: "RoadRadio";
