@@ -4510,15 +4510,11 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 }
 
 @media (max-width: 768px) {
-  .form-thanks-page {
-    height: 100vh;
-  }
-}
-@media (max-width: 768px) {
   .section-registation__thanks {
     height: 100%;
     margin-bottom: 0;
     overflow: hidden;
+    position: static;
   }
   .section-registation__thanks h1 {
     font-family: "RoadRadio";
@@ -4571,14 +4567,6 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   width: 385px;
   max-width: 100%;
 }
-@media (max-width: 768px) {
-  .section-registation__partner {
-    display: flex;
-    flex-direction: column;
-    height: inherit;
-  }
-}
-
 .section-registation__partner--info {
   border-radius: 10px;
   background: var(--accent2);
@@ -4618,8 +4606,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 
 @media (max-width: 768px) {
   .section-registation__partner__btn {
-    position: static;
-    margin-top: auto;
+    position: absolute;
     left: 0;
     width: 95%;
     margin: auto;

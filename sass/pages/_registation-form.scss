@@ -28,18 +28,18 @@
     }
 }
 
-@media (max-width:$tablet) {
-    .form-thanks-page {
-        height: 100vh;
-    }
-}
-
+// @media (max-width:$tablet) {
+//     .form-thanks-page {
+//         height: 100vh;
+//     }
+// }
 .section-registation__thanks {
     @media (max-width: $tablet) {
         // height: 96vh;
         height: 100%;
         margin-bottom: 0;
         overflow: hidden;
+        position: static;
         h1 {
             font-family: 'RoadRadio';
             text-align: left;
@@ -88,9 +88,9 @@
     width: 385px;
     max-width: 100%;
     @media (max-width: $tablet) {
-        display: flex;
-        flex-direction: column;
-        height: inherit;
+        // display: flex;
+        // flex-direction: column;
+        // height: inherit;
     }
 }
 
@@ -129,8 +129,7 @@
 
 .section-registation__partner__btn {
     @media (max-width: $tablet) {
-        position: static;
-        margin-top: auto;
+        position: absolute;
         left: 0;
         width: 95%;
         margin: auto;
