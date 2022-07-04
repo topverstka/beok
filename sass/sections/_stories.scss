@@ -16,6 +16,9 @@
         background: transparent;
         padding: 0;
         margin-right: -12px;
+        .swiper {
+            padding-right: 12px;
+        }
         .swiper-slide {
             width: 100px;
             height: 100px
