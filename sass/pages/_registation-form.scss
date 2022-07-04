@@ -28,9 +28,15 @@
     }
 }
 
+@media (max-width:$tablet) {
+    .form-thanks-page {
+        height: 100vh;
+    }
+}
+
 .section-registation__thanks {
     @media (max-width: $tablet) {
-        height: 96vh;
+        // height: 96vh;
         margin-bottom: 0;
         overflow: hidden;
         h1 {
