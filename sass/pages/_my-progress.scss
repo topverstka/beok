@@ -454,7 +454,9 @@
         cursor: pointer;
         width: max-content !important;
         @media (max-width: $tablet) {
-            margin-top: 13px
+            margin-top: 13px;
+            width: 50% !important;
+            text-align: center !important;
         }
     }
     

@@ -95,10 +95,26 @@
         line-height: 120%;
         letter-spacing: -0.02em;
         color: #000000;
+        &:hover {
+            color: $outline;
+            svg path {
+                fill: $outline
+            }
+        }
+        &:active,
+        &:focus {
+            color: $gray;
+            svg path {
+                fill: $gray
+            }
+        }
         svg {
             width: 22px;
             height: 20px;
             margin-left: 10px;
+            path {
+                transition: .3s;
+            }
         }
     }
     @media (max-width: $tablet) {

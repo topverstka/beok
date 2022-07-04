@@ -2582,10 +2582,25 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   letter-spacing: -0.02em;
   color: #000000;
 }
+.your-reports__bottom--box .your-reports__bottom-link:hover {
+  color: var(--outline);
+}
+.your-reports__bottom--box .your-reports__bottom-link:hover svg path {
+  fill: var(--outline);
+}
+.your-reports__bottom--box .your-reports__bottom-link:active, .your-reports__bottom--box .your-reports__bottom-link:focus {
+  color: var(--gray);
+}
+.your-reports__bottom--box .your-reports__bottom-link:active svg path, .your-reports__bottom--box .your-reports__bottom-link:focus svg path {
+  fill: var(--gray);
+}
 .your-reports__bottom--box .your-reports__bottom-link svg {
   width: 22px;
   height: 20px;
   margin-left: 10px;
+}
+.your-reports__bottom--box .your-reports__bottom-link svg path {
+  transition: 0.3s;
 }
 @media (max-width: 768px) {
   .your-reports__bottom--box {
@@ -3531,6 +3546,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   height: 133px;
   width: 100%;
   resize: none;
+  font-size: 14px;
 }
 
 .section-questionnaire__form input[type=submit] {
@@ -5325,6 +5341,8 @@ body._active_dropdown main:after {
 @media (max-width: 768px) {
   .ct-label.ct-horizontal.ct-end {
     margin-top: 13px;
+    width: 50% !important;
+    text-align: center !important;
   }
 }
 
