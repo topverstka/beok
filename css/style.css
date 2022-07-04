@@ -4510,8 +4510,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 }
 
 @media (max-width: 768px) {
-  .form-thanks-page,
-body {
+  .form-thanks-page {
     height: 100vh;
   }
 }
@@ -4572,6 +4571,13 @@ body {
   width: 385px;
   max-width: 100%;
 }
+@media (max-width: 768px) {
+  .section-registation__partner {
+    display: flex;
+    flex-direction: column;
+    height: inherit;
+  }
+}
 
 .section-registation__partner--info {
   border-radius: 10px;
@@ -4612,7 +4618,8 @@ body {
 
 @media (max-width: 768px) {
   .section-registation__partner__btn {
-    position: absolute;
+    position: static;
+    margin-top: auto;
     left: 0;
     width: 95%;
     margin: auto;

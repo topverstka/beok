@@ -29,8 +29,7 @@
 }
 
 @media (max-width:$tablet) {
-    .form-thanks-page,
-    body {
+    .form-thanks-page {
         height: 100vh;
     }
 }
@@ -88,6 +87,11 @@
 .section-registation__partner {
     width: 385px;
     max-width: 100%;
+    @media (max-width: $tablet) {
+        display: flex;
+        flex-direction: column;
+        height: inherit;
+    }
 }
 
 .section-registation__partner--info {
@@ -125,7 +129,8 @@
 
 .section-registation__partner__btn {
     @media (max-width: $tablet) {
-        position: absolute;
+        position: static;
+        margin-top: auto;
         left: 0;
         width: 95%;
         margin: auto;
