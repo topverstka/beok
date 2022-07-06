@@ -1316,7 +1316,6 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   transition: all 0.2s;
 }
 .general-menu__nav-elem a:hover {
-  background-color: #fff;
   color: var(--black);
 }
 .general-menu__nav-elem a:hover svg {
@@ -1324,10 +1323,6 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 }
 .general-menu__nav-elem a:hover:after {
   outline: 2px solid #fff !important;
-}
-.general-menu__nav-elem a:active, .general-menu__nav-elem a:focus {
-  color: var(--main);
-  background-color: transparent;
 }
 .general-menu__nav-elem._active-menu svg {
   fill: var(--black);

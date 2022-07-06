@@ -104,7 +104,6 @@
                 transition: all 0.2s;
             }
             &:hover {
-                background-color: #fff;
                 color: var(--black);
                 svg {
                     fill: var(--black);
@@ -112,11 +111,6 @@
                 &:after {
                     outline: 2px solid #fff !important;
                 }
-            }
-            &:active,
-            &:focus {
-                color: $main;
-                background-color: transparent;
             }
         }
         &._active-menu {
