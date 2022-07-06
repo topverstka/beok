@@ -259,6 +259,15 @@
     }
 }
 
+.take-photo__upload-label {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    cursor: pointer;
+}
+
 .take-photo__upload-section-file {
     position: absolute;
     bottom: -11px;
