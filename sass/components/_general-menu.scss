@@ -20,16 +20,15 @@
         @media (max-width: $tablet) {
             position: fixed;
             top: auto;
-            bottom: 19px;
-            padding-top: 0;
+            bottom: 0;
+            padding-top: 8px;
             display: flex;
             align-items: center;
-            justify-content: center;
+            box-sizing: border-box;
             background: #FFFFFF;
-            box-shadow: 3px 3px 10px rgb(83 57 39 / 18%);
-            border-radius: 50px;
-            height: 61px;
-            width: 96%;
+            border: 1px solid rgba(144, 149, 158, 0.5);
+            height: 80px;
+            width: 100%;
             z-index: 9999;
             left: 0;
             right: 0;
@@ -38,10 +37,11 @@
             .general-menu__nav-list {
                 display: grid;
                 grid-template-columns: repeat(4, 1fr);
+                gap: 3px;
             }
             .general-menu__nav {
                 width: 100%;
-                padding: 0 15px;
+                padding: 0 23px;
             }
             .general-menu__nav-elem {
                 width: auto;
@@ -74,6 +74,11 @@
                 &:nth-of-type(4) {
                     order: 2
                 }
+            }
+        }
+        @media (max-width: 374px) {
+            .general-menu__nav {
+                padding: 0 15px;
             }
         }
     }
