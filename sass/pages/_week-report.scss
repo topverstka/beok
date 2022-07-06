@@ -659,8 +659,14 @@
     margin-right: -18px;
     &::-webkit-scrollbar {
         width: 7px;
+    }
+    &::-webkit-scrollbar-track {
         background: #F5BAA6;
         border-radius: 10px;
+    }
+    &::-webkit-scrollbar-button:end {
+        background-color: transparent;
+        height: 84%;
     }
     &::-webkit-scrollbar-thumb {
         background: $outline;
