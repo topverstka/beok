@@ -82,6 +82,12 @@
             }
         }
     }
+
+    .general-menu--hide--tablet {
+        @media (max-width: $tablet) {
+            display: none;
+        }
+    }
     
     .general-menu__logo {
         width: 110px;
