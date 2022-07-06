@@ -51,7 +51,10 @@
             width: 49px;
             height: 56px;
             margin: 0 auto 12px auto;
-            display: flex;
+            display: inline-flex;
+        }
+        .modal__icon {
+            text-align: center;
         }
         .modal__title {
             font-family: 'Raleway';
