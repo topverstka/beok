@@ -269,7 +269,6 @@
             &._active {
                 z-index: 9999999 !important;
                 transform: translateY(0);
-                transition: transform .4s, opacity .4s;
             }
             li {
                 height: auto;
