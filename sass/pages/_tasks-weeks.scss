@@ -180,6 +180,11 @@
 }
 
 .section-information__tasks--width {
+    .section-information-title {
+        font-size: 18px;
+        line-height: 21px;
+    }
+
     @media (max-width: $tablet) {
         margin-bottom: 100px;
         .section-information__tasks-slider {
