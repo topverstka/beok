@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <link rel="icon" href="./img/favicon.ico">
     <!-- Генератор фавикон - https://realfavicongenerator.net/ -->
     <title>BeOK</title>
@@ -17,9 +17,14 @@
 
     <main>
         <div class="section-questionnaire">
-            <div class="section-questionnaire--progress" style="--width-line: 50%"></div>
+            <a class="link-pref-page" href="#">
+                <svg class="">
+                    <use href="./img/icons-sprite.svg#icon-link-prev-mobile"></use>
+                </svg>
+            </a>
             <h1 class="hello">Еженедельный отчет</h1>
             <p class="hello-motivation">Внимательно отнесись к заполнению данных, на их основе команда выдаст тебе рекомендации</p>
+            <div class="section-questionnaire--progress" style="--width-line: 50%"></div>
             <form action="#" class="section-questionnaire__form">
                 <div class="section-questionnaire__content">
                     <a href="" class="take-photo__container--link">
@@ -116,7 +121,7 @@
                     <div class="field-text">
                         <h2>Мы видим, что ты начал тренироваться, это круто!</h2>
                         <div class="field-text__input" data-type="search">
-                            <input type="text" placeholder="Упражнения">
+                            <input type="button" value="Упражнения">
                         </div>
                         <p class="field-text__description">Выбери минимум 2 упражнения из списка (чем больше, тем лучше),<br> затем впиши вес снаряда и количество повторов с указанным весом за один подход</p>
                         <div class="field-text__selected--box">
