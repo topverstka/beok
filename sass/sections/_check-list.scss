@@ -1,8 +1,6 @@
 .check-list {
+    position: relative;
     margin: 70px 30px 40px 0;
-    border: 2px solid $accent;
-    border-radius: 15px;
-    overflow: hidden;
     @media (max-width: $tablet) {
         margin: 28px 0 100px 0;
     }
@@ -11,6 +9,9 @@
 .check-list__container {
     display: flex;
     position: relative;
+    overflow: hidden;
+    border: 2px solid $accent;
+    border-radius: 15px;
     @media (max-width: $tablet) {
         flex-direction: column;
         padding: 20px 0
@@ -81,13 +82,60 @@
     position: absolute;
     right: 24px;
     top: 25px;
+    z-index: 1;
+    cursor: pointer;
+    &:hover {
+        .check-list__info-tooltip {
+            opacity: 1;
+            transform: translate3d(0, -20px, 0);
+            z-index: 9;
+            pointer-events: all;
+        }
+    }
     svg {
         width: 30px;
         height: 30px;
     }
     @media (max-width:$tablet) {
         top: 18px;
-        right: 18px
+        right: 18px;
+        &:hover {
+            .check-list__info-tooltip {
+                transform: translate3d(0, -10px, 0);
+            }
+        }
+    }
+}
+
+.check-list__info-tooltip {
+    position: absolute;
+    right: -5px;
+    left: auto;
+    bottom: 28px;
+    width: 169px;
+    padding: 6px 9px;
+    background: var(--second);
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 130%;
+    opacity: 0;
+    z-index: -2;
+    transform: translate3d(0, -10px, 0);
+    transition: .4s;
+    pointer-events: none;
+    &:after {
+        content: '';
+        position: absolute;
+        background-image: url("data:image/svg+xml,%3Csvg width='16' height='14' viewBox='0 0 16 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.66268 12.5129C8.87074 13.6975 7.12926 13.6975 6.33732 12.5129L0.553807 3.86152C-0.334603 2.53259 0.617944 0.75 2.21649 0.75L13.7835 0.750001C15.3821 0.750002 16.3346 2.53258 15.4462 3.86152L9.66268 12.5129Z' fill='%23D2FADF'/%3E%3C/svg%3E%0A");
+        background-repeat: no-repeat;
+        width: 20px;
+        height: 20px;
+        bottom: -12px;
+        right: 8px;
+    }
+    @media (max-width:$tablet) {
+        transform: translate3d(0, -5px, 0);
     }
 }
 
