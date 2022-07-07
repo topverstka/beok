@@ -39,6 +39,12 @@ $btn-second-disabled: var(--btn-second-disabled);
     &:active {
         background: #D13F1C
     }
+    &:disabled {
+        opacity: 0.5;
+        &:hover {
+            background: $outline;
+        }
+    }
 }
 
 // Акцентная кнопка

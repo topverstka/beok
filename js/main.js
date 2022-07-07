@@ -160,17 +160,18 @@ function validationForm() {
 }
 
 function checkForms() {
-    for (const form of document.forms) {
+    const forms = document.querySelectorAll('form');
+    
+    forms.forEach((form) => {
         const submitNode = form.querySelector('[type=submit]');
-
-        if (!submitNode) break;
+        if (!submitNode) return;
 
         submitNode.disabled = true;
 
         form.addEventListener('input', () => {
             submitNode.disabled = false;
         }, { once: true });
-    }
+    });
 }
 
 checkForms();
