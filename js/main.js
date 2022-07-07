@@ -642,7 +642,7 @@ if (find('[data-empty]')) {
 if (find('[data-picker]')) {
     let flage = false;
     let dp = new AirDatepicker('[data-picker]', {
-        minDate: new Date(),
+        //minDate: new Date(),
         onShow(param) {
             if (find('#birthday')) {
                 if (param === true) {
@@ -655,11 +655,11 @@ if (find('[data-picker]')) {
     });
     if (find('[data-picker]')) {
         window.addEventListener('click', function(e) {
-            if (find('.varios-report__top-calendar-icon') && !returnElementDeligitaion(e, '.varios-report__top-calendar-icon') && find('#air-datepicker-global-container').childElementCount > 0) {
+            if (!e.target.closest('.air-datepicker-global-container') && find('.varios-report__top-calendar-icon') && !returnElementDeligitaion(e, '.varios-report__top-calendar-icon') && find('#air-datepicker-global-container').childElementCount > 0) {
                 dp.hide();
             }
 
-            if (returnElementDeligitaion(e, '.varios-report__top-calendar-icon')) {
+            if (!e.target.closest('.air-datepicker-global-container') && returnElementDeligitaion(e, '.varios-report__top-calendar-icon')) {
                 if (find('#air-datepicker-global-container').childElementCount > 0) {
                     dp.hide();
                 } else {
@@ -668,7 +668,7 @@ if (find('[data-picker]')) {
             }
 
 
-            if (e.target.closest('[data-info]') && !e.target.hasAttribute('data-picker') && flage) {
+            if (!e.target.closest('.air-datepicker-global-container') && e.target.closest('[data-info]') && !e.target.hasAttribute('data-picker') && flage) {
                 if (find('#air-datepicker-global-container').childElementCount > 0) {
                     dp.hide();
                 } else {
@@ -678,10 +678,21 @@ if (find('[data-picker]')) {
 
 
 
-            if (flage && !e.target.closest('[data-info]')) {
+            if (!e.target.closest('.air-datepicker-global-container') && flage && !e.target.closest('[data-info]')) {
                 if (find('#air-datepicker-global-container').childElementCount > 0) {
                     dp.hide();
                 }
+            }
+
+
+            if (returnElementDeligitaion(e, '.varios-report__top-calendar-right')) {
+                dp.show();
+                dp.next();
+            }
+
+            if (returnElementDeligitaion(e, '.varios-report__top-calendar-left')) {
+                dp.show();
+                dp.prev();
             }
 
         });
