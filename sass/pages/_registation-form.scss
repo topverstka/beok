@@ -7,6 +7,9 @@
         font-size: 32px;
         line-height: 32px;
         margin-bottom: 10px;
+        span:last-child {
+            display: none;
+        }
     }
     .link-pref-page {
         position: absolute;
@@ -20,6 +23,12 @@
             text-align: center;
             font-size: 18px;
             line-height: 21px;
+            span:first-child {
+                display: none;
+            }
+            span:last-child {
+                display: block;
+            }
         }
         .hello-motivation {
             margin-top: 0;
@@ -410,12 +419,19 @@
         color: #fff;
         font-weight: 700;
         font-size: 18px;
+        transition: $tr;
         &:hover {
             background: #F29D8E;
         }
         &:focus,
         &:active {
             background: #D13F1C
+        }
+        &:disabled {
+            opacity: 0.5;
+            &:hover {
+                background: $outline;
+            }
         }
     }
     @media (max-width: $tablet) {
