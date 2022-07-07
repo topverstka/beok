@@ -418,6 +418,9 @@
         color: $outline;
         font-family: 'RoadRadio';
     }
+    &:focus::placeholder {
+        color: transparent;
+    }
 }
 
 .varios-report__bottom-element-field {
