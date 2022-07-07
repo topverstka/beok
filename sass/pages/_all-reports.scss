@@ -131,7 +131,7 @@
     padding: 24px;
     overflow: hidden;
     margin-right: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 60px;
     .your-reports__bottom-element-list-line {
         &[data-info] {
             &:before {
@@ -180,6 +180,10 @@
 .reports-all-section__content--indicators {
     display: flex;
     align-items: center;
+    @media (min-width: 1600px) {
+        width: 1052px;
+        max-width: 100%;
+    }
     @media (max-width: $tablet) {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -204,6 +208,25 @@
         width: 168px;
         min-height: 68px;
         justify-content: center;
+        flex: 1;
+        &[data-up] {
+            &:after {
+                margin-left: 4px;
+                background-image: url("data:image/svg+xml,%3Csvg width='21' height='20' viewBox='0 0 21 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.25 15.8327L10.25 4.16602' stroke='%2390959E' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M4.41683 9.99935L10.2502 4.16602L16.0835 9.99935' stroke='%2390959E' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+                width: 20px;
+                height: 20px;
+                margin-bottom: 2px;
+            }
+        }
+        &[data-down] {
+            &:after {
+                background-image: url("data:image/svg+xml,%3Csvg width='21' height='20' viewBox='0 0 21 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.25 15.8327L10.25 4.16602' stroke='%232CA869%0A' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M4.41683 9.99935L10.2502 4.16602L16.0835 9.99935' stroke='%232CA869%0A' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+                margin-left: 4px;
+                transform: rotate(180deg);
+                width: 20px;
+                height: 20px;
+            }
+        }
         &:not(:last-child) {
             padding: 0;
             margin-right: 10px;
@@ -224,6 +247,7 @@
     min-height: 68px;
     display: flex;
     align-items: center;
+    flex: 2;
     margin-left: 10px;
 }
 
@@ -348,9 +372,8 @@
     margin-top: 20px;
     display: flex;
     justify-content: flex-end;
-    svg {
-        width: 22px;
-        height: 17px;
+    .swiper-button-prev {
+        margin-right: 29px;
     }
 }
 
