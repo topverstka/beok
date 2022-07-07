@@ -161,7 +161,7 @@ function validationForm() {
 
 function checkForms() {
     const forms = document.querySelectorAll('form');
-    
+
     forms.forEach((form) => {
         const submitNode = form.querySelector('[type=submit]');
         if (!submitNode) return;
@@ -615,6 +615,18 @@ document.addEventListener('click', function(e) {
     }
 
 });
+
+
+if (find('[data-empty]')) {
+    [...findAll('.your-reports__bottom-element-list-line:not([data-empty])')].filter(i => {
+        let elemWidth = i.scrollWidth;
+        if (find(`.your-reports__bottom-element-list-line[data-empty][data-info="${i.getAttribute('data-info')}"]`)) {
+            find(`.your-reports__bottom-element-list-line[data-empty][data-info="${i.getAttribute('data-info')}"]`).style.width = elemWidth + 'px';
+            return;
+        }
+    });
+}
+
 
 
 
