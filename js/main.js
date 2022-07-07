@@ -485,6 +485,12 @@ function swiperCustom(slideCount, margin, element, elementParent, breakpoint = {
     new Swiper(`${element}`, {
         slidesPerView: slideCount ? slideCount : 'auto',
         spaceBetween: margin ? margin : 0,
+        mousewheel: {
+            invert: false,
+            // forceToAxis: true,
+            thresholdDelta: 60,
+        },
+
         navigation: {
             nextEl: `${elementParent} .swiper-button-next`,
             prevEl: `${elementParent} .swiper-button-prev`,
