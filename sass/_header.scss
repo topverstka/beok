@@ -252,6 +252,12 @@
     }
 }
 
+.header__nav--hide--tablet {
+    @media (max-width: $tablet) {
+        display: none;
+    }
+}
+
 .header__nav-list--mobile {
     display: flex;
     align-items: center;

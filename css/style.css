@@ -514,6 +514,12 @@ img {
   }
 }
 
+@media (max-width: 768px) {
+  .header__nav--hide--tablet {
+    display: none;
+  }
+}
+
 .header__nav-list--mobile {
   display: flex;
   align-items: center;
@@ -4223,25 +4229,30 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 }
 @media (max-width: 768px) {
   .section-account {
-    margin: 20px 0 140px 0;
+    margin: 20px 0 100px 0;
   }
-  .section-account h1 {
-    font-family: "RoadRadio";
-    font-weight: 400;
-    font-size: 26px;
-    line-height: 26px;
+}
+
+.section-account__title {
+  margin-bottom: 8px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+}
+@media (max-width: 768px) {
+  .section-account__title {
     margin-bottom: 5px;
   }
 }
 
-.hello-mail {
+.section-account__mail {
   font-weight: 500;
   font-size: 16px;
   line-height: 130%;
   color: rgba(0, 0, 0, 0.5);
 }
 @media (max-width: 768px) {
-  .hello-mail {
+  .section-account__mail {
     font-size: 14px;
   }
 }
@@ -4284,6 +4295,11 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 
 .page-account .link-pref-page {
   transform: translateY(-4px);
+}
+@media (max-width: 768px) {
+  .page-account {
+    margin-top: 0;
+  }
 }
 
 .section-account--esc {
@@ -4481,6 +4497,12 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   justify-content: center;
   align-items: center;
 }
+.section-account__form input[type=submit]:disabled {
+  opacity: 0.5;
+}
+.section-account__form input[type=submit]:disabled:hover {
+  background: var(--outline);
+}
 @media (min-width: 769px) {
   .section-account__form input[type=submit]:hover {
     background: #F29D8E;
@@ -4506,6 +4528,12 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
     width: max-content;
     height: auto;
     margin-top: 0;
+  }
+  .section-account__form input[type=submit]:disabled {
+    opacity: 0.5;
+  }
+  .section-account__form input[type=submit]:disabled:hover {
+    background: transparent;
   }
 }
 
@@ -5908,6 +5936,9 @@ body._active_dropdown main:after {
   line-height: 18px;
   color: var(--outline);
   font-family: "RoadRadio";
+}
+.varios-report__bottom-element-input:focus::placeholder {
+  color: transparent;
 }
 
 .varios-report__bottom-element-field {

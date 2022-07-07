@@ -4,18 +4,22 @@
     position: relative;
     margin-bottom: 40px;
     @media (max-width: $tablet) {
-        margin: 20px 0 140px 0;
-        h1 {
-            font-family: 'RoadRadio';
-            font-weight: 400;
-            font-size: 26px;
-            line-height: 26px;
-            margin-bottom: 5px;
-        }
+        margin: 20px 0 100px 0;
     }
 }
 
-.hello-mail {
+.section-account__title {
+    margin-bottom: 8px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+
+    @media (max-width: $tablet) {
+        margin-bottom: 5px;
+    }
+}
+
+.section-account__mail {
     font-weight: 500;
     font-size: 16px;
     line-height: 130%;
@@ -62,6 +66,10 @@
 .page-account {
     .link-pref-page {
         transform: translateY(-4px);
+    }
+
+    @media (max-width: $tablet) {
+        margin-top: 0;
     }
 }
 
@@ -250,6 +258,15 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
+        &:disabled {
+            opacity: 0.5;
+
+            &:hover {
+                background: $outline;
+            }
+        }
+
         @media (min-width: $minHover) {
             &:hover {
                 background: #F29D8E;
@@ -275,6 +292,14 @@
             width: max-content;
             height: auto;
             margin-top: 0;
+
+            &:disabled {
+                opacity: 0.5;
+    
+                &:hover {
+                    background: transparent;
+                }
+            }
         }
     }
 }

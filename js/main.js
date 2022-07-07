@@ -159,9 +159,21 @@ function validationForm() {
     return con
 }
 
+function checkForms() {
+    for (const form of document.forms) {
+        const submitNode = form.querySelector('[type=submit]');
 
+        if (!submitNode) break;
 
+        submitNode.disabled = true;
 
+        form.addEventListener('input', () => {
+            submitNode.disabled = false;
+        }, { once: true });
+    }
+}
+
+checkForms();
 
 
 
