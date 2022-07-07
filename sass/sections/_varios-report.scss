@@ -453,12 +453,11 @@
     align-items: center;
     margin-right: 0;
     p {
+        margin-right: 14px;
         font-weight: 600;
-        font-size: 12px;
-        line-height: 110%;
+        font-size: 14px;
+        line-height: 15px;
         opacity: 0.4;
-        margin-left: 6px;
-        width: 70px
     }
     svg {
         width: 24px;
@@ -466,8 +465,10 @@
     }
     @media (max-width: $tablet) {
         p {
-            font-size: 10px;
-            width: 52px
+            margin-right: 10px;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 14px;
         }
         svg {
             width: 13px;
@@ -480,7 +481,9 @@
 }
 
 .varios-report__bottom-element-checkbox {
+    flex-shrink: 0;
     display: inline-block;
+    margin-top: auto;
     margin-left: auto;
     height: 23px;
     width: 46px;
