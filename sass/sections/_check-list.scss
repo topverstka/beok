@@ -13,7 +13,7 @@
     position: relative;
     @media (max-width: $tablet) {
         flex-direction: column;
-        padding: 19px 0
+        padding: 20px 0
     }
 }
 
@@ -132,10 +132,12 @@
     @media (max-width:$tablet) {
         label,
         input[type="checkbox"] {
-            width: 18px;
-            height: 18px
+            width: 32px;
+            height: 32px;
         }
         label {
+            width: 24px;
+            height: 24px;
             margin-right: 15px;
             border: 1px solid $accent;
             &:after {
