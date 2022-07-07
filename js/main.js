@@ -161,7 +161,7 @@ function validationForm() {
 
 function checkForms() {
     const forms = document.querySelectorAll('form');
-    
+
     forms.forEach((form) => {
         const submitNode = form.querySelector('[type=submit]');
         if (!submitNode) return;
@@ -488,6 +488,12 @@ function swiperCustom(slideCount, margin, element, elementParent, breakpoint = {
     new Swiper(`${element}`, {
         slidesPerView: slideCount ? slideCount : 'auto',
         spaceBetween: margin ? margin : 0,
+        mousewheel: {
+            invert: false,
+            // forceToAxis: true,
+            thresholdDelta: 60,
+        },
+
         navigation: {
             nextEl: `${elementParent} .swiper-button-next`,
             prevEl: `${elementParent} .swiper-button-prev`,
@@ -618,6 +624,18 @@ document.addEventListener('click', function(e) {
     }
 
 });
+
+
+if (find('[data-empty]')) {
+    [...findAll('.your-reports__bottom-element-list-line:not([data-empty])')].filter(i => {
+        let elemWidth = i.scrollWidth;
+        if (find(`.your-reports__bottom-element-list-line[data-empty][data-info="${i.getAttribute('data-info')}"]`)) {
+            find(`.your-reports__bottom-element-list-line[data-empty][data-info="${i.getAttribute('data-info')}"]`).style.width = elemWidth + 'px';
+            return;
+        }
+    });
+}
+
 
 
 
