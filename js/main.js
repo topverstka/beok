@@ -480,7 +480,7 @@ if (window.innerWidth > 768) {
 
 swiperCustom('auto', 12, '.swiperStories', null, { 768: { spaceBetween: 24 } });
 swiperCustom('auto', 12, '.swiperTasks', '.section-information__tasks');
-swiperCustom('auto', 10, '.swiperRecommend');
+swiperCustom('auto', 10, '.swiperRecommend', '.reports-all-section__content--recommendation');
 
 
 
