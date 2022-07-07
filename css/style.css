@@ -273,6 +273,12 @@ img {
   }
 }
 
+@media (max-width: 768px) {
+  .header--thin {
+    padding-top: 0;
+  }
+}
+
 .link-pref-page svg {
   width: 32px;
   height: 32px;
@@ -1288,6 +1294,9 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
     margin: 0 0 2px 0;
     height: 28px;
     width: 27px;
+  }
+  .general-menu .general-menu__nav-elem._active-menu svg {
+    fill: var(--black);
   }
   .general-menu .general-menu__nav-elem:nth-of-type(1) {
     order: 1;
@@ -5882,7 +5891,7 @@ body._active_dropdown main:after {
   font-size: 16px;
   line-height: 130%;
   margin-top: 9px;
-  width: 95%;
+  width: 100%;
 }
 @media (max-width: 768px) {
   .varios-report__bottom-element-title {
@@ -6050,12 +6059,11 @@ body._active_dropdown main:after {
   margin-right: 0;
 }
 .varios-report__bottom-element-field--info p {
+  margin-right: 14px;
   font-weight: 600;
-  font-size: 12px;
-  line-height: 110%;
+  font-size: 14px;
+  line-height: 15px;
   opacity: 0.4;
-  margin-left: 6px;
-  width: 70px;
 }
 .varios-report__bottom-element-field--info svg {
   width: 24px;
@@ -6063,8 +6071,10 @@ body._active_dropdown main:after {
 }
 @media (max-width: 768px) {
   .varios-report__bottom-element-field--info p {
-    font-size: 10px;
-    width: 52px;
+    margin-right: 10px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
   }
   .varios-report__bottom-element-field--info svg {
     width: 13px;
@@ -6078,7 +6088,9 @@ body._active_dropdown main:after {
 }
 
 .varios-report__bottom-element-checkbox {
+  flex-shrink: 0;
   display: inline-block;
+  margin-top: auto;
   margin-left: auto;
   height: 23px;
   width: 46px;
@@ -6822,7 +6834,7 @@ body._active_dropdown main:after {
 @media (max-width: 768px) {
   .check-list__container {
     flex-direction: column;
-    padding: 19px 0;
+    padding: 20px 0;
   }
 }
 
@@ -6946,10 +6958,12 @@ body._active_dropdown main:after {
 @media (max-width: 768px) {
   .check-list__form-field label,
 .check-list__form-field input[type=checkbox] {
-    width: 18px;
-    height: 18px;
+    width: 32px;
+    height: 32px;
   }
   .check-list__form-field label {
+    width: 24px;
+    height: 24px;
     margin-right: 15px;
     border: 1px solid var(--accent);
   }
