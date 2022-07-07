@@ -62,6 +62,11 @@
                         width: 27px;
                     }
                 }
+                &._active-menu {
+                    svg {
+                        fill: var(--black);
+                    }
+                }
                 &:nth-of-type(1) {
                     order: 1
                 }

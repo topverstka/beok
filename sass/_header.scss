@@ -16,6 +16,12 @@
     }
 }
 
+.header--thin {
+    @media (max-width: $tablet) {
+        padding-top: 0;
+    }
+}
+
 .link-pref-page {
     svg {
         width: 32px;
