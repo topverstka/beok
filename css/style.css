@@ -3213,6 +3213,9 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   position: static;
   transform: translate3d(0, 0, 0);
 }
+.section-tabs .your-reports__bottom-element-edit {
+  display: none;
+}
 @media (max-width: 768px) {
   .section-tabs {
     margin-right: 0;
