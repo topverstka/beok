@@ -240,7 +240,6 @@ let anchors = d.querySelectorAll('.anchor');
 for (let i = 0; i < anchors.length; i++) {
     anchors[i].addEventListener('click', function() {
         let anchor = this.getAttribute('href');
-        console.log(anchor)
         smoothScroll(anchor);
         if (this.closest('.header__nav--mobile')) {
             d.querySelector('.header__nav-burger').click();
@@ -286,7 +285,6 @@ function modal() {
                 const modal = document.querySelector(`#${dataBtn}`)
                 openModal(modal)
                 window.location.hash = dataBtn;
-                console.log(dataBtn);
                 if (dataBtn === 'alert-by') {
                     addElementInLottie('confetti', 'confetti.json');
                 }
@@ -503,6 +501,17 @@ document.addEventListener('change', function(e) {
 
 // file input add
 
+
+window.addEventListener('change', function(e) {
+    if (e.target.tagName === 'INPUT' && e.target.closest('.field-radio-line__elemement')) {
+        if (e.target.nextElementSibling.innerText === 'Да') {
+            e.target.closest('.field-radio-line').querySelector('.field-checkbox') ? e.target.closest('.field-radio-line').querySelector('.field-checkbox').style.display = 'block' : '';
+        } else {
+            e.target.closest('.field-radio-line').querySelector('.field-checkbox') ? e.target.closest('.field-radio-line').querySelector('.field-checkbox').style = null : '';
+        }
+    }
+});
+
 let returnElementDeligitaion = (event, element) => event.target.classList.contains(element.replace(/[^a-zа-яё0-9\s]/gi, ' ')) || event.target.closest(element);
 
 document.addEventListener('click', function(e) {
@@ -510,6 +519,11 @@ document.addEventListener('click', function(e) {
         e.target.closest('.take-photo__upload--photo').classList.remove('_active');
         e.target.closest('.take-photo__upload--photo').style = null
         e.target.closest('.take-photo__upload--photo').querySelector('.take-photo__upload-section-file').classList.remove('_active-delete')
+    }
+
+
+    if (e.target.hasAttribute('data-url')) {
+        location.href = e.target.getAttribute('data-url');
     }
 
 

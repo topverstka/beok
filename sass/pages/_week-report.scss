@@ -21,13 +21,12 @@
     }
     .hello-motivation {
         margin-bottom: 26px;
-
-        & + .section-questionnaire--progress {
+        &+.section-questionnaire--progress {
             margin-bottom: 26px;
         }
         @media (max-width: $tablet) {
             order: -1;
-            & + .section-questionnaire--progress {
+            &+.section-questionnaire--progress {
                 order: -2;
                 margin-bottom: 12px;
             }
@@ -574,7 +573,8 @@
 }
 
 .field-checkbox {
-    margin-bottom: 30px;
+    margin-top: 30px;
+    display: none;
     .field-checkbox__line {
         position: relative;
         display: flex;
@@ -632,7 +632,7 @@
         }
     }
     @media (max-width: $tablet) {
-        margin-bottom: 24px;
+        margin-top: 24px;
     }
 }
 
