@@ -5409,7 +5409,6 @@ circle {
 }
 [data-down] .section-chart .ct-point,
 [data-up] .section-chart .ct-point {
-  stroke: var(--main) !important;
   stroke-width: 12px !important;
 }
 
@@ -5425,6 +5424,9 @@ circle {
 }
 [data-up] .ct-series-a .ct-area {
   fill: url(#linear-gradient-up) !important;
+}
+[data-up] line.ct-point {
+  stroke: var(--accent) !important;
 }
 
 [data-up] .ct-line {
