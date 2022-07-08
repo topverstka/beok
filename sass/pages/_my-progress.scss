@@ -154,7 +154,7 @@
             z-index: -1;
             &[data-chart-body="days"] {
                 .ct-point {
-                    opacity: 0;
+                    // opacity: 0;
                     &:hover {
                         opacity: 1;
                     }

@@ -2113,12 +2113,19 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   }
   .take-photo__container .take-photo__container-box::-webkit-scrollbar {
     width: 3px;
+  }
+  .take-photo__container .take-photo__container-box::-webkit-scrollbar-track {
     background: #F5BAA6;
-    border-radius: 1px;
+    border-radius: 10px;
+  }
+  .take-photo__container .take-photo__container-box::-webkit-scrollbar-button:end {
+    background-color: transparent;
+    height: 42%;
+    display: block;
   }
   .take-photo__container .take-photo__container-box::-webkit-scrollbar-thumb {
     background: var(--outline);
-    border-radius: 1px;
+    border-radius: 10px;
   }
 }
 
@@ -5266,9 +5273,6 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   top: 0;
   width: 100%;
   z-index: -1;
-}
-.chart-tabs-section .chart-tab[data-chart-body=days] .ct-point {
-  opacity: 0;
 }
 .chart-tabs-section .chart-tab[data-chart-body=days] .ct-point:hover {
   opacity: 1;

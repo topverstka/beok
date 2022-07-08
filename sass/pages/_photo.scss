@@ -64,12 +64,19 @@
             padding-right: 10px;
             &::-webkit-scrollbar {
                 width: 3px;
+            }
+            &::-webkit-scrollbar-track {
                 background: #F5BAA6;
-                border-radius: 1px;
+                border-radius: 10px;
+            }
+            &::-webkit-scrollbar-button:end {
+                background-color: transparent;
+                height: 42%;
+                display: block;
             }
             &::-webkit-scrollbar-thumb {
                 background: $outline;
-                border-radius: 1px;
+                border-radius: 10px;
             }
         }
     }
