@@ -151,11 +151,21 @@
 
             <div class="fast-progress">
                 <div class="fast-progress__box fast-progress__box--general">
-                    <h2 class="fast-progress__title">Прогресс по текущей неделе
-                        <svg>
-                            <use xlink:href="./img/icons-sprite.svg#arr-bottom"></use>
-                        </svg>
-                    </h2>
+                    <div class="line-chart__top--dropdown">
+                        <div class="line-chart__top--dropdown--select-text">
+                            <p class="line-chart__top--dropdown--select-p">
+                                Прогресс по текущей неделе
+                            </p>
+                            <svg>
+                                <use xlink:href="./img/icons-sprite.svg#arr-bottom"></use>
+                            </svg>
+                        </div>
+                        <ul class="line-chart__top--dropdown-list">
+                            <li class="line-chart__top--dropdown-element _active">Прогресс по текущей неделе</li>
+                            <li class="line-chart__top--dropdown-element">Прогресс по всему курсу</li>
+                        </ul>
+                    </div>
+
                     <div class="fast-progress__bar">
                         <div class="fast-progress__bar-line" style="--width-line:25%"></div>
                         <div class="fast-progress__bar-count">25%</div>

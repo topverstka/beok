@@ -92,7 +92,7 @@ function myFunction() {
 function defineMarginContent() {
     if (window.innerWidth > 768 && find('.general-menu')) {
         let paddingScrollBar = window.getComputedStyle(find('.general-menu')).paddingRight;
-        let widthScrollBar = find('.general-menu').scrollWidth + parseInt(paddingScrollBar);
+        let widthScrollBar = find('.general-menu').scrollWidth;
         find('.page-content').style.marginLeft = `${widthScrollBar}px`;
     }
 }
@@ -457,27 +457,6 @@ if (window.innerWidth > 768) {
     swiperCustom('auto', 16, '.mySwiper', '.varios-report');
 }
 
-
-// let swiperTasks = new Swiper(".swiperTasks", {
-//     slidesPerView: 'auto',
-//     spaceBetween: 12,
-//     navigation: {
-//         nextEl: ".section-information__tasks .swiper-button-next",
-//         prevEl: ".section-information__tasks .swiper-button-prev",
-//     },
-// });
-
-
-// let swiperStories = new Swiper(".swiperStories", {
-//     slidesPerView: 'auto',
-//     spaceBetween: 12,
-//     breakpoints: {
-//         768: {
-//             spaceBetween: 24,
-//         }
-//     }
-// });
-
 swiperCustom('auto', 12, '.swiperStories', null, { 768: { spaceBetween: 24 } });
 swiperCustom('auto', 12, '.swiperTasks', '.section-information__tasks');
 swiperCustom('auto', 10, '.swiperRecommend', '.reports-all-section__content--recommendation');
@@ -561,7 +540,7 @@ document.addEventListener('click', function(e) {
     }
 
 
-    if (returnElementDeligitaion(e, '.line-chart__top--dropdown-list')) {
+    if (returnElementDeligitaion(e, '.line-chart__top--dropdown-list') && returnElementDeligitaion(e, '.line-chart__top--dropdown-element')) {
         let textBox = e.target.closest('.line-chart__top--dropdown').querySelector('.line-chart__top--dropdown--select-p');
         textBox.innerText = e.target.innerText;
         e.target.closest('.line-chart__top--dropdown-list').querySelector('.line-chart__top--dropdown-element._active').classList.remove('_active');
