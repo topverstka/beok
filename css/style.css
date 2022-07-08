@@ -2946,7 +2946,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   background: #fff;
   border-radius: 5px;
   overflow: hidden;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
 }
 .reports-all-section__content--diet__element._dropdown-show .reports-all-section__content--diet__element--btn svg {
   transform: rotate(180deg);
