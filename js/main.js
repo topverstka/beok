@@ -615,8 +615,13 @@ if (find('[data-empty]')) {
     });
 }
 
-
-
+if (find('.reports-all-section__content--indicators')) {
+    let arrCountElem = [];
+    findAll('.reports-all-section__content--indicators .reports-all-section__content--element').forEach(i => {
+        i.scrollWidth !== 0 ? arrCountElem.push(i) : '';
+    });
+    find('.reports-all-section__content .reports-all-section__content--element-calories').style.gridColumn = `${arrCountElem.length}/1`;
+}
 
 if (find('[data-picker]')) {
     let flage = false;

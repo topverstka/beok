@@ -2579,6 +2579,11 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   }
 }
 
+@media (max-width: 768px) {
+  .reports-page .header {
+    display: none;
+  }
+}
 .list-report-all {
   margin-bottom: 27px;
   display: flex;
@@ -2753,7 +2758,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 @media (max-width: 768px) {
   .reports-all-section__content--indicators {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(0px, 1fr));
     grid-gap: 10px;
   }
   .reports-all-section__content--indicators .reports-all-section__content--element[data-info] {
