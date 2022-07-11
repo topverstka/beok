@@ -161,22 +161,51 @@ function validationForm() {
     return con
 }
 
-function checkForms() {
-    const forms = document.querySelectorAll('form');
+// function checkForms() {
+//     const forms = document.querySelectorAll('form');
 
-    forms.forEach((form) => {
-        const submitNode = form.querySelector('[type=submit]');
-        if (!submitNode) return;
+//     forms.forEach((form) => {
+//         const submitNode = form.querySelector('[type=submit]');
+//         if (!submitNode) return;
 
-        submitNode.disabled = true;
+//         submitNode.disabled = true;
 
-        form.addEventListener('change', () => {
-            submitNode.disabled = false;
-        }, { once: true });
-    });
-}
+//         form.addEventListener('change', () => {
+//             submitNode.disabled = false;
+//         }, { once: true });
+//     });
+// }
 
-checkForms();
+// checkForms();
+
+
+document.querySelectorAll('form input[type="submit"]').forEach(i => i.disabled = true)
+
+
+document.addEventListener('input', function(e) {
+    if (e.target.closest('form')) {
+        let arrValueBool = [];
+        let valueField = [...e.target.closest('form').querySelectorAll('.required')].every(i => i.value !== '');
+        let valueFieldRadio = [...e.target.closest('form').querySelectorAll('input[type="checkbox"].required')].every(i => i.checked);
+
+        e.target.closest('form').querySelectorAll('.required').forEach(i => {
+            if (i.tagName !== 'INPUT') {
+                i.querySelector('input:checked') ? arrValueBool.push(true) : arrValueBool.push(false);
+            }
+        });
+
+
+        if (valueField && valueFieldRadio && !arrValueBool.includes(false)) {
+            e.target.closest('form').querySelector('input[type="submit"]').disabled = false;
+        } else {
+            e.target.closest('form').querySelector('input[type="submit"]').disabled = true;
+        }
+
+
+
+    }
+
+});
 
 
 
