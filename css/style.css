@@ -212,6 +212,11 @@ img {
   max-width: 100%;
 }
 
+@media (max-width: 768px) {
+  .height-vh-mobile {
+    height: 100vh;
+  }
+}
 .container {
   max-width: 1240px;
   width: 100%;

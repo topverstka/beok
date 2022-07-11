@@ -60,6 +60,12 @@ img {
     max-width: 100%;
 }
 
+@media (max-width: $tablet) {
+    .height-vh-mobile {
+        height: 100vh;
+    }
+}
+
 @import '_grid'; // Сетка
 @import './header';
 @import './footer';
