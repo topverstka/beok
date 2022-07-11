@@ -616,7 +616,7 @@ document.addEventListener('click', function(e) {
     }
 
     if (e.target.classList.contains('modal-field__count--minus') || e.target.closest('.modal-field__count--minus')) {
-        e.target.closest('.modal-field__count').querySelector('.modal-field__count--number').innerText > 0 ? e.target.closest('.modal-field__count').querySelector('.modal-field__count--number').innerText = Number(e.target.closest('.modal-field__count').querySelector('.modal-field__count--number').innerText) - 1 : 0;
+        e.target.closest('.modal-field__count').querySelector('.modal-field__count--number').innerText > 1 ? e.target.closest('.modal-field__count').querySelector('.modal-field__count--number').innerText = Number(e.target.closest('.modal-field__count').querySelector('.modal-field__count--number').innerText) - 1 : 1;
     }
 
 });
