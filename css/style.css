@@ -171,6 +171,7 @@ body {
   line-height: 1.5;
   overflow-x: hidden;
   font-feature-settings: "pnum" on, "lnum" on;
+  touch-action: pan-x pan-y;
 }
 body._lock {
   overflow: hidden;
@@ -5817,6 +5818,7 @@ body._active_dropdown main:after {
   height: 100%;
   z-index: -1;
   color: transparent;
+  opacity: 0;
 }
 
 .varios-report__bottom .swiper-slide {
