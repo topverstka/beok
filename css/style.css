@@ -2742,7 +2742,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   }
   .reports-all-section .your-reports__bottom-element-edit {
     position: absolute;
-    top: -41px;
+    top: -44px;
     right: 0;
   }
   .reports-all-section .your-reports__bottom-element-edit svg {
