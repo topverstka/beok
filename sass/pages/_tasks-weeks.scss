@@ -3,6 +3,9 @@
     overflow-y: hidden;
     overflow-x: auto;
     padding-bottom: 22px;
+    &::-webkit-scrollbar {
+        display: none;
+    }
     @media (max-width: $tablet) {
         margin-bottom: 4px;
     }
@@ -184,7 +187,6 @@
         font-size: 18px;
         line-height: 21px;
     }
-
     @media (max-width: $tablet) {
         margin-bottom: 100px;
         .section-information__tasks-slider {

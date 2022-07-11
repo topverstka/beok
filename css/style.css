@@ -2373,6 +2373,9 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   overflow-x: auto;
   padding-bottom: 22px;
 }
+.weeks-section::-webkit-scrollbar {
+  display: none;
+}
 @media (max-width: 768px) {
   .weeks-section {
     margin-bottom: 4px;
@@ -6855,7 +6858,6 @@ body._active_dropdown main:after {
   .section-information__tasks-slider-field-btn {
     bottom: 0px;
     line-height: 1;
-    padding-bottom: 1px;
     padding-right: 12px;
     right: 0px;
     padding-left: 19px;
