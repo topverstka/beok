@@ -6729,7 +6729,7 @@ body._active_dropdown main:after {
     margin-left: 12px;
   }
   .section-information__tasks .swiper {
-    padding-right: 12px;
+    padding-right: 24px;
   }
   .section-information__tasks.section-information__tasks--width {
     margin-left: 0;

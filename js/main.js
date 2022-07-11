@@ -110,7 +110,9 @@ function heightSlideTasks() {
         });
     }
 }
-heightSlideTasks();
+
+
+window.innerWidth > 768 ? heightSlideTasks() : '';
 
 
 window.addEventListener('resize', function(e) {
@@ -168,7 +170,7 @@ function checkForms() {
 
         submitNode.disabled = true;
 
-        form.addEventListener('input', () => {
+        form.addEventListener('change', () => {
             submitNode.disabled = false;
         }, { once: true });
     });
