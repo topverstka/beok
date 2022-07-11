@@ -214,7 +214,7 @@ img {
 
 @media (max-width: 768px) {
   .height-vh-mobile {
-    height: 100vh;
+    height: inherit;
   }
 }
 .container {
@@ -1441,7 +1441,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 
 @media (max-width: 768px) {
   .useful-information--page {
-    margin: 60px 0 60px 0;
+    margin: 60px 0 0 0;
   }
   .useful-information--page .hello-motivation {
     display: none;

@@ -62,7 +62,7 @@ img {
 
 @media (max-width: $tablet) {
     .height-vh-mobile {
-        height: 100vh;
+        height: inherit;
     }
 }
 
