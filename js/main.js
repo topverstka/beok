@@ -559,6 +559,7 @@ document.addEventListener('click', function(e) {
         textBox.innerText = e.target.innerText;
         e.target.closest('.line-chart__top--dropdown-list').querySelector('.line-chart__top--dropdown-element._active').classList.remove('_active');
         e.target.classList.add('_active');
+        e.target.closest('.line-chart__top--dropdown-list').classList.remove('_active');
         e.target.closest('.line-chart__top--dropdown').classList.remove('_show');
         window.innerWidth < 768 ? document.body.classList.remove('_active_dropdown') : '';
     }

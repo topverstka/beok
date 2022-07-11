@@ -200,7 +200,10 @@ width: auto; */
     }
     @media (max-width:$tablet) {
         // overflow-y: auto;
-        width: 100%
+        width: 100%;
+        .chart-tab {
+            width: 100%
+        }
     }
 }
 

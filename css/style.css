@@ -5322,6 +5322,9 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   .chart-tabs-section {
     width: 100%;
   }
+  .chart-tabs-section .chart-tab {
+    width: 100%;
+  }
 }
 
 .line-chart__area .chart-tabs-section {
