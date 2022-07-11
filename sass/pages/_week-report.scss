@@ -51,18 +51,24 @@
     }
     @media (max-width: $tablet) {
         padding: 0 12px;
-        margin: 40px 0 28px 0;
+        margin: 20px 0 28px 0;
+        position: relative;
         .hello {
             font-weight: 700;
             font-size: 18px;
             line-height: 21px;
             font-family: 'Raleway';
-            margin-bottom: 10px;
+            margin-bottom: 24px;
+            text-align: center;
         }
         .hello-motivation {
             font-size: 14px;
             line-height: 130%;
             margin-bottom: 20px;
+        }
+        .link-pref-page {
+            position: absolute;
+            top: -16px;
         }
     }
 }

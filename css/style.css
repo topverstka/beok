@@ -3527,19 +3527,25 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 @media (max-width: 768px) {
   .section-questionnaire {
     padding: 0 12px;
-    margin: 40px 0 28px 0;
+    margin: 20px 0 28px 0;
+    position: relative;
   }
   .section-questionnaire .hello {
     font-weight: 700;
     font-size: 18px;
     line-height: 21px;
     font-family: "Raleway";
-    margin-bottom: 10px;
+    margin-bottom: 24px;
+    text-align: center;
   }
   .section-questionnaire .hello-motivation {
     font-size: 14px;
     line-height: 130%;
     margin-bottom: 20px;
+  }
+  .section-questionnaire .link-pref-page {
+    position: absolute;
+    top: -16px;
   }
 }
 
