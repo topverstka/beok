@@ -5561,6 +5561,7 @@ circle {
 .section-chart .ct-point {
   stroke-width: 18px;
   stroke: var(--outline) !important;
+  cursor: pointer;
 }
 .section-chart .ct-point__double {
   stroke-width: 8px;
@@ -5611,6 +5612,13 @@ body._active_dropdown main:after {
   margin-top: 24px;
   cursor: pointer;
   width: max-content !important;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 100%;
+  color: var(--gray);
+}
+.ct-label.ct-horizontal.ct-end:hover {
+  color: var(--outline);
 }
 @media (max-width: 768px) {
   .ct-label.ct-horizontal.ct-end {

@@ -2,23 +2,7 @@ let rectHover = document.createElement('div');
 let tooltipChart = document.createElement('div');
 rectHover.classList.add('ct-chart-hover');
 tooltipChart.classList.add('tooltip-hover');
-window.addEventListener("load", function(e) {
-    // find('.ct-chart').insertAdjacentHTML('afterbegin', `<div class="tooltip-ct"></div>`);
-    // let pointPosition = find('.ct-point');
-    // //console.log(pointPosition);
-    // find('.tooltip-ct').style.cssText = `
-    //     left: ${Number(pointPosition.getAttribute('x1')) - 20}px;
-    //     top: ${Number(pointPosition.getAttribute('y1')) - 45}px;
-    // `;
-    // find('.tooltip-ct').innerText = pointPosition.getAttribute('ct:value');
-    // find('.ct-chart-2').appendChild(tooltipChart);
-    // document.querySelectorAll('.ct-chart-2 .ct-point').forEach((i, index) => {
-    //     i.insertAdjacentHTML('beforebegin', `<text x="${Number(i.getAttribute('x1')) - 5}" y="${Number(i.getAttribute('y1')) - 15}">${index + 1}</text>`);
-    // });
-});
-// find('.ct-chart-all').append(rectHover);
-//  rectHover.setAttribute('style', 'transform: translate(-15px,-8px)');
-// let heightCharts = find('.ct-chart-2').offsetHeight;
+
 document.addEventListener('click', function(e) {
     if (e.target.classList.contains('ct-point')) {
         let positionLeft = e.target.getAttribute('x1');
@@ -32,8 +16,25 @@ document.addEventListener('click', function(e) {
         tooltipChartTarget.innerText = 'в среднем\n' + positionValue + (targetValue ? ' ' + targetValue : '');
         tooltipChartTarget.classList.add('_active');
         tooltipChartTarget.style.left = (positionLeft - (tooltipChartTarget.scrollWidth / 2)) + 'px';
-        // find('.ct-point__active') ? findAll('.ct-point__active').forEach(i => i.classList.remove('ct-point__active')) : '';
-        // e.target.classList.add('ct-point__active');
+
+
+        let countDate = e.target;
+
+        e.target.closest('svg').querySelectorAll('.ct-end[data-count]').forEach(i => i.style = null);
+
+        [...countDate.parentElement.querySelectorAll('line')].find((i, index) => {
+            if (i === countDate) {
+                e.target.closest('svg').querySelectorAll('.ct-end[data-count]')[index].style.color = "#ED6A53";
+            }
+        });
+
+        if (e.target.closest('svg').querySelector('text[data-count]')) {
+            countDate = e.target.previousSibling.dataset.count;
+            e.target.closest('svg').querySelectorAll('text[data-count]').forEach(i => i.style = null);
+            let elementHover = e.target.closest('svg').querySelectorAll('text[data-count]')[countDate];
+            elementHover.style.fill = "#ED6A53";
+        }
+
     }
 
 
@@ -60,6 +61,7 @@ document.addEventListener('mouseout', function(e) {
         e.target.closest('svg').parentElement.querySelector('.ct-chart-hover') ? e.target.closest('svg').parentElement.querySelector('.ct-chart-hover').style.display = 'none' : '';
         e.target.closest('svg').parentElement.querySelector('.tooltip-hover').classList.remove('_active');
         findAll('.ct-point').forEach(i => i.style = null);
+        findAll('[data-count]').forEach(i => i.style = null);
     }
 });
 
@@ -549,7 +551,7 @@ new Chartist.Line('.ct-chart-3', {
 
 
     e.svg._node.closest('.section-chart').querySelectorAll('.ct-point').forEach((i, index) => {
-        i.insertAdjacentHTML('beforebegin', `<text x="${Number(i.getAttribute('x1')) - 4}" y="${Number(i.getAttribute('y1')) - 20}">${index + 1}</text>`);
+        i.insertAdjacentHTML('beforebegin', `<text data-count="${index}" x="${Number(i.getAttribute('x1')) - 4}" y="${Number(i.getAttribute('y1')) - 20}">${index + 1}</text>`);
     });
 });
 

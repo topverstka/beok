@@ -451,7 +451,8 @@ circle {
     }
     .ct-point {
         stroke-width: 18px;
-        stroke: $outline !important
+        stroke: $outline !important;
+        cursor: pointer;
     }
     .ct-point__double {
         stroke-width: 8px;
@@ -506,6 +507,13 @@ body._active_dropdown {
     margin-top: 24px;
     cursor: pointer;
     width: max-content !important;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 100%;
+    color: $gray;
+    &:hover {
+        color: $outline
+    }
     @media (max-width: $tablet) {
         margin-top: 13px;
         width: 70% !important;
