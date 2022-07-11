@@ -776,3 +776,10 @@ if (find('.field-range__slide--input')) {
         setValue(this.value)
     });
 }
+
+
+document.addEventListener('input', function(e) {
+    if (e.target.getAttribute('type') === 'number') {
+        e.target.value = e.target.value.replace(/[^\d]/, '')
+    }
+});
