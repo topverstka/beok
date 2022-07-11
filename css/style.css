@@ -5150,6 +5150,28 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   padding-bottom: 30px;
 }
 
+.ct-start-text__chart {
+  transform: translate(-5px, 6px);
+}
+@media (max-width: 768px) {
+  .ct-start-text__chart {
+    position: absolute;
+    left: 0;
+    top: 18px;
+  }
+}
+
+.ct-start-text__element {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 100%;
+  position: absolute;
+  color: var(--gray);
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
 .line-chart__weight {
   display: flex;
   align-items: flex-end;
@@ -5262,6 +5284,15 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   margin-right: 20px;
 }
 
+.ct-chart__container {
+  height: 100%;
+}
+@media (max-width: 768px) {
+  .ct-chart__container {
+    overflow-y: auto;
+  }
+}
+
 .chart-tabs-section {
   height: 100%;
   position: relative;
@@ -5271,7 +5302,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   transition: 0.4s;
   position: absolute;
   top: 0;
-  width: 100%;
+  width: 96%;
   z-index: -1;
 }
 .chart-tabs-section .chart-tab[data-chart-body=days] .ct-point:hover {
@@ -5284,7 +5315,6 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 }
 @media (max-width: 768px) {
   .chart-tabs-section {
-    overflow-y: auto;
     width: 100%;
   }
 }
@@ -5458,7 +5488,7 @@ circle {
   font-weight: 700;
   font-size: 14px;
   line-height: 130%;
-  border-radius: 50px;
+  border-radius: 5px;
 }
 .tooltip-ct:after {
   content: "";
@@ -5480,17 +5510,12 @@ circle {
   top: 15px;
   width: 30px;
 }
-@media (max-width: 768px) {
-  .ct-chart-hover {
-    top: 35px;
-  }
-}
 
 .tooltip-hover {
   position: absolute;
   z-index: 9;
   background: #0E0E0E;
-  border-radius: 50px;
+  border-radius: 5px;
   color: #fff;
   padding: 6px 10px;
   font-weight: 700;
@@ -5498,6 +5523,7 @@ circle {
   line-height: 130%;
   opacity: 0;
   width: max-content;
+  text-align: center;
 }
 .tooltip-hover:after {
   content: "";
@@ -5536,6 +5562,11 @@ circle {
   stroke-width: 18px;
   stroke: var(--outline) !important;
 }
+.section-chart .ct-point__double {
+  stroke-width: 8px;
+  stroke: var(--main);
+  stroke-linecap: round;
+}
 @media (max-width: 768px) {
   .section-chart {
     margin-top: 20px;
@@ -5543,6 +5574,9 @@ circle {
   }
   .section-chart .ct-point {
     stroke-width: 12px;
+  }
+  .section-chart .ct-point__double {
+    stroke-width: 4px;
   }
 }
 
@@ -5566,9 +5600,13 @@ body._active_dropdown main:after {
 
 @media (max-width: 768px) {
   .line-chart:not(.line-chart__area) .section-chart {
-    min-width: 350px !important;
+    min-width: 500px !important;
   }
 }
+.ct-label.ct-vertical.ct-start {
+  display: none;
+}
+
 .ct-label.ct-horizontal.ct-end {
   margin-top: 24px;
   cursor: pointer;
@@ -5577,7 +5615,7 @@ body._active_dropdown main:after {
 @media (max-width: 768px) {
   .ct-label.ct-horizontal.ct-end {
     margin-top: 13px;
-    width: 50% !important;
+    width: 70% !important;
     text-align: center !important;
   }
 }

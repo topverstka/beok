@@ -1,562 +1,602 @@
-    .line-chart {
-        border: 1px solid $gray;
-        border-radius: 20px;
-        padding: 30px 30px 60px 30px;
-        height: 456px;
-        margin-bottom: 40px;
-        margin-right: 30px;
-        overflow: hidden;
-        position: relative;
-        &[data-down] {
-            .line-chart__weight {
-                color: $outline
-            }
-        }
-        &[data-up] {
-            .line-chart__weight {
-                color: $accent
-            }
-        }
-        @media (max-width:$tablet) {
-            margin-right: 0;
-            padding: 20px;
-            margin-bottom: 20px;
-            height: 310px;
+.line-chart {
+    border: 1px solid $gray;
+    border-radius: 20px;
+    padding: 30px 30px 60px 30px;
+    height: 456px;
+    margin-bottom: 40px;
+    margin-right: 30px;
+    overflow: hidden;
+    position: relative;
+    &[data-down] {
+        .line-chart__weight {
+            color: $outline
         }
     }
-    
-    .line-chart__result {
-        height: auto;
-        padding-bottom: 30px;
+    &[data-up] {
+        .line-chart__weight {
+            color: $accent
+        }
     }
-    
-    .line-chart__weight {
-        display: flex;
-        align-items: flex-end;
-        margin-top: 19px;
-        font-family: 'RoadRadio';
+    @media (max-width:$tablet) {
+        margin-right: 0;
+        padding: 20px;
+        margin-bottom: 20px;
+        height: 310px;
+    }
+}
+
+.line-chart__result {
+    height: auto;
+    padding-bottom: 30px;
+}
+
+.ct-start-text__chart {
+    transform: translate(-5px, 6px);
+    @media (max-width: $tablet) {
+        position: absolute;
+        left: 0;
+        top: 18px;
+    }
+}
+
+.ct-start-text__element {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 100%;
+    position: absolute;
+    color: $gray;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.line-chart__weight {
+    display: flex;
+    align-items: flex-end;
+    margin-top: 19px;
+    font-family: 'RoadRadio';
+    .line-chart__weight-number {
+        font-weight: 400;
+        font-size: 64px;
+        line-height: 53px;
+    }
+    .line-chart__weight-text {
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 36px;
+        margin-left: 10px
+    }
+    @media (max-width:$tablet) {
+        margin-top: 6px;
         .line-chart__weight-number {
-            font-weight: 400;
-            font-size: 64px;
-            line-height: 53px;
+            font-size: 48px;
+            line-height: 48px;
         }
         .line-chart__weight-text {
             font-weight: 700;
-            font-size: 36px;
-            line-height: 36px;
-            margin-left: 10px
+            font-size: 32px;
+            line-height: 37px;
+            margin-left: 8px
         }
-        @media (max-width:$tablet) {
-            margin-top: 6px;
-            .line-chart__weight-number {
-                font-size: 48px;
-                line-height: 48px;
+    }
+}
+
+.line-chart__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.chart-section {
+    /* height: 500px;
+width: auto; */
+    height: 100%;
+    transform: translateY(-9px);
+}
+
+.numbElement {
+    div {
+        position: absolute;
+        z-index: 9;
+    }
+}
+
+.line-chart__top-title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 130%;
+    @media (max-width: $tablet) {
+        font-size: 14px;
+    }
+}
+
+.line-chart__top--dropdown {
+    padding: 8px 12px 8px 16px;
+    background: #FAEFDD;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 14px;
+    position: relative;
+    cursor: pointer;
+    transition: .4s;
+    &._show {
+        background: $main;
+        .line-chart__top--dropdown--select-text {
+            color: #fff;
+            svg {
+                transform: rotate(180deg);
+                path {
+                    stroke: #fff
+                }
             }
-            .line-chart__weight-text {
-                font-weight: 700;
-                font-size: 32px;
-                line-height: 37px;
-                margin-left: 8px
-            }
+        }
+        .line-chart__top--dropdown-list {
+            transform: translateY(0);
+            opacity: 1;
+            z-index: 3
         }
     }
-    
-    .line-chart__top {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        position: relative;
+}
+
+.line-chart__top--dropdown--select-text {
+    display: flex;
+    align-items: center;
+    svg {
+        width: 16px;
+        height: 16px;
+        fill: transparent;
+        margin-left: 4px;
+        margin-top: 0;
+        transition: .4s;
     }
-    
-    .chart-section {
-        /* height: 500px;
-    width: auto; */
-        height: 100%;
-        transform: translateY(-9px);
-    }
-    
-    .numbElement {
-        div {
-            position: absolute;
-            z-index: 9;
-        }
-    }
-    
-    .line-chart__top-title {
-        font-weight: 700;
-        font-size: 20px;
-        line-height: 130%;
-        @media (max-width: $tablet) {
-            font-size: 14px;
-        }
-    }
-    
+}
+
+.line-chart__right {
+    display: flex;
+    align-items: center;
     .line-chart__top--dropdown {
-        padding: 8px 12px 8px 16px;
-        background: #FAEFDD;
-        border-radius: 5px;
-        font-weight: 500;
-        font-size: 14px;
-        position: relative;
-        cursor: pointer;
-        transition: .4s;
-        &._show {
-            background: $main;
-            .line-chart__top--dropdown--select-text {
-                color: #fff;
-                svg {
-                    transform: rotate(180deg);
-                    path {
-                        stroke: #fff
-                    }
-                }
-            }
-            .line-chart__top--dropdown-list {
-                transform: translateY(0);
-                opacity: 1;
-                z-index: 3
-            }
+        &:not(:last-child) {
+            margin-right: 20px;
         }
     }
-    
-    .line-chart__top--dropdown--select-text {
-        display: flex;
-        align-items: center;
-        svg {
-            width: 16px;
-            height: 16px;
-            fill: transparent;
-            margin-left: 4px;
-            margin-top: 0;
-            transition: .4s;
-        }
+}
+
+.ct-chart__container {
+    height: 100%;
+    @media (max-width: $tablet) {
+        overflow-y: auto;
     }
-    
-    .line-chart__right {
-        display: flex;
-        align-items: center;
-        .line-chart__top--dropdown {
-            &:not(:last-child) {
-                margin-right: 20px;
-            }
-        }
-    }
-    
-    .chart-tabs-section {
-        height: 100%;
-        position: relative;
-        .chart-tab {
-            opacity: 0;
-            transition: .4s;
-            position: absolute;
-            top: 0;
-            width: 100%;
-            z-index: -1;
-            &[data-chart-body="days"] {
-                .ct-point {
-                    // opacity: 0;
-                    &:hover {
-                        opacity: 1;
-                    }
-                }
-            }
-            &._show {
-                opacity: 1;
-                position: static;
-                z-index: 1;
-            }
-        }
-        @media (max-width:$tablet) {
-            overflow-y: auto;
-            width: 100%
-        }
-    }
-    
-    .line-chart__area {
-        .chart-tabs-section {
-            margin-top: 50px
-        }
-        @media (max-width:$tablet) {
-            &[data-down],
-            &[data-up] {
-                .section-chart {
-                    margin-top: 0;
-                    height: 70%;
-                }
-            }
-            .chart-tabs-section {
-                overflow: visible;
-                padding-left: 5px;
-                margin-top: 0
-            }
-        }
-    }
-    
-    .line-chart__area--text {
-        position: absolute;
-        bottom: 54px;
-        left: 57px;
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 130%;
-        color: #888FA7;
-        @media (max-width: $tablet) {
-            font-size: 13px;
-            line-height: 110%;
-            left: 33px;
-            bottom: 23px
-        }
-    }
-    
-    .line-chart__top--dropdown-list {
-        position: absolute;
-        top: 50px;
-        bottom: auto;
-        padding: 12px;
-        right: 0;
-        width: 256px;
-        background: #fff;
-        box-shadow: 2px 2px 10px rgba(89, 89, 89, 0.12);
-        border-radius: 5px;
-        transform: translateY(-10px);
-        transition: .4s;
-        z-index: -1;
+}
+
+.chart-tabs-section {
+    height: 100%;
+    position: relative;
+    .chart-tab {
         opacity: 0;
-        li {
-            padding: 0 0 0 20px;
-            height: 44px;
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            position: relative;
-            margin: 0 -12px;
-            &:after {
-                content: '';
-                transform: scale(0);
-                transition: .4s;
-            }
-            @media (min-width:$minHover) {
-                &:hover {
-                    background: #FAEFDD;
-                }
-            }
-            &._active {
-                &:after {
-                    content: '';
-                    position: absolute;
-                    right: 12px;
-                    width: 24px;
-                    height: 24px;
-                    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 6L9 17L4 12' stroke='%23ED6A53' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
-                    background-repeat: no-repeat;
-                    background-size: cover;
-                    transform: scale(1);
-                }
-            }
-        }
-        @media (max-width:$tablet) {
-            position: fixed;
-            top: auto;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            width: 100%;
-            height: max-content;
-            border-radius: 20px 20px 0px 0px;
-            transform: translateY(100%);
-            transition: transform .4s, opacity .4s;
-            &._active {
-                z-index: 9999999 !important;
-                transform: translateY(0);
-            }
-            li {
-                height: auto;
-                padding-top: 20px;
-                padding-bottom: 20px;
-                &:not(:last-child) {
-                    border-bottom: 1px solid #ECECEC;
-                }
-            }
-        }
-    }
-    
-    circle {
-        fill: #ED6A53;
-        z-index: 9999;
-    }
-    
-    .ct-label.ct-vertical.ct-start {
-        transform: translate(-5px, 5px);
-    }
-    
-    .ct-line {
-        stroke-width: 1px !important;
-    }
-    
-    [data-down] .section-chart,
-    [data-up] .section-chart {
-        height: 75%;
-        .ct-point {
-            stroke-width: 12px !important;
-        }
-    }
-    
-    [data-down] {
-        .ct-line {
-            stroke: $outline !important;
-        }
-        .ct-series-a .ct-area {
-            fill: url(#linear-gradient-down) !important;
-        }
-    }
-    
-    [data-up] {
-        .ct-line {
-            stroke: $accent !important;
-        }
-        .ct-series-a .ct-area {
-            fill: url(#linear-gradient-up) !important;
-        }
-        line.ct-point {
-            stroke: $accent !important;
-        }
-    }
-    
-    [data-up] .ct-line {
-        stroke: $accent !important
-    }
-    
-    .ct-point {
-        stroke: #0E0E0E !important
-    }
-    
-    [data-up] .ct-point:not(:nth-of-type(1)),
-    [data-down] .ct-point:not(:nth-of-type(1)) {
-        display: none;
-    }
-    
-    .tooltip-ct {
+        transition: .4s;
         position: absolute;
-        display: block;
-        height: auto;
-        z-index: 9;
-        background: #0E0E0E;
-        width: max-content;
-        padding: 6px 10px;
-        color: #fff;
-        font-weight: 700;
-        font-size: 14px;
-        line-height: 130%;
-        border-radius: 50px;
-        &:after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 0;
-            right: 0;
-            border: 10px solid transparent;
-            border-top: 15px solid var(--main);
-            width: 10px;
-            margin: auto;
-            z-index: -1;
-        }
-    }
-    
-    .ct-chart-hover {
-        position: absolute;
+        top: 0;
+        width: 96%;
         z-index: -1;
-        background: linear-gradient(180deg, rgba(237, 106, 83, 0.1) 35.6%, #ED6A53 100%);
-        top: 15px;
-        // height: 250px;
-        width: 30px;
-        @media (max-width: $tablet) {
-            top: 35px
-        }
-    }
-    
-    .tooltip-hover {
-        position: absolute;
-        z-index: 9;
-        background: #0E0E0E;
-        border-radius: 50px;
-        color: #fff;
-        padding: 6px 10px;
-        font-weight: 700;
-        font-size: 14px;
-        line-height: 130%;
-        opacity: 0;
-        width: max-content;
-        &:after {
-            content: '';
-            position: absolute;
-            bottom: -17px;
-            left: 0;
-            right: 0;
-            border: 10px solid transparent;
-            border-top: 15px solid var(--main);
-            width: 10px;
-            margin: auto;
-            z-index: -1;
-        }
-    }
-    
-    .tooltip-hover._active {
-        opacity: 1;
-    }
-    
-    .section-chart {
-        margin-top: 23px;
-        height: 90%;
-        position: relative;
-        svg {
-            overflow: visible;
-        }
-        .ct-series-a {
-            .ct-line {
-                stroke: $main;
-            }
-            text {
-                fill: $gray;
-                font-weight: 500;
-                font-size: 12px;
-            }
-        }
-        .ct-point {
-            stroke-width: 18px;
-            stroke: $outline !important
-        }
-        @media (max-width:$tablet) {
-            margin-top: 20px;
-            height: 75%;
+        &[data-chart-body="days"] {
             .ct-point {
-                stroke-width: 12px
+                // opacity: 0;
+                &:hover {
+                    opacity: 1;
+                }
             }
         }
+        &._show {
+            opacity: 1;
+            position: static;
+            z-index: 1;
+        }
     }
-    
-    body._active_dropdown {
-        overflow: hidden;
+    @media (max-width:$tablet) {
+        // overflow-y: auto;
+        width: 100%
+    }
+}
+
+.line-chart__area {
+    .chart-tabs-section {
+        margin-top: 50px
+    }
+    @media (max-width:$tablet) {
+        &[data-down],
+        &[data-up] {
+            .section-chart {
+                margin-top: 0;
+                height: 70%;
+            }
+        }
+        .chart-tabs-section {
+            overflow: visible;
+            padding-left: 5px;
+            margin-top: 0
+        }
+    }
+}
+
+.line-chart__area--text {
+    position: absolute;
+    bottom: 54px;
+    left: 57px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 130%;
+    color: #888FA7;
+    @media (max-width: $tablet) {
+        font-size: 13px;
+        line-height: 110%;
+        left: 33px;
+        bottom: 23px
+    }
+}
+
+.line-chart__top--dropdown-list {
+    position: absolute;
+    top: 50px;
+    bottom: auto;
+    padding: 12px;
+    right: 0;
+    width: 256px;
+    background: #fff;
+    box-shadow: 2px 2px 10px rgba(89, 89, 89, 0.12);
+    border-radius: 5px;
+    transform: translateY(-10px);
+    transition: .4s;
+    z-index: -1;
+    opacity: 0;
+    li {
+        padding: 0 0 0 20px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
         position: relative;
-        main {
-            position: relative;
+        margin: 0 -12px;
+        &:after {
+            content: '';
+            transform: scale(0);
+            transition: .4s;
+        }
+        @media (min-width:$minHover) {
+            &:hover {
+                background: #FAEFDD;
+            }
+        }
+        &._active {
             &:after {
                 content: '';
                 position: absolute;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(35, 30, 30, 0.85);
-                z-index: 999;
+                right: 12px;
+                width: 24px;
+                height: 24px;
+                background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 6L9 17L4 12' stroke='%23ED6A53' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+                background-repeat: no-repeat;
+                background-size: cover;
+                transform: scale(1);
             }
         }
     }
-    
     @media (max-width:$tablet) {
-        .line-chart {
-            &:not(.line-chart__area) {
-                .section-chart {
-                    min-width: 350px !important
-                }
+        position: fixed;
+        top: auto;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: max-content;
+        border-radius: 20px 20px 0px 0px;
+        transform: translateY(100%);
+        transition: transform .4s, opacity .4s;
+        &._active {
+            z-index: 9999999 !important;
+            transform: translateY(0);
+        }
+        li {
+            height: auto;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            &:not(:last-child) {
+                border-bottom: 1px solid #ECECEC;
             }
         }
     }
-    
+}
+
+circle {
+    fill: #ED6A53;
+    z-index: 9999;
+}
+
+.ct-label.ct-vertical.ct-start {
+    transform: translate(-5px, 5px);
+}
+
+.ct-line {
+    stroke-width: 1px !important;
+}
+
+[data-down] .section-chart,
+[data-up] .section-chart {
+    height: 75%;
+    .ct-point {
+        stroke-width: 12px !important;
+    }
+}
+
+[data-down] {
+    .ct-line {
+        stroke: $outline !important;
+    }
+    .ct-series-a .ct-area {
+        fill: url(#linear-gradient-down) !important;
+    }
+}
+
+[data-up] {
+    .ct-line {
+        stroke: $accent !important;
+    }
+    .ct-series-a .ct-area {
+        fill: url(#linear-gradient-up) !important;
+    }
+    line.ct-point {
+        stroke: $accent !important;
+    }
+}
+
+[data-up] .ct-line {
+    stroke: $accent !important
+}
+
+.ct-point {
+    stroke: #0E0E0E !important
+}
+
+[data-up] .ct-point:not(:nth-of-type(1)),
+[data-down] .ct-point:not(:nth-of-type(1)) {
+    display: none;
+}
+
+.tooltip-ct {
+    position: absolute;
+    display: block;
+    height: auto;
+    z-index: 9;
+    background: #0E0E0E;
+    width: max-content;
+    padding: 6px 10px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 130%;
+    border-radius: 5px;
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: -15px;
+        left: 0;
+        right: 0;
+        border: 10px solid transparent;
+        border-top: 15px solid var(--main);
+        width: 10px;
+        margin: auto;
+        z-index: -1;
+    }
+}
+
+.ct-chart-hover {
+    position: absolute;
+    z-index: -1;
+    background: linear-gradient(180deg, rgba(237, 106, 83, 0.1) 35.6%, #ED6A53 100%);
+    top: 15px;
+    // height: 250px;
+    width: 30px;
+    // @media (max-width: $tablet) {
+    //     top: 35px
+    // }
+}
+
+.tooltip-hover {
+    position: absolute;
+    z-index: 9;
+    background: #0E0E0E;
+    border-radius: 5px;
+    color: #fff;
+    padding: 6px 10px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 130%;
+    opacity: 0;
+    width: max-content;
+    text-align: center;
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: -17px;
+        left: 0;
+        right: 0;
+        border: 10px solid transparent;
+        border-top: 15px solid var(--main);
+        width: 10px;
+        margin: auto;
+        z-index: -1;
+    }
+}
+
+.tooltip-hover._active {
+    opacity: 1;
+}
+
+.section-chart {
+    margin-top: 23px;
+    height: 90%;
+    position: relative;
+    svg {
+        overflow: visible;
+    }
+    .ct-series-a {
+        .ct-line {
+            stroke: $main;
+        }
+        text {
+            fill: $gray;
+            font-weight: 500;
+            font-size: 12px;
+        }
+    }
+    .ct-point {
+        stroke-width: 18px;
+        stroke: $outline !important
+    }
+    .ct-point__double {
+        stroke-width: 8px;
+        stroke: $main;
+        stroke-linecap: round;
+    }
+    @media (max-width:$tablet) {
+        margin-top: 20px;
+        height: 75%;
+        .ct-point {
+            stroke-width: 12px
+        }
+        .ct-point__double {
+            stroke-width: 4px;
+        }
+    }
+}
+
+body._active_dropdown {
+    overflow: hidden;
+    position: relative;
+    main {
+        position: relative;
+        &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(35, 30, 30, 0.85);
+            z-index: 999;
+        }
+    }
+}
+
+@media (max-width:$tablet) {
+    .line-chart {
+        &:not(.line-chart__area) {
+            .section-chart {
+                min-width: 500px !important
+            }
+        }
+    }
+}
+
+.ct-label.ct-vertical.ct-start {
+    display: none
+}
+
+.ct-label.ct-horizontal.ct-end {
+    margin-top: 24px;
+    cursor: pointer;
+    width: max-content !important;
+    @media (max-width: $tablet) {
+        margin-top: 13px;
+        width: 70% !important;
+        text-align: center !important;
+    }
+}
+
+.line-chart__bar {
     .ct-label.ct-horizontal.ct-end {
-        margin-top: 24px;
-        cursor: pointer;
-        width: max-content !important;
-        @media (max-width: $tablet) {
-            margin-top: 13px;
-            width: 50% !important;
-            text-align: center !important;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.result-line__chart {
+    margin-top: 28px;
+}
+
+.result-line__chart--col {
+    background: rgba(121, 126, 135, 0.1);
+    padding: 16px 32px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 108px;
+    &:not(:last-child) {
+        margin-bottom: 10px;
+    }
+    @media (max-width: $tablet) {
+        padding: 16px 24px;
+        min-height: 64px;
+    }
+}
+
+.result-line__chart--col-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &:first-child {
+        .result-line__chart--title {
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 21px;
+            color: $main;
+            margin-bottom: 0;
         }
     }
-    
-    .line-chart__bar {
-        .ct-label.ct-horizontal.ct-end {
-            margin-left: auto;
-            margin-right: auto;
-        }
-    }
-    
-    .result-line__chart {
-        margin-top: 28px;
-    }
-    
-    .result-line__chart--col {
-        background: rgba(121, 126, 135, 0.1);
-        padding: 16px 32px;
-        border-radius: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        min-height: 108px;
-        &:not(:last-child) {
-            margin-bottom: 10px;
-        }
-        @media (max-width: $tablet) {
-            padding: 16px 24px;
-            min-height: 64px;
-        }
-    }
-    
-    .result-line__chart--col-box {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    @media (max-width: $tablet) {
         &:first-child {
             .result-line__chart--title {
-                font-weight: 700;
-                font-size: 18px;
-                line-height: 21px;
-                color: $main;
-                margin-bottom: 0;
-            }
-        }
-        @media (max-width: $tablet) {
-            &:first-child {
-                .result-line__chart--title {
-                    font-size: 14px;
-                    line-height: 130%;
-                }
+                font-size: 14px;
+                line-height: 130%;
             }
         }
     }
-    
-    .result-line__chart--icon {
-        width: 22px;
-        height: 20px;
-        margin-bottom: 8px;
-        @media (max-width: $tablet) {
-            margin-bottom: 4px;
-        }
+}
+
+.result-line__chart--icon {
+    width: 22px;
+    height: 20px;
+    margin-bottom: 8px;
+    @media (max-width: $tablet) {
+        margin-bottom: 4px;
     }
-    
-    .result-line__chart--title {
-        font-size: 16px;
+}
+
+.result-line__chart--title {
+    font-size: 16px;
+    line-height: 130%;
+    color: $gray;
+    font-weight: 700;
+    margin-bottom: 6px;
+    @media (max-width: $tablet) {
+        font-weight: 600;
+        font-size: 12px;
         line-height: 130%;
-        color: $gray;
-        font-weight: 700;
-        margin-bottom: 6px;
-        @media (max-width: $tablet) {
-            font-weight: 600;
-            font-size: 12px;
-            line-height: 130%;
-            margin-bottom: 2px;
-        }
+        margin-bottom: 2px;
     }
-    
-    .result-line__chart--text {
-        @media (max-width: $tablet) {
-            font-weight: 600;
-            font-size: 12px;
-            line-height: 130%;
-        }
+}
+
+.result-line__chart--text {
+    @media (max-width: $tablet) {
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 130%;
     }
-    
-    .section-progress {
-        @media (max-width: $tablet) {
-            margin-bottom: 100px;
-        }
+}
+
+.section-progress {
+    @media (max-width: $tablet) {
+        margin-bottom: 100px;
     }
+}
