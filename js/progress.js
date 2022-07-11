@@ -348,7 +348,7 @@ new Chartist.Line('.ct-chart-4__all-course', {
     rectHover.style.height = (e.svg._node.scrollHeight - 50) + 'px';
 
     e.svg._node.closest('.section-chart').querySelectorAll('.ct-point').forEach((i, index) => {
-        i.insertAdjacentHTML('beforebegin', `<text x="${Number(i.getAttribute('x1')) - 4}" y="${Number(i.getAttribute('y1')) - 20}">${index + 1}</text>`);
+        i.insertAdjacentHTML('beforebegin', `<text data-count="${index}" x="${Number(i.getAttribute('x1')) - 4}" y="${Number(i.getAttribute('y1')) - 20}">${index + 1}</text>`);
     });
 
 });
