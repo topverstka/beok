@@ -84,10 +84,13 @@
             }
         }
         input[type="submit"] {
-            background: #FFE4DA;
-            color: rgba(232, 86, 51, 0.5);
+            &[disabled] {
+                background: #FFE4DA;
+                color: rgba(232, 86, 51, 0.5);
+            }
             height: 45px;
-            margin-top: auto
+            margin-top: auto;
+            opacity: 1;
         }
         .modal__close {
             left: 12px;

@@ -1617,10 +1617,14 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   }
   .modal#edit-report input[type=submit],
 .modal#popup-exercisec input[type=submit] {
-    background: #FFE4DA;
-    color: rgba(232, 86, 51, 0.5);
     height: 45px;
     margin-top: auto;
+    opacity: 1;
+  }
+  .modal#edit-report input[type=submit][disabled],
+.modal#popup-exercisec input[type=submit][disabled] {
+    background: #FFE4DA;
+    color: rgba(232, 86, 51, 0.5);
   }
   .modal#edit-report .modal__close,
 .modal#popup-exercisec .modal__close {
