@@ -58,17 +58,25 @@
             font-size: 18px;
             line-height: 21px;
             font-family: 'Raleway';
-            margin-bottom: 24px;
-            text-align: center;
+            margin-bottom: 10px;
         }
         .hello-motivation {
             font-size: 14px;
             line-height: 130%;
             margin-bottom: 20px;
         }
+    }
+}
+
+.section-reports-screen {
+    @media (max-width: $tablet) {
         .link-pref-page {
             position: absolute;
             top: -16px;
+        }
+        .hello {
+            text-align: center;
+            margin-bottom: 24px;
         }
     }
 }
