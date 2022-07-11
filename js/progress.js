@@ -65,6 +65,58 @@ document.addEventListener('mouseout', function(e) {
     }
 });
 
+
+function CreateChart(node, isNumberPoints) {
+    node.closest('.section-chart').querySelectorAll('.ct-end').forEach((i, index) => {
+        i.parentElement.setAttribute('x', Number(i.parentElement.getAttribute('x')) - 30)
+    });
+
+    let widthContainer = node.closest('.chart-tabs-section').scrollWidth;
+
+
+    if (window.innerWidth < 768) {
+        widthContainer = node.closest('.section-chart').scrollWidth;
+    }
+
+
+    node.closest('.section-chart').querySelectorAll('.ct-grids .ct-grid').forEach(i => {
+        i.setAttribute('x1', 30)
+        i.setAttribute('x2', widthContainer)
+    });
+
+    node.closest('.section-chart').insertAdjacentHTML('afterbegin', '<div class="tooltip-hover"></div>');
+
+    !node.closest('.ct-chart__container').querySelector('.ct-start-text__chart') ? node.closest('.ct-chart__container').insertAdjacentHTML('afterbegin', '<div class="ct-start-text__chart"></div>') : '';
+
+
+    if (!node.closest('.ct-chart__container').querySelector('.ct-start-text__chart .ct-start-text__element')) {
+        node.closest('.section-chart').querySelectorAll('.ct-start').forEach((i, index) => {
+            node.closest('.ct-chart__container').querySelector('.ct-start-text__chart').insertAdjacentHTML('afterbegin', `
+        <div class="ct-start-text__element"
+            style="
+                top: ${i.parentElement.getAttribute('y')}px;
+                left: ${i.parentElement.getAttribute('x')}px;
+                width: ${i.parentElement.getAttribute('width')}px;
+                height: ${i.parentElement.getAttribute('height')}px;
+            "
+        >${i.innerText}</div>
+        `);
+        });
+    }
+
+    rectHover.style.height = (node.scrollHeight - 50) + 'px';
+
+    node.closest('.section-chart').querySelectorAll('.ct-end').forEach((i, index) => {
+        i.setAttribute('data-count', index);
+    });
+
+    if (isNumberPoints) {
+        node.closest('.section-chart').querySelectorAll('.ct-point').forEach((i, index) => {
+            i.insertAdjacentHTML('beforebegin', `<text data-count="${index}" x="${Number(i.getAttribute('x1')) - 4}" y="${Number(i.getAttribute('y1')) - 20}">${index + 1}</text>`);
+        });
+    }
+}
+
 new Chartist.Bar('.ct-chart-bar--weeks', {
     labels: ['2 - 10 июл', '2 - 10 июл', '2 - 10 июл', '2 - 10 июл', '2 - 10 июл', '2 - 10 июл', '2 - 10 июл', '2 - 10 июл'],
 
@@ -192,8 +244,6 @@ new Chartist.Line('.ct-chart-4', {
     }
 
 }, [
-    // You can even use responsive configuration overrides to
-    // customize your series configuration even further!
     ['screen and (max-width: 500px)', {
         chartPadding: {
             left: 15
@@ -205,54 +255,7 @@ new Chartist.Line('.ct-chart-4', {
         }
     }]
 ]).on('created', function(e) {
-    if (window.innerWidth > 768) {
-        e.svg._node.closest('.section-chart').querySelectorAll('.ct-end').forEach((i, index) => {
-            i.parentElement.setAttribute('x', Number(i.parentElement.getAttribute('x')) - 30)
-
-        });
-    } else {
-        e.svg._node.closest('.section-chart').querySelectorAll('.ct-end').forEach((i, index) => {
-
-            i.parentElement.setAttribute('x', Number(i.parentElement.getAttribute('x')) - 30)
-
-        });
-    }
-
-    let widthContainer = e.svg._node.closest('.chart-tabs-section').scrollWidth;
-
-
-    e.svg._node.closest('.section-chart').querySelectorAll('.ct-grids .ct-grid').forEach(i => {
-        i.setAttribute('x1', 40)
-        i.setAttribute('x2', widthContainer)
-    });
-
-    e.svg._node.closest('.section-chart').querySelectorAll('.ct-end').forEach((i, index) => {
-        i.setAttribute('data-count', index);
-    });
-
-    e.svg._node.closest('.section-chart').insertAdjacentHTML('afterbegin', '<div class="tooltip-hover"></div>');
-
-
-    !e.svg._node.closest('.ct-chart__container').querySelector('.ct-start-text__chart') ? e.svg._node.closest('.ct-chart__container').insertAdjacentHTML('afterbegin', '<div class="ct-start-text__chart"></div>') : '';
-
-
-    if (!e.svg._node.closest('.ct-chart__container').querySelector('.ct-start-text__chart .ct-start-text__element')) {
-        e.svg._node.closest('.section-chart').querySelectorAll('.ct-start').forEach((i, index) => {
-            e.svg._node.closest('.ct-chart__container').querySelector('.ct-start-text__chart').insertAdjacentHTML('afterbegin', `
-        <div class="ct-start-text__element"
-            style="
-                top: ${i.parentElement.getAttribute('y')}px;
-                left: ${i.parentElement.getAttribute('x')}px;
-                width: ${i.parentElement.getAttribute('width')}px;
-                height: ${i.parentElement.getAttribute('height')}px;
-            "
-        >${i.innerText}</div>
-        `);
-        });
-    }
-
-    rectHover.style.height = (e.svg._node.scrollHeight - 50) + 'px';
-
+    CreateChart(e.svg._node);
 });
 
 new Chartist.Line('.ct-chart-4__all-course', {
@@ -287,8 +290,6 @@ new Chartist.Line('.ct-chart-4__all-course', {
     }
 
 }, [
-    // You can even use responsive configuration overrides to
-    // customize your series configuration even further!
     ['screen and (max-width: 500px)', {
         chartPadding: {
             left: 15
@@ -300,56 +301,8 @@ new Chartist.Line('.ct-chart-4__all-course', {
         }
     }]
 ]).on('created', function(e) {
-    if (window.innerWidth > 768) {
-        e.svg._node.closest('.section-chart').querySelectorAll('.ct-end').forEach((i, index) => {
-            i.parentElement.setAttribute('x', Number(i.parentElement.getAttribute('x')) - 30)
-        });
-    } else {
-        e.svg._node.closest('.section-chart').querySelectorAll('.ct-end').forEach((i, index) => {
 
-            i.parentElement.setAttribute('x', Number(i.parentElement.getAttribute('x')) - 30)
-
-        });
-    }
-
-    let widthContainer = e.svg._node.closest('.chart-tabs-section').scrollWidth;
-
-
-    e.svg._node.closest('.section-chart').querySelectorAll('.ct-grids .ct-grid').forEach(i => {
-        i.setAttribute('x1', 40)
-        i.setAttribute('x2', widthContainer)
-    });
-
-    e.svg._node.closest('.section-chart').querySelectorAll('.ct-end').forEach((i, index) => {
-        i.setAttribute('data-count', index);
-    });
-
-    e.svg._node.closest('.section-chart').insertAdjacentHTML('afterbegin', '<div class="tooltip-hover"></div>');
-
-
-    !e.svg._node.closest('.ct-chart__container').querySelector('.ct-start-text__chart') ? e.svg._node.closest('.ct-chart__container').insertAdjacentHTML('afterbegin', '<div class="ct-start-text__chart"></div>') : '';
-
-
-    if (!e.svg._node.closest('.ct-chart__container').querySelector('.ct-start-text__chart .ct-start-text__element')) {
-        e.svg._node.closest('.section-chart').querySelectorAll('.ct-start').forEach((i, index) => {
-            e.svg._node.closest('.ct-chart__container').querySelector('.ct-start-text__chart').insertAdjacentHTML('afterbegin', `
-        <div class="ct-start-text__element"
-            style="
-                top: ${i.parentElement.getAttribute('y')}px;
-                left: ${i.parentElement.getAttribute('x')}px;
-                width: ${i.parentElement.getAttribute('width')}px;
-                height: ${i.parentElement.getAttribute('height')}px;
-            "
-        >${i.innerText}</div>
-        `);
-        });
-    }
-
-    rectHover.style.height = (e.svg._node.scrollHeight - 50) + 'px';
-
-    e.svg._node.closest('.section-chart').querySelectorAll('.ct-point').forEach((i, index) => {
-        i.insertAdjacentHTML('beforebegin', `<text data-count="${index}" x="${Number(i.getAttribute('x1')) - 4}" y="${Number(i.getAttribute('y1')) - 20}">${index + 1}</text>`);
-    });
+    CreateChart(e.svg._node, true);
 
 });
 
@@ -388,8 +341,6 @@ new Chartist.Line('.ct-chart-4__month', {
     }
 
 }, [
-    // You can even use responsive configuration overrides to
-    // customize your series configuration even further!
     ['screen and (max-width: 500px)', {
         chartPadding: {
             left: 15
@@ -401,52 +352,7 @@ new Chartist.Line('.ct-chart-4__month', {
         }
     }]
 ]).on('created', function(e) {
-    if (window.innerWidth > 768) {
-        e.svg._node.closest('.section-chart').querySelectorAll('.ct-end').forEach((i, index) => {
-            i.parentElement.setAttribute('x', Number(i.parentElement.getAttribute('x')) - 30)
-        });
-    } else {
-        e.svg._node.closest('.section-chart').querySelectorAll('.ct-end').forEach((i, index) => {
-
-            i.parentElement.setAttribute('x', Number(i.parentElement.getAttribute('x')) - 30)
-
-        });
-    }
-
-    let widthContainer = e.svg._node.closest('.chart-tabs-section').scrollWidth;
-
-
-    e.svg._node.closest('.section-chart').querySelectorAll('.ct-grids .ct-grid').forEach(i => {
-        i.setAttribute('x1', 40)
-        i.setAttribute('x2', widthContainer)
-    });
-
-    e.svg._node.closest('.section-chart').querySelectorAll('.ct-end').forEach((i, index) => {
-        i.setAttribute('data-count', index);
-    });
-
-    e.svg._node.closest('.section-chart').insertAdjacentHTML('afterbegin', '<div class="tooltip-hover"></div>');
-
-
-    !e.svg._node.closest('.ct-chart__container').querySelector('.ct-start-text__chart') ? e.svg._node.closest('.ct-chart__container').insertAdjacentHTML('afterbegin', '<div class="ct-start-text__chart"></div>') : '';
-
-
-    if (!e.svg._node.closest('.ct-chart__container').querySelector('.ct-start-text__chart .ct-start-text__element')) {
-        e.svg._node.closest('.section-chart').querySelectorAll('.ct-start').forEach((i, index) => {
-            e.svg._node.closest('.ct-chart__container').querySelector('.ct-start-text__chart').insertAdjacentHTML('afterbegin', `
-        <div class="ct-start-text__element"
-            style="
-                top: ${i.parentElement.getAttribute('y')}px;
-                left: ${i.parentElement.getAttribute('x')}px;
-                width: ${i.parentElement.getAttribute('width')}px;
-                height: ${i.parentElement.getAttribute('height')}px;
-            "
-        >${i.innerText}</div>
-        `);
-        });
-    }
-
-    rectHover.style.height = (e.svg._node.scrollHeight - 50) + 'px';
+    CreateChart(e.svg._node);
 
 });
 
@@ -461,9 +367,6 @@ new Chartist.Line('.ct-chart-3', {
     lineSmooth: Chartist.Interpolation.monotoneCubic({
         fillHoles: false
     }),
-    // divisor: true,
-    //  ticks: [1, 10, 20, 30],
-    //showArea: true,
     showGrid: false,
     fullWidth: true,
     lineSmooth: false,
@@ -485,8 +388,6 @@ new Chartist.Line('.ct-chart-3', {
     }
 
 }, [
-    // You can even use responsive configuration overrides to
-    // customize your series configuration even further!
     ['screen and (max-width: 500px)', {
         chartPadding: {
             left: 15
@@ -498,61 +399,7 @@ new Chartist.Line('.ct-chart-3', {
         }
     }]
 ]).on('created', function(e) {
-    if (window.innerWidth > 768) {
-        e.svg._node.closest('.section-chart').querySelectorAll('.ct-end').forEach((i, index) => {
-            //   if (index !== 0) {
-            i.parentElement.setAttribute('x', Number(i.parentElement.getAttribute('x')) - 30)
-                //  }
-        });
-    } else {
-        e.svg._node.closest('.section-chart').querySelectorAll('.ct-end').forEach((i, index) => {
-
-            i.parentElement.setAttribute('x', Number(i.parentElement.getAttribute('x')) - 30)
-
-        });
-    }
-
-    let widthContainer = e.svg._node.closest('.chart-tabs-section').scrollWidth;
-
-
-    e.svg._node.closest('.section-chart').querySelectorAll('.ct-grids .ct-grid').forEach(i => {
-        i.setAttribute('x1', 40)
-        i.setAttribute('x2', widthContainer)
-    });
-
-    e.svg._node.closest('.section-chart').insertAdjacentHTML('afterbegin', '<div class="tooltip-hover"></div>');
-
-
-    !e.svg._node.closest('.ct-chart__container').querySelector('.ct-start-text__chart') ? e.svg._node.closest('.ct-chart__container').insertAdjacentHTML('afterbegin', '<div class="ct-start-text__chart"></div>') : '';
-
-
-    if (!e.svg._node.closest('.ct-chart__container').querySelector('.ct-start-text__chart .ct-start-text__element')) {
-        e.svg._node.closest('.section-chart').querySelectorAll('.ct-start').forEach((i, index) => {
-            e.svg._node.closest('.ct-chart__container').querySelector('.ct-start-text__chart').insertAdjacentHTML('afterbegin', `
-        <div class="ct-start-text__element"
-            style="
-                top: ${i.parentElement.getAttribute('y')}px;
-                left: ${i.parentElement.getAttribute('x')}px;
-                width: ${i.parentElement.getAttribute('width')}px;
-                height: ${i.parentElement.getAttribute('height')}px;
-            "
-        >${i.innerText}</div>
-        `);
-        });
-    }
-
-
-
-    rectHover.style.height = (e.svg._node.scrollHeight - 50) + 'px';
-
-    e.svg._node.closest('.section-chart').querySelectorAll('.ct-end').forEach((i, index) => {
-        i.setAttribute('data-count', index);
-    });
-
-
-    e.svg._node.closest('.section-chart').querySelectorAll('.ct-point').forEach((i, index) => {
-        i.insertAdjacentHTML('beforebegin', `<text data-count="${index}" x="${Number(i.getAttribute('x1')) - 4}" y="${Number(i.getAttribute('y1')) - 20}">${index + 1}</text>`);
-    });
+    CreateChart(e.svg._node, true);
 });
 
 
@@ -593,8 +440,6 @@ new Chartist.Line('.ct-chart-2__weeks', {
     }
 
 }, [
-    // You can even use responsive configuration overrides to
-    // customize your series configuration even further!
     ['screen and (max-width: 500px)', {
         chartPadding: {
             left: 15
@@ -606,55 +451,7 @@ new Chartist.Line('.ct-chart-2__weeks', {
         }
     }]
 ]).on('created', function(e) {
-    if (window.innerWidth > 768) {
-        e.svg._node.closest('.section-chart').querySelectorAll('.ct-end').forEach((i, index) => {
-            i.parentElement.setAttribute('x', Number(i.parentElement.getAttribute('x')) - 30)
-        });
-    } else {
-        e.svg._node.closest('.section-chart').querySelectorAll('.ct-end').forEach((i, index) => {
-
-            i.parentElement.setAttribute('x', Number(i.parentElement.getAttribute('x')) - 30)
-
-        });
-    }
-
-    let widthContainer = e.svg._node.closest('.chart-tabs-section').scrollWidth;
-
-
-    e.svg._node.closest('.section-chart').querySelectorAll('.ct-grids .ct-grid').forEach(i => {
-        i.setAttribute('x1', 40)
-        i.setAttribute('x2', widthContainer)
-    });
-
-    e.svg._node.closest('.section-chart').insertAdjacentHTML('afterbegin', '<div class="tooltip-hover"></div>');
-
-    !e.svg._node.closest('.ct-chart__container').querySelector('.ct-start-text__chart') ? e.svg._node.closest('.ct-chart__container').insertAdjacentHTML('afterbegin', '<div class="ct-start-text__chart"></div>') : '';
-
-
-    if (!e.svg._node.closest('.ct-chart__container').querySelector('.ct-start-text__chart .ct-start-text__element')) {
-        e.svg._node.closest('.section-chart').querySelectorAll('.ct-start').forEach((i, index) => {
-            e.svg._node.closest('.ct-chart__container').querySelector('.ct-start-text__chart').insertAdjacentHTML('afterbegin', `
-        <div class="ct-start-text__element"
-            style="
-                top: ${i.parentElement.getAttribute('y')}px;
-                left: ${i.parentElement.getAttribute('x')}px;
-                width: ${i.parentElement.getAttribute('width')}px;
-                height: ${i.parentElement.getAttribute('height')}px;
-            "
-        >${i.innerText}</div>
-        `);
-        });
-    }
-
-
-    rectHover.style.height = (e.svg._node.scrollHeight - 50) + 'px';
-
-
-
-    e.svg._node.closest('.section-chart').querySelectorAll('.ct-end').forEach((i, index) => {
-        i.setAttribute('data-count', index);
-    });
-
+    CreateChart(e.svg._node);
 });
 
 new Chartist.Line('.ct-chart-2', {
@@ -694,8 +491,6 @@ new Chartist.Line('.ct-chart-2', {
     }
 
 }, [
-    // You can even use responsive configuration overrides to
-    // customize your series configuration even further!
     ['screen and (max-width: 500px)', {
         chartPadding: {
             left: 15
@@ -707,59 +502,9 @@ new Chartist.Line('.ct-chart-2', {
         }
     }]
 ]).on('created', function(e) {
-    if (window.innerWidth > 768) {
-        e.svg._node.closest('.section-chart').querySelectorAll('.ct-end').forEach((i, index) => {
-            //if (index !== 0) {
-            i.parentElement.setAttribute('x', Number(i.parentElement.getAttribute('x')) - 30)
-                // }
-        });
-    } else {
-        e.svg._node.closest('.section-chart').querySelectorAll('.ct-end').forEach((i, index) => {
 
-            i.parentElement.setAttribute('x', Number(i.parentElement.getAttribute('x')) - 30)
+    CreateChart(e.svg._node)
 
-        });
-    }
-
-
-    let widthContainer = e.svg._node.closest('.chart-tabs-section').scrollWidth;
-
-
-    e.svg._node.closest('.section-chart').querySelectorAll('.ct-grids .ct-grid').forEach(i => {
-        i.setAttribute('x1', 30)
-        i.setAttribute('x2', widthContainer)
-    });
-
-    e.svg._node.closest('.section-chart').insertAdjacentHTML('afterbegin', '<div class="tooltip-hover"></div>');
-
-    !e.svg._node.closest('.ct-chart__container').querySelector('.ct-start-text__chart') ? e.svg._node.closest('.ct-chart__container').insertAdjacentHTML('afterbegin', '<div class="ct-start-text__chart"></div>') : '';
-
-
-    if (!e.svg._node.closest('.ct-chart__container').querySelector('.ct-start-text__chart .ct-start-text__element')) {
-        e.svg._node.closest('.section-chart').querySelectorAll('.ct-start').forEach((i, index) => {
-            e.svg._node.closest('.ct-chart__container').querySelector('.ct-start-text__chart').insertAdjacentHTML('afterbegin', `
-        <div class="ct-start-text__element"
-            style="
-                top: ${i.parentElement.getAttribute('y')}px;
-                left: ${i.parentElement.getAttribute('x')}px;
-                width: ${i.parentElement.getAttribute('width')}px;
-                height: ${i.parentElement.getAttribute('height')}px;
-            "
-        >${i.innerText}</div>
-        `);
-        });
-    }
-
-    rectHover.style.height = (e.svg._node.scrollHeight - 50) + 'px';
-
-    e.svg._node.closest('.section-chart').querySelectorAll('.ct-end').forEach((i, index) => {
-        i.setAttribute('data-count', index);
-    });
-
-
-    // document.querySelectorAll('.ct-chart-2 .ct-point').forEach((i, index) => {
-    //     i.insertAdjacentHTML('beforebegin', `<text x="${Number(i.getAttribute('x1')) - 4}" y="${Number(i.getAttribute('y1')) - 20}">${index + 1}</text>`);
-    // });
 }).on('draw', function(data) {
     if (data.type === 'line') {
 
