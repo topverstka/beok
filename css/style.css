@@ -5156,8 +5156,13 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 @media (max-width: 768px) {
   .ct-start-text__chart {
     position: absolute;
-    left: 0;
+    left: -5px;
     top: 18px;
+    height: 177px;
+    display: block;
+    width: 32px;
+    background: #fff;
+    z-index: 8;
   }
 }
 
@@ -5625,6 +5630,7 @@ body._active_dropdown main:after {
     margin-top: 13px;
     width: 70% !important;
     text-align: center !important;
+    justify-content: center !important;
   }
 }
 

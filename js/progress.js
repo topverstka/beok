@@ -5,6 +5,7 @@ tooltipChart.classList.add('tooltip-hover');
 
 document.addEventListener('click', function(e) {
     if (e.target.classList.contains('ct-point')) {
+        let positionToolTop = window.innerWidth > 768 ? 85 : 65;
         let positionLeft = e.target.getAttribute('x1');
         let positionTop = e.target.getAttribute('y1');
         let positionValue = e.target.getAttribute('ct:value');
@@ -12,7 +13,7 @@ document.addEventListener('click', function(e) {
         let targetValue = e.target.closest('[data-value]') ? e.target.closest('[data-value]').getAttribute('data-value') : false;
         !e.target.closest('svg').parentElement.querySelector('.ct-chart-hover') && !e.target.closest('.line-chart__area') ? e.target.closest('svg').parentElement.append(rectHover) : e.target.closest('svg').parentElement.querySelector('.ct-chart-hover').style.display = 'block';
         e.target.closest('svg').parentElement.querySelector('.ct-chart-hover').style.left = (positionLeft - 15) + 'px';
-        tooltipChartTarget.style.top = (positionTop - 85) + 'px';
+        tooltipChartTarget.style.top = (positionTop - positionToolTop) + 'px';
         tooltipChartTarget.innerText = 'в среднем\n' + positionValue + (targetValue ? ' ' + targetValue : '');
         tooltipChartTarget.classList.add('_active');
         tooltipChartTarget.style.left = (positionLeft - (tooltipChartTarget.scrollWidth / 2)) + 'px';
