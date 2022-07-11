@@ -68,7 +68,8 @@ document.addEventListener('mouseout', function(e) {
 
 function CreateChart(node, isNumberPoints) {
     node.closest('.section-chart').querySelectorAll('.ct-end').forEach((i, index) => {
-        i.parentElement.setAttribute('x', Number(i.parentElement.getAttribute('x')) - 30)
+        let res = Number(i.parentElement.getAttribute('x')) - (i.scrollWidth / 2);
+        i.parentElement.setAttribute('x', res);
     });
 
     let widthContainer = node.closest('.chart-tabs-section').scrollWidth;
