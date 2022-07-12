@@ -325,10 +325,10 @@ function addElementInLottie(element, fileJson) {
     let anim;
     anim = bodymovin.loadAnimation(params);
     anim.play();
-    anim.addEventListener('complete', () => {
+    setTimeout(() => {
         container.classList.remove('_show');
         anim.destroy();
-    });
+    }, 1200);
 }
 
 
