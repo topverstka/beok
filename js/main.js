@@ -207,6 +207,38 @@ document.addEventListener('input', function(e) {
 
 });
 
+document.addEventListener('submit', function(e) {
+    if (e.target.closest('form') && e.target.querySelector('input[type="submit"]').hasAttribute('disabled')) {
+        e.preventDefault();
+    }
+
+});
+
+
+class formsSubmit {
+    handleEvent(e) {
+        switch (e.type) {
+            case 'submit':
+                if (e.target.closest('form') && e.target.querySelector('input[type="submit"]').hasAttribute('disabled')) {
+                    e.preventDefault();
+                }
+                break;
+            case 'keydown':
+                if (e.keyCode === 13) {
+                    e.preventDefault();
+                }
+                break;
+        }
+    }
+}
+
+let formSubmit = new formsSubmit();
+
+document.addEventListener('submit', formSubmit);
+
+if (window.innerWidth < 768) {
+    document.addEventListener('keydown', formSubmit);
+}
 
 
 // Плавная прокрутка
