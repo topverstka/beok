@@ -410,17 +410,14 @@ img {
   .header {
     top: 0;
   }
-
   .header__nav-sub-list {
     position: static;
     transition: all 0.2s ease-out;
   }
-
   .header__nav-elem--has-sub:hover .header__nav-sub-list {
     max-height: 300px;
     opacity: 1;
   }
-
   .header__nav {
     background: rgb(35, 37, 45);
     position: fixed;
@@ -434,36 +431,29 @@ img {
     z-index: -2;
     overflow-y: auto;
   }
-
   .header__nav.active {
     right: 0;
     opacity: 1;
     transform: translateX(0);
     z-index: 11;
   }
-
   .header__container {
     position: relative;
   }
-
   .header__nav-list {
     display: block;
   }
-
   .header__nav {
     display: none;
   }
-
   .header__nav--mobile {
     display: block;
     position: fixed;
   }
-
   .header__nav-elem {
     margin-bottom: 35px;
     opacity: 1;
   }
-
   .header__nav-burger {
     display: block;
     position: absolute;
@@ -488,7 +478,6 @@ img {
     margin-bottom: 0;
     width: 15px;
   }
-
   .header__nav-burger.active span:first-child {
     transform: rotate(45deg);
     top: 13px;
@@ -505,7 +494,6 @@ img {
   .header__nav-burger {
     right: 20px;
   }
-
   .header__nav-elem--has-sub:hover .header__nav-sub-list {
     padding-top: 20px;
   }
@@ -1115,25 +1103,21 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   .modal__content {
     padding: 20px;
   }
-
   .modal__title {
     font-size: 24px;
     line-height: 36px;
     letter-spacing: 0.015em;
     margin-bottom: 33px;
   }
-
   .modal__telegram-item {
     margin-bottom: 10px;
   }
   .modal__telegram-item:last-child {
     margin-bottom: 0;
   }
-
   .modal__telegram-item .contacts-item {
     margin-right: 23px;
   }
-
   .modal__telegram-name {
     font-size: 16px;
     line-height: 32px;
@@ -1214,19 +1198,16 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
     padding-top: 20px;
     padding-bottom: 20px;
   }
-
   .cookie__title {
     font-size: 14px;
     line-height: 18px;
     margin-bottom: 15px;
   }
-
   .cookie__text {
     font-size: 12px;
     line-height: 18px;
     margin-bottom: 15px;
   }
-
   .btn--cookie {
     font-size: 12px;
     line-height: 14px;
@@ -1264,7 +1245,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
     align-items: center;
     box-sizing: border-box;
     background: #FFFFFF;
-    border: 1px solid rgba(144, 149, 158, 0.5);
+    border-top: 1px solid rgba(144, 149, 158, 0.5);
     height: 80px;
     width: 100%;
     z-index: 9999;
@@ -3238,9 +3219,6 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   position: static;
   transform: translate3d(0, 0, 0);
 }
-.section-tabs .your-reports__bottom-element-edit {
-  display: none;
-}
 @media (max-width: 768px) {
   .section-tabs {
     margin-right: 0;
@@ -4158,6 +4136,15 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 }
 .section-exercisec .field-text__input[data-type=search] input {
   height: 52px;
+}
+.section-exercisec .field-text__input[data-type=search] input + .field-text__input--delete {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s, visibility 0.2s;
+}
+.section-exercisec .field-text__input[data-type=search] input:not(:placeholder-shown) + .field-text__input--delete {
+  visibility: visible;
+  opacity: 1;
 }
 .section-exercisec .field-text__input._active svg {
   width: 24px;
@@ -5290,6 +5277,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 .line-chart__top--dropdown._show .line-chart__top--dropdown-list {
   transform: translateY(0);
   opacity: 1;
+  visibility: visible;
   z-index: 3;
 }
 
@@ -5397,7 +5385,8 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   border-radius: 5px;
   transform: translateY(-10px);
   transition: 0.4s;
-  z-index: -1;
+  visibility: hidden;
+  z-index: 3;
   opacity: 0;
 }
 .line-chart__top--dropdown-list li {
@@ -5901,9 +5890,6 @@ body._active_dropdown main:after {
     flex-direction: row;
     align-items: center;
     flex-wrap: nowrap;
-  }
-  .varios-report__bottom .swiper-slide:nth-of-type(2) .varios-report__bottom-element-icon {
-    transform: translateY(-2px);
   }
   .varios-report__bottom .swiper-slide:nth-of-type(2) .varios-report__bottom-element--container {
     display: flex;
