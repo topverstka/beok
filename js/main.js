@@ -111,13 +111,28 @@ function heightSlideTasks() {
     }
 }
 
+function showBtnsMore() {
+    findAll('.section-information__tasks-slider-text').forEach(i => {
+        if (i.scrollHeight > i.offsetHeight) {
+            // const lineHeight = parseInt(getComputedStyle(i).lineHeight);
+            // const lines = Math.floor(i.offsetHeight / lineHeight);
+
+            // i.style = `height: ${lineHeight * lines}px`;
+            i.insertAdjacentHTML('beforeend', '<div class="section-information__tasks-slider-field-btn" data-modal-open="tasks-popup"><button class="section-information__tasks-slider-btn">Подробнее</button></div>');
+        }
+    });
+}
+
 
 window.innerWidth > 768 ? heightSlideTasks() : '';
-
+showBtnsMore();
 
 window.addEventListener('resize', function(e) {
     defineMarginContent();
-    heightSlideTasks();
+
+    if (window.innerWidth > 768) {
+        heightSlideTasks();
+    }
 });
 
 
@@ -488,16 +503,6 @@ let cookieBtn = d.querySelector('#cookie-btn');
 //     }
 
 // });
-
-findAll('.section-information__tasks-slider-text').forEach(i => {
-    if (i.scrollHeight > i.offsetHeight) {
-        const lineHeight = parseInt(getComputedStyle(i).lineHeight);
-        const lines = Math.floor(i.offsetHeight / lineHeight);
-        i.style = `height: ${lines * lineHeight}px`;
-        i.insertAdjacentHTML('beforeend', '<div class="section-information__tasks-slider-field-btn" data-modal-open="tasks-popup"><button class="section-information__tasks-slider-btn">Подробнее</button></div>');
-    }
-});
-
 
 document.addEventListener('click', function(e) {
     if (e.target.classList.contains('section-information__tasks-slider-field-btn') ||
