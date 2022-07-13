@@ -531,12 +531,17 @@ swiperCustom('auto', 10, '.swiperRecommend', '.reports-all-section__content--rec
 
 function swiperCustom(slideCount, margin, element, elementParent, breakpoint = {}) {
     new Swiper(`${element}`, {
+        nested: true,
+        freeMode: {
+            // enabled: true,
+            // sticky: true,
+        },
         slidesPerView: slideCount ? slideCount : 'auto',
         spaceBetween: margin ? margin : 0,
         mousewheel: {
             invert: false,
-            // forceToAxis: true,
-            thresholdDelta: 60,
+            forceToAxis: true,
+            // thresholdDelta: 0,
         },
 
         navigation: {

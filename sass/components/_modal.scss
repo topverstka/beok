@@ -9,7 +9,7 @@
     overflow: hidden;
     visibility: hidden;
     opacity: 0;
-    transition: $tr;
+    transition: .4s ease;
     &._show {
         visibility: visible;
         opacity: 1;
