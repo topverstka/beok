@@ -902,10 +902,9 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   width: 100%;
   height: 100%;
   background: rgba(35, 30, 30, 0.85);
-  overflow: hidden;
   visibility: hidden;
   opacity: 0;
-  transition: 0.4s ease;
+  transition: var(--tr);
 }
 .modal._show {
   visibility: visible;
@@ -1026,7 +1025,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   justify-content: center;
   align-items: center;
   padding: 30px 16px;
-  transition: 0.4s ease;
+  transition: var(--tr);
 }
 
 .modal__content {
