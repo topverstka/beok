@@ -667,7 +667,18 @@
         }
         &[data-type="search"] {
             input {
-                height: 52px
+                height: 52px;
+
+                & + .field-text__input--delete {
+                    visibility: hidden;
+                    opacity: 0;
+                    transition: opacity .2s, visibility .2s;
+                }
+                
+                &:not(:placeholder-shown) + .field-text__input--delete {
+                    visibility: visible;
+                    opacity: 1;
+                }
             }
         }
         &._active {
