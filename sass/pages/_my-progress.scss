@@ -139,6 +139,7 @@ width: auto; */
         .line-chart__top--dropdown-list {
             transform: translateY(0);
             opacity: 1;
+            visibility: visible;
             z-index: 3
         }
     }
@@ -255,7 +256,7 @@ width: auto; */
     border-radius: 5px;
     transform: translateY(-10px);
     transition: .4s;
-    z-index: -1;
+    visibility: hidden;
     opacity: 0;
     li {
         padding: 0 0 0 20px;
