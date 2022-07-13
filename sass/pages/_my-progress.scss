@@ -257,6 +257,7 @@ width: auto; */
     transform: translateY(-10px);
     transition: .4s;
     visibility: hidden;
+    z-index: 3;
     opacity: 0;
     li {
         padding: 0 0 0 20px;
