@@ -410,17 +410,14 @@ img {
   .header {
     top: 0;
   }
-
   .header__nav-sub-list {
     position: static;
     transition: all 0.2s ease-out;
   }
-
   .header__nav-elem--has-sub:hover .header__nav-sub-list {
     max-height: 300px;
     opacity: 1;
   }
-
   .header__nav {
     background: rgb(35, 37, 45);
     position: fixed;
@@ -434,36 +431,29 @@ img {
     z-index: -2;
     overflow-y: auto;
   }
-
   .header__nav.active {
     right: 0;
     opacity: 1;
     transform: translateX(0);
     z-index: 11;
   }
-
   .header__container {
     position: relative;
   }
-
   .header__nav-list {
     display: block;
   }
-
   .header__nav {
     display: none;
   }
-
   .header__nav--mobile {
     display: block;
     position: fixed;
   }
-
   .header__nav-elem {
     margin-bottom: 35px;
     opacity: 1;
   }
-
   .header__nav-burger {
     display: block;
     position: absolute;
@@ -488,7 +478,6 @@ img {
     margin-bottom: 0;
     width: 15px;
   }
-
   .header__nav-burger.active span:first-child {
     transform: rotate(45deg);
     top: 13px;
@@ -505,7 +494,6 @@ img {
   .header__nav-burger {
     right: 20px;
   }
-
   .header__nav-elem--has-sub:hover .header__nav-sub-list {
     padding-top: 20px;
   }
@@ -1125,25 +1113,21 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   .modal__content {
     padding: 20px;
   }
-
   .modal__title {
     font-size: 24px;
     line-height: 36px;
     letter-spacing: 0.015em;
     margin-bottom: 33px;
   }
-
   .modal__telegram-item {
     margin-bottom: 10px;
   }
   .modal__telegram-item:last-child {
     margin-bottom: 0;
   }
-
   .modal__telegram-item .contacts-item {
     margin-right: 23px;
   }
-
   .modal__telegram-name {
     font-size: 16px;
     line-height: 32px;
@@ -1224,19 +1208,16 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
     padding-top: 20px;
     padding-bottom: 20px;
   }
-
   .cookie__title {
     font-size: 14px;
     line-height: 18px;
     margin-bottom: 15px;
   }
-
   .cookie__text {
     font-size: 12px;
     line-height: 18px;
     margin-bottom: 15px;
   }
-
   .btn--cookie {
     font-size: 12px;
     line-height: 14px;
@@ -1777,6 +1758,85 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
     font-size: 18px;
     line-height: 21px;
   }
+}
+
+.container-margin {
+  margin: 0 0 78px 0;
+}
+@media (max-width: 768px) {
+  .container-margin {
+    margin-top: 30px;
+  }
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pagination button {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #DFE3E8;
+  border-radius: 4px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 3px;
+}
+.pagination button.btn-disabled {
+  background: var(--gray);
+  opacity: 0.5;
+  border-color: transparent;
+  pointer-events: none;
+}
+.pagination button.btn-disabled svg path {
+  fill: #fff;
+}
+.pagination button svg {
+  width: 12px;
+  height: 12px;
+}
+
+.pagination__list {
+  margin: 0 8px;
+  display: flex;
+  align-items: center;
+}
+.pagination__list li {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #DFE3E8;
+  border-radius: 4px;
+  background: #fff;
+  transition: 0.3s;
+}
+.pagination__list li:hover {
+  border-color: var(--outline);
+}
+.pagination__list li:hover a {
+  color: var(--outline);
+}
+.pagination__list li._active {
+  border-color: var(--outline);
+}
+.pagination__list li._active a {
+  color: var(--outline);
+}
+.pagination__list li a {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--main);
+  padding-top: 2px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pagination__list li:not(:last-child) {
+  margin-right: 8px;
 }
 
 .hello-motivation {
@@ -6851,10 +6911,19 @@ body._active_dropdown main:after {
   }
 }
 
+.section-information__tasks--width .section-information__tasks-slider-field-btn {
+  bottom: 0;
+}
+@media (max-width: 768px) {
+  .section-information__tasks--width .section-information__tasks-slider-field-btn {
+    bottom: 3px;
+  }
+}
+
 .section-information__tasks-slider-field-btn {
   position: absolute;
   right: 4px;
-  bottom: 0;
+  bottom: 4px;
   line-height: 1;
   padding-left: 18px;
   cursor: pointer;
@@ -6875,7 +6944,7 @@ body._active_dropdown main:after {
 }
 @media (max-width: 768px) {
   .section-information__tasks-slider-field-btn {
-    bottom: 1px;
+    bottom: 2px;
     line-height: 1;
     padding-right: 12px;
     right: 0px;

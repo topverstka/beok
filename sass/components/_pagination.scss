@@ -1,0 +1,76 @@
+.container-margin {
+    margin: 0 0 78px 0;
+    @media (max-width: $tablet) {
+        margin-top: 30px;
+    }
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    button {
+        width: 32px;
+        height: 32px;
+        border: 1px solid #DFE3E8;
+        border-radius: 4px;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 3px;
+        &.btn-disabled {
+            background: $gray;
+            opacity: .5;
+            border-color: transparent;
+            pointer-events: none;
+            svg path {
+                fill: #fff
+            }
+        }
+        svg {
+            width: 12px;
+            height: 12px;
+        }
+    }
+}
+
+.pagination__list {
+    margin: 0 8px;
+    display: flex;
+    align-items: center;
+    li {
+        width: 32px;
+        height: 32px;
+        border: 1px solid #DFE3E8;
+        border-radius: 4px;
+        background: #fff;
+        transition: .3s;
+        &:hover {
+            border-color: $outline;
+            a {
+                color: $outline;
+            }
+        }
+        &._active {
+            border-color: $outline;
+            a {
+                color: $outline;
+            }
+        }
+        a {
+            font-weight: 700;
+            font-size: 14px;
+            color: $main;
+            padding-top: 2px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        &:not(:last-child) {
+            margin-right: 8px;
+        }
+    }
+}

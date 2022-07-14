@@ -264,10 +264,17 @@
     }
 }
 
+.section-information__tasks--width .section-information__tasks-slider-field-btn {
+    bottom: 0;
+    @media (max-width: $tablet) {
+        bottom: 3px
+    }
+}
+
 .section-information__tasks-slider-field-btn {
     position: absolute;
     right: 4px;
-    bottom: 0;
+    bottom: 4px;
     line-height: 1;
     padding-left: 18px;
     cursor: pointer;
@@ -286,7 +293,7 @@
         font-size: 14px;
     }
     @media (max-width:$tablet) {
-        bottom: 1px;
+        bottom: 2px;
         line-height: 1;
         padding-right: 12px;
         right: 0px;

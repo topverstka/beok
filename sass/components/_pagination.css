@@ -1,0 +1,12 @@
+.pagination {
+  display: flex;
+  align-items: center;
+}
+
+.pagination button {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #DFE3E8;
+  border-radius: 4px;
+  background: #fff;
+}
