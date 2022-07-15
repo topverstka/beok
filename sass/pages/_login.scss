@@ -1,0 +1,152 @@
+.login-page {
+    background: url(/img/login-background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 21% 69%;
+    .general-menu {
+        background: transparent;
+        padding-top: 55px
+    }
+    .header {
+        padding-top: 55px;
+    }
+    .header__nav-elem {
+        svg {
+            fill: transparent
+        }
+    }
+    .general-menu__logo {
+        margin-left: 56px
+    }
+    @media (max-width:$tablet) {
+        .general-menu {
+            display: none
+        }
+        .header__nav--hide--tablet {
+            display: block;
+            svg {
+                fill: transparent
+            }
+        }
+        .header__nav-elem--mobile--logo {
+            margin-left: 0;
+            margin-right: auto;
+        }
+        .header__nav-elem--mobile:not(:last-child) {
+            margin-right: 22px;
+        }
+        .header__nav-elem--mobile:first-child {
+            margin-right: auto;
+        }
+    }
+}
+
+.login-form {
+    width: 556px;
+    background: #FFFFFF;
+    box-shadow: 5px 4px 15px rgba(119, 119, 119, 0.24);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 44px 40px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    .section-registation__field {
+        flex-wrap: wrap;
+        .section-registation__field--col {
+            position: relative;
+            input[type="password"] {
+                &::-ms-reveal,
+                &::-ms-clear {
+                    display: none
+                }
+            }
+            &:not(:last-child) {
+                margin-right: 0;
+            }
+        }
+    }
+    @media (max-width:$tablet) {
+        width: 100%;
+        top: 0;
+        transform: none;
+        left: 0;
+        height: 100vh;
+        padding: 106px 12px 0 12px;
+        box-shadow: none;
+        .section-registation__field {
+            flex-direction: column;
+        }
+        .section-registation__field--col {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.login-form__title {
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 34px;
+    font-family: 'RoadRadio';
+    text-align: center;
+    margin-bottom: 32px;
+    @media (max-width: $tablet) {
+        font-size: 24px;
+        line-height: 24px;
+        margin-bottom: 20px;
+        text-align: left;
+    }
+}
+
+.login-form__btn {
+    height: 52px;
+    @media (max-width: $tablet) {
+        margin-top: 16px;
+    }
+}
+
+.login-form__create-account {
+    margin-top: 72px;
+    text-align: center;
+    @media (max-width: $tablet) {
+        margin-top: 60px;
+    }
+}
+
+.login-form__create-account--text {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 130%;
+    margin-bottom: 16px;
+}
+
+.login-form__create-account--link {
+    height: 52px;
+}
+
+.login-form__password-link {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 130%;
+    color: #467EF3;
+    margin-top: 6px;
+    width: 100%;
+    text-align: right;
+    @media (max-width: $tablet) {
+        margin-top: -9px;
+    }
+}
+
+.login-form__view {
+    position: absolute;
+    top: 50%;
+    right: 14px;
+    svg {
+        width: 24px;
+        height: 24px;
+        fill: transparent;
+    }
+}

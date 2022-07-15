@@ -194,7 +194,7 @@ function validationForm() {
 // checkForms();
 
 
-document.querySelectorAll('form input[type="submit"]').forEach(i => i.disabled = true)
+document.querySelectorAll('form input[type="submit"]:not(.not-disabled)').forEach(i => i.disabled = true)
 
 
 document.addEventListener('input', function(e) {
@@ -222,15 +222,15 @@ document.addEventListener('input', function(e) {
 
 });
 
-document.addEventListener('submit', function(e) {
-    if (e.target.closest('form') && e.target.querySelector('input[type="submit"]').hasAttribute('disabled')) {
-        e.preventDefault();
-    }
+// document.addEventListener('submit', function(e) {
+//     if (e.target.closest('form') && e.target.querySelector('input[type="submit"]').hasAttribute('disabled')) {
+//         e.preventDefault();
+//     }
 
-});
+// });
 
 
-class formsSubmit {
+class formSubmit {
     handleEvent(e) {
         switch (e.type) {
             case 'submit':
@@ -247,12 +247,12 @@ class formsSubmit {
     }
 }
 
-let formSubmit = new formsSubmit();
+let innerFormSubmit = new formSubmit();
 
-document.addEventListener('submit', formSubmit);
+document.addEventListener('submit', innerFormSubmit);
 
 if (window.innerWidth < 768) {
-    document.addEventListener('keydown', formSubmit);
+    document.addEventListener('keydown', innerFormSubmit);
 }
 
 
@@ -594,6 +594,18 @@ document.addEventListener('click', function(e) {
         e.target.closest('.take-photo__upload--photo').querySelector('.take-photo__upload-section-file').classList.remove('_active-delete')
     }
 
+    if (returnElementDeligitaion(e, '.login-form__view')) {
+
+        if (e.target.closest('div').querySelector('input[type="password"]')) {
+            e.target.closest('div').querySelector('input[type="password"]').setAttribute('type', 'text');
+            e.target.closest('div').querySelector('.login-form__view svg use').setAttribute('xlink:href', './img/icons-sprite.svg#password-not');
+        } else {
+            e.target.closest('div').querySelector('input[type="text"]').setAttribute('type', 'password');
+            e.target.closest('div').querySelector('.login-form__view svg use').setAttribute('xlink:href', './img/icons-sprite.svg#password-view')
+        }
+
+    }
+
 
     if (e.target.hasAttribute('data-url')) {
         location.href = e.target.getAttribute('data-url');
@@ -652,6 +664,17 @@ document.addEventListener('click', function(e) {
 
 
     // dropdown
+    if (e.target.closest('.reports-all-section') &&
+        (e.target.dataset.dropdownBtn || e.target.closest('[data-dropdown-btn]'))) {
+        let heightChildElement = e.target.closest('[data-dropdown-parent]').querySelector('[data-dropdown-body]').scrollHeight;
+        if (!e.target.closest('[data-dropdown-parent]').classList.contains('_dropdown-show')) {
+            e.target.closest('.reports-all-section').style.height = heightChildElement + e.target.closest('.reports-all-section').scrollHeight + 'px';
+        } else {
+            e.target.closest('.reports-all-section').style.height = e.target.closest('.reports-all-section').scrollHeight - heightChildElement + 'px';
+        }
+    }
+
+
     if (e.target.dataset.dropdownBtn || e.target.closest('[data-dropdown-btn]')) {
         let targetParent = e.target.closest('[data-dropdown-parent]');
         let targetBody = targetParent.querySelector('[data-dropdown-body]');
@@ -689,6 +712,25 @@ document.addEventListener('click', function(e) {
     if (e.target.classList.contains('modal-field__count--minus') || e.target.closest('.modal-field__count--minus')) {
         e.target.closest('.modal-field__count').querySelector('.modal-field__count--number').innerText > 1 ? e.target.closest('.modal-field__count').querySelector('.modal-field__count--number').innerText = Number(e.target.closest('.modal-field__count').querySelector('.modal-field__count--number').innerText) - 1 : 1;
     }
+
+
+
+    // List chat
+    if (returnElementDeligitaion(e, '.message-page__btn')) {
+
+        if (e.target.firstChild.nodeValue.trim() === 'Подробнее') {
+            e.target.firstChild.nodeValue = 'Свернуть';
+            returnElementDeligitaion(e, '.message-page__btn').classList.add('_show');
+            find('.reports-all-section').style.height = find('.reports-all-section').scrollHeight + 'px';
+        } else {
+            e.target.firstChild.nodeValue = 'Подробнее';
+            returnElementDeligitaion(e, '.message-page__btn').classList.remove('_show');
+            find('.reports-all-section').style = null;
+        }
+    }
+    // List chat
+
+
 
 });
 
