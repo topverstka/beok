@@ -1,4 +1,7 @@
 .chat-page {
+    .link-pref-page__desctop {
+        display: none;
+    }
     @media (max-width: $tablet) {
         .general-menu {
             display: none;

@@ -1839,6 +1839,9 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   margin-right: 8px;
 }
 
+.chat-page .link-pref-page__desctop {
+  display: none;
+}
 @media (max-width: 768px) {
   .chat-page .general-menu {
     display: none;
