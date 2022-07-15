@@ -150,6 +150,9 @@
         margin-right: 13px;
         object-fit: cover;
     }
+    @media (max-width:$tablet) {
+        margin-right: 50px;
+    }
 }
 
 .dialog__message--name {

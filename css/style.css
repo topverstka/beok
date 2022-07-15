@@ -1979,6 +1979,11 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   margin-right: 13px;
   object-fit: cover;
 }
+@media (max-width: 768px) {
+  .dialog__message--photo {
+    margin-right: 50px;
+  }
+}
 
 .dialog__message--name {
   font-weight: 500;
@@ -5071,6 +5076,9 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   align-items: center;
   margin-top: 14px;
 }
+.section-account--link.section-account--link-tech {
+  display: none;
+}
 .section-account--link .section-account--link-left {
   width: 80%;
 }
@@ -5079,6 +5087,9 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
     background: var(--accent2);
     border: none;
     margin-top: 10px;
+  }
+  .section-account--link.section-account--link-tech {
+    display: flex;
   }
 }
 
