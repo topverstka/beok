@@ -75,14 +75,18 @@ var sticky = 250;
 function myFunction() {
     let currentPosition = window.pageYOffset || document.documentElement.scrollTop;
     if (window.pageYOffset > sticky) {
+        find('body').style.paddingTop = (header.scrollHeight + parseInt(window.getComputedStyle(header).marginBottom)) + 'px';
         header.classList.add("sticky");
         if (previousPosition > currentPosition) {
             header.classList.add("sticky");
         } else {
             header.classList.remove("sticky");
+            find('body').style.paddingTop = null;
+
         }
     } else {
         header.classList.remove("sticky");
+        find('body').style.paddingTop = null;
     }
     previousPosition = currentPosition;
 }
@@ -132,6 +136,7 @@ window.addEventListener('resize', function(e) {
 
     if (window.innerWidth > 768) {
         heightSlideTasks();
+        styleElementChat();
     }
 });
 
@@ -896,3 +901,21 @@ document.addEventListener('input', function(e) {
         e.target.value = e.target.value.replace(/[^\d]/, '')
     }
 });
+
+
+
+
+
+function styleElementChat() {
+    if (find('.message-push')) {
+        let heightHeader = find('.header').scrollHeight;
+        let heightMessage = find('.message-push').scrollHeight;
+        find('.message-page').style.height = (window.innerHeight - heightHeader - heightMessage - 20) + 'px';
+
+        let marginElement = find('.page-content').style.marginLeft;
+
+        find('.message-push').style.width = `calc(100% - ${marginElement})`;
+    }
+}
+
+styleElementChat()

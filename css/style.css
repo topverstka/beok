@@ -2010,7 +2010,11 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 }
 
 .message-page {
-  margin: 0 58px 51px 40px;
+  margin: 0 58px 0 40px;
+  overflow-y: auto;
+  margin-right: 0;
+  padding-right: 58px;
+  padding-bottom: 40px;
 }
 .message-page .reports-all-section {
   height: 335px;
@@ -2044,7 +2048,8 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 }
 @media (max-width: 768px) {
   .message-page {
-    margin: 40px 0 20px 0;
+    margin: 40px -12px 0 0;
+    padding: 0 12px 20px 0;
   }
   .message-page .varios-report__top-calendar {
     width: auto;
@@ -2121,12 +2126,14 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 
 .message-push {
   padding: 16px 24px;
-  background: rgba(121, 126, 135, 0.15);
-  width: calc(100% + 15px);
+  background: #EBECED;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-left: -15px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 999;
 }
 .message-push button svg {
   width: 32px;
@@ -2134,7 +2141,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 }
 @media (max-width: 768px) {
   .message-push {
-    width: calc(100% + 27px);
+    width: 100%;
     height: 80px;
     align-items: flex-start;
     padding: 10px 11px 0 11px;
