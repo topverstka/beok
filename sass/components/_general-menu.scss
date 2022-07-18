@@ -59,7 +59,7 @@
                         fill: rgba(121, 126, 135, 0.15);
                         margin: 0 0 2px 0;
                         height: 28px;
-                        width: 27px;
+                        width: 28px;
                     }
                 }
                 &._active-menu {
@@ -87,7 +87,7 @@
             }
         }
     }
-
+    
     .general-menu--hide--tablet {
         @media (max-width: $tablet) {
             display: none;
