@@ -77,6 +77,7 @@
         height: 100vh;
         padding: 106px 12px 0 12px;
         box-shadow: none;
+        overflow: auto;
         .section-registation__field {
             flex-direction: column;
         }
@@ -112,7 +113,7 @@
     margin-top: 72px;
     text-align: center;
     @media (max-width: $tablet) {
-        margin-top: 60px;
+        margin: 60px 0 20px 0;
     }
 }
 

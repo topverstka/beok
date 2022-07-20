@@ -6375,6 +6375,7 @@ body._active_dropdown main:after {
     height: 100vh;
     padding: 106px 12px 0 12px;
     box-shadow: none;
+    overflow: auto;
   }
   .login-form .section-registation__field {
     flex-direction: column;
@@ -6416,7 +6417,7 @@ body._active_dropdown main:after {
 }
 @media (max-width: 768px) {
   .login-form__create-account {
-    margin-top: 60px;
+    margin: 60px 0 20px 0;
   }
 }
 
