@@ -74,7 +74,8 @@ var sticky = 250;
 // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
 function myFunction() {
     let currentPosition = window.pageYOffset || document.documentElement.scrollTop;
-    if (window.pageYOffset > sticky && window.scrollY + 100 <= document.documentElement.scrollHeight - document.documentElement.clientHeight) {
+    let positionBottom = window.scrollY + 100 <= document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    if (window.pageYOffset > sticky && positionBottom) {
         find('body').style.paddingTop = (header.scrollHeight + parseInt(window.getComputedStyle(header).marginBottom)) + 'px';
         header.classList.add("sticky");
         if (previousPosition > currentPosition) {
@@ -619,10 +620,14 @@ document.addEventListener('click', function(e) {
 
 
     if (returnElementDeligitaion(e, '.line-chart__top--dropdown') && !returnElementDeligitaion(e, '.line-chart__top--dropdown-list')) {
-        findAll('.line-chart__top--dropdown').forEach(i => { i.classList.remove('_show') });
         let dropdownTarget = e.target.closest('.line-chart__top--dropdown') ? e.target.closest('.line-chart__top--dropdown') : e.target.classList.contains('line-chart__top--dropdown');
         let dropdownList = dropdownTarget.querySelector('.line-chart__top--dropdown-list');
-        !dropdownTarget.classList.contains('_show') ? dropdownTarget.classList.add('_show') : dropdownTarget.classList.remove('_show');
+        if (!dropdownTarget.classList.contains('_show')) {
+            findAll('.line-chart__top--dropdown').forEach(i => { i.classList.remove('_show') });
+            dropdownTarget.classList.add('_show');
+        } else {
+            dropdownTarget.classList.remove('_show');
+        }
 
         if (window.innerWidth < 768) {
             dropdownList.classList.add('_active');

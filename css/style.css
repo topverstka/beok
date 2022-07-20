@@ -5418,6 +5418,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   display: flex;
   flex-direction: column;
   width: -webkit-fill-available;
+  flex: 1;
 }
 .section-registation__field .section-registation__field--col label,
 .section-registation__field .section-registation__field--col .section-registation__field--col-title {
@@ -6552,7 +6553,7 @@ body._active_dropdown main:after {
     flex-wrap: nowrap;
   }
   .varios-report__bottom .swiper-slide[data-block=report] .varios-report__bottom-element-icon {
-    transform: translateY(-2px);
+    transform: translateY(-1px);
   }
   .varios-report__bottom .swiper-slide[data-block=report] .varios-report__bottom-element--container {
     display: flex;
