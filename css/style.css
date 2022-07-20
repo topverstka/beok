@@ -4090,6 +4090,9 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
     margin: 24px 0;
     flex-direction: column;
   }
+  .field-box[data-type=textarea] input {
+    height: 110px;
+  }
 }
 
 .field-box__col {

@@ -120,6 +120,11 @@
     @media (max-width: $tablet) {
         margin: 24px 0;
         flex-direction: column;
+        &[data-type="textarea"] {
+            input {
+                height: 110px
+            }
+        }
     }
 }
 
@@ -668,14 +673,12 @@
         &[data-type="search"] {
             input {
                 height: 52px;
-
-                & + .field-text__input--delete {
+                &+.field-text__input--delete {
                     visibility: hidden;
                     opacity: 0;
                     transition: opacity .2s, visibility .2s;
                 }
-                
-                &:not(:placeholder-shown) + .field-text__input--delete {
+                &:not(:placeholder-shown)+.field-text__input--delete {
                     visibility: visible;
                     opacity: 1;
                 }
