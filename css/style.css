@@ -2139,7 +2139,14 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   right: 0;
   z-index: 999;
 }
-.message-push button svg {
+.message-push form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.message-push button svg,
+.message-push .message-push--file svg {
   width: 32px;
   height: 32px;
 }
@@ -2194,6 +2201,16 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 
 .message-push--file {
   margin-left: 28px;
+  position: relative;
+}
+
+.message-push__field-file {
+  opacity: 0;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  left: 0;
+  cursor: pointer;
 }
 
 .message-push--audio {
