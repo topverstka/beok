@@ -234,11 +234,12 @@ document.addEventListener('input', function(e) {
             e.target.parentElement.querySelector('.error-message') ? e.target.parentElement.querySelector('.error-message').remove() : false;
         }
 
-
-        if (valueField && valueFieldRadio && !arrValueBool.includes(false) && valueMail) {
-            e.target.closest('form').querySelector('input[type="submit"]').disabled = false;
-        } else {
-            e.target.closest('form').querySelector('input[type="submit"]').disabled = true;
+        if (e.target.closest('form').querySelector('input[type="submit"]')) {
+            if (valueField && valueFieldRadio && !arrValueBool.includes(false) && valueMail) {
+                e.target.closest('form').querySelector('input[type="submit"]').disabled = false;
+            } else {
+                e.target.closest('form').querySelector('input[type="submit"]').disabled = true;
+            }
         }
 
 
@@ -598,9 +599,9 @@ function swiperCustom(slideCount, margin, element, elementParent, breakpoint = {
 
 
 
-// file input add
 
 document.addEventListener('change', function(e) {
+    // file input add
     if (e.target.classList.contains('take-photo__upload--file') && !e.target.classList.contains('_active-delete')) {
         let file = e.target.files[0];
         let img = document.createElement('img');
@@ -614,9 +615,17 @@ document.addEventListener('change', function(e) {
         e.target.closest('.take-photo__upload--photo').querySelector('.take-photo__upload-section-file').classList.add('_active-delete');
         e.target.value = '';
     }
-});
+    // file input add
 
-// file input add
+
+    // При заполнение всех полей вылетают конфетти
+    if (e.target.classList.contains('check-list__form-field--input')) {
+        let inputChecked = [...e.target.closest('form').querySelectorAll('.check-list__form-field--input')].every(i => i.checked);
+        if (inputChecked) {
+            addElementInLottie('confetti', 'confetti.json');
+        }
+    }
+});
 
 
 window.addEventListener('change', function(e) {
