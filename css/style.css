@@ -1650,6 +1650,15 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   }
 }
 
+@media (max-height: 580px) and (max-width: 768px) {
+  .modal#edit-report form {
+    height: auto;
+    padding-bottom: 20px;
+  }
+  .modal#edit-report form input[type=submit] {
+    margin-top: 20px;
+  }
+}
 .edit-report--date {
   font-weight: 500;
   font-size: 16px;

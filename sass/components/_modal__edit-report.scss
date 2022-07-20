@@ -119,6 +119,18 @@
     }
 }
 
+@media (max-height:580px) and (max-width:$tablet) {
+    .modal#edit-report {
+        form {
+            height: auto;
+            padding-bottom: 20px;
+            input[type="submit"] {
+                margin-top: 20px
+            }
+        }
+    }
+}
+
 .edit-report--date {
     font-weight: 500;
     font-size: 16px;
