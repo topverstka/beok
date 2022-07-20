@@ -7533,6 +7533,11 @@ body._active_dropdown main:after {
     z-index: -1;
   }
 }
+@media (min-width: 1700px) {
+  .section-information__tasks-slider-field-btn {
+    bottom: 1px;
+  }
+}
 
 .section-information__tasks-slider-btn {
   font-size: inherit;

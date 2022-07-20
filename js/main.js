@@ -104,13 +104,14 @@ defineMarginContent();
 
 
 function heightSlideTasks() {
+    let dopHeigh = window.innerWidth > 1700 ? 4 : 0;
     if (find('.section-information__billboard')) {
         findAll('.section-information__tasks-slider-element').forEach(i => {
             i.style.height = find('.section-information__billboard').offsetHeight + 'px';
             let paddingElement = parseInt(window.getComputedStyle(i).padding);
             let plashka = i.querySelector('.section-information__tasks-slider-sing').offsetHeight;
             let marginPlashka = parseInt(window.getComputedStyle(i.querySelector('.section-information__tasks-slider-sing')).marginBottom);
-            i.querySelector('.section-information__tasks-slider-text').style.height = (i.offsetHeight - paddingElement - plashka - marginPlashka) - paddingElement + 'px';
+            i.querySelector('.section-information__tasks-slider-text').style.height = (i.offsetHeight - paddingElement - plashka - marginPlashka + dopHeigh) - paddingElement + 'px';
         });
     }
 }
