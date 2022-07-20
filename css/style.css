@@ -5644,7 +5644,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   cursor: pointer;
 }
 .section-registation__policy--field input:checked + label {
-  outline: 1px solid transparent;
+  border: 1px solid transparent;
   background: var(--outline);
 }
 .section-registation__policy--field input:checked + label:after {
@@ -5653,7 +5653,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 .section-registation__policy--field label {
   width: 18px;
   height: 18px;
-  outline: 1px solid var(--main);
+  border: 1px solid var(--main);
   border-radius: 2px;
   position: relative;
   display: block;
@@ -5674,7 +5674,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   transform: scale(0);
   transition: 0.4s;
 }
-@media (max-width: 768px) {
+@media (max-width: 400px) {
   .section-registation__policy--field {
     top: 3px;
   }
