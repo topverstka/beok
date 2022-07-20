@@ -131,6 +131,21 @@
     }
 }
 
+@media (max-height:400px) and (max-width:$tablet) {
+    .modal#popup-exercisec {
+        form {
+            input[type="submit"] {
+                position: static;
+                width: 100%;
+                margin-top: 20px
+            }
+        }
+        .modal__body {
+            height: auto;
+        }
+    }
+}
+
 .edit-report--date {
     font-weight: 500;
     font-size: 16px;
