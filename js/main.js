@@ -774,7 +774,10 @@ if (find('[data-picker]')) {
     });
     if (find('[data-picker]')) {
         window.addEventListener('click', function(e) {
-            if (!e.target.closest('.air-datepicker-global-container') && find('.varios-report__top-calendar-icon') && !returnElementDeligitaion(e, '.varios-report__top-calendar-icon') && find('#air-datepicker-global-container').childElementCount > 0) {
+            if (!e.target.closest('.air-datepicker-global-container') &&
+                find('.varios-report__top-calendar-icon') &&
+                !returnElementDeligitaion(e, '.varios-report__top-calendar-icon') &&
+                find('#air-datepicker-global-container').childElementCount > 0) {
                 dp.hide();
             }
 
@@ -812,6 +815,12 @@ if (find('[data-picker]')) {
             if (returnElementDeligitaion(e, '.varios-report__top-calendar-left')) {
                 dp.show();
                 dp.prev();
+            }
+
+
+
+            if (returnElementDeligitaion(e, '.air-datepicker--content')) {
+                dp.hide();
             }
 
         });
