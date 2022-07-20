@@ -43,6 +43,12 @@
     }
 }
 
+@media (max-width: $tablet) and (max-height: 550px) {
+    .form-thanks-page {
+        overflow: auto;
+    }
+}
+
 .section-registation__thanks {
     @media (max-width: $tablet) {
         // height: 96vh;
@@ -145,6 +151,11 @@
         margin: auto;
         right: 0;
         bottom: 48px;
+    }
+    @media (max-width: $tablet) and (max-height: 550px) {
+        position: static;
+        margin-bottom: 40px;
+        width: 100%;
     }
 }
 
