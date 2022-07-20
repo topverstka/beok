@@ -121,6 +121,9 @@
 
 @media (max-height:580px) and (max-width:$tablet) {
     .modal#edit-report {
+        .modal__body {
+            height: auto;
+        }
         form {
             height: auto;
             padding-bottom: 20px;
