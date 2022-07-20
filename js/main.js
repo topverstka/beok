@@ -934,3 +934,21 @@ function styleElementChat() {
 }
 
 styleElementChat()
+
+
+// Макса даты ДД.ММ.ГГГГ
+const maskDate = value => {
+    let v = value.replace(/\D/g, '').slice(0, 8);
+    if (v.length >= 4) {
+        return `${v.slice(0,2)}.${v.slice(2,4)}.${v.slice(4)}`;
+    } else if (v.length >= 3) {
+        return `${v.slice(0,2)}.${v.slice(2)}`;
+    }
+    return v
+}
+document.addEventListener('keyup', function(e) {
+    if (e.target.id === 'birthday') {
+        //if (e.target.value.length >= 10) return;
+        e.target.value = maskDate(e.target.value)
+    }
+});
