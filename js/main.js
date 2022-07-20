@@ -906,8 +906,8 @@ if (find('.field-range__slide--input')) {
 
 
 document.addEventListener('input', function(e) {
-    if (e.target.getAttribute('type') === 'number') {
-        e.target.value = e.target.value.replace(/[^\d]/, '')
+    if (e.target.hasAttribute('data-number')) {
+        e.target.value = e.target.value.replace(/[^0-9\.\,]/g, '')
     }
 });
 
