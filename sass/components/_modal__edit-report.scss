@@ -47,6 +47,9 @@
     }
     @media (max-width: $tablet) {
         z-index: 999999;
+        &._show {
+            overflow-y: auto;
+        }
         .modal__content {
             width: 100%;
             max-width: 100%;
