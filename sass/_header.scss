@@ -51,6 +51,9 @@
     width: calc(100% - 242px);
     right: 0;
     animation: header 1s;
+    &.sticky-show {
+        top: 0
+    }
     @media (max-width: $tablet) {
         left: 0;
         width: 100%;

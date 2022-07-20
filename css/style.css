@@ -316,6 +316,9 @@ img {
   right: 0;
   animation: header 1s;
 }
+.header.sticky.sticky-show {
+  top: 0;
+}
 @media (max-width: 768px) {
   .header.sticky {
     left: 0;

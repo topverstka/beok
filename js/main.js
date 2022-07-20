@@ -74,7 +74,7 @@ var sticky = 250;
 // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
 function myFunction() {
     let currentPosition = window.pageYOffset || document.documentElement.scrollTop;
-    if (window.pageYOffset > sticky) {
+    if (window.pageYOffset > sticky && window.scrollY + 1 <= document.documentElement.scrollHeight - document.documentElement.clientHeight) {
         find('body').style.paddingTop = (header.scrollHeight + parseInt(window.getComputedStyle(header).marginBottom)) + 'px';
         header.classList.add("sticky");
         if (previousPosition > currentPosition) {
