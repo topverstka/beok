@@ -6621,7 +6621,7 @@ body._active_dropdown main:after {
     flex-wrap: nowrap;
   }
   .varios-report__bottom .swiper-slide[data-block=report] .varios-report__bottom-element-icon {
-    transform: translateY(-1px);
+    transform: translateY(-0.5px);
   }
   .varios-report__bottom .swiper-slide[data-block=report] .varios-report__bottom-element--container {
     display: flex;
