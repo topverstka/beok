@@ -201,7 +201,15 @@ function validationForm() {
 // checkForms();
 
 
-document.querySelectorAll('form input[type="submit"]:not(.not-disabled)').forEach(i => i.disabled = true)
+document.querySelectorAll('form input[type="submit"]:not(.not-disabled)').forEach(i => i.disabled = true);
+
+
+const validateEmail = (email) => {
+    return email.match(
+        /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
+};
+
 
 
 document.addEventListener('input', function(e) {
@@ -209,6 +217,7 @@ document.addEventListener('input', function(e) {
         let arrValueBool = [];
         let valueField = [...e.target.closest('form').querySelectorAll('.required')].every(i => i.value !== '');
         let valueFieldRadio = [...e.target.closest('form').querySelectorAll('input[type="checkbox"].required')].every(i => i.checked);
+        let valueMail = e.target.closest('form').querySelector('#mail') ? validateEmail(e.target.closest('form').querySelector('#mail').value) : false;
 
         e.target.closest('form').querySelectorAll('.required').forEach(i => {
             if (i.tagName !== 'INPUT') {
@@ -216,8 +225,17 @@ document.addEventListener('input', function(e) {
             }
         });
 
+        if (!valueMail && e.target.id === 'mail') {
+            e.target.classList.add('_error');
+            // e.target.value = e.target.validationMessage;
+            !e.target.parentElement.querySelector('.error-message') ? e.target.parentElement.insertAdjacentHTML('beforeend', '<p class="error-message">Не правильно заполнено поле</p>') : false;
+        } else {
+            e.target.classList.remove('_error');
+            e.target.parentElement.querySelector('.error-message') ? e.target.parentElement.querySelector('.error-message').remove() : false;
+        }
 
-        if (valueField && valueFieldRadio && !arrValueBool.includes(false)) {
+
+        if (valueField && valueFieldRadio && !arrValueBool.includes(false) && valueMail) {
             e.target.closest('form').querySelector('input[type="submit"]').disabled = false;
         } else {
             e.target.closest('form').querySelector('input[type="submit"]').disabled = true;
@@ -237,6 +255,18 @@ document.addEventListener('input', function(e) {
 // });
 
 
+// Макса даты ДД.ММ.ГГГГ
+const maskDate = value => {
+    let v = value.replace(/\D/g, '').slice(0, 8);
+    if (v.length >= 4) {
+        return `${v.slice(0,2)}.${v.slice(2,4)}.${v.slice(4)}`;
+    } else if (v.length >= 3) {
+        return `${v.slice(0,2)}.${v.slice(2)}`;
+    }
+    return v
+}
+
+
 class formSubmit {
     handleEvent(e) {
         switch (e.type) {
@@ -250,6 +280,12 @@ class formSubmit {
                     e.preventDefault();
                 }
                 break;
+            case 'keyup':
+                if (e.target.id === 'birthday') {
+                    //if (e.target.value.length >= 10) return;
+                    e.target.value = maskDate(e.target.value)
+                }
+                break;
         }
     }
 }
@@ -257,6 +293,7 @@ class formSubmit {
 let innerFormSubmit = new formSubmit();
 
 document.addEventListener('submit', innerFormSubmit);
+document.addEventListener('keyup', innerFormSubmit);
 
 if (window.innerWidth < 768) {
     document.addEventListener('keydown', innerFormSubmit);
@@ -934,21 +971,3 @@ function styleElementChat() {
 }
 
 styleElementChat()
-
-
-// Макса даты ДД.ММ.ГГГГ
-const maskDate = value => {
-    let v = value.replace(/\D/g, '').slice(0, 8);
-    if (v.length >= 4) {
-        return `${v.slice(0,2)}.${v.slice(2,4)}.${v.slice(4)}`;
-    } else if (v.length >= 3) {
-        return `${v.slice(0,2)}.${v.slice(2)}`;
-    }
-    return v
-}
-document.addEventListener('keyup', function(e) {
-    if (e.target.id === 'birthday') {
-        //if (e.target.value.length >= 10) return;
-        e.target.value = maskDate(e.target.value)
-    }
-});

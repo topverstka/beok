@@ -5410,6 +5410,14 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   }
 }
 
+.error-message {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 130%;
+  color: var(--outline);
+  margin-top: 6px;
+}
+
 .section-registation__field {
   display: flex;
   margin-bottom: 30px;
@@ -5429,11 +5437,17 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   display: block;
 }
 .section-registation__field .section-registation__field--col input[type=text],
-.section-registation__field .section-registation__field--col input[type=password] {
+.section-registation__field .section-registation__field--col input[type=password],
+.section-registation__field .section-registation__field--col input[type=mail] {
   border: 1px solid #0E0E0E;
   border-radius: 5px;
   padding: 20px 12px 20px 15px;
   height: 52px;
+}
+.section-registation__field .section-registation__field--col input[type=text]._error,
+.section-registation__field .section-registation__field--col input[type=password]._error,
+.section-registation__field .section-registation__field--col input[type=mail]._error {
+  border: 2px solid var(--outline);
 }
 .section-registation__field .section-registation__field--col:not(:last-child) {
   margin-right: 30px;

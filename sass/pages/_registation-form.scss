@@ -200,6 +200,14 @@
     }
 }
 
+.error-message {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 130%;
+    color: $outline;
+    margin-top: 6px
+}
+
 .section-registation__field {
     display: flex;
     margin-bottom: 30px;
@@ -217,11 +225,15 @@
             display: block;
         }
         input[type="text"],
-        input[type="password"] {
+        input[type="password"],
+        input[type="mail"] {
             border: 1px solid #0E0E0E;
             border-radius: 5px;
             padding: 20px 12px 20px 15px;
             height: 52px;
+            &._error {
+                border: 2px solid $outline;
+            }
         }
         &:not(:last-child) {
             margin-right: 30px;
