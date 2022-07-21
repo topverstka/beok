@@ -3493,6 +3493,10 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   display: flex;
   justify-content: flex-end;
 }
+.reports-all-section__content--recommendation--link svg {
+  width: 31px;
+  height: 19px;
+}
 .reports-all-section__content--recommendation--link .swiper-button-prev {
   margin-right: 29px;
 }
