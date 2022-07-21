@@ -219,6 +219,12 @@
     margin-top: 6px
 }
 
+body.Safari {
+    &[data-info="birthday"] {
+        cursor: pointer
+    }
+}
+
 .section-registation__field {
     display: flex;
     margin-bottom: 30px;
@@ -258,12 +264,6 @@
         }
         &[data-info="birthday"] {
             position: relative;
-            cursor: pointer;
-            // &:hover {
-            //     &:after {
-            //         cursor: pointer;
-            //     }
-            // }
             &:after {
                 content: '';
                 position: absolute;
@@ -275,6 +275,8 @@
                 background-size: cover;
                 top: 36px;
                 display: flex;
+                cursor: pointer;
+                z-index: 999;
                 //  transform: translateY(50%);
             }
         }
