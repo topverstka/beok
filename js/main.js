@@ -844,8 +844,9 @@ if (find('[data-picker]')) {
                 } else {
                     flage = false
                 }
+
             }
-        }
+        },
     });
     if (find('[data-picker]')) {
         window.addEventListener('click', function(e) {
@@ -898,8 +899,14 @@ if (find('[data-picker]')) {
                 dp.hide();
             }
 
-            if (returnElementDeligitaion(e, '.air-datepicker--navigation') || e.target.tagName === 'I') {
-                dp.show();
+
+
+            if (returnElementDeligitaion(e, '.air-datepicker--navigation') || e.target.getAttribute('data-info') === 'birthday') {
+                if (find('#air-datepicker-global-container').childElementCount > 0 && flage) {
+                    dp.hide();
+                } else {
+                    dp.show();
+                }
             }
 
         });
