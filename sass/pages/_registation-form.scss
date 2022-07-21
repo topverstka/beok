@@ -220,7 +220,7 @@
 }
 
 body.Safari {
-    &[data-info="birthday"] {
+    [data-info="birthday"] {
         cursor: pointer
     }
 }
