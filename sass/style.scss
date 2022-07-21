@@ -23,9 +23,7 @@ body {
     touch-action: pan-x pan-y;
     &._lock {
         overflow: hidden;
-        .modal:after {
-            padding: 0 calc(16px - (100vw - 100%)) 0 0;
-        }
+        padding: 0 calc(16px - (100vw - 100%)) 0 0;
     }
 }
 
