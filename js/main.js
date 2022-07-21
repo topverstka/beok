@@ -892,14 +892,14 @@ if (find('[data-picker]')) {
                 dp.prev();
             }
 
-            if (returnElementDeligitaion(e, '.air-datepicker--navigation')) {
-                dp.show();
-            }
-
 
 
             if (returnElementDeligitaion(e, '.air-datepicker--content') && e.target.classList.contains('-day-')) {
                 dp.hide();
+            }
+
+            if (returnElementDeligitaion(e, '.air-datepicker--navigation') || e.target.tagName === 'I') {
+                dp.show();
             }
 
         });
