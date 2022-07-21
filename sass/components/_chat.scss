@@ -204,6 +204,9 @@
                     height: 16px;
                 }
             }
+            .your-reports__bottom-element-list-line[data-info="period"] {
+                display: flex
+            }
         }
         &[data-status="checked"] {
             .reports-all-section--plashka {
@@ -217,6 +220,9 @@
                     width: 15px;
                     height: 14px;
                 }
+            }
+            .your-reports__bottom-element-list-line[data-info="period"] {
+                display: none
             }
         }
     }
