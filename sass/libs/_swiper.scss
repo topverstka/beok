@@ -49,7 +49,7 @@
     &:after {
         content: none;
     }
-    @media (max-width: 767px) {
+    @media (max-width: $tablet) {
         display: none;
     }
 }

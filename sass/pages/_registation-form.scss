@@ -258,6 +258,11 @@
         }
         &[data-info="birthday"] {
             position: relative;
+            &:hover {
+                &:after {
+                    cursor: pointer;
+                }
+            }
             &:after {
                 content: '';
                 position: absolute;
@@ -269,7 +274,7 @@
                 background-size: cover;
                 top: 36px;
                 display: flex;
-                cursor: pointer;
+                //cursor: pointer;
                 //  transform: translateY(50%);
             }
         }
