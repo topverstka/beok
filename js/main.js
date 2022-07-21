@@ -869,9 +869,13 @@ if (find('[data-picker]')) {
                 dp.prev();
             }
 
+            if (returnElementDeligitaion(e, '.air-datepicker--navigation')) {
+                dp.show();
+            }
 
 
-            if (returnElementDeligitaion(e, '.air-datepicker--content')) {
+
+            if (returnElementDeligitaion(e, '.air-datepicker--content') && e.target.classList.contains('-day-')) {
                 dp.hide();
             }
 
