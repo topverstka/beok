@@ -5534,8 +5534,6 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 }
 .section-registation__field .section-registation__field--col[data-info=birthday] {
   position: relative;
-}
-.section-registation__field .section-registation__field--col[data-info=birthday]:hover:after {
   cursor: pointer;
 }
 .section-registation__field .section-registation__field--col[data-info=birthday]:after {
