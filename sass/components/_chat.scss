@@ -331,6 +331,10 @@
         padding: 10px 11px 0 11px;
         .message-push--file {
             margin-left: 0;
+            svg {
+                width: 24px;
+                height: 24px;
+            }
         }
         .message-push--audio {
             margin-right: 0;
@@ -384,6 +388,7 @@
     height: 32px;
     left: 0;
     cursor: pointer;
+    font-size: 0
 }
 
 .message-push--audio {

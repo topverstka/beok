@@ -2206,6 +2206,10 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   .message-push .message-push--file {
     margin-left: 0;
   }
+  .message-push .message-push--file svg {
+    width: 24px;
+    height: 24px;
+  }
   .message-push .message-push--audio {
     margin-right: 0;
   }
@@ -2257,6 +2261,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   height: 32px;
   left: 0;
   cursor: pointer;
+  font-size: 0;
 }
 
 .message-push--audio {
@@ -2338,7 +2343,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   border-right: 1px solid #D9DCE0;
   background: #fff;
 }
-@media (max-width: 920px) {
+@media (max-width: 992px) {
   .section-chat {
     display: none;
     max-width: 100%;

@@ -821,12 +821,12 @@ document.addEventListener('click', function(e) {
     // List chat
     if (returnElementDeligitaion(e, '.message-page__btn')) {
 
-        if (e.target.firstChild.nodeValue.trim() === 'Подробнее') {
-            e.target.firstChild.nodeValue = 'Свернуть';
+        if (e.target.closest('.message-page__btn').firstChild.nodeValue.trim() === 'Подробнее') {
+            e.target.closest('.message-page__btn').firstChild.nodeValue = 'Свернуть';
             returnElementDeligitaion(e, '.message-page__btn').classList.add('_show');
             find('.reports-all-section').style.height = find('.reports-all-section').scrollHeight + 'px';
         } else {
-            e.target.firstChild.nodeValue = 'Подробнее';
+            e.target.closest('.message-page__btn').firstChild.nodeValue = 'Подробнее';
             returnElementDeligitaion(e, '.message-page__btn').classList.remove('_show');
             find('.reports-all-section').style = null;
         }
