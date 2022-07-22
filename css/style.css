@@ -6682,7 +6682,7 @@ body._active_dropdown main:after {
 }
 
 .login-page {
-  background: url(/img/login-background.png);
+  background: url(../img/login-background.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 21% 69%;
