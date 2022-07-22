@@ -461,3 +461,13 @@
 //     left: 0;
 //     width: max-content;
 // }
+.test-chat {
+    @media (max-width: 992px) {
+        .page-content {
+            display: none
+        }
+        .section-chat {
+            display: block
+        }
+    }
+}

@@ -16,55 +16,101 @@
 <body class="chat-page">
 
     <main>
-        <div class="general-menu">
-            <div class="general-menu__logo">
-                <a href="">
-                    <img src="./img/logo.svg" alt="">
+
+        <div class="section-chat">
+            <div class="section-chat__top">
+                <a href="" class="link-pref-page">
+                    <svg class="link-pref-page__desctop1">
+                        <use href="./img/icons-sprite.svg#icon-link-prev-mobile"></use>
+                    </svg>
+                    <svg class="link-pref-page__mobile">
+                        <use href="./img/icons-sprite.svg#icon-link-prev-mobile"></use>
+                    </svg>
                 </a>
+                <p class="section-chat__title-moble">Чат</p>
+                <div class="section-chat__search">
+                    <input type="search" placeholder="Поиск">
+                </div>
             </div>
-
-            <nav class="general-menu__nav">
-                <ul class="general-menu__nav-list">
-                    <li class="general-menu__nav-elem">
-                        <a href="#">
-                            <svg>
-                                <use xlink:href="./img/icons-sprite.svg#home"></use>
-                            </svg> Главная
-                        </a>
-                    </li>
-                    <li class="general-menu__nav-elem">
-                        <a href="#">
-                            <svg>
-                                <use xlink:href="./img/icons-sprite.svg#star"></use>
-                            </svg> Прогресс
-                        </a>
-                    </li>
-                    <li class="general-menu__nav-elem">
-                        <a href="#">
-                            <svg>
-                                <use xlink:href="./img/icons-sprite.svg#blank"></use>
-                            </svg> Отчеты
-                        </a>
-                    </li>
-                    <li class="general-menu__nav-elem _active-menu">
-                        <a href="#">
-                            <svg>
-                                <use xlink:href="./img/icons-sprite.svg#dialog"></use>
-                            </svg> Чат
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-
-            <div class="general-menu__support">
-                <a href="#">
-                    <svg>
-                        <use xlink:href="./img/icons-sprite.svg#support"></use>
-                    </svg> Техподдержка
-                </a>
+            <div class="section-chat__messages">
+                <div class="section-chat__messages--line">
+                    <div class="section-chat__messages--avatar">
+                        М
+                    </div>
+                    <div class="section-chat__messages--content">
+                        <div class="section-chat__messages--name">Мария Смирнова</div>
+                        <div class="section-chat__messages--text">Отвечу завтра.</div>
+                    </div>
+                    <div class="section-chat__messages--status">
+                        <div class="section-chat__messages--time">11:01</div>
+                        <span class="section-chat__messages--count">3</span>
+                    </div>
+                </div>
+                <div class="section-chat__messages--line">
+                    <div class="section-chat__messages--avatar">
+                        П
+                    </div>
+                    <div class="section-chat__messages--content">
+                        <div class="section-chat__messages--name">Мария Смирнова</div>
+                        <div class="section-chat__messages--text">Спасибо за классный коммент! Ценю за классный</div>
+                    </div>
+                    <div class="section-chat__messages--status">
+                        <div class="section-chat__messages--time">11:01</div>
+                    </div>
+                </div>
+                <div class="section-chat__messages--line _active" data-status="read">
+                    <div class="section-chat__messages--avatar">
+                        Е
+                    </div>
+                    <div class="section-chat__messages--content">
+                        <div class="section-chat__messages--name">Мария Смирнова</div>
+                        <div class="section-chat__messages--text" data-message="diary">
+                            <span class="section-chat__messages--diary">Дневник</span>
+                        </div>
+                    </div>
+                    <div class="section-chat__messages--status">
+                        <div class="section-chat__messages--time">11:01</div>
+                    </div>
+                </div>
+                <div class="section-chat__messages--line" data-status="read">
+                    <div class="section-chat__messages--avatar">
+                        М
+                    </div>
+                    <div class="section-chat__messages--content">
+                        <div class="section-chat__messages--name">Мария Смирнова</div>
+                        <div class="section-chat__messages--text">Отвечу завтра.</div>
+                    </div>
+                    <div class="section-chat__messages--status">
+                        <div class="section-chat__messages--time">11:01</div>
+                    </div>
+                </div>
+                <div class="section-chat__messages--line" data-status="read">
+                    <div class="section-chat__messages--avatar">
+                        М
+                    </div>
+                    <div class="section-chat__messages--content">
+                        <div class="section-chat__messages--name">Мария Смирнова</div>
+                        <div class="section-chat__messages--text">Отвечу завтра.</div>
+                    </div>
+                    <div class="section-chat__messages--status">
+                        <div class="section-chat__messages--time">11:01</div>
+                    </div>
+                </div>
+                <div class="section-chat__messages--line" data-status="read">
+                    <div class="section-chat__messages--avatar">
+                        М
+                    </div>
+                    <div class="section-chat__messages--content">
+                        <div class="section-chat__messages--name">Мария Смирнова</div>
+                        <div class="section-chat__messages--text">Отвечу завтра.</div>
+                    </div>
+                    <div class="section-chat__messages--status">
+                        <div class="section-chat__messages--time">11:01</div>
+                        <span class="section-chat__messages--count">3</span>
+                    </div>
+                </div>
             </div>
         </div>
-
 
         <div class="page-content content--page">
             <div class="header header--thin">
@@ -76,84 +122,8 @@
                         <use href="./img/icons-sprite.svg#icon-link-prev-mobile"></use>
                     </svg>
                 </a>
-                <div class="wrap header__wrap">
-                    <div class="header__logo">
-                        <img src="./img/header-logo.svg" alt="">
-                    </div>
-
-                    <nav class="header__nav">
-                        <ul class="header__nav-list">
-                            <li class="header__nav-elem">
-                                <a href="#">
-                                    <svg>
-                                        <use xlink:href="./img/icons-sprite.svg#info"></use>
-                                    </svg>
-                                </a>
-                            </li>
-
-                            <li class="header__nav-elem">
-                                <a href="#">
-                                    <svg>
-                                        <use xlink:href="./img/icons-sprite.svg#bell"></use>
-                                    </svg>
-                                </a>
-                            </li>
-
-                            <li class="header__nav-elem">
-                                <a href="#">
-                                    <svg>
-                                        <use xlink:href="./img/icons-sprite.svg#vk"></use>
-                                    </svg>
-                                </a>
-                            </li>
-
-                            <li class="header__nav-elem">
-                                <a href="#">
-                                    <svg>
-                                        <use xlink:href="./img/icons-sprite.svg#user"></use>
-                                    </svg>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-
-                    <nav class="header__nav--mobile header__nav--hide--tablet">
-                        <ul class="header__nav-list--mobile">
-                            <li class="header__nav-elem--mobile">
-                                <a href="#">
-                                    <svg>
-                                        <use xlink:href="./img/icons-sprite.svg#info"></use>
-                                    </svg>
-                                </a>
-                            </li>
-                            <li class="header__nav-elem--mobile header__nav-elem--mobile--logo">
-                                <a href="#">
-                                    <img src="./img/logo-mobile.svg" alt="">
-                                </a>
-                            </li>
-                            <li class="header__nav-elem--mobile">
-                                <a href="#">
-                                    <svg>
-                                        <use xlink:href="./img/icons-sprite.svg#bell-mobile"></use>
-                                    </svg>
-                                </a>
-                            </li>
-                            <li class="header__nav-elem--mobile">
-                                <a href="#">
-                                    <svg>
-                                        <use xlink:href="./img/icons-sprite.svg#vk-mobile"></use>
-                                    </svg>
-                                </a>
-                            </li>
-                            <li class="header__nav-elem--mobile">
-                                <a href="#">
-                                    <svg>
-                                        <use xlink:href="./img/icons-sprite.svg#user-mobile"></use>
-                                    </svg>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
+                <div class="wrap header__wrap header__wrap--chat">
+                    <p class="name-user">Мария Смиронова</p>
                 </div>
             </div>
 
