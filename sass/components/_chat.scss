@@ -335,6 +335,11 @@
         padding: 10px 11px 0 11px;
         .message-push--file {
             margin-left: 0;
+            padding-top: 4px;
+            input {
+                width: 24px;
+                height: 24px;
+            }
             svg {
                 width: 24px;
                 height: 24px;

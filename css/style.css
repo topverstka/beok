@@ -2211,6 +2211,11 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   }
   .message-push .message-push--file {
     margin-left: 0;
+    padding-top: 4px;
+  }
+  .message-push .message-push--file input {
+    width: 24px;
+    height: 24px;
   }
   .message-push .message-push--file svg {
     width: 24px;
