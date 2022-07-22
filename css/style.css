@@ -2338,7 +2338,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   width: 100%;
   padding: 8px 0;
   height: 100vh;
-  overflow-x: auto;
+  overflow-y: auto;
   position: fixed;
   border-right: 1px solid #D9DCE0;
   background: #fff;
