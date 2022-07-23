@@ -1998,6 +1998,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 @media (max-width: 992px) {
   .dialog__message--text {
     padding-right: 0px;
+    width: 80%;
   }
 }
 
