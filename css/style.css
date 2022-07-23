@@ -2219,7 +2219,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   }
   .message-push .message-push--file {
     margin-left: 0;
-    padding-top: 4px;
+    padding-top: 0;
   }
   .message-push .message-push--file input {
     width: 24px;
