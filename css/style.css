@@ -2052,6 +2052,11 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   margin: 20px 0 10px 0;
 }
 
+.reports-all-section__content--diet {
+  opacity: 0;
+  transition: 0.4s;
+}
+
 .message-page {
   margin: 0 58px 0 40px;
   overflow-y: auto;
@@ -2059,6 +2064,9 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   padding-right: 58px;
   padding-bottom: 40px;
   position: relative;
+}
+.message-page._active .reports-all-section__content--diet {
+  opacity: 1;
 }
 .message-page .reports-all-section {
   height: 335px;

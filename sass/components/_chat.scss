@@ -179,6 +179,11 @@
     margin: 20px 0 10px 0
 }
 
+.reports-all-section__content--diet {
+    opacity: 0;
+    transition: .4s;
+}
+
 .message-page {
     margin: 0 58px 0 40px;
     overflow-y: auto;
@@ -186,6 +191,11 @@
     padding-right: 58px;
     padding-bottom: 40px;
     position: relative;
+    &._active {
+        .reports-all-section__content--diet {
+            opacity: 1;
+        }
+    }
     .reports-all-section {
         height: 335px;
         transition: .4s;
