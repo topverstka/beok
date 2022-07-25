@@ -2053,7 +2053,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   margin: 20px 0 10px 0;
 }
 
-.reports-all-section__content--diet {
+.message-page .reports-all-section__content--diet {
   opacity: 0;
   transition: 0.4s;
 }
@@ -2664,6 +2664,60 @@ input[type=search]::-webkit-search-decoration, input[type=search]::-webkit-searc
     right: 0;
     top: 13px;
   }
+}
+
+.loader-cyrcle {
+  width: 80px;
+  height: 80px;
+  margin: auto;
+  position: relative;
+}
+.loader-cyrcle span {
+  background: rgba(121, 126, 135, 0.15);
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: flex;
+  position: absolute;
+}
+.loader-cyrcle span._active {
+  background: var(--outline);
+}
+.loader-cyrcle span:nth-of-type(1) {
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 0;
+}
+.loader-cyrcle span:nth-of-type(8) {
+  top: 13px;
+  right: 9px;
+}
+.loader-cyrcle span:nth-of-type(7) {
+  top: 34px;
+  right: -1px;
+}
+.loader-cyrcle span:nth-of-type(6) {
+  top: 55px;
+  right: 9px;
+}
+.loader-cyrcle span:nth-of-type(5) {
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 0;
+}
+.loader-cyrcle span:nth-of-type(4) {
+  top: 55px;
+  left: 9px;
+}
+.loader-cyrcle span:nth-of-type(3) {
+  top: 34px;
+  left: -1px;
+}
+.loader-cyrcle span:nth-of-type(2) {
+  top: 13px;
+  left: 9px;
 }
 
 .hello-motivation {
@@ -3621,6 +3675,7 @@ input[type=search]::-webkit-search-decoration, input[type=search]::-webkit-searc
   overflow: hidden;
   margin-right: 30px;
   margin-bottom: 60px;
+  transition: height 0.5s ease;
 }
 .reports-all-section .your-reports__bottom-element-list-line[data-info]:before {
   background-size: cover;

@@ -1039,3 +1039,64 @@ function styleElementChat() {
 }
 
 styleElementChat()
+
+
+
+let timeId;
+
+// let iteration = 0;
+// let flageLoading = false;
+// let countElement = findAll('.loader-cyrcle span').length - 1;
+// let delay = 150
+// const loader = {
+//     setup() {
+//         this.timeId = setTimeout(function run() {
+//             if (flageLoading) {
+//                 find('.loader-cyrcle span._active').classList.remove('_active');
+//                 flageLoading = false;
+//             }
+//             findAll('.loader-cyrcle span')[iteration].classList.add('_active');
+//             if (findAll('.loader-cyrcle span')[iteration - 1]) findAll('.loader-cyrcle span')[iteration - 1].classList.remove('_active');
+//             if (iteration === countElement) {
+//                 iteration = 0;
+//                 flageLoading = true;
+//             } else {
+//                 iteration++;
+//             }
+//             setTimeout(run, delay);
+//         }, delay);
+//     },
+//     cancel() {
+//         clearTimeout(this.timeId)
+//     }
+// }
+
+
+function loader(delay) {
+    let iteration = 0;
+    let flageLoading = false;
+    let countElement = findAll('.loader-cyrcle span').length - 1;
+    timeId = setInterval(() => {
+        if (flageLoading) {
+            find('.loader-cyrcle span._active').classList.remove('_active');
+            flageLoading = false;
+            // clearTimeout(run);
+        }
+        findAll('.loader-cyrcle span')[iteration].classList.add('_active');
+        if (findAll('.loader-cyrcle span')[iteration - 1]) findAll('.loader-cyrcle span')[iteration - 1].classList.remove('_active');
+        if (iteration === countElement) {
+            iteration = 0;
+            flageLoading = true;
+        } else {
+            iteration++;
+        }
+        //setTimeout(run, delay);
+    }, delay);
+}
+
+//loader(150)
+
+
+function clearTime() {
+    clearTimeout(timeId);
+}

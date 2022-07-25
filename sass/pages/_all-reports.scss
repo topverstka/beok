@@ -138,6 +138,7 @@
     overflow: hidden;
     margin-right: 30px;
     margin-bottom: 60px;
+    transition: height 0.5s ease;
     .your-reports__bottom-element-list-line {
         &[data-info] {
             &:before {
