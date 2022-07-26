@@ -3,6 +3,7 @@
     height: 80px;
     margin: auto;
     position: relative;
+    // animation: load 11s steps(11, end) infinite;
     span {
         background: rgba(121, 126, 135, 0.15);
         width: 15px;
@@ -48,6 +49,36 @@
         &:nth-of-type(2) {
             top: 13px;
             left: 9px;
+        }
+    }
+    @media (max-width:$tablet) {
+        width: 60px;
+        height: 60px;
+        span {
+            width: 11px;
+            height: 11px;
+            &:nth-of-type(2) {
+                left: 7px;
+                top: 7px;
+            }
+            &:nth-of-type(3) {
+                top: 24px;
+            }
+            &:nth-of-type(4) {
+                top: 41px;
+                left: 7px;
+            }
+            &:nth-of-type(6) {
+                top: 41px;
+                right: 7px;
+            }
+            &:nth-of-type(7) {
+                top: 24px;
+            }
+            &:nth-of-type(8) {
+                right: 7px;
+                top: 7px;
+            }
         }
     }
 }

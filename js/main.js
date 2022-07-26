@@ -437,6 +437,46 @@ function addElementInLottie(element, fileJson) {
 }
 
 
+let timeId;
+let flageTimeout = false;
+
+function loader(delay) {
+    let iteration = 0;
+    let flageLoading = false;
+    let countElement = findAll('.loader-cyrcle span').length - 1;
+    flageTimeout = false;
+    timeId = setTimeout(function run() {
+        if (flageLoading) {
+            find('.loader-cyrcle span._active').classList.remove('_active');
+            flageLoading = false;
+        }
+        findAll('.loader-cyrcle span')[iteration].classList.add('_active');
+        if (findAll('.loader-cyrcle span')[iteration - 1]) findAll('.loader-cyrcle span')[iteration - 1].classList.remove('_active');
+        if (iteration === countElement) {
+            iteration = 0;
+            flageLoading = true;
+        } else {
+            iteration++;
+        }
+
+
+        if (flageTimeout) {
+            clearTimeout(run);
+            find('.loader-cyrcle span._active').classList.remove('_active');
+        } else {
+            setTimeout(run, delay);
+        }
+
+    }, delay);
+}
+
+
+
+function clearTime() {
+    flageTimeout = true;
+}
+
+
 // Функции для модальных окон
 function modal() {
 
@@ -453,9 +493,18 @@ function modal() {
                 const modal = document.querySelector(`#${dataBtn}`)
                 openModal(modal)
                 window.location.hash = dataBtn;
-                if (dataBtn === 'alert-by') {
-                    addElementInLottie('confetti', 'confetti.json');
+
+
+                switch (dataBtn) {
+                    case 'alert-by':
+                        addElementInLottie('confetti', 'confetti.json');
+                        break;
+                    default:
+                        break;
                 }
+
+
+
             }
         });
 
@@ -481,6 +530,16 @@ function modal() {
             const modal = document.querySelector(`.modal#${hash}`)
 
             if (modal) openModal(modal)
+
+            switch (hash) {
+                case 'loader':
+                    loader(150);
+                    break;
+                default:
+                    break;
+            }
+
+
         }
     }
     openModalHash();
@@ -493,6 +552,15 @@ function modal() {
 
             if (find('.modal._show')) find('.modal._show').classList.remove('_show')
             if (modal && hash != '') openModal(modal)
+
+
+            switch (hash) {
+                case '#loader':
+                    loader(150);
+                    break;
+                default:
+                    break;
+            }
         })
     }
     checkHash()
@@ -553,6 +621,13 @@ function modal() {
         modal.classList.remove('_show')
         bodyLock(false)
         resetHash()
+        switch (modal.id) {
+            case 'loader':
+                clearTime();
+                break;
+            default:
+                break;
+        }
     }
 }
 
@@ -1039,64 +1114,3 @@ function styleElementChat() {
 }
 
 styleElementChat()
-
-
-
-let timeId;
-
-// let iteration = 0;
-// let flageLoading = false;
-// let countElement = findAll('.loader-cyrcle span').length - 1;
-// let delay = 150
-// const loader = {
-//     setup() {
-//         this.timeId = setTimeout(function run() {
-//             if (flageLoading) {
-//                 find('.loader-cyrcle span._active').classList.remove('_active');
-//                 flageLoading = false;
-//             }
-//             findAll('.loader-cyrcle span')[iteration].classList.add('_active');
-//             if (findAll('.loader-cyrcle span')[iteration - 1]) findAll('.loader-cyrcle span')[iteration - 1].classList.remove('_active');
-//             if (iteration === countElement) {
-//                 iteration = 0;
-//                 flageLoading = true;
-//             } else {
-//                 iteration++;
-//             }
-//             setTimeout(run, delay);
-//         }, delay);
-//     },
-//     cancel() {
-//         clearTimeout(this.timeId)
-//     }
-// }
-
-
-function loader(delay) {
-    let iteration = 0;
-    let flageLoading = false;
-    let countElement = findAll('.loader-cyrcle span').length - 1;
-    timeId = setInterval(() => {
-        if (flageLoading) {
-            find('.loader-cyrcle span._active').classList.remove('_active');
-            flageLoading = false;
-            // clearTimeout(run);
-        }
-        findAll('.loader-cyrcle span')[iteration].classList.add('_active');
-        if (findAll('.loader-cyrcle span')[iteration - 1]) findAll('.loader-cyrcle span')[iteration - 1].classList.remove('_active');
-        if (iteration === countElement) {
-            iteration = 0;
-            flageLoading = true;
-        } else {
-            iteration++;
-        }
-        //setTimeout(run, delay);
-    }, delay);
-}
-
-//loader(150)
-
-
-function clearTime() {
-    clearTimeout(timeId);
-}

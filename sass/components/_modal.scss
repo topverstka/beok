@@ -118,6 +118,37 @@
     }
 }
 
+#loader {
+    .modal__content {
+        max-width: 532px;
+        padding: 54px
+    }
+    .modal__close {
+        display: none
+    }
+    .modal__title-loader {
+        text-align: center;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 21px;
+        margin-top: 30px;
+    }
+    @media (max-width:$tablet) {
+        .modal__body {
+            padding-left: 9%;
+            padding-right: 9%
+        }
+        .modal__title-loader {
+            font-size: 14px;
+            line-height: 130%;
+            margin-top: 20px
+        }
+        .modal__content {
+            padding: 48px
+        }
+    }
+}
+
 .modal__body {
     min-height: 100%;
     transform: translate(0, 100vh);
