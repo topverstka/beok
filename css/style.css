@@ -1558,16 +1558,19 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 }
 
 .modal#edit-report .modal__content,
-.modal#popup-exercisec .modal__content {
+.modal#popup-exercisec .modal__content,
+.modal[data-form] .modal__content {
   width: 630px;
   max-width: 630px;
 }
 .modal#edit-report form,
-.modal#popup-exercisec form {
+.modal#popup-exercisec form,
+.modal[data-form] form {
   margin-top: 28px;
 }
 .modal#edit-report input:not([type=submit]),
-.modal#popup-exercisec input:not([type=submit]) {
+.modal#popup-exercisec input:not([type=submit]),
+.modal[data-form] input:not([type=submit]) {
   border: 1px solid var(--main);
   border-radius: 5px;
   width: 100%;
@@ -1578,11 +1581,13 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   color: #1a1a1a;
 }
 .modal#edit-report .modal-field:not(:last-child),
-.modal#popup-exercisec .modal-field:not(:last-child) {
+.modal#popup-exercisec .modal-field:not(:last-child),
+.modal[data-form] .modal-field:not(:last-child) {
   margin-bottom: 8px;
 }
 .modal#edit-report .modal-field label,
-.modal#popup-exercisec .modal-field label {
+.modal#popup-exercisec .modal-field label,
+.modal[data-form] .modal-field label {
   font-weight: 700;
   font-size: 14px;
   line-height: 130%;
@@ -1590,7 +1595,8 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   display: block;
 }
 .modal#edit-report .modal-field input:not([type=submit]),
-.modal#popup-exercisec .modal-field input:not([type=submit]) {
+.modal#popup-exercisec .modal-field input:not([type=submit]),
+.modal[data-form] .modal-field input:not([type=submit]) {
   padding: 20px 12px 20px 15px;
   border: 1px solid var(--main);
   border-radius: 5px;
@@ -1599,8 +1605,29 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   line-height: 130%;
   color: #1A1A1A;
 }
+.modal#edit-report .modal-field__checkbox,
+.modal#popup-exercisec .modal-field__checkbox,
+.modal[data-form] .modal-field__checkbox {
+  display: flex;
+  align-items: center;
+  margin-top: 23px;
+}
+.modal#edit-report .modal-field__checkbox label,
+.modal#popup-exercisec .modal-field__checkbox label,
+.modal[data-form] .modal-field__checkbox label {
+  margin-right: 8px;
+  margin-bottom: 0;
+}
+.modal#edit-report .modal-field__checkbox p,
+.modal#popup-exercisec .modal-field__checkbox p,
+.modal[data-form] .modal-field__checkbox p {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 130%;
+}
 .modal#edit-report input[type=submit],
-.modal#popup-exercisec input[type=submit] {
+.modal#popup-exercisec input[type=submit],
+.modal[data-form] input[type=submit] {
   width: 100%;
   margin-top: 52px;
   color: #fff;
@@ -1609,15 +1636,18 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 }
 @media (max-width: 992px) {
   .modal#edit-report,
-.modal#popup-exercisec {
+.modal#popup-exercisec,
+.modal[data-form] {
     z-index: 999999;
   }
   .modal#edit-report._show,
-.modal#popup-exercisec._show {
+.modal#popup-exercisec._show,
+.modal[data-form]._show {
     overflow-y: auto;
   }
   .modal#edit-report .modal__content,
-.modal#popup-exercisec .modal__content {
+.modal#popup-exercisec .modal__content,
+.modal[data-form] .modal__content {
     width: 100%;
     max-width: 100%;
     height: 100%;
@@ -1625,12 +1655,14 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
     padding: 12px 12px 60px 12px;
   }
   .modal#edit-report .modal__body,
-.modal#popup-exercisec .modal__body {
+.modal#popup-exercisec .modal__body,
+.modal[data-form] .modal__body {
     padding: 0;
     height: 100%;
   }
   .modal#edit-report form,
-.modal#popup-exercisec form {
+.modal#popup-exercisec form,
+.modal[data-form] form {
     margin-top: 17px;
     display: flex;
     flex-direction: column;
@@ -1639,7 +1671,8 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
     padding-bottom: 60px;
   }
   .modal#edit-report .modal__title,
-.modal#popup-exercisec .modal__title {
+.modal#popup-exercisec .modal__title,
+.modal[data-form] .modal__title {
     text-align: center;
     font-weight: 700;
     font-size: 18px;
@@ -1647,38 +1680,50 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
     margin-bottom: 4px;
   }
   .modal#edit-report .edit-report--date,
-.modal#popup-exercisec .edit-report--date {
+.modal#popup-exercisec .edit-report--date,
+.modal[data-form] .edit-report--date {
     text-align: center;
     font-size: 12px;
     line-height: 130%;
   }
+  .modal#edit-report .modal-field__checkbox,
+.modal#popup-exercisec .modal-field__checkbox,
+.modal[data-form] .modal-field__checkbox {
+    margin-top: 0;
+  }
   .modal#edit-report .modal-field:not(:last-child),
-.modal#popup-exercisec .modal-field:not(:last-child) {
+.modal#popup-exercisec .modal-field:not(:last-child),
+.modal[data-form] .modal-field:not(:last-child) {
     margin-bottom: 20px;
   }
   .modal#edit-report input[type=submit],
-.modal#popup-exercisec input[type=submit] {
+.modal#popup-exercisec input[type=submit],
+.modal[data-form] input[type=submit] {
     height: 45px;
     margin-top: auto;
     opacity: 1;
   }
   .modal#edit-report input[type=submit][disabled],
-.modal#popup-exercisec input[type=submit][disabled] {
+.modal#popup-exercisec input[type=submit][disabled],
+.modal[data-form] input[type=submit][disabled] {
     background: #FFE4DA;
     color: rgba(232, 86, 51, 0.5);
   }
   .modal#edit-report .modal__close,
-.modal#popup-exercisec .modal__close {
+.modal#popup-exercisec .modal__close,
+.modal[data-form] .modal__close {
     left: 12px;
     top: 11px;
     right: auto;
   }
   .modal#edit-report .modal__close span,
-.modal#popup-exercisec .modal__close span {
+.modal#popup-exercisec .modal__close span,
+.modal[data-form] .modal__close span {
     display: none;
   }
   .modal#edit-report .modal__close:after,
-.modal#popup-exercisec .modal__close:after {
+.modal#popup-exercisec .modal__close:after,
+.modal[data-form] .modal__close:after {
     content: "";
     background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19 12H5' stroke='%230E0E0E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M12 19L5 12L12 5' stroke='%230E0E0E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
     background-repeat: no-repeat;
@@ -1689,12 +1734,25 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 }
 @media (max-width: 992px) {
   .modal#edit-report .modal__title,
-.modal#popup-exercisec .modal__title {
+.modal#popup-exercisec .modal__title,
+.modal[data-form] .modal__title {
     font-family: "Raleway";
     font-weight: 700;
     font-size: 18px;
     line-height: 21px;
+    padding-top: 45px;
+    text-align: left;
   }
+}
+
+.modal[data-form] .modal__title {
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 26px;
+  font-family: "RoadRadio";
+}
+.modal[data-form] form {
+  margin-top: 40px;
 }
 
 @media (max-height: 580px) and (max-width: 992px) {

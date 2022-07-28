@@ -1,5 +1,6 @@
 .modal#edit-report,
-.modal#popup-exercisec {
+.modal#popup-exercisec,
+.modal[data-form] {
     .modal__content {
         width: 630px;
         max-width: 630px;
@@ -36,6 +37,20 @@
             font-size: 14px;
             line-height: 130%;
             color: #1A1A1A;
+        }
+    }
+    .modal-field__checkbox {
+        display: flex;
+        align-items: center;
+        margin-top: 23px;
+        label {
+            margin-right: 8px;
+            margin-bottom: 0;
+        }
+        p {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 130%;
         }
     }
     input[type="submit"] {
@@ -81,6 +96,9 @@
             font-size: 12px;
             line-height: 130%;
         }
+        .modal-field__checkbox {
+            margin-top: 0;
+        }
         .modal-field {
             &:not(:last-child) {
                 margin-bottom: 20px;
@@ -118,7 +136,21 @@
             font-weight: 700;
             font-size: 18px;
             line-height: 21px;
+            padding-top: 45px;
+            text-align: left;
         }
+    }
+}
+
+.modal[data-form] {
+    .modal__title {
+        font-weight: 400;
+        font-size: 26px;
+        line-height: 26px;
+        font-family: 'RoadRadio';
+    }
+    form {
+        margin-top: 40px;
     }
 }
 

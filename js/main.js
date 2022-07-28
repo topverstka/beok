@@ -262,7 +262,7 @@ document.addEventListener('input', function(e) {
         let arrValueBool = [];
         let valueField = [...e.target.closest('form').querySelectorAll('.required')].every(i => i.value !== '');
         let valueFieldRadio = [...e.target.closest('form').querySelectorAll('input[type="checkbox"].required')].every(i => i.checked);
-        let valueMail = e.target.closest('form').querySelector('#mail') ? validateEmail(e.target.closest('form').querySelector('#mail').value) : false;
+        let valueMail = e.target.closest('form').querySelector('#mail') ? validateEmail(e.target.closest('form').querySelector('#mail').value) : true;
 
         e.target.closest('form').querySelectorAll('.required').forEach(i => {
             if (i.tagName !== 'INPUT') {
@@ -285,6 +285,12 @@ document.addEventListener('input', function(e) {
             } else {
                 e.target.closest('form').querySelector('input[type="submit"]').disabled = true;
             }
+        }
+
+
+        if (e.target.hasAttribute('data-popup-checkbox') && e.target.checked) {
+            //e.target.closest('form').querySelector('input[type="submit"]')
+            e.target.closest('form').querySelector('input[type="submit"]').disabled = false;
         }
 
 

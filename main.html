@@ -788,6 +788,62 @@
         </div>
     </div>
 
+    <div class="modal" id="weight-today" data-form>
+        <div class="modal__body">
+            <div class="modal__content">
+                <h2 class="modal__title">Какой твой утренний вес сегодня?</h2>
+                <form action="#">
+                    <div class="modal-field">
+                        <label>
+                            Утренний вес
+                        </label>
+                        <div class="modal-field__inputs">
+                            <input type="text" data-number name="weight" class="required" inputmode="numeric">
+                        </div>
+                    </div>
+                    <div class="modal-field modal-field__checkbox section-registation__policy--field">
+                        <input type="checkbox" class="modal-field__checkbox" data-popup-checkbox>
+                        <label></label>
+                        <p class="modal-field__checkbox--text">Я не взвешивался</p>
+                    </div>
+                    <input class="btn" type="submit" value="Готово">
+                </form>
+                <button class="modal__close">
+					<span></span>
+					<span></span>
+				</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="step-today" data-form>
+        <div class="modal__body">
+            <div class="modal__content">
+                <h2 class="modal__title">Сколько шагов сделал сегодня?</h2>
+                <form action="#">
+                    <div class="modal-field">
+                        <label>
+                            Количество шагов
+                        </label>
+                        <div class="modal-field__inputs">
+                            <input type="text" data-number name="step" class="required" inputmode="numeric">
+                        </div>
+                    </div>
+                    <div class="modal-field modal-field__checkbox section-registation__policy--field">
+                        <input type="checkbox" class="modal-field__checkbox" data-popup-checkbox>
+                        <label></label>
+                        <p class="modal-field__checkbox--text">Я не ходил/не считал шаги</p>
+                    </div>
+                    <input class="btn" type="submit" value="Готово">
+                </form>
+                <button class="modal__close">
+					<span></span>
+					<span></span>
+				</button>
+            </div>
+        </div>
+    </div>
+
     <div id="confetti"></div>
 
 
