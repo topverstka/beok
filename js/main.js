@@ -289,8 +289,8 @@ document.addEventListener('input', function(e) {
 
 
         if (e.target.hasAttribute('data-popup-checkbox') && e.target.checked) {
-            //e.target.closest('form').querySelector('input[type="submit"]')
-            e.target.closest('form').querySelector('input[type="submit"]').disabled = false;
+            let allCheked = [...e.target.closest('form').querySelectorAll('[data-popup-checkbox]')].every(i => i.checked);
+            allCheked ? e.target.closest('form').querySelector('input[type="submit"]').disabled = false : false;
         }
 
 

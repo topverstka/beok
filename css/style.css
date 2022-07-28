@@ -911,19 +911,12 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   visibility: hidden;
   opacity: 0;
   transition: var(--tr);
-}
-.modal::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(35, 30, 30, 0.85);
+  overflow-y: auto;
 }
 .modal._show {
   visibility: visible;
   opacity: 1;
+  background: rgba(35, 30, 30, 0.85);
 }
 .modal._show .modal__body {
   transform: translate(0, 0);
@@ -1080,6 +1073,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   background: #fff;
   border-radius: var(--radius);
   padding: 80px 32px 46px;
+  z-index: 1;
 }
 
 .modal__title {
@@ -1180,6 +1174,29 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
     letter-spacing: 0em;
   }
 }
+.modal-field__line {
+  border: 1px solid var(--main);
+  border-radius: 5px;
+  padding: 16px 15px;
+  display: flex;
+  height: 52px;
+}
+.modal-field__line svg {
+  width: 24px;
+  height: 24px;
+}
+
+.modal-field__line-left--text {
+  font-weight: 700;
+  font-size: 14px;
+  margin-left: 8px;
+}
+
+.modal-field__line-left {
+  display: flex;
+  align-items: center;
+}
+
 .cookie {
   position: fixed;
   width: 100%;
@@ -1580,10 +1597,10 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   line-height: 130%;
   color: #1a1a1a;
 }
-.modal#edit-report .modal-field:not(:last-child),
-.modal#popup-exercisec .modal-field:not(:last-child),
-.modal[data-form] .modal-field:not(:last-child) {
-  margin-bottom: 8px;
+.modal#edit-report .modal-field,
+.modal#popup-exercisec .modal-field,
+.modal[data-form] .modal-field {
+  margin-bottom: 23px;
 }
 .modal#edit-report .modal-field label,
 .modal#popup-exercisec .modal-field label,
@@ -1593,6 +1610,11 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   line-height: 130%;
   margin-bottom: 5px;
   display: block;
+}
+.modal#edit-report .modal-field .modal-field__checkbox,
+.modal#popup-exercisec .modal-field .modal-field__checkbox,
+.modal[data-form] .modal-field .modal-field__checkbox {
+  margin-top: 13px;
 }
 .modal#edit-report .modal-field input:not([type=submit]),
 .modal#popup-exercisec .modal-field input:not([type=submit]),
@@ -1696,6 +1718,11 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 .modal[data-form] .modal-field:not(:last-child) {
     margin-bottom: 20px;
   }
+  .modal#edit-report .modal-field .modal-field,
+.modal#popup-exercisec .modal-field .modal-field,
+.modal[data-form] .modal-field .modal-field {
+    margin-bottom: 0;
+  }
   .modal#edit-report input[type=submit],
 .modal#popup-exercisec input[type=submit],
 .modal[data-form] input[type=submit] {
@@ -1732,18 +1759,6 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
     display: block;
   }
 }
-@media (max-width: 992px) {
-  .modal#edit-report .modal__title,
-.modal#popup-exercisec .modal__title,
-.modal[data-form] .modal__title {
-    font-family: "Raleway";
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 21px;
-    padding-top: 45px;
-    text-align: left;
-  }
-}
 
 .modal[data-form] .modal__title {
   font-weight: 400;
@@ -1753,6 +1768,16 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 }
 .modal[data-form] form {
   margin-top: 40px;
+}
+@media (max-width: 992px) {
+  .modal[data-form] .modal__title {
+    font-family: "Raleway";
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    padding-top: 45px;
+    text-align: left;
+  }
 }
 
 @media (max-height: 580px) and (max-width: 992px) {
@@ -1804,10 +1829,24 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 
 .modal-box__diary {
   display: flex;
-  border: 2px solid var(--accent);
   padding: 16px;
-  border-radius: 15px;
+  border-radius: 5px;
   margin-top: 20px;
+}
+.modal-box__diary[data-info=update] {
+  border: 1px solid var(--accent);
+}
+.modal-box__diary[data-info=update] .modal-box__diary-right--btn {
+  background: var(--accent);
+}
+.modal-box__diary[data-info=pass] {
+  border: 1px solid var(--outline);
+}
+.modal-box__diary[data-info=pass] .modal-box__diary-right--btn {
+  background: var(--outline);
+}
+.modal-box__diary[data-info=pass] .modal-box__diary-right--update {
+  opacity: 0;
 }
 .modal-box__diary svg {
   width: 24px;
@@ -1817,6 +1856,9 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 @media (max-width: 992px) {
   .modal-box__diary {
     margin-top: 12px;
+  }
+  .modal-box__diary[data-info=pass] .modal-box__diary-right--update {
+    display: none;
   }
 }
 

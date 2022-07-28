@@ -665,6 +665,11 @@
                         <div class="modal-field__input">
                             <input type="text" data-number name="weight" class="required" inputmode="numeric">
                         </div>
+                        <div class="modal-field modal-field__checkbox section-registation__policy--field">
+                            <input type="checkbox" class="modal-field__checkbox" data-popup-checkbox>
+                            <label></label>
+                            <p class="modal-field__checkbox--text">Я не взвешивался</p>
+                        </div>
                     </div>
                     <div class="modal-field">
                         <label>
@@ -673,19 +678,36 @@
                         <div class="modal-field__input">
                             <input type="text" data-number name="step" class="required" inputmode="numeric">
                         </div>
+                        <div class="modal-field modal-field__checkbox section-registation__policy--field">
+                            <input type="checkbox" class="modal-field__checkbox" data-popup-checkbox>
+                            <label></label>
+                            <p class="modal-field__checkbox--text">Я не ходил/не считал шаги</p>
+                        </div>
                     </div>
-                    <div class="modal-box__diary">
+                    <div class="modal-field__line">
+                        <div class="modal-field__line-left">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M11.8615 2.25C11.5567 2.40693 8.91616 6.64215 8.50993 7.26958C7.44364 8.94265 6.32635 11.0341 5.71706 12.9165C5.00601 15.2695 5.00601 17.6222 6.42811 19.6614C9.22098 23.6349 14.9082 23.2692 17.2446 19.6092C18.6664 17.4653 18.6664 15.2695 17.9047 12.8121C17.2953 10.9299 16.1273 8.83856 15.1118 7.21769C14.7056 6.59029 12.1158 2.35509 11.8109 2.25062H11.8616L11.8615 2.25Z" fill="#ED6A53"/>
+                            </svg>
+                            <p class="modal-field__line-left--text">Месячные</p>
+                        </div>
+                        <label class="varios-report__bottom-element-checkbox">
+                            <input type="checkbox" class="varios-report__bottom-element-checkbox--input">
+                            <span class="varios-report__bottom-element-checkbox-switch"></span>
+                        </label>
+                    </div>
+                    <div class="modal-box__diary" data-info="pass">
                         <svg class="modal-box__diary--icon">
                             <use xlink:href="./img/icons-sprite.svg#apple-icon-element"></use>
                         </svg>
                         <div class="modal-box__diary-container">
                             <div class="modal-box__diary--text">
                                 <p class="modal-box__diary--text-title">Пищевой дневник из FatSecret</p>
-                                <span class="modal-box__diary--text-description">Обнови дневник, если ты съел что-то после его сдачи и записал данные в FatSecret.</span>
+                                <span class="modal-box__diary--text-description">Важно сдать дневник в конце каждого дня или до 12:00 следующего дня. </span>
                             </div>
                             <div class="modal-box__diary-right">
                                 <p class="modal-box__diary-right--update">Обновлено 01.05.2022 в 10:51</p>
-                                <button class="modal-box__diary-right--btn">Обновить дневник</button>
+                                <button class="modal-box__diary-right--btn">Сдать дневник</button>
                             </div>
                         </div>
                     </div>
