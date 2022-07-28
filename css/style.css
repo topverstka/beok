@@ -3699,6 +3699,7 @@ input[type=search]::-webkit-search-decoration, input[type=search]::-webkit-searc
   line-height: 120%;
   letter-spacing: -0.02em;
   color: #000000;
+  margin-left: 40px;
 }
 .your-reports__bottom--box .your-reports__bottom-link:hover {
   color: var(--outline);
@@ -7717,7 +7718,8 @@ body._active_dropdown main:after {
 }
 .your-reports__bottom-element-list-line[data-info=period]:before {
   content: "";
-  background-image: url("data:image/svg+xml,%3Csvg width='25' height='24' viewBox='0 0 25 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M11.6966 2C11.3956 2.15499 8.78765 6.33792 8.38644 6.95761C7.33331 8.61002 6.22981 10.6756 5.62804 12.5348C4.92577 14.8588 4.92577 17.1825 6.33031 19.1964C9.08871 23.1209 14.7057 22.7597 17.0133 19.1448C18.4176 17.0275 18.4176 14.8588 17.6652 12.4317C17.0634 10.5727 15.9098 8.50722 14.9068 6.90636C14.5056 6.2867 11.9478 2.10379 11.6467 2.00061H11.6968L11.6966 2Z' fill='%23ED6A53'/%3E%3C/svg%3E%0A");
+  background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M15.8153 3C15.4089 3.20924 11.8882 8.85619 11.3466 9.69278C9.92486 11.9235 8.43514 14.7121 7.62274 17.222C6.67467 20.3594 6.67468 23.4963 8.57081 26.2152C12.2946 31.5132 19.8776 31.0256 22.9928 26.1455C24.8886 23.2871 24.8886 20.3594 23.8729 17.0828C23.0604 14.5732 21.5031 11.7847 20.1491 9.62359C19.6074 8.78705 16.1544 3.14012 15.7479 3.00083H15.8155L15.8153 3Z' fill='%23ED6A53'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
 }
 @media (max-width: 992px) {
   .your-reports__bottom-element-list-line {
