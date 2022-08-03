@@ -120,15 +120,15 @@
 
 .your-reports__bottom-element-date {
     font-weight: 700;
-    font-size: 20px;
-    line-height: 23px;
+    font-size: 16px;
+    line-height: 130%;
 }
 
 .your-reports__bottom-element-list {
     display: flex;
     align-items: center;
     height: 42px;
-    margin-left: 17%;
+    margin-left: 10%;
     margin-right: auto;
     @media (max-width: $tablet) {
         height: auto;

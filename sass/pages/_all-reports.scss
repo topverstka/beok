@@ -21,6 +21,12 @@
     }
 }
 
+.reports-page {
+    .section-tabs {
+        margin-right: 0;
+    }
+}
+
 .list-report-all {
     margin-bottom: 27px;
     display: flex;
@@ -88,7 +94,24 @@
 }
 
 .your-reports__bottom--box {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+    &[data-checked] {
+        .your-reports__bottom-element-edit,
+        .your-reports__bottom-link {
+            pointer-events: none;
+        }
+        .your-reports__bottom-element-edit svg {
+            fill: $gray
+        }
+    }
+    &:not([data-checked]):hover {
+        .your-reports__bottom-element-edit svg {
+            fill: $outline
+        }
+        .your-reports__bottom-link {
+            color: $outline
+        }
+    }
     .your-reports__bottom-element {
         margin-bottom: 12px;
     }
@@ -124,10 +147,35 @@
             }
         }
     }
+    @media (max-width:1350px) {
+        .your-reports__bottom-link {
+            margin-left: 10px
+        }
+    }
+    @media (max-width:1300px) {
+        .your-reports__bottom-element-list-line:not(:last-child) {
+            padding-right: 12px;
+            margin-right: 12px;
+        }
+    }
+    @media (max-width:1200px) {
+        .your-reports__bottom-element-list {
+            margin-left: 30px
+        }
+    }
+    @media (max-width:1150px) {
+        .your-reports__bottom {
+            margin-right: 10px
+        }
+    }
     @media (max-width: $tablet) {
         margin-bottom: 16px;
         .your-reports__bottom-link {
             display: none;
+        }
+        .your-reports__bottom-element-list-line:not(:last-child) {
+            padding-right: 0;
+            margin-right: 4px;
         }
     }
 }

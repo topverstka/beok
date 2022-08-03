@@ -113,12 +113,12 @@ function myFunction() {
 
 
 
-const SCREEN_TABLET = 920;
+const SCREEN_TABLET = 992;
 
 
 
 function defineMarginContent() {
-    if (window.innerWidth > SCREEN_TABLET && (find('.general-menu') || find('.section-chat'))) {
+    if (window.screen.width > SCREEN_TABLET && (find('.general-menu') || find('.section-chat'))) {
         // let paddingScrollBar = window.getComputedStyle(find('.general-menu')).paddingRight ? 
         // window.getComputedStyle(find('.general-menu')).paddingRight :
         // window.getComputedStyle(find('.section-chat')).paddingRight;
@@ -921,7 +921,7 @@ document.addEventListener('click', function(e) {
 });
 
 
-if (find('[data-empty]')) {
+if (find('[data-empty]') && window.screen.width > SCREEN_TABLET) {
     [...findAll('.your-reports__bottom-element-list-line:not([data-empty])')].filter(i => {
         let elemWidth = i.scrollWidth;
         if (find(`.your-reports__bottom-element-list-line[data-empty][data-info="${i.getAttribute('data-info')}"]`)) {

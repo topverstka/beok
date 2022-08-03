@@ -388,6 +388,9 @@
     padding: 16px 30px;
     resize: none;
     overflow: hidden;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: -0.2px;
     &::placeholder {
         font-weight: 400;
         font-size: 16px;
