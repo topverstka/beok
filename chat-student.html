@@ -876,7 +876,7 @@
         document.querySelector('.message-push--field').addEventListener('focus', function(e) {
             setTimeout(() => {
                 const innerHeight = window.innerHeight;
-                document.querySelector('.main').style.paddingTop = innerHeight + 'px';
+                document.querySelector('.main').style.height = innerHeight + 'px';
                 document.querySelector('.main').style.overflow = 'hidden';
                 document.documentElement.style.height = innerHeight + 'px';
                 //console.log(innerHeight)
