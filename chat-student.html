@@ -876,17 +876,18 @@
         document.querySelector('.message-push--field').addEventListener('focus', function(e) {
             setTimeout(() => {
                 const innerHeight = window.innerHeight;
-                document.body.style.paddingTop = innerHeight + 'px';
-                document.querySelector('.main').style.overflow = 'hidden';
-                document.body.style.overflow = 'hidden';
-                document.documentElement.style.height = innerHeight + 'px';
+                //document.body.style.paddingTop = innerHeight + 'px';
+                document.querySelector('.message-push').style.bottom = innerHeight + 'px';
+                // document.body.style.overflow = 'hidden';
+                // document.documentElement.style.height = innerHeight + 'px';
                 //console.log(innerHeight)
             }, 300)
         });
         document.querySelector('.message-push--field').addEventListener('blur', function(e) {
-            document.body.style = null;
-            document.documentElement.style = null;
-            document.querySelector('.main').style = null;
+            // document.body.style = null;
+            // document.documentElement.style = null;
+            // document.querySelector('.main').style = null;
+            document.querySelector('.message-push').style = null;
         });
     </script>
 
