@@ -877,6 +877,7 @@
             setTimeout(() => {
                 const innerHeight = window.innerHeight;
                 document.body.style.paddingTop = innerHeight + 'px';
+                document.body.style.overflow = 'hidden';
                 document.documentElement.style.height = innerHeight + 'px';
                 console.log(innerHeight)
             }, 300)
