@@ -874,10 +874,15 @@
 
     <script>
         document.querySelector('.message-push--field').addEventListener('focus', function(e) {
-            const innerHeight = window.innerHeight;
-            document.body.style.marginTop = 400 + 'px';
-            document.documentElement.style.height = innerHeight + 'px';
-            console.log(innerHeight)
+            setTimeout(() => {
+                const innerHeight = window.innerHeight;
+                document.body.style.marginTop = innerHeight + 'px';
+                // document.documentElement.style.height = innerHeight + 'px';
+                console.log(innerHeight)
+            }, 500)
+        });
+        document.querySelector('.message-push--field').addEventListener('blur', function(e) {
+            document.body.style = null
         });
     </script>
 
