@@ -942,14 +942,16 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 
 #alert .modal__content,
 #alert-report .modal__content,
-#alert-by .modal__content {
+#alert-by .modal__content,
+[data-alert-popup] .modal__content {
   width: 532px;
   max-width: 532px;
   padding: 32px;
 }
 #alert .modal__content svg,
 #alert-report .modal__content svg,
-#alert-by .modal__content svg {
+#alert-by .modal__content svg,
+[data-alert-popup] .modal__content svg {
   width: 49px;
   height: 56px;
   margin: 0 auto 12px auto;
@@ -957,12 +959,14 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 }
 #alert .modal__content .modal__icon,
 #alert-report .modal__content .modal__icon,
-#alert-by .modal__content .modal__icon {
+#alert-by .modal__content .modal__icon,
+[data-alert-popup] .modal__content .modal__icon {
   text-align: center;
 }
 #alert .modal__content .modal__title,
 #alert-report .modal__content .modal__title,
-#alert-by .modal__content .modal__title {
+#alert-by .modal__content .modal__title,
+[data-alert-popup] .modal__content .modal__title {
   font-family: "Raleway";
   font-weight: 700;
   font-size: 18px;
@@ -972,7 +976,8 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 }
 #alert .modal__content .modal__close,
 #alert-report .modal__content .modal__close,
-#alert-by .modal__content .modal__close {
+#alert-by .modal__content .modal__close,
+[data-alert-popup] .modal__content .modal__close {
   position: static;
   width: 351px;
   max-width: 100%;
@@ -985,26 +990,30 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 @media (max-width: 992px) {
   #alert .modal__content,
 #alert-report .modal__content,
-#alert-by .modal__content {
+#alert-by .modal__content,
+[data-alert-popup] .modal__content {
     max-width: 80%;
     padding: 24px 20px;
   }
   #alert .modal__content .modal__title,
 #alert-report .modal__content .modal__title,
-#alert-by .modal__content .modal__title {
+#alert-by .modal__content .modal__title,
+[data-alert-popup] .modal__content .modal__title {
     font-size: 14px;
     line-height: 130%;
   }
   #alert .modal__content svg,
 #alert-report .modal__content svg,
-#alert-by .modal__content svg {
+#alert-by .modal__content svg,
+[data-alert-popup] .modal__content svg {
     width: 39px;
     height: 51px;
     margin-bottom: 8px;
   }
   #alert .modal__content .modal__close,
 #alert-report .modal__content .modal__close,
-#alert-by .modal__content .modal__close {
+#alert-by .modal__content .modal__close,
+[data-alert-popup] .modal__content .modal__close {
     margin-top: 24px;
     width: 233px;
     font-size: 16px;

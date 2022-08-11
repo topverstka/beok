@@ -53,7 +53,8 @@
 
 #alert,
 #alert-report,
-#alert-by {
+#alert-by,
+[data-alert-popup] {
     .modal__content {
         width: 532px;
         max-width: 532px;
