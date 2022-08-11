@@ -1313,13 +1313,13 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
     position: fixed;
     top: auto;
     bottom: 0;
-    padding-top: 8px;
     display: flex;
     align-items: center;
     box-sizing: border-box;
     background: #FFFFFF;
     border-top: 1px solid rgba(144, 149, 158, 0.5);
-    height: 80px;
+    height: auto;
+    padding: 8px 0 6px;
     width: 100%;
     z-index: 9999;
     left: 0;
@@ -1330,7 +1330,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   .general-menu .general-menu__nav-list {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 3px;
+    gap: 27px;
   }
   .general-menu .general-menu__nav {
     width: 100%;
@@ -1353,8 +1353,8 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   .general-menu .general-menu__nav-elem a svg {
     fill: rgba(121, 126, 135, 0.15);
     margin: 0 0 2px 0;
-    height: 28px;
-    width: 28px;
+    height: 20px;
+    width: 20px;
   }
   .general-menu .general-menu__nav-elem._active-menu svg {
     fill: var(--black);
@@ -1372,12 +1372,6 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
     order: 2;
   }
 }
-@media (max-width: 374px) {
-  .general-menu .general-menu__nav {
-    padding: 0 15px;
-  }
-}
-
 @media (max-width: 992px) {
   .general-menu--hide--tablet {
     display: none;
@@ -7460,9 +7454,6 @@ body._active_dropdown main:after {
     transform: rotate(157.55deg);
     top: 140px;
     right: -7px;
-  }
-  .guide-section.guide-section--ios li:nth-of-type(5) .guide-section__list--box {
-    margin-top: 20px;
   }
   .guide-section.guide-section--ios li:nth-of-type(5) .guide-section__list--arrow {
     transform: rotate(-116.35deg);
