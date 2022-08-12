@@ -2278,7 +2278,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   display: flex;
   align-items: center;
   margin-left: auto;
-  margin-right: 20px;
+  margin-right: 0;
   position: relative;
 }
 .reports-all-section--plashka:before {
@@ -2289,6 +2289,10 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   .reports-all-section--plashka {
     line-height: 1;
   }
+}
+
+.your-reports__bottom-element-edit {
+  margin-left: 20px;
 }
 
 .message-page__btn {
@@ -4121,7 +4125,7 @@ input[type=search]::-webkit-search-decoration, input[type=search]::-webkit-searc
 }
 
 .reports-all-section__content--recommendation--link {
-  margin-top: 20px;
+  margin-top: 18px;
   display: flex;
   justify-content: flex-end;
 }

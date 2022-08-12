@@ -275,7 +275,7 @@
     display: flex;
     align-items: center;
     margin-left: auto;
-    margin-right: 20px;
+    margin-right: 0;
     position: relative;
     &:before {
         display: block;
@@ -284,6 +284,10 @@
     @media (max-width:$tablet) {
         line-height: 1;
     }
+}
+
+.your-reports__bottom-element-edit {
+    margin-left: 20px;
 }
 
 .message-page__btn {
