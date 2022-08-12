@@ -267,9 +267,9 @@
 
 .section-information__tasks--width .section-information__tasks-slider-field-btn {
     bottom: 0;
-    @media (max-width: $tablet) {
-        bottom: 3px
-    }
+    // @media (max-width: $tablet) {
+    //     bottom: 3px
+    // }
 }
 
 .section-information__tasks-slider-field-btn {
@@ -294,8 +294,8 @@
         font-size: 14px;
     }
     @media (max-width:$tablet) {
-        bottom: 2px;
-        line-height: 1;
+        bottom: 0;
+        line-height: 150%;
         padding-right: 12px;
         right: 0px;
         padding-left: 19px;
