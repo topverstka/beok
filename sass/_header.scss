@@ -32,6 +32,10 @@
     }
     @media (max-width:$tablet) {
         transform: translateY(11px);
+        svg {
+            width: 24px;
+            height: 24px;
+        }
         .link-pref-page__mobile {
             display: block;
             width: 24px;
@@ -39,6 +43,44 @@
         }
         .link-pref-page__desctop {
             display: none;
+        }
+    }
+}
+
+.header-top-mobile.header {
+    // position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 9999;
+    flex-wrap: wrap;
+    background: #fff;
+    padding-bottom: 6px;
+    padding: 0 12px 6px 12px;
+    height: auto;
+    opacity: 0;
+    .section-questionnaire--progress {
+        bottom: 0;
+        margin-bottom: 0;
+        width: 100%;
+        margin-top: 24px;
+        order: 1;
+    }
+    h1.hello {
+        margin: 12px auto 0 auto;
+    }
+    a.link-pref-page {
+        transform: none;
+        top: 10px;
+        margin-bottom: 0;
+    }
+    &.sticky {
+        opacity: 1;
+        a.link-pref-page {
+            display: block;
         }
     }
 }

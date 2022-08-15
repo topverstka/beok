@@ -565,6 +565,7 @@ body._active_dropdown {
     flex-direction: column;
     align-items: center;
     &:first-child {
+        width: 4%;
         .result-line__chart--title {
             font-weight: 700;
             font-size: 18px;
@@ -575,6 +576,7 @@ body._active_dropdown {
     }
     @media (max-width: $tablet) {
         &:first-child {
+            width: 11%;
             .result-line__chart--title {
                 font-size: 14px;
                 line-height: 130%;

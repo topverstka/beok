@@ -1,6 +1,7 @@
 // Служебные переменные
 const d = document;
 const body = document.querySelector('body');
+const SCREEN_TABLET = 992;
 
 // Служебные функции
 
@@ -77,6 +78,10 @@ function faq() {
 
 faq();
 
+
+
+customHeaderMobile();
+
 let previousPosition = window.pageYOffset || document.documentElement.scrollTop;
 // When the user scrolls the page, execute myFunction
 var header = document.querySelector(".header");
@@ -112,8 +117,6 @@ function myFunction() {
 }
 
 
-
-const SCREEN_TABLET = 992;
 
 
 
@@ -1119,4 +1122,17 @@ function styleElementChat() {
     }
 }
 
-styleElementChat()
+styleElementChat();
+
+
+function customHeaderMobile() {
+    if (find('[data-custom]') && window.screen.width < SCREEN_TABLET) {
+        let linkClone = find('.link-pref-page').cloneNode(true);
+        let titleClone = find('.hello').cloneNode(true);
+        let lineClone = find('.section-questionnaire--progress').cloneNode(true);
+        find('.section-questionnaire').insertAdjacentHTML('afterbegin', '<div class="header-top-mobile header"></div>');
+        find('.header-top-mobile').insertAdjacentHTML('afterbegin', linkClone.outerHTML);
+        find('.header-top-mobile').insertAdjacentHTML('afterbegin', titleClone.outerHTML);
+        find('.header-top-mobile').insertAdjacentHTML('afterbegin', lineClone.outerHTML);
+    }
+}
