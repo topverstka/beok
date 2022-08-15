@@ -102,18 +102,38 @@ function myFunction() {
     if (window.pageYOffset > sticky && positionBottom) {
         find('body').style.paddingTop = (header.scrollHeight + parseInt(window.getComputedStyle(header).marginBottom)) + 'px';
         header.classList.add("sticky");
+        if (find('.section-account__submit') && window.screen.width < SCREEN_TABLET) {
+            find('.section-account__submit').classList.add("_active-fixed");
+        }
         if (previousPosition > currentPosition) {
             header.classList.add("sticky");
+            if (find('.section-account__submit') && window.screen.width < SCREEN_TABLET) {
+                find('.section-account__submit').classList.add("_active-fixed");
+            }
         } else {
+            if (find('.section-account__submit') && window.screen.width < SCREEN_TABLET) {
+                find('.section-account__submit').classList.remove("_active-fixed");
+            }
             header.classList.remove("sticky");
             find('body').style.paddingTop = null;
 
         }
     } else {
+        if (find('.section-account__submit') && window.screen.width < SCREEN_TABLET) {
+            find('.section-account__submit').classList.remove("_active-fixed");
+        }
         header.classList.remove("sticky");
         find('body').style.paddingTop = null;
     }
     previousPosition = currentPosition;
+
+
+
+    if (find('.section-account__title') && find('.section-account__title').getBoundingClientRect().top <= 0) {
+        header.style.height = 64 + 'px';
+    } else {
+        header.style = null;
+    }
 }
 
 
@@ -241,6 +261,7 @@ const validateEmail = (email) => {
 
 
 document.addEventListener('input', function(e) {
+
     if (e.target.classList.contains('message-push--field')) {
         if (e.target.value !== '') {
             e.target.closest('.message-push').querySelector('.message-push--audio').innerHTML = `

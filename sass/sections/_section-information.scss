@@ -40,9 +40,11 @@
     border-radius: 15px;
     padding: 20px;
     margin-bottom: 16px;
+    min-height: 226px;
     @media (max-width: $tablet) {
         padding: 53px 16px 16px 16px;
         margin-bottom: 28px;
+        min-height: 159px;
     }
 }
 
@@ -275,7 +277,7 @@
 .section-information__tasks-slider-field-btn {
     position: absolute;
     right: 4px;
-    bottom: 4px;
+    bottom: 0;
     line-height: 1;
     padding-left: 18px;
     cursor: pointer;

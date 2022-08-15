@@ -5685,6 +5685,12 @@ input[type=search]::-webkit-search-decoration, input[type=search]::-webkit-searc
   .page-account {
     margin-top: 0;
   }
+  .page-account .header.sticky {
+    padding: 20px 12px;
+  }
+  .page-account .header.sticky .link-pref-page {
+    display: block;
+  }
 }
 
 .section-account--esc {
@@ -5925,6 +5931,13 @@ input[type=search]::-webkit-search-decoration, input[type=search]::-webkit-searc
   }
   .section-account__form input[type=submit]:disabled:hover {
     background: transparent;
+  }
+  .section-account__form input[type=submit]._active-fixed {
+    position: fixed;
+    right: 12px;
+    top: 18px;
+    z-index: 999;
+    animation: header 1s;
   }
 }
 
@@ -8897,11 +8910,13 @@ body._active_dropdown main:after {
   border-radius: 15px;
   padding: 20px;
   margin-bottom: 16px;
+  min-height: 226px;
 }
 @media (max-width: 992px) {
   .section-information__billboard {
     padding: 53px 16px 16px 16px;
     margin-bottom: 28px;
+    min-height: 159px;
   }
 }
 
@@ -9148,7 +9163,7 @@ body._active_dropdown main:after {
 .section-information__tasks-slider-field-btn {
   position: absolute;
   right: 4px;
-  bottom: 4px;
+  bottom: 0;
   line-height: 1;
   padding-left: 18px;
   cursor: pointer;

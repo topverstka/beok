@@ -68,6 +68,15 @@
     }
     @media (max-width: $tablet) {
         margin-top: 0;
+        .header {
+            //height: 64px;
+            &.sticky {
+                padding: 20px 12px;
+                .link-pref-page {
+                    display: block;
+                }
+            }
+        }
     }
 }
 
@@ -298,6 +307,13 @@
                 &:hover {
                     background: transparent;
                 }
+            }
+            &._active-fixed {
+                position: fixed;
+                right: 12px;
+                top: 18px;
+                z-index: 999;
+                animation: header 1s;
             }
         }
     }
