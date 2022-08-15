@@ -261,24 +261,39 @@ const validateEmail = (email) => {
 };
 
 
-
+let numberTemporary;
 document.addEventListener('input', function(e) {
 
     if (e.target.classList.contains('message-push--field')) {
         if (e.target.value !== '') {
-            e.target.closest('.message-push').querySelector('.message-push--audio').innerHTML = `
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect width="32" height="32" rx="16" fill="#467EF3"/>
-                <path d="M11.6249 15.8214L14.4374 18.5L20.9999 12.25" stroke="white" stroke-width="1.50937" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            `;
+            if (!e.target.closest('.message-push').querySelector('.message-send')) {
+                e.target.insertAdjacentHTML('afterend', `
+            <button class="message-send">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="16" fill="#467EF3"/>
+                    <path d="M11.6249 15.8214L14.4374 18.5L20.9999 12.25" stroke="white" stroke-width="1.50937" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            `);
+            }
+
+            if (numberTemporary === undefined) numberTemporary = e.target.scrollHeight;
+
+            // console.log(numberTemporary, e.target.scrollHeight)
+
+            if (numberTemporary !== e.target.scrollHeight) {
+                e.target.style.height = '1px'; // Для проверки реальной высоты textarea
+                e.target.style.height = e.target.scrollHeight + "px";
+                e.target.closest('form').classList.add('align-end');
+            } else {
+                e.target.closest('form').classList.remove('align-end');
+            }
         } else {
-            e.target.closest('.message-push').querySelector('.message-push--audio').innerHTML = `
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M25.3333 16.668C25.3333 21.4544 21.4531 24.668 16.6667 24.668M16.6667 24.668C11.8802 24.668 8 21.4544 8 16.668M16.6667 24.668V27.0013V29.3346M16.6667 29.3346H20M16.6667 29.3346H13.3333" stroke="#90959E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M22.0002 8.0013C22.0002 4.66797 19.3335 2.66797 16.6668 2.66797C14.0002 2.66797 11.3335 4.8013 11.3335 8.0013V16.0013C11.3335 19.3346 14.0002 21.3346 16.6668 21.3346C19.3335 21.3346 22.0002 19.3346 22.0002 16.0013V12.668" stroke="#90959E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>   
-            `;
+            if (e.target.closest('.message-push').querySelector('.message-send')) {
+                e.target.closest('.message-push').querySelector('.message-send').remove();
+                e.target.closest('form').classList.remove('align-end');
+            }
+            e.target.style = null;
         }
     }
 
@@ -354,8 +369,10 @@ class formSubmit {
                 }
                 break;
             case 'keydown':
-                if (e.keyCode === 13) {
-                    e.preventDefault();
+                if (window.innerWidth < SCREEN_TABLET) {
+                    if (e.keyCode === 13) {
+                        e.preventDefault();
+                    }
                 }
                 break;
             case 'keyup':
@@ -372,10 +389,7 @@ let innerFormSubmit = new formSubmit();
 
 document.addEventListener('submit', innerFormSubmit);
 document.addEventListener('keyup', innerFormSubmit);
-
-if (window.innerWidth < SCREEN_TABLET) {
-    document.addEventListener('keydown', innerFormSubmit);
-}
+document.addEventListener('keydown', innerFormSubmit);
 
 
 // Плавная прокрутка

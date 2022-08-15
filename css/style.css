@@ -2451,6 +2451,9 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   justify-content: space-between;
   width: 100%;
 }
+.message-push form.align-end {
+  align-items: flex-end;
+}
 .message-push button svg,
 .message-push .message-push--file svg {
   width: 32px;
@@ -2459,9 +2462,9 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 @media (max-width: 992px) {
   .message-push {
     width: 100%;
-    height: 80px;
+    min-height: 52px;
     align-items: flex-start;
-    padding: 10px 11px 0 11px;
+    padding: 10px 11px 10px 11px;
   }
   .message-push .message-push--file {
     margin-left: 0;
@@ -2500,7 +2503,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 
 .message-push--field {
   width: 100%;
-  margin: 0 24px;
+  margin: 0 0 0 24px;
   height: 48px;
   border-radius: 24px;
   padding: 16px 30px;
@@ -2532,8 +2535,13 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   font-size: 0;
 }
 
-.message-push--audio {
-  margin-right: 28px;
+.message-send {
+  margin-left: 24px;
+}
+@media (max-width: 992px) {
+  .message-send {
+    margin-left: 7px;
+  }
 }
 
 .reporst-check {
