@@ -6,6 +6,10 @@
         .general-menu {
             display: none;
         }
+        .header.sticky .link-pref-page {
+            display: block;
+            padding: 0 12px 20px 12px
+        }
     }
 }
 

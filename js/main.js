@@ -370,7 +370,7 @@ class formSubmit {
                 break;
             case 'keydown':
                 if (window.innerWidth < SCREEN_TABLET) {
-                    if (e.keyCode === 13) {
+                    if (e.keyCode === 13 && !find('.message-push--field')) {
                         e.preventDefault();
                     }
                 }
