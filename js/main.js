@@ -807,6 +807,7 @@ window.addEventListener('change', function(e) {
 
 let returnElementDeligitaion = (event, element) => event.target.classList.contains(element.replace(/[^a-zа-яё0-9\s]/gi, ' ')) || event.target.closest(element);
 
+let heightVariable;
 document.addEventListener('click', function(e) {
     if (e.target.classList.contains('_active-delete') || e.target.closest('._active-delete')) {
         e.target.closest('.take-photo__upload--photo').classList.remove('_active');
@@ -942,16 +943,24 @@ document.addEventListener('click', function(e) {
     // List chat
     if (returnElementDeligitaion(e, '.message-page__btn')) {
 
+
         if (e.target.closest('.message-page__btn').firstChild.nodeValue.trim() === 'Подробнее') {
             e.target.closest('.message-page__btn').firstChild.nodeValue = 'Свернуть';
             returnElementDeligitaion(e, '.message-page__btn').classList.add('_show');
+            heightVariable = find('.reports-all-section').offsetHeight;
+            find('.reports-all-section__content').style.height = 'auto';
             find('.reports-all-section').style.height = find('.reports-all-section').scrollHeight + 'px';
             e.target.closest('.message-page').classList.add('_active');
         } else {
             e.target.closest('.message-page__btn').firstChild.nodeValue = 'Подробнее';
             returnElementDeligitaion(e, '.message-page__btn').classList.remove('_show');
-            find('.reports-all-section').style = null;
+
             e.target.closest('.message-page').classList.remove('_active');
+
+            setTimeout(() => {
+                heightReportsBlock();
+                find('.reports-all-section').style.height = heightVariable + 'px';
+            }, 0);
         }
     }
     // List chat
@@ -1173,3 +1182,20 @@ function customHeaderMobile() {
         find('.header-top-mobile').insertAdjacentHTML('afterbegin', lineClone.outerHTML);
     }
 }
+
+
+function heightReportsBlock() {
+    if (find('.reports-all-section__content')) {
+        let heightIndicator = find('.reports-all-section__content--indicators').scrollHeight;
+        let heightRecommendations = 0;
+        let marginRecommendations = 0
+        if (find('.reports-all-section__content--recommendation')) {
+            heightRecommendations = find('.reports-all-section__content--recommendation').scrollHeight;
+            marginRecommendations = window.getComputedStyle(find('.reports-all-section__content--recommendation')).marginTop;
+        }
+        find('.reports-all-section__content').style.height = heightIndicator + heightRecommendations + parseInt(marginRecommendations) + 'px';
+        find('.reports-all-section').style.height = find('.reports-all-section').offsetHeight + 'px';
+    }
+}
+
+heightReportsBlock()
