@@ -2506,18 +2506,18 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   }
 }
 
-body.keyboard main {
-  bottom: 275px;
+@media (max-width: 992px) {
+  body.keyboard main {
+    bottom: 275px;
+  }
+  body.keyboard main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
 }
-
-body.keyboard.Safari main {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
 .message-push--field {
   width: 100%;
   margin: 0 0 0 24px;
