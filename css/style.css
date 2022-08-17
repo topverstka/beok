@@ -2469,6 +2469,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
     min-height: 52px;
     align-items: flex-start;
     padding: 10px 11px 10px 11px;
+    position: absolute;
   }
   .message-push .message-push--file {
     margin-left: 0;
@@ -2503,6 +2504,10 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
     width: 24px;
     height: 24px;
   }
+}
+
+body.keyboard {
+  height: 270px;
 }
 
 .message-push--field {

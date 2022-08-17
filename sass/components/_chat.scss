@@ -355,7 +355,7 @@
         min-height: 52px;
         align-items: flex-start;
         padding: 10px 11px 10px 11px;
-        // position: absolute;
+        position: absolute;
         .message-push--file {
             margin-left: 0;
             padding-top: 0;
@@ -390,6 +390,10 @@
             }
         }
     }
+}
+
+body.keyboard {
+    height: 270px;
 }
 
 .message-push--field {
