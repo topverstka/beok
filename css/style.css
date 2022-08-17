@@ -2507,7 +2507,6 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 }
 
 .chat-page .page-content {
-  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
