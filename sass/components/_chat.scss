@@ -392,17 +392,20 @@
     }
 }
 
-.chat-page .page-content {
-    // height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-}
-
-body.keyboard.Safari .page-content {
-    bottom: 270px;
+body {
+    &.keyboard.Safari .main {
+        bottom: 270px;
+    }
+    &.Safari {
+        &.chat-page main {
+            // height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+    }
 }
 
 .message-push--field {
