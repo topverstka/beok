@@ -2506,11 +2506,11 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   }
 }
 
-body.keyboard.Safari main {
+body.keyboard main {
   bottom: 275px;
 }
 
-body.chat-page.Safari main {
+body.chat-page main {
   position: absolute;
   top: 0;
   left: 0;
