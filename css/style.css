@@ -2509,7 +2509,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 body.keyboard.Safari .main {
   bottom: 270px;
 }
-body.Safari.chat-page main {
+body.chat-page.Safari main {
   position: absolute;
   top: 0;
   left: 0;
