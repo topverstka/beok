@@ -392,8 +392,11 @@
     }
 }
 
-body.safari.keyboard .message-push {
-    bottom: 270px;
+// body.safari.keyboard .message-push {
+//     bottom: 270px;
+// }
+.chat-page .page-content {
+    height: 100%;
 }
 
 .message-push--field {
