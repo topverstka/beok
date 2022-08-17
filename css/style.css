@@ -2506,8 +2506,8 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   }
 }
 
-body.safari.keyboard {
-  height: 270px;
+body.safari.keyboard .message-push {
+  bottom: 270px;
 }
 
 .message-push--field {
