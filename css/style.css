@@ -7690,7 +7690,8 @@ body._active_dropdown main:after {
     margin-bottom: 0;
   }
   .guide-section.guide-section--android .guide-section__list--picture,
-.guide-section.guide-section--android li:nth-child(n+5) .guide-section__list--picture {
+.guide-section.guide-section--android li:nth-child(n+5) .guide-section__list--picture,
+.guide-section.guide-section--android li:nth-of-type(4) .guide-section__list--picture {
     width: 267px;
   }
   .guide-section.guide-section--android .guide-section__list--text + .guide-section__list--box {
@@ -7708,10 +7709,10 @@ body._active_dropdown main:after {
   .guide-section.guide-section--android li:nth-of-type(1) .guide-section__list--arrow--mobile {
     display: block;
     transform: matrix(0.62, -0.78, -0.78, -0.62, 0, 0) rotate(68deg);
-    top: 25px;
-    left: -42px;
+    height: 86px;
+    left: -50px;
+    top: 26px;
     width: 88px;
-    height: 65px;
   }
   .guide-section.guide-section--android li:nth-of-type(1) .guide-section__list--box div.guide-section__list--line-left {
     margin-top: 20px;
@@ -7747,8 +7748,9 @@ body._active_dropdown main:after {
     bottom: -16px;
   }
   .guide-section.guide-section--android li:nth-of-type(4) .guide-section__list--arrow {
-    top: 102px;
-    left: 104px;
+    top: 88px;
+    left: 90px;
+    transform: rotate(-158deg);
     width: 197px;
   }
   .guide-section.guide-section--android li:nth-of-type(5) .guide-section__list--arrow {
@@ -7758,9 +7760,9 @@ body._active_dropdown main:after {
     display: block;
     width: 115px;
     height: 83px;
-    left: 39px;
-    bottom: -26px;
-    transform: matrix(-0.73, -0.68, -0.68, 0.73, 0, 0) rotate(61deg);
+    transform: matrix(-0.73, -0.68, -0.68, 0.73, 0, 0) rotate(69deg);
+    bottom: -25px;
+    left: 37px;
   }
   .guide-section.guide-section--android li:nth-of-type(5) .guide-selection {
     width: 30px;
@@ -7788,8 +7790,8 @@ body._active_dropdown main:after {
   .guide-section.guide-section--android li:nth-of-type(7) .guide-section__list--arrow--mobile {
     display: block;
     width: 61px;
-    height: 52px;
-    right: -33px;
+    right: -41px;
+    height: 70px;
     top: 11px;
   }
   .guide-section.guide-section--android li:nth-of-type(8) .guide-section__list--arrow {
@@ -7814,11 +7816,11 @@ body._active_dropdown main:after {
   }
   .guide-section.guide-section--android li:nth-of-type(9) .guide-section__list--arrow--mobile {
     display: block;
-    transform: matrix(-0.58, -0.81, -0.81, 0.58, 0, 0) rotate(116deg);
+    bottom: -67px;
+    left: 15px;
+    transform: matrix(-0.58, -0.81, -0.81, 0.58, 0, 0) rotate(119deg);
+    height: 69px;
     width: 65px;
-    height: 65px;
-    left: 20px;
-    bottom: -60px;
   }
 }
 
