@@ -30,6 +30,8 @@ function browser() {
     return 'unknown';
 }
 
+alert(browser())
+
 document.body.classList.add(browser());
 
 // Удаляет у всех элементов items класс itemClass
