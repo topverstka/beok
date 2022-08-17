@@ -1201,3 +1201,15 @@ function heightReportsBlock() {
 }
 
 heightReportsBlock()
+
+if (document.querySelector('.message-push--field')) {
+    document.querySelector('.message-push--field').addEventListener('focus', function(e) {
+        document.body.classList.add('keyboard');
+        setTimeout(function() {
+            window.scrollTo(0, 0);
+        }, 200);
+    });
+    document.querySelector('.message-push--field').addEventListener('blur', function(e) {
+        document.body.classList.remove('keyboard');
+    });
+}

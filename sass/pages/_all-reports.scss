@@ -449,6 +449,9 @@
     .swiper-button-prev {
         margin-right: 29px;
     }
+    @media (max-width:$tablet) {
+        display: none
+    }
 }
 
 .reports-all-section__content--diet__element {

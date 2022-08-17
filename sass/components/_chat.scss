@@ -2,6 +2,12 @@
     .link-pref-page__desctop {
         display: none;
     }
+    .reports-all-section__content--recommendation {
+        margin-bottom: 0;
+    }
+    .reports-all-section__content--diet {
+        margin-top: 24px;
+    }
     @media (max-width: $tablet) {
         .general-menu {
             display: none;
@@ -9,6 +15,9 @@
         .header.sticky .link-pref-page {
             display: block;
             padding: 0 12px 20px 12px
+        }
+        .reports-all-section__content--diet {
+            margin-top: 16px;
         }
     }
 }
@@ -236,6 +245,9 @@
                     height: 14px;
                 }
             }
+            .your-reports__bottom-element-list-line:nth-last-child(2) {
+                margin-right: 0;
+            }
             .your-reports__bottom-element-list-line[data-info="period"] {
                 display: none
             }
@@ -392,19 +404,6 @@
     }
 }
 
-// body {
-//     &.keyboard.Safari main {
-//         bottom: 270px;
-//     }
-//     &.chat-page.Safari main {
-//         // height: 100%;
-//         position: absolute;
-//         top: 0;
-//         left: 0;
-//         right: 0;
-//         bottom: 0;
-//     }
-// }
 @media (max-width: $tablet) {
     body {
         &.keyboard {

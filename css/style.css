@@ -2126,6 +2126,12 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 .chat-page .link-pref-page__desctop {
   display: none;
 }
+.chat-page .reports-all-section__content--recommendation {
+  margin-bottom: 0;
+}
+.chat-page .reports-all-section__content--diet {
+  margin-top: 24px;
+}
 @media (max-width: 992px) {
   .chat-page .general-menu {
     display: none;
@@ -2133,6 +2139,9 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   .chat-page .header.sticky .link-pref-page {
     display: block;
     padding: 0 12px 20px 12px;
+  }
+  .chat-page .reports-all-section__content--diet {
+    margin-top: 16px;
   }
 }
 
@@ -2346,6 +2355,9 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   background-size: cover;
   width: 15px;
   height: 14px;
+}
+.message-page .reports-all-section[data-status=checked] .your-reports__bottom-element-list-line:nth-last-child(2) {
+  margin-right: 0;
 }
 .message-page .reports-all-section[data-status=checked] .your-reports__bottom-element-list-line[data-info=period] {
   display: none;
@@ -4283,6 +4295,11 @@ input[type=search]::-webkit-search-decoration, input[type=search]::-webkit-searc
 }
 .reports-all-section__content--recommendation--link .swiper-button-prev {
   margin-right: 29px;
+}
+@media (max-width: 992px) {
+  .reports-all-section__content--recommendation--link {
+    display: none;
+  }
 }
 
 .reports-all-section__content--diet__element {
