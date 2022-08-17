@@ -2510,7 +2510,7 @@ body.keyboard main {
   bottom: 275px;
 }
 
-.Safari.chat-page main {
+.chat-page.Safari main {
   position: absolute;
   top: 0;
   left: 0;
