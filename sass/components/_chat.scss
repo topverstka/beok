@@ -407,15 +407,15 @@
 // }
 @media (max-width: $tablet) {
     body.keyboard main {
-        bottom: 275px
-    }
-    body.keyboard main {
         // height: 100%;
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
+    }
+    body.Safari.keyboard main {
+        bottom: 275px
     }
 }
 
