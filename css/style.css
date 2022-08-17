@@ -2508,6 +2508,15 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 
 .chat-page .page-content {
   height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+body.safari.keyboard .page-content {
+  bottom: 270px;
 }
 
 .message-push--field {
