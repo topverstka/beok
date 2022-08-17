@@ -2515,7 +2515,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   bottom: 0;
 }
 
-body.safari.keyboard .page-content {
+body.keyboard .page-content {
   bottom: 270px;
 }
 
