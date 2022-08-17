@@ -2506,10 +2506,10 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   }
 }
 
-body.Safari.keyboard .page-content {
+body.keyboard .page-content {
   bottom: 270px;
 }
-body.Safari .chat-page .page-content {
+body .chat-page .page-content {
   position: absolute;
   top: 0;
   left: 0;
