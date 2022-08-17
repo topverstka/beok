@@ -2507,8 +2507,9 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 }
 
 body.keyboard.Safari main {
-  bottom: 270px;
+  bottom: 275px;
 }
+
 body.chat-page.Safari main {
   position: absolute;
   top: 0;
