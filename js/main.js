@@ -134,24 +134,25 @@ function myFunction() {
     previousPosition = currentPosition;
 
 
+    if (find('.section-account__title')) {
+        if (find('.section-account__title').getBoundingClientRect().top <= 0 && window.screen.width < SCREEN_TABLET) {
 
-    if (find('.section-account__title') && find('.section-account__title').getBoundingClientRect().top <= 0 && window.screen.width < SCREEN_TABLET) {
-
-        // header.style.height = 64 + 'px';
-
-
-        header.classList.add("sticky");
-        find('.section-account__submit').classList.add("_active-fixed");
-        find('body').style.marginTop = 42 + 'px';
+            // header.style.height = 64 + 'px';
 
 
-    } else {
-        header.style = null;
-        header.classList.remove("sticky");
-        find('.section-account__submit').classList.remove("_active-fixed");
-        find('body').style = null;
+            header.classList.add("sticky");
+            find('.section-account__submit').classList.add("_active-fixed");
+            find('body').style.marginTop = 42 + 'px';
 
 
+        } else {
+            header.style = null;
+            header.classList.remove("sticky");
+            find('.section-account__submit').classList.remove("_active-fixed");
+            find('body').style = null;
+
+
+        }
     }
 }
 
@@ -337,6 +338,8 @@ document.addEventListener('input', function(e) {
                 i.querySelector('input:checked') ? arrValueBool.push(true) : arrValueBool.push(false);
             }
         });
+
+        flDisabledFalse = true;
 
         if (!valueMail && e.target.id === 'mail') {
             e.target.classList.add('_error');
