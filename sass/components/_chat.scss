@@ -418,8 +418,15 @@
                 bottom: 0;
             }
         }
-        &.Safari.keyboard main {
-            bottom: 275px
+        @media (min-height:850px) {
+            &.Safari.keyboard main {
+                bottom: 275px
+            }
+        }
+        @media (max-height:800px) {
+            &.Safari.keyboard main {
+                bottom: 305px
+            }
         }
     }
 }
