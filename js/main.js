@@ -280,8 +280,16 @@ const validateEmail = (email) => {
 };
 
 
+
+
 let numberTemporary;
+let flDisabledFalse = false;
 document.addEventListener('input', function(e) {
+
+    if (e.target.hasAttribute('data-number')) {
+        e.target.value = e.target.value.replace(/[^.\d]+/g, "").replace(/^([^\.]*\.)|\./g, '$1')
+        if (e.target.value.split('').length > 0) flDisabledFalse = true;
+    }
 
     if (e.target.classList.contains('message-push--field')) {
         if (e.target.value !== '') {
@@ -340,7 +348,7 @@ document.addEventListener('input', function(e) {
         }
 
         if (e.target.closest('form').querySelector('input[type="submit"]')) {
-            if (valueField && valueFieldRadio && !arrValueBool.includes(false) && valueMail) {
+            if (valueField && valueFieldRadio && !arrValueBool.includes(false) && valueMail && flDisabledFalse) {
                 e.target.closest('form').querySelector('input[type="submit"]').disabled = false;
             } else {
                 e.target.closest('form').querySelector('input[type="submit"]').disabled = true;
@@ -367,7 +375,7 @@ document.addEventListener('input', function(e) {
 // });
 
 
-// Макса даты ДД.ММ.ГГГГ
+// Маска даты ДД.ММ.ГГГГ
 const maskDate = value => {
     let v = value.replace(/\D/g, '').slice(0, 8);
     if (v.length >= 4) {
@@ -1165,11 +1173,6 @@ if (find('.field-range__slide--input')) {
 }
 
 
-document.addEventListener('input', function(e) {
-    if (e.target.hasAttribute('data-number')) {
-        e.target.value = e.target.value.replace(/[^0-9\.\,]/g, '')
-    }
-});
 
 
 
