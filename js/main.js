@@ -97,20 +97,31 @@ if (header) {
 // Get the offset position of the navbar
 var sticky = 250;
 
+let flScroll = false;
+
 // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
 function myFunction() {
     let currentPosition = window.pageYOffset || document.documentElement.scrollTop;
     let positionBottom = window.scrollY + 100 <= document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    if (window.pageYOffset > sticky && positionBottom) {
-        find('body').style.paddingTop = (header.scrollHeight + parseInt(window.getComputedStyle(header).marginBottom)) + 'px';
-        header.classList.add("sticky");
-        if (find('.section-account__submit') && window.screen.width < SCREEN_TABLET) {
-            find('.section-account__submit').classList.add("_active-fixed");
-        }
-        if (previousPosition > currentPosition) {
+    if (!find('.section-account__title')) {
+        if (window.pageYOffset > sticky && positionBottom) {
+            if (!find('.header-top-mobile')) find('body').style.paddingTop = (header.scrollHeight + parseInt(window.getComputedStyle(header).marginBottom)) + 'px';
             header.classList.add("sticky");
             if (find('.section-account__submit') && window.screen.width < SCREEN_TABLET) {
                 find('.section-account__submit').classList.add("_active-fixed");
+            }
+            if (previousPosition > currentPosition) {
+                header.classList.add("sticky");
+                if (find('.section-account__submit') && window.screen.width < SCREEN_TABLET) {
+                    find('.section-account__submit').classList.add("_active-fixed");
+                }
+            } else {
+                if (find('.section-account__submit') && window.screen.width < SCREEN_TABLET) {
+                    find('.section-account__submit').classList.remove("_active-fixed");
+                }
+                header.classList.remove("sticky");
+                find('body').style.paddingTop = null;
+
             }
         } else {
             if (find('.section-account__submit') && window.screen.width < SCREEN_TABLET) {
@@ -118,23 +129,29 @@ function myFunction() {
             }
             header.classList.remove("sticky");
             find('body').style.paddingTop = null;
-
         }
-    } else {
-        if (find('.section-account__submit') && window.screen.width < SCREEN_TABLET) {
-            find('.section-account__submit').classList.remove("_active-fixed");
-        }
-        header.classList.remove("sticky");
-        find('body').style.paddingTop = null;
     }
     previousPosition = currentPosition;
 
 
 
-    if (find('.section-account__title') && find('.section-account__title').getBoundingClientRect().top <= 0) {
-        header.style.height = 64 + 'px';
+    if (find('.section-account__title') && find('.section-account__title').getBoundingClientRect().top <= 0 && window.screen.width < SCREEN_TABLET) {
+
+        // header.style.height = 64 + 'px';
+
+
+        header.classList.add("sticky");
+        find('.section-account__submit').classList.add("_active-fixed");
+        find('body').style.marginTop = 42 + 'px';
+
+
     } else {
         header.style = null;
+        header.classList.remove("sticky");
+        find('.section-account__submit').classList.remove("_active-fixed");
+        find('body').style = null;
+
+
     }
 }
 
