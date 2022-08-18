@@ -7509,6 +7509,7 @@ body._active_dropdown main:after {
 }
 .guide-section.guide-section--ios li:nth-of-type(4) .guide-section__list--picture {
   height: 607px;
+  object-position: 0 71%;
 }
 .guide-section.guide-section--ios li:nth-of-type(4) .guide-section__list--arrow {
   right: -195px;
@@ -7548,26 +7549,30 @@ body._active_dropdown main:after {
   width: 118px;
 }
 .guide-section.guide-section--android li:nth-of-type(2) .guide-section__list--arrow {
-  right: 211px;
-  bottom: -6px;
-  transform: rotate(-28deg);
+  width: 204px;
+  height: 116px;
+  bottom: -34px;
+  right: 219px;
 }
 .guide-section.guide-section--android li:nth-of-type(2) ol .guide-section__list--arrow {
   top: auto;
-  bottom: -66px;
+  bottom: -99px;
+  width: 175px;
   right: 289px;
-  width: 167px;
   transform: rotate(-28deg);
 }
 .guide-section.guide-section--android li:nth-of-type(3) .guide-section__list--arrow {
-  transform: matrix(-0.66, -0.75, -0.75, 0.66, 0, 0) rotate(17deg);
-  bottom: -2px;
-  right: 27px;
+  right: -12px;
+  transform: rotate(0deg);
+  width: 209px;
+  height: 116px;
+  bottom: -28px;
 }
 .guide-section.guide-section--android li:nth-of-type(4) .guide-section__list--arrow {
-  transform: rotate(-159deg);
-  top: 174px;
-  left: 144px;
+  width: 360px;
+  height: 140px;
+  top: 180px;
+  left: 128px;
 }
 .guide-section.guide-section--android li:nth-of-type(4) .guide-section__list--picture {
   width: 426px;
@@ -7582,32 +7587,38 @@ body._active_dropdown main:after {
   left: 71px;
 }
 .guide-section.guide-section--android li:nth-of-type(5) .guide-section__list--arrow {
-  transform: matrix(-0.66, -0.75, -0.75, 0.66, 0, 0) rotate(16deg);
-  bottom: 16px;
-  left: 85px;
+  width: 240px;
+  height: 140px;
+  bottom: -33px;
+  left: 96px;
 }
 .guide-section.guide-section--android li:nth-of-type(6) .guide-section__list--arrow {
-  top: 147px;
-  left: -105px;
-  transform: matrix(0.59, -0.8, -0.8, -0.59, 0, 0) rotate(15deg);
+  height: 97px;
+  width: 202px;
+  top: 139px;
+  transform: matrix(0.59, -0.8, -0.8, -0.59, 0, 0) rotate(21deg);
+  left: -120px;
 }
 .guide-section.guide-section--android li:nth-of-type(7) .guide-section__list--arrow {
-  transform: rotate(-134deg);
-  right: -158px;
-  top: 82px;
+  width: 120px;
+  height: 98px;
+  top: 56px;
+  right: -97px;
 }
 .guide-section.guide-section--android li:nth-of-type(8) .guide-section__list--arrow {
-  transform: rotate(-153.85deg);
-  bottom: 160px;
-  right: 11px;
+  width: 240px;
+  height: 113px;
+  bottom: 110px;
+  right: -50px;
 }
 .guide-section.guide-section--android li:nth-of-type(9) {
-  margin-bottom: 100px;
+  margin-bottom: 110px;
 }
 .guide-section.guide-section--android li:nth-of-type(9) .guide-section__list--arrow {
-  left: 35px;
-  bottom: -107px;
-  transform: matrix(-0.58, -0.81, -0.81, 0.58, 0, 0) rotate(17deg);
+  width: 150px;
+  height: 85px;
+  bottom: -97px;
+  left: 38px;
 }
 @media (max-width: 1250px) {
   .guide-section.guide-section--android li {
@@ -7697,6 +7708,7 @@ body._active_dropdown main:after {
   }
   .guide-section.guide-section--ios li:nth-of-type(4) .guide-section__list--picture {
     height: 546px;
+    object-position: 0 70%;
   }
   .guide-section.guide-section--ios li:nth-of-type(5) .guide-section__list--arrow {
     transform: rotate(-116.35deg);
@@ -7756,18 +7768,18 @@ body._active_dropdown main:after {
   .guide-section.guide-section--android li:nth-of-type(2) .guide-section__list--arrow--mobile {
     display: block;
     transform: rotate(-92.48deg);
-    bottom: -15px;
-    left: 195px;
     width: 98px;
-    height: 65px;
+    height: 75px;
+    bottom: -24px;
+    left: 200px;
   }
   .guide-section.guide-section--android li:nth-of-type(2) ol .guide-section__list--arrow--mobile {
-    height: 61px;
-    transform: matrix(-0.88, -0.47, -0.47, 0.88, 0, 0) rotate(68deg);
-    bottom: -30px;
     top: auto;
-    left: 109px;
     width: 105px;
+    height: 80px;
+    bottom: -48px;
+    left: 120px;
+    transform: matrix(-0.88, -0.47, -0.47, 0.88, 0, 0) rotate(63deg);
   }
   .guide-section.guide-section--android li:nth-of-type(3) .guide-section__list--arrow {
     display: none;
@@ -7776,15 +7788,19 @@ body._active_dropdown main:after {
     display: block;
     transform: matrix(-0.66, -0.75, -0.75, 0.66, 0, 0) rotate(65deg);
     width: 98px;
-    height: 69px;
     right: 0;
-    bottom: -16px;
+    height: 79px;
+    bottom: -26px;
   }
   .guide-section.guide-section--android li:nth-of-type(4) .guide-section__list--arrow {
-    top: 88px;
+    display: none;
+  }
+  .guide-section.guide-section--android li:nth-of-type(4) .guide-section__list--arrow--mobile {
+    display: block;
     left: 90px;
     transform: rotate(-158deg);
-    width: 197px;
+    top: 100px;
+    width: 204px;
   }
   .guide-section.guide-section--android li:nth-of-type(5) .guide-section__list--arrow {
     display: none;
@@ -7793,9 +7809,9 @@ body._active_dropdown main:after {
     display: block;
     width: 115px;
     height: 83px;
-    transform: matrix(-0.73, -0.68, -0.68, 0.73, 0, 0) rotate(69deg);
-    bottom: -25px;
-    left: 37px;
+    transform: none;
+    bottom: -35px;
+    left: 45px;
   }
   .guide-section.guide-section--android li:nth-of-type(5) .guide-selection {
     width: 30px;
@@ -8043,7 +8059,7 @@ body._active_dropdown main:after {
   margin-left: 65px;
 }
 .guide-section__list--box .guide-section__list--line-left {
-  margin-left: 6px;
+  margin-left: 2px;
 }
 @media (max-width: 768px) {
   .guide-section__list--box {
@@ -8275,7 +8291,7 @@ body._active_dropdown main:after {
   }
 }
 .shadow-picture {
-  filter: drop-shadow(2px 2px 8px rgba(102, 101, 101, 0.17));
+  box-shadow: 2px 2px 8px 0px rgba(102, 101, 101, 0.17);
   border-radius: 10px;
 }
 
