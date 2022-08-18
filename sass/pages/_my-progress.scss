@@ -550,13 +550,15 @@ body._active_dropdown {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-height: 108px;
+    min-height: 102px;
     &:not(:last-child) {
         margin-bottom: 10px;
     }
     @media (max-width: $tablet) {
-        padding: 16px 24px;
+        padding: 10px 0;
         min-height: 64px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -576,7 +578,7 @@ body._active_dropdown {
     }
     @media (max-width: $tablet) {
         &:first-child {
-            width: 11%;
+            width: auto;
             .result-line__chart--title {
                 font-size: 14px;
                 line-height: 130%;
@@ -586,11 +588,13 @@ body._active_dropdown {
 }
 
 .result-line__chart--icon {
-    width: 22px;
-    height: 20px;
-    margin-bottom: 8px;
+    width: 24px;
+    height: 24px;
+    margin-bottom: 6px;
     @media (max-width: $tablet) {
-        margin-bottom: 4px;
+        margin-bottom: 2px;
+        width: 20px;
+        height: 20px;
     }
 }
 
