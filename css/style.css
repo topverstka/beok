@@ -2150,7 +2150,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   .chat-page main .page-content {
     height: auto;
     overflow: scroll;
-    margin-bottom: 40px;
+    padding-bottom: 40px;
   }
 }
 
