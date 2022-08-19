@@ -1240,10 +1240,10 @@ if (document.querySelector('.message-push--field')) {
             window.scrollTo(0, 0);
         }, 200);
 
-        // if (window.screen.width < SCREEN_TABLET) find('.message-page').style.height = (find('.message-page').offsetHeight - 275) + 'px';
+        if (window.screen.width < SCREEN_TABLET) find('.message-page').style.height = (find('.message-page').offsetHeight - 275) + 'px';
     });
     document.querySelector('.message-push--field').addEventListener('blur', function(e) {
         document.body.classList.remove('keyboard');
-        //if (window.screen.width < SCREEN_TABLET) find('.message-page').style.height = (find('.message-page').offsetHeight + 275) + 'px';
+        if (window.screen.width < SCREEN_TABLET) find('.message-page').style.height = (find('.message-page').offsetHeight + 275) + 'px';
     });
 }
