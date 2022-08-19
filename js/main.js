@@ -288,7 +288,7 @@ let flDisabledFalse = false;
 document.addEventListener('input', function(e) {
 
     if (e.target.hasAttribute('data-number')) {
-        e.target.value = e.target.value.replace(/[^.\d]+/g, "").replace(/^([^\.]*\.)|\./g, '$1')
+        e.target.value = e.target.value.replace(/[^\d,.]*/g, '').replace(/([,.])[,.]+/g, '$1').replace(/^[^\d]*(\d+([.,]\d{0,5})?).*$/g, '$1');
         if (e.target.value.split('').length > 0) flDisabledFalse = true;
     }
 
