@@ -2144,13 +2144,6 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   .chat-page .reports-all-section__content--diet {
     margin-top: 16px;
   }
-  .chat-page main {
-    height: 100vh;
-  }
-  .chat-page main .page-content {
-    height: auto;
-    overflow: scroll;
-  }
 }
 
 .dialog__date {
@@ -2490,7 +2483,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
     min-height: 52px;
     align-items: flex-start;
     padding: 10px 11px 10px 11px;
-    position: absolute;
+    position: fixed;
   }
   .message-push .message-push--file {
     margin-left: 0;
@@ -2537,6 +2530,9 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
     left: 0;
     right: 0;
     bottom: 0;
+  }
+  body.Safari .message-push {
+    position: absolute;
   }
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {

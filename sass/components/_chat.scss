@@ -19,14 +19,14 @@
         .reports-all-section__content--diet {
             margin-top: 16px;
         }
-        main {
-            height: 100vh;
-            .page-content {
-                height: auto;
-                overflow: scroll;
-                // padding-bottom: 40px;
-            }
-        }
+        // main {
+        //     height: 100vh;
+        //     .page-content {
+        //         height: auto;
+        //         overflow: scroll;
+        //         // padding-bottom: 40px;
+        //     }
+        // }
     }
 }
 
@@ -376,7 +376,7 @@
         min-height: 52px;
         align-items: flex-start;
         padding: 10px 11px 10px 11px;
-        position: absolute;
+        position: fixed;
         .message-push--file {
             margin-left: 0;
             padding-top: 0;
@@ -425,6 +425,9 @@
                 right: 0;
                 bottom: 0;
             }
+        }
+        &.Safari .message-push {
+            position: absolute;
         }
         // @media (max-height:800px) {
         //     &.Safari.keyboard main {
