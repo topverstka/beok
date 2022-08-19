@@ -309,14 +309,16 @@ document.addEventListener('input', function(e) {
 
             // console.log(numberTemporary, e.target.scrollHeight)
 
-            if (numberTemporary !== e.target.scrollHeight) {
+            if (numberTemporary !== e.target.scrollHeight && e.target.scrollHeight <= 125) {
                 e.target.style.height = '1px'; // Для проверки реальной высоты textarea
                 e.target.style.height = e.target.scrollHeight + "px";
                 e.target.closest('form').classList.add('align-end');
                 find('.message-page').style.paddingBottom = e.target.scrollHeight + "px";
             } else {
-                e.target.closest('form').classList.remove('align-end');
-                find('.message-page').style.paddingBottom = null;
+                if (numberTemporary >= e.target.scrollHeight) {
+                    e.target.closest('form').classList.remove('align-end');
+                    find('.message-page').style.paddingBottom = null;
+                }
             }
 
         } else {
@@ -1237,10 +1239,11 @@ if (document.querySelector('.message-push--field')) {
         setTimeout(function() {
             window.scrollTo(0, 0);
         }, 200);
-        find('.message-page').style.height = (find('.message-page').offsetHeight - 275) + 'px';
+
+        if (window.screen.width < SCREEN_TABLET) find('.message-page').style.height = (find('.message-page').offsetHeight - 275) + 'px';
     });
     document.querySelector('.message-push--field').addEventListener('blur', function(e) {
         document.body.classList.remove('keyboard');
-        find('.message-page').style.height = (find('.message-page').offsetHeight + 275) + 'px';
+        if (window.screen.width < SCREEN_TABLET) find('.message-page').style.height = (find('.message-page').offsetHeight + 275) + 'px';
     });
 }

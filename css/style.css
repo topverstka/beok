@@ -2477,6 +2477,12 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   width: 32px;
   height: 32px;
 }
+.message-push .message-push--field {
+  overflow: auto;
+}
+.message-push .message-push--field::-webkit-scrollbar {
+  display: none;
+}
 @media (max-width: 992px) {
   .message-push {
     width: 100%;
