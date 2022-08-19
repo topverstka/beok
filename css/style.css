@@ -1893,7 +1893,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   }
 }
 
-@media (max-height: 580px) and (max-width: 992px) {
+@media (max-height: 640px) and (max-width: 992px) {
   .modal#edit-report .modal__body {
     height: auto;
   }
