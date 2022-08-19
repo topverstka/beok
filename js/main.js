@@ -1182,7 +1182,7 @@ if (find('.field-range__slide--input')) {
 
 
 function styleElementChat() {
-    if (find('.message-push')) {
+    if (find('.message-push') && window.screen.width > SCREEN_TABLET) {
         let heightHeader = find('.header').scrollHeight;
         let heightMessage = find('.message-push').scrollHeight;
         find('.message-page').style.height = (window.innerHeight - heightHeader - heightMessage - 20) + 'px';

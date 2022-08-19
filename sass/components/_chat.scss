@@ -19,6 +19,14 @@
         .reports-all-section__content--diet {
             margin-top: 16px;
         }
+        main {
+            height: 100vh;
+            .page-content {
+                height: auto;
+                overflow: scroll;
+                margin-bottom: 40px;
+            }
+        }
     }
 }
 
