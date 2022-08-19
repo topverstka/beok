@@ -1237,10 +1237,10 @@ if (document.querySelector('.message-push--field')) {
         setTimeout(function() {
             window.scrollTo(0, 0);
         }, 200);
-        // find('.message-page').style.height = (find('.message-page').offsetHeight - 275) + 'px';
+        find('.message-page').style.height = (find('.message-page').offsetHeight - 275) + 'px';
     });
     document.querySelector('.message-push--field').addEventListener('blur', function(e) {
         document.body.classList.remove('keyboard');
-        // find('.message-page').style.height = (find('.message-page').offsetHeight + 275) + 'px';
+        find('.message-page').style.height = (find('.message-page').offsetHeight + 275) + 'px';
     });
 }
