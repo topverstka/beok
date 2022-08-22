@@ -22,7 +22,7 @@ body {
     font-feature-settings: "pnum" on, "lnum" on;
     touch-action: pan-x pan-y;
     &._lock {
-        padding: 0 calc(16px - (100vw - 100%)) 0 0;
+        padding: 0 calc(var(--scrollbar-width) - (100vw - 100%)) 0 0;
         overflow: hidden;
     }
 }

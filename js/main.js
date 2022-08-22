@@ -1251,3 +1251,17 @@ if (document.querySelector('.message-push--field') && window.screen.width < SCRE
         if (window.screen.width < SCREEN_TABLET) find('.message-page').style.height = (find('.message-page').offsetHeight + 275) + 'px';
     });
 }
+
+
+function defineScrollBar() {
+    let div = document.createElement('div');
+    div.style.overflowY = 'scroll';
+    div.style.width = '50px';
+    div.style.height = '50px';
+    document.body.append(div);
+    let scrollWidth = div.offsetWidth - div.clientWidth;
+    div.remove();
+    document.body.setAttribute('style', `--scrollbar-width: ${scrollWidth}px`);
+}
+
+defineScrollBar();
