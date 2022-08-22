@@ -174,8 +174,8 @@ body {
   touch-action: pan-x pan-y;
 }
 body._lock {
-  overflow: hidden;
   padding: 0 calc(16px - (100vw - 100%)) 0 0;
+  overflow: hidden;
 }
 
 main {
@@ -953,7 +953,6 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   visibility: hidden;
   opacity: 0;
   transition: var(--tr);
-  overflow-y: auto;
 }
 .modal._show {
   visibility: visible;
@@ -962,6 +961,9 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 }
 .modal._show .modal__body {
   transform: translate(0, 0);
+}
+.modal.time-show-overflow {
+  overflow-y: auto;
 }
 
 #tasks-popup .modal__content {

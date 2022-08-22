@@ -9,7 +9,7 @@
     visibility: hidden;
     opacity: 0;
     transition: $tr;
-    overflow-y: auto;
+    //overflow-y: auto;
     // &::after {
     //     content: '';
     //     position: absolute;
@@ -28,6 +28,9 @@
         & .modal__body {
             transform: translate(0, 0);
         }
+    }
+    &.time-show-overflow {
+        overflow-y: auto;
     }
 }
 

@@ -697,6 +697,7 @@ function modal() {
     function openModal(modal) {
         modal.classList.add('_show')
         bodyLock(true)
+        setTimeout(() => modal.classList.add('time-show-overflow'), 500)
     }
 
     // Закрытие модального окна
@@ -704,6 +705,7 @@ function modal() {
         modal.classList.remove('_show')
         bodyLock(false)
         resetHash()
+        modal.classList.remove('time-show-overflow')
         switch (modal.id) {
             case 'loader':
                 clearTime();
