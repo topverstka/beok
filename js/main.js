@@ -303,6 +303,7 @@ document.addEventListener('input', function(e) {
                 </svg>
             </button>
             `);
+                e.target.closest('.message-push').classList.add('_active-mess');
             }
 
             if (numberTemporary === undefined) numberTemporary = e.target.scrollHeight;
@@ -325,6 +326,7 @@ document.addEventListener('input', function(e) {
             if (e.target.closest('.message-push').querySelector('.message-send')) {
                 e.target.closest('.message-push').querySelector('.message-send').remove();
                 e.target.closest('form').classList.remove('align-end');
+                e.target.closest('.message-push').classList.remove('_active-mess');
             }
             e.target.style = null;
         }
@@ -1233,7 +1235,7 @@ heightReportsBlock()
 
 
 
-if (document.querySelector('.message-push--field')) {
+if (document.querySelector('.message-push--field') && document.body.classList.contains('Safari')) {
     document.querySelector('.message-push--field').addEventListener('focus', function(e) {
         document.body.classList.add('keyboard');
         setTimeout(function() {

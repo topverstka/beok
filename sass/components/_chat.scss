@@ -263,7 +263,7 @@
     }
     @media (max-width: $tablet) {
         margin: 40px -12px 0 0;
-        padding: 0 12px 20px 0;
+        padding: 0 12px 30px 0;
         .varios-report__top-calendar {
             width: auto;
             .varios-report__top-calendar-text {
@@ -277,9 +277,10 @@
             margin-top: 8px;
         }
         .reports-all-section {
-            height: 184px;
+            height: 180px;
             overflow: hidden;
             padding-top: 8px;
+            padding-bottom: 8px;
         }
     }
     @media (min-width:$tablet) and (max-width:1200px) {
@@ -347,7 +348,7 @@
 
 .message-push {
     padding: 16px 24px;
-    background: #EBECED;
+    background: #F2F2F3;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -379,10 +380,16 @@
     }
     @media (max-width:$tablet) {
         width: 100%;
-        min-height: 52px;
+        min-height: 80px;
         align-items: flex-start;
         padding: 10px 11px 10px 11px;
         position: fixed;
+        border-top: 0.5px solid #90959E;
+        &._active-mess {
+            min-height: 52px;
+            border-bottom: 0.5px solid #90959E;
+            border-top-color: transparent;
+        }
         .message-push--file {
             margin-left: 0;
             padding-top: 0;

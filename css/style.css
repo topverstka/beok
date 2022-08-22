@@ -2366,7 +2366,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 @media (max-width: 992px) {
   .message-page {
     margin: 40px -12px 0 0;
-    padding: 0 12px 20px 0;
+    padding: 0 12px 30px 0;
   }
   .message-page .varios-report__top-calendar {
     width: auto;
@@ -2381,9 +2381,10 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
     margin-top: 8px;
   }
   .message-page .reports-all-section {
-    height: 184px;
+    height: 180px;
     overflow: hidden;
     padding-top: 8px;
+    padding-bottom: 8px;
   }
 }
 @media (min-width: 992px) and (max-width: 1200px) {
@@ -2454,7 +2455,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 
 .message-push {
   padding: 16px 24px;
-  background: #EBECED;
+  background: #F2F2F3;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -2486,10 +2487,16 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 @media (max-width: 992px) {
   .message-push {
     width: 100%;
-    min-height: 52px;
+    min-height: 80px;
     align-items: flex-start;
     padding: 10px 11px 10px 11px;
     position: fixed;
+    border-top: 0.5px solid #90959E;
+  }
+  .message-push._active-mess {
+    min-height: 52px;
+    border-bottom: 0.5px solid #90959E;
+    border-top-color: transparent;
   }
   .message-push .message-push--file {
     margin-left: 0;
