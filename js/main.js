@@ -1237,7 +1237,7 @@ heightReportsBlock()
 
 
 
-if (document.querySelector('.message-push--field') && window.screen.width < SCREEN_TABLET) {
+if (document.querySelector('.message-push--field') && window.screen.width < SCREEN_TABLET && document.body.classList.contains('Safari')) {
     document.querySelector('.message-push--field').addEventListener('focus', function(e) {
         document.body.classList.add('keyboard');
         setTimeout(function() {
