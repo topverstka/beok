@@ -105,7 +105,7 @@ function myFunction() {
     let positionBottom = window.scrollY + 100 <= document.documentElement.scrollHeight - document.documentElement.clientHeight;
     if (!find('.section-account__title')) {
         if (window.pageYOffset > sticky && positionBottom) {
-            if (!find('.header-top-mobile') && (!find('.chat-page') && window.screen.width > 500)) find('body').style.paddingTop = (header.scrollHeight + parseInt(window.getComputedStyle(header).marginBottom)) + 'px';
+            if (!find('.header-top-mobile')) find('body').style.paddingTop = (header.scrollHeight + parseInt(window.getComputedStyle(header).marginBottom)) + 'px';
             header.classList.add("sticky");
             if (find('.section-account__submit') && window.screen.width < SCREEN_TABLET) {
                 find('.section-account__submit').classList.add("_active-fixed");
@@ -314,11 +314,11 @@ document.addEventListener('input', function(e) {
                 e.target.style.height = '1px'; // Для проверки реальной высоты textarea
                 e.target.style.height = e.target.scrollHeight + "px";
                 e.target.closest('form').classList.add('align-end');
-                find('.page-content').style.paddingBottom = e.target.scrollHeight + "px";
+                find('.message-page').style.paddingBottom = e.target.scrollHeight + "px";
             } else {
                 if (numberTemporary >= e.target.scrollHeight) {
                     e.target.closest('form').classList.remove('align-end');
-                    find('.page-content').style.paddingBottom = null;
+                    find('.message-page').style.paddingBottom = null;
                 }
             }
 
@@ -989,12 +989,12 @@ document.addEventListener('click', function(e) {
             heightVariable = find('.reports-all-section').offsetHeight;
             find('.reports-all-section__content').style.height = 'auto';
             find('.reports-all-section').style.height = find('.reports-all-section').scrollHeight + 'px';
-            e.target.closest('body').querySelector('.message-page').classList.add('_active');
+            e.target.closest('.message-page').classList.add('_active');
         } else {
             e.target.closest('.message-page__btn').firstChild.nodeValue = 'Подробнее';
             returnElementDeligitaion(e, '.message-page__btn').classList.remove('_show');
 
-            e.target.closest('body').querySelector('.message-page').classList.remove('_active');
+            e.target.closest('.message-page').classList.remove('_active');
 
             setTimeout(() => {
                 heightReportsBlock();
@@ -1007,17 +1007,6 @@ document.addEventListener('click', function(e) {
 
 
 });
-
-
-function swapBtnChat() {
-    if (find('.message-page__btn') && window.screen.width < 500) {
-        let btnClone = find('.message-page__btn').cloneNode(true);
-        find('.message-push').insertAdjacentHTML('beforebegin', btnClone.outerHTML);
-        find('.message-page__btn').remove();
-    }
-}
-
-swapBtnChat();
 
 
 if (find('[data-empty]') && window.screen.width > SCREEN_TABLET) {
@@ -1202,7 +1191,7 @@ if (find('.field-range__slide--input')) {
 
 
 function styleElementChat() {
-    if (find('.message-push') && window.screen.width > 500) {
+    if (find('.message-push')) {
         let heightHeader = find('.header').scrollHeight;
         let heightMessage = find('.message-push').scrollHeight;
         find('.message-page').style.height = (window.innerHeight - heightHeader - heightMessage - 20) + 'px';
@@ -1248,20 +1237,20 @@ heightReportsBlock()
 
 
 
-// if (document.querySelector('.message-push--field') && window.screen.width < SCREEN_TABLET) {
-//     document.querySelector('.message-push--field').addEventListener('focus', function(e) {
-//         document.body.classList.add('keyboard');
-//         setTimeout(function() {
-//             window.scrollTo(0, 0);
-//         }, 200);
+if (document.querySelector('.message-push--field') && window.screen.width < SCREEN_TABLET) {
+    document.querySelector('.message-push--field').addEventListener('focus', function(e) {
+        document.body.classList.add('keyboard');
+        setTimeout(function() {
+            window.scrollTo(0, 0);
+        }, 200);
 
-//         if (window.screen.width < SCREEN_TABLET) find('.message-page').style.height = (find('.message-page').offsetHeight - 275) + 'px';
-//     });
-//     document.querySelector('.message-push--field').addEventListener('blur', function(e) {
-//         document.body.classList.remove('keyboard');
-//         if (window.screen.width < SCREEN_TABLET) find('.message-page').style.height = (find('.message-page').offsetHeight + 275) + 'px';
-//     });
-// }
+        if (window.screen.width < SCREEN_TABLET) find('.message-page').style.height = (find('.message-page').offsetHeight - 275) + 'px';
+    });
+    document.querySelector('.message-push--field').addEventListener('blur', function(e) {
+        document.body.classList.remove('keyboard');
+        if (window.screen.width < SCREEN_TABLET) find('.message-page').style.height = (find('.message-page').offsetHeight + 275) + 'px';
+    });
+}
 
 
 function defineScrollBar() {
@@ -1276,3 +1265,14 @@ function defineScrollBar() {
 }
 
 defineScrollBar();
+
+
+// function swapBtnChat() {
+//     if (find('.message-page__btn') && window.screen.width < SCREEN_TABLET) {
+//         let btnClone = find('.message-page__btn').cloneNode(true);
+//         find('.message-push').insertAdjacentHTML('beforebegin', btnClone.outerHTML);
+//         find('.message-page__btn').remove();
+//     }
+// }
+
+// swapBtnChat();

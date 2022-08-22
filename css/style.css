@@ -2147,21 +2147,6 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
     margin-top: 16px;
   }
 }
-@media (max-width: 500px) {
-  .chat-page .header {
-    position: fixed;
-    top: 0;
-    background: #fff;
-    right: 0;
-    animation: header 1s;
-    left: 0;
-    width: 100%;
-    height: auto;
-  }
-  .chat-page .header .link-pref-page {
-    padding: 0 12px 20px 12px;
-  }
-}
 
 .dialog__date {
   font-weight: 500;
@@ -2410,11 +2395,6 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
     padding-right: 15px;
   }
 }
-@media (max-width: 500px) {
-  .message-page {
-    padding-bottom: 95px;
-  }
-}
 
 .reports-all-section--plashka {
   width: max-content;
@@ -2472,11 +2452,6 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   .message-page__btn svg {
     width: 16px;
     height: 16px;
-  }
-}
-@media (max-width: 500px) {
-  .message-page__btn {
-    transform: translateY(-95px);
   }
 }
 

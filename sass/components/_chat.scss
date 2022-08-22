@@ -28,21 +28,21 @@
         //     }
         // }
     }
-    @media (max-width:500px) {
-        .header {
-            position: fixed;
-            top: 0;
-            background: #fff;
-            right: 0;
-            animation: header 1s;
-            left: 0;
-            width: 100%;
-            height: auto;
-            .link-pref-page {
-                padding: 0 12px 20px 12px;
-            }
-        }
-    }
+    // @media (max-width:500px) {
+    //     .header {
+    //         position: fixed;
+    //         top: 0;
+    //         background: #fff;
+    //         right: 0;
+    //         animation: header 1s;
+    //         left: 0;
+    //         width: 100%;
+    //         height: auto;
+    //         .link-pref-page {
+    //             padding: 0 12px 20px 12px;
+    //         }
+    //     }
+    // }
 }
 
 .dialog__date {
@@ -302,9 +302,6 @@
         margin-left: 0;
         padding-right: 15px
     }
-    @media (max-width:500px) {
-        padding-bottom: 95px;
-    }
 }
 
 .reports-all-section--plashka {
@@ -361,9 +358,6 @@
             width: 16px;
             height: 16px;
         }
-    }
-    @media (max-width:500px) {
-        transform: translateY(-95px);
     }
 }
 
