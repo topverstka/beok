@@ -2518,7 +2518,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   .message-push .message-push--field {
     height: 32px;
     padding: 5px 12.5px;
-    border: 1px solid #B4B4BF;
+    border: 1px solid #90959E;
     margin: 0 7px;
   }
   .message-push .message-push--field::placeholder {
