@@ -2396,6 +2396,11 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   }
 }
 
+@media (max-width: 992px) {
+  .Safari .reports-all-section {
+    transition: 0.1s;
+  }
+}
 .reports-all-section--plashka {
   width: max-content;
   padding: 4px 8px;

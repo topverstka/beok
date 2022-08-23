@@ -304,6 +304,12 @@
     }
 }
 
+@media (max-width: $tablet) {
+    .Safari .reports-all-section {
+        transition: .1s;
+    }
+}
+
 .reports-all-section--plashka {
     width: max-content;
     padding: 4px 8px;
