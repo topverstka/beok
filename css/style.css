@@ -2397,7 +2397,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 }
 
 @media (max-width: 992px) {
-  .Safari .reports-all-section {
+  .Safari .message-page .reports-all-section {
     transition: 0.1s;
   }
 }
