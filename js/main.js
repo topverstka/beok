@@ -1281,7 +1281,7 @@ defineScrollBar();
 
 
 function hideArrowSlider(parentSlider, slide) {
-    if (find('[data-arrow]')) {
+    if (find(parentSlider)) {
         let widthParent = find(parentSlider).offsetWidth;
         let widthSlide = find(slide).offsetWidth;
         let countSlide = findAll(slide).length;
