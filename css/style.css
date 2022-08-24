@@ -1953,6 +1953,18 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 }
 .modal-box__diary[data-info=update] .modal-box__diary-right--btn {
   background: var(--accent);
+  position: relative;
+  color: transparent;
+}
+.modal-box__diary[data-info=update] .modal-box__diary-right--btn:after {
+  content: "Обновить дневник";
+  color: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-weight: 700;
+  font-size: 14px;
 }
 .modal-box__diary[data-info=pass] {
   border: 1px solid var(--outline);
@@ -1974,6 +1986,10 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   }
   .modal-box__diary[data-info=pass] .modal-box__diary-right--update {
     display: none;
+  }
+  .modal-box__diary[data-info=update] .modal-box__diary-right--btn:after {
+    content: "Обновить дневник";
+    font-size: 18px;
   }
 }
 

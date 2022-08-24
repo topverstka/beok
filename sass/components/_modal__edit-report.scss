@@ -219,7 +219,19 @@
     &[data-info="update"] {
         border: 1px solid $accent;
         .modal-box__diary-right--btn {
-            background: $accent
+            background: $accent;
+            position: relative;
+            color: transparent;
+            &:after {
+                content: 'Обновить дневник';
+                color: #fff;
+                position: absolute;
+                left: 0;
+                right: 0;
+                text-align: center;
+                font-weight: 700;
+                font-size: 14px;
+            }
         }
     }
     &[data-info="pass"] {
@@ -241,6 +253,14 @@
         &[data-info="pass"] {
             .modal-box__diary-right--update {
                 display: none;
+            }
+        }
+        &[data-info="update"] {
+            .modal-box__diary-right--btn {
+                &:after {
+                    content: 'Обновить дневник';
+                    font-size: 18px;
+                }
             }
         }
     }

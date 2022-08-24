@@ -209,6 +209,8 @@ window.addEventListener('resize', function(e) {
     if (window.innerWidth > SCREEN_TABLET) {
         heightSlideTasks();
         styleElementChat();
+        hideArrowSlider('.varios-report__bottom .swiper', '.varios-report__bottom .swiper .swiper-slide');
+        hideArrowSlider('.swiperTasks', '.swiperTasks .swiper-slide');
     }
 });
 
@@ -1276,3 +1278,23 @@ defineScrollBar();
 // }
 
 // swapBtnChat();
+
+
+function hideArrowSlider(parentSlider, slide) {
+    if (find('[data-arrow]')) {
+        let widthParent = find(parentSlider).offsetWidth;
+        let widthSlide = find(slide).offsetWidth;
+        let countSlide = findAll(slide).length;
+
+        if ((widthParent / widthSlide) > countSlide + 0.5) {
+            find(parentSlider).parentElement.parentElement.querySelector('[data-arrow]').style.display = 'none';
+        } else {
+            find(parentSlider).parentElement.parentElement.querySelector('[data-arrow]').style = null;
+        }
+    }
+
+}
+
+hideArrowSlider('.varios-report__bottom .swiper', '.varios-report__bottom .swiper .swiper-slide');
+hideArrowSlider('.swiperTasks', '.swiperTasks .swiper-slide');
+hideArrowSlider('.swiperRecommend', '.swiperRecommend .swiper-slide');
