@@ -1291,6 +1291,11 @@ function bodyFixPosition() {
 
 }
 
+document.ontouchmove = function(event) {
+    // console.log(event);
+    event.preventDefault();
+}
+
 // 2. Расфиксация <body>
 function bodyUnfixPosition() {
 
