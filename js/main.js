@@ -1238,12 +1238,13 @@ function heightReportsBlock() {
 heightReportsBlock()
 
 
-
+let hh = 0;
 
 if (document.querySelector('.message-push--field') && window.screen.width < SCREEN_TABLET) {
     document.querySelector('.message-push--field').addEventListener('focus', function(e) {
         e.target.closest('.message-push').classList.add('_active-mess');
         if (document.body.classList.contains('Safari')) {
+            hh = window.pageYOffset || document.documentElement.scrollTop;
             document.body.classList.add('keyboard');
             document.querySelector('html').style.overflow = 'hidden';
             setTimeout(function() {
@@ -1293,7 +1294,7 @@ function bodyFixPosition() {
 
 window.addEventListener("scroll", (e) => {
     e.preventDefault();
-    window.scrollTo(0, 0);
+    window.scrollTo(0, hh);
 });
 
 // 2. Расфиксация <body>
