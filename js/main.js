@@ -1251,7 +1251,7 @@ if (document.querySelector('.message-push--field') && window.screen.width < SCRE
                 window.scrollTo(0, 0);
             }, 200);
 
-            bodyFixPosition();
+            bodyScrollLock.disableBodyScroll(targetElement);
 
             if (window.screen.width < SCREEN_TABLET) find('.message-page').style.height = (find('.message-page').offsetHeight - 275) + 'px';
         }
@@ -1262,6 +1262,7 @@ if (document.querySelector('.message-push--field') && window.screen.width < SCRE
             document.querySelector('html').style = null;
             document.body.classList.remove('keyboard');
             bodyUnfixPosition();
+            bodyScrollLock.clearAllBodyScrollLocks();
             if (window.screen.width < SCREEN_TABLET) find('.message-page').style.height = (find('.message-page').offsetHeight + 275) + 'px';
         }
     });
@@ -1322,6 +1323,19 @@ function bodyUnfixPosition() {
 
 }
 
+
+
+const targetElement = document.querySelector('.message-page');
+
+// 2. ...in some event handler after showing the target element...disable body scroll
+bodyScrollLock.disableBodyScroll(targetElement);
+
+// 3. ...in some event handler after hiding the target element...
+bodyScrollLock.enableBodyScroll(targetElement);
+
+// 4. Useful if we have called disableBodyScroll for multiple target elements,
+// and we just want a kill-switch to undo all that.
+bodyScrollLock.clearAllBodyScrollLocks();
 
 function defineScrollBar() {
     let div = document.createElement('div');
