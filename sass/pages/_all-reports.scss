@@ -104,14 +104,14 @@
             fill: $gray
         }
     }
-    &:not([data-checked]):hover {
-        .your-reports__bottom-element-edit svg {
-            fill: $outline
-        }
-        .your-reports__bottom-link {
-            color: $outline
-        }
-    }
+    // &:not([data-checked]):hover {
+    //     .your-reports__bottom-element-edit svg {
+    //         fill: $outline
+    //     }
+    //     .your-reports__bottom-link {
+    //         color: $outline
+    //     }
+    // }
     .your-reports__bottom-element {
         margin-bottom: 12px;
     }

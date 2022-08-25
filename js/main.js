@@ -329,7 +329,7 @@ document.addEventListener('input', function(e) {
             if (e.target.closest('.message-push').querySelector('.message-send')) {
                 e.target.closest('.message-push').querySelector('.message-send').remove();
                 e.target.closest('form').classList.remove('align-end');
-                e.target.closest('.message-push').classList.remove('_active-mess');
+                // e.target.closest('.message-push').classList.remove('_active-mess');
             }
             e.target.style = null;
         }
@@ -1209,12 +1209,12 @@ styleElementChat();
 
 
 function customHeaderMobile() {
-    if (find('[data-custom]') && window.screen.width < SCREEN_TABLET) {
-        let linkClone = find('.link-pref-page').cloneNode(true);
+    if (find('[data-custom]')) {
+        let linkClone = find('.link-pref-page') ? find('.link-pref-page').cloneNode(true) : false;
         let titleClone = find('.hello').cloneNode(true);
         let lineClone = find('.section-questionnaire--progress').cloneNode(true);
         find('.section-questionnaire').insertAdjacentHTML('afterbegin', '<div class="header-top-mobile header"></div>');
-        find('.header-top-mobile').insertAdjacentHTML('afterbegin', linkClone.outerHTML);
+        find('.link-pref-page') ? find('.header-top-mobile').insertAdjacentHTML('afterbegin', linkClone.outerHTML) : false;
         find('.header-top-mobile').insertAdjacentHTML('afterbegin', titleClone.outerHTML);
         find('.header-top-mobile').insertAdjacentHTML('afterbegin', lineClone.outerHTML);
     }
@@ -1240,18 +1240,24 @@ heightReportsBlock()
 
 
 
-if (document.querySelector('.message-push--field') && window.screen.width < SCREEN_TABLET && document.body.classList.contains('Safari')) {
+if (document.querySelector('.message-push--field') && window.screen.width < SCREEN_TABLET) {
     document.querySelector('.message-push--field').addEventListener('focus', function(e) {
-        document.body.classList.add('keyboard');
-        setTimeout(function() {
-            window.scrollTo(0, 0);
-        }, 200);
+        e.target.closest('.message-push').classList.add('_active-mess');
+        if (document.body.classList.contains('Safari')) {
+            document.body.classList.add('keyboard');
+            setTimeout(function() {
+                window.scrollTo(0, 0);
+            }, 200);
 
-        if (window.screen.width < SCREEN_TABLET) find('.message-page').style.height = (find('.message-page').offsetHeight - 275) + 'px';
+            if (window.screen.width < SCREEN_TABLET) find('.message-page').style.height = (find('.message-page').offsetHeight - 275) + 'px';
+        }
     });
     document.querySelector('.message-push--field').addEventListener('blur', function(e) {
-        document.body.classList.remove('keyboard');
-        if (window.screen.width < SCREEN_TABLET) find('.message-page').style.height = (find('.message-page').offsetHeight + 275) + 'px';
+        e.target.closest('.message-push').classList.remove('_active-mess');
+        if (document.body.classList.contains('Safari')) {
+            document.body.classList.remove('keyboard');
+            if (window.screen.width < SCREEN_TABLET) find('.message-page').style.height = (find('.message-page').offsetHeight + 275) + 'px';
+        }
     });
 }
 

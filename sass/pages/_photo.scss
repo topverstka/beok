@@ -248,6 +248,8 @@
         .take-photo__upload-section-file {
             background: $outline;
             cursor: pointer;
+            top: auto;
+            bottom: -11px
         }
         .take-photo__upload--file {
             pointer-events: none;
@@ -277,7 +279,8 @@
 
 .take-photo__upload-section-file {
     position: absolute;
-    bottom: -11px;
+    bottom: 0;
+    top: 0;
     left: 0;
     right: 0;
     margin: auto;
