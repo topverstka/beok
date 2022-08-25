@@ -1291,10 +1291,10 @@ function bodyFixPosition() {
 
 }
 
-document.ontouchmove = function(event) {
-    // console.log(event);
-    event.preventDefault();
-}
+window.addEventListener("scroll", (e) => {
+    e.preventDefault();
+    window.scrollTo(0, 0);
+});
 
 // 2. Расфиксация <body>
 function bodyUnfixPosition() {
