@@ -1245,6 +1245,7 @@ if (document.querySelector('.message-push--field') && window.screen.width < SCRE
         e.target.closest('.message-push').classList.add('_active-mess');
         if (document.body.classList.contains('Safari')) {
             document.body.classList.add('keyboard');
+            document.querySelector('html').style.overflow = 'hidden';
             setTimeout(function() {
                 window.scrollTo(0, 0);
             }, 200);
@@ -1255,6 +1256,7 @@ if (document.querySelector('.message-push--field') && window.screen.width < SCRE
     document.querySelector('.message-push--field').addEventListener('blur', function(e) {
         e.target.closest('.message-push').classList.remove('_active-mess');
         if (document.body.classList.contains('Safari')) {
+            document.querySelector('html').style = null;
             document.body.classList.remove('keyboard');
             if (window.screen.width < SCREEN_TABLET) find('.message-page').style.height = (find('.message-page').offsetHeight + 275) + 'px';
         }
