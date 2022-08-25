@@ -1292,10 +1292,10 @@ function bodyFixPosition() {
 
 }
 
-window.addEventListener("scroll", (e) => {
-    e.preventDefault();
-    window.scrollTo(0, hh);
-});
+// window.addEventListener("scroll", (e) => {
+//     e.preventDefault();
+//     window.scrollTo(0, hh);
+// });
 
 // 2. Расфиксация <body>
 function bodyUnfixPosition() {
