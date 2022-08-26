@@ -998,10 +998,11 @@
     margin: 60px 0 85px 0;
     .guide-section__list--line--box {
         position: relative;
+        width: fit-content
     }
     .guide-section__list--arrow {
         left: 10%;
-        bottom: -52px;
+        bottom: -65px;
         transform: rotate(-24.65deg);
     }
     @media (max-width: $tablet) {
@@ -1037,10 +1038,6 @@
     .photo-screen-desc {
         display: none
     }
-    .photo-screen-mobile {
-        display: block;
-        margin-top: 29px;
-    }
     .guide-section__list--line--box {
         .guide-section__list--arrow {
             display: none;
@@ -1051,6 +1048,15 @@
             height: 80px;
             bottom: -42px;
             left: 33px;
+        }
+        img.photo-screen-mobile {
+            display: block;
+            margin-top: 29px;
+            height: 513px;
+            object-fit: cover;
+            object-position: 0 72%;
+            width: 365px;
+            max-width: 100%;
         }
     }
 }
