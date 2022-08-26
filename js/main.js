@@ -1199,9 +1199,9 @@ function styleElementChat() {
         let heightMessage = find('.message-push').scrollHeight;
         find('.message-page').style.height = (window.innerHeight - heightHeader - heightMessage - 20) + 'px';
 
-        let marginElement = find('.page-content').style.marginLeft;
+        let widthElement = find('.section-chat').offsetWidth;
 
-        find('.message-push').style.width = `calc(100% - ${marginElement})`;
+        find('.message-push').style.width = `calc(100% - ${widthElement}px)`;
     }
 }
 

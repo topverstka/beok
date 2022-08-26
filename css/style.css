@@ -3102,10 +3102,6 @@ input[type=search]::-webkit-search-decoration, input[type=search]::-webkit-searc
   }
 }
 
-body {
-  touch-action: none;
-}
-
 .hello-motivation {
   font-family: Raleway;
   font-size: 16px;
