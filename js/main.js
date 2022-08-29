@@ -1330,6 +1330,10 @@ hideArrowSlider('.swiperRecommend', '.swiperRecommend .swiper-slide', 0.8);
 
 
 
+
+let arrRadio = [];
+let arrLineRadio = [];
+let arrInputCount = [];
 if (find('.section-questionnaire__content')) {
     let radioLineCount = findAll('.field-radio-line').length;
     let radioCount = findAll('.field-radio').length;
@@ -1337,9 +1341,6 @@ if (find('.section-questionnaire__content')) {
     let textOtherCount = findAll('.field-text input[type="text"]').length;
     let numberComplete = 100 / (radioLineCount + radioCount + textInputCount + textOtherCount);
 
-    let arrRadio = [];
-    let arrLineRadio = [];
-    let arrInputCount = [];
     find('.section-questionnaire__content').addEventListener('input', function(e) {
         if (e.target.tagName === 'INPUT') {
             checkedFieldsComplete();
