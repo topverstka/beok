@@ -297,6 +297,11 @@ document.addEventListener('input', function(e) {
         if (e.target.value.split('').length > 0) flDisabledFalse = true;
     }
 
+
+    if (e.target.hasAttribute('data-step')) {
+        e.target.value = e.target.value.replace(/\D/, '');
+    }
+
     if (e.target.classList.contains('message-push--field')) {
         if (e.target.value !== '') {
             if (!e.target.closest('.message-push').querySelector('.message-send')) {
