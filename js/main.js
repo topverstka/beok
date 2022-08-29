@@ -1334,10 +1334,10 @@ hideArrowSlider('.swiperRecommend', '.swiperRecommend .swiper-slide', 0.8);
 let arrRadio = [];
 let arrLineRadio = [];
 let arrInputCount = [];
-let radioLineCount = findAll('.field-radio-line').length;
-let radioCount = findAll('.field-radio').length;
-let textInputCount = findAll('.field-box input').length;
-let textOtherCount = findAll('.field-text input[type="text"]').length;
+let radioLineCount = findAll('.field-radio-line[data-required]').length;
+let radioCount = findAll('.field-radio[data-required]').length;
+let textInputCount = findAll('.field-box[data-required] input').length;
+let textOtherCount = findAll('.field-text[data-required] input[type="text"]').length;
 let numberComplete = 100 / (radioLineCount + radioCount + textInputCount + textOtherCount);
 if (find('.section-questionnaire__content')) {
 
@@ -1357,7 +1357,7 @@ if (find('.section-questionnaire__content')) {
         arrLineRadio.length = 0;
         arrInputCount.length = 0;
 
-        findAll('.field-radio-line').forEach(el => {
+        findAll('.field-radio-line[data-required]').forEach(el => {
             [...el.querySelectorAll('input[type=radio]')].some(elem => {
                 if (elem.checked) {
                     arrRadio.push(true);
@@ -1365,7 +1365,7 @@ if (find('.section-questionnaire__content')) {
             });
         });
 
-        findAll('.field-radio').forEach(el => {
+        findAll('.field-radio[data-required]').forEach(el => {
             [...el.querySelectorAll('input[type=radio]')].some(elem => {
                 if (elem.checked) {
                     arrLineRadio.push(true);
@@ -1373,7 +1373,7 @@ if (find('.section-questionnaire__content')) {
             });
         });
 
-        findAll('.field-box').forEach(el => {
+        findAll('.field-box[data-required]').forEach(el => {
             [...el.querySelectorAll('input')].map(elem => {
                 if (elem.value !== '') {
                     arrInputCount.push(true);
@@ -1381,7 +1381,7 @@ if (find('.section-questionnaire__content')) {
             });
         });
 
-        findAll('.field-text').forEach(el => {
+        findAll('.field-text[data-required]').forEach(el => {
             [...el.querySelectorAll('input[type="text"]')].map(elem => {
                 if (elem.value !== '') {
                     arrInputCount.push(true);
