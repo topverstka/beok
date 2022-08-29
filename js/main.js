@@ -94,13 +94,14 @@ if (header) {
 // Get the header
 
 
-// Get the offset position of the navbar
-var sticky = 250;
 
 let flScroll = false;
 
 // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
 function myFunction() {
+    // Get the offset position of the navbar
+    var sticky = find('.section-questionnaire--progress:not(.progress-fixed-menu)') ? find('.section-questionnaire--progress:not(.progress-fixed-menu)').getBoundingClientRect().y : 250;
+
     let currentPosition = window.pageYOffset || document.documentElement.scrollTop;
     let positionBottom = !find('[data-custom]') ? window.scrollY + 100 <= document.documentElement.scrollHeight - document.documentElement.clientHeight : 1;
     if (!find('.section-account__title')) {
@@ -1220,6 +1221,7 @@ function customHeaderMobile() {
         let linkClone = find('.link-pref-page') ? find('.link-pref-page').cloneNode(true) : false;
         let titleClone = find('.hello').cloneNode(true);
         let lineClone = find('.section-questionnaire--progress').cloneNode(true);
+        lineClone.classList.add('progress-fixed-menu');
         find('.section-questionnaire').insertAdjacentHTML('afterbegin', '<div class="header-top-mobile header"></div>');
         find('.link-pref-page') ? find('.header-top-mobile').insertAdjacentHTML('afterbegin', linkClone.outerHTML) : false;
         find('.header-top-mobile').insertAdjacentHTML('afterbegin', titleClone.outerHTML);
@@ -1323,3 +1325,71 @@ function hideArrowSlider(parentSlider, slide, floatRate) {
 hideArrowSlider('.varios-report__bottom .swiper', '.varios-report__bottom .swiper .swiper-slide', 0.5);
 hideArrowSlider('.swiperTasks', '.swiperTasks .swiper-slide', 0.2);
 hideArrowSlider('.swiperRecommend', '.swiperRecommend .swiper-slide', 0.8);
+
+
+
+if (find('.section-questionnaire__content')) {
+    let radioLineCount = findAll('.field-radio-line').length;
+    let radioCount = findAll('.field-radio').length;
+    let textInputCount = findAll('.field-box input').length;
+    let textOtherCount = findAll('.field-text input[type="text"]').length;
+    let numberComplete = 100 / (radioLineCount + radioCount + textInputCount + textOtherCount);
+
+    let arrRadio = [];
+    let arrLineRadio = [];
+    let arrInputCount = [];
+    find('.section-questionnaire__content').addEventListener('input', function(e) {
+        if (e.target.tagName === 'INPUT') {
+            checkedFieldsComplete();
+        }
+    });
+
+    window.addEventListener('load', () => {
+        setTimeout(() => checkedFieldsComplete(), 100);
+    });
+
+    function checkedFieldsComplete() {
+        arrRadio.length = 0;
+        arrLineRadio.length = 0;
+        arrInputCount.length = 0;
+
+        findAll('.field-radio-line').forEach(el => {
+            [...el.querySelectorAll('input[type=radio]')].some(elem => {
+                if (elem.checked) {
+                    arrRadio.push(true);
+                }
+            });
+        });
+
+        findAll('.field-radio').forEach(el => {
+            [...el.querySelectorAll('input[type=radio]')].some(elem => {
+                if (elem.checked) {
+                    arrLineRadio.push(true);
+                }
+            });
+        });
+
+        findAll('.field-box').forEach(el => {
+            [...el.querySelectorAll('input')].map(elem => {
+                if (elem.value !== '') {
+                    arrInputCount.push(true);
+                }
+            });
+        });
+
+        findAll('.field-text').forEach(el => {
+            [...el.querySelectorAll('input[type="text"]')].map(elem => {
+                if (elem.value !== '') {
+                    arrInputCount.push(true);
+                }
+            });
+        });
+
+        let percentNumber = numberComplete * (arrRadio.length + arrLineRadio.length + arrInputCount.length);
+
+        findAll('.section-questionnaire--progress').forEach(el => {
+            el.setAttribute('style', `--width-line: ${percentNumber >= 100 ? 100 : percentNumber}%`);
+        });
+    }
+
+}

@@ -97,6 +97,7 @@
         width: var(--width-line);
         background: $accent;
         border-radius: 100px;
+        transition: width .4s;
     }
     @media (max-width: $tablet) {
         order: -3;

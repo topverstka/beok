@@ -4973,6 +4973,7 @@ input[type=search]::-webkit-search-decoration, input[type=search]::-webkit-searc
   width: var(--width-line);
   background: var(--accent);
   border-radius: 100px;
+  transition: width 0.4s;
 }
 @media (max-width: 992px) {
   .section-questionnaire--progress {
