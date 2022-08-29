@@ -425,9 +425,7 @@ class formSubmit {
             case 'keyup':
                 if (e.target.id === 'birthday' && (e.keyCode !== 8)) {
                     //if (e.target.value.length >= 10) return;
-                    //alert(e.key);
-                    e.target.value = e.keyCode;
-                    // e.target.value = maskDate(e.target.value)
+                    e.target.value = maskDate(e.target.value)
                 }
                 break;
         }
