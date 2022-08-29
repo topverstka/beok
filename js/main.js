@@ -102,7 +102,7 @@ let flScroll = false;
 // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
 function myFunction() {
     let currentPosition = window.pageYOffset || document.documentElement.scrollTop;
-    let positionBottom = window.scrollY + 100 <= document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    let positionBottom = !find('[data-custom]') ? window.scrollY + 100 <= document.documentElement.scrollHeight - document.documentElement.clientHeight : 1;
     if (!find('.section-account__title')) {
         if (window.pageYOffset > sticky && positionBottom) {
             if (!find('.header-top-mobile')) find('body').style.paddingTop = (header.scrollHeight + parseInt(window.getComputedStyle(header).marginBottom)) + 'px';
@@ -110,18 +110,20 @@ function myFunction() {
             if (find('.section-account__submit') && window.screen.width < SCREEN_TABLET) {
                 find('.section-account__submit').classList.add("_active-fixed");
             }
-            if (previousPosition > currentPosition) {
-                header.classList.add("sticky");
-                if (find('.section-account__submit') && window.screen.width < SCREEN_TABLET) {
-                    find('.section-account__submit').classList.add("_active-fixed");
-                }
-            } else {
-                if (find('.section-account__submit') && window.screen.width < SCREEN_TABLET) {
-                    find('.section-account__submit').classList.remove("_active-fixed");
-                }
-                header.classList.remove("sticky");
-                find('body').style.paddingTop = null;
+            if (!find('[data-custom]')) {
+                if (previousPosition > currentPosition) {
+                    header.classList.add("sticky");
+                    if (find('.section-account__submit') && window.screen.width < SCREEN_TABLET) {
+                        find('.section-account__submit').classList.add("_active-fixed");
+                    }
+                } else {
+                    if (find('.section-account__submit') && window.screen.width < SCREEN_TABLET) {
+                        find('.section-account__submit').classList.remove("_active-fixed");
+                    }
+                    header.classList.remove("sticky");
+                    find('body').style.paddingTop = null;
 
+                }
             }
         } else {
             if (find('.section-account__submit') && window.screen.width < SCREEN_TABLET) {
@@ -1199,7 +1201,7 @@ function styleElementChat() {
         let heightMessage = find('.message-push').scrollHeight;
         find('.message-page').style.height = (window.innerHeight - heightHeader - heightMessage - 20) + 'px';
 
-        let widthElement = find('.section-chat').offsetWidth;
+        let widthElement = find('.section-chat') ? find('.section-chat').offsetWidth : find('.general-menu').offsetWidth;
 
         find('.message-push').style.width = `calc(100% - ${widthElement}px)`;
     }
