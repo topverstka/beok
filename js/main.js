@@ -1334,12 +1334,13 @@ hideArrowSlider('.swiperRecommend', '.swiperRecommend .swiper-slide', 0.8);
 let arrRadio = [];
 let arrLineRadio = [];
 let arrInputCount = [];
+let radioLineCount = findAll('.field-radio-line').length;
+let radioCount = findAll('.field-radio').length;
+let textInputCount = findAll('.field-box input').length;
+let textOtherCount = findAll('.field-text input[type="text"]').length;
+let numberComplete = 100 / (radioLineCount + radioCount + textInputCount + textOtherCount);
 if (find('.section-questionnaire__content')) {
-    let radioLineCount = findAll('.field-radio-line').length;
-    let radioCount = findAll('.field-radio').length;
-    let textInputCount = findAll('.field-box input').length;
-    let textOtherCount = findAll('.field-text input[type="text"]').length;
-    let numberComplete = 100 / (radioLineCount + radioCount + textInputCount + textOtherCount);
+
 
     find('.section-questionnaire__content').addEventListener('input', function(e) {
         if (e.target.tagName === 'INPUT') {
