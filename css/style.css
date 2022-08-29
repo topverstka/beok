@@ -5004,7 +5004,9 @@ input[type=search]::-webkit-search-decoration, input[type=search]::-webkit-searc
     flex-direction: column;
   }
   .field-box[data-type=textarea] input {
-    height: 110px;
+    height: auto;
+    padding-bottom: 72px;
+    max-height: 110px;
   }
 }
 
