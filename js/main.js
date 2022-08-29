@@ -418,7 +418,7 @@ class formSubmit {
                 }
                 break;
             case 'keyup':
-                if (e.target.id === 'birthday') {
+                if (e.target.id === 'birthday' && (e.key !== "Escape" || e.keyCode !== 27)) {
                     //if (e.target.value.length >= 10) return;
                     e.target.value = maskDate(e.target.value)
                 }
@@ -1102,7 +1102,7 @@ if (find('[data-picker]')) {
 
             if (returnElementDeligitaion(e, '.air-datepicker--navigation') || e.target.getAttribute('data-info') === 'birthday') {
                 if (find('#air-datepicker-global-container').childElementCount > 0 && flage) {
-                    dp.hide();
+                    dp.show();
                 } else {
                     dp.show();
                 }
