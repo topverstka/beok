@@ -299,7 +299,7 @@ document.addEventListener('input', function(e) {
 
 
     if (e.target.hasAttribute('data-step')) {
-        e.target.value = e.target.value.replace(/\D/, '');
+        e.target.value = e.target.value.replace(/[^0-9]/g, '');
     }
 
     if (e.target.classList.contains('message-push--field')) {
