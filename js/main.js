@@ -163,7 +163,7 @@ function myFunction() {
 
 
 function defineMarginContent() {
-    if (window.screen.width > SCREEN_TABLET && (find('.general-menu') || find('.section-chat'))) {
+    if ((window.outerWidth || window.screen.width) > SCREEN_TABLET && (find('.general-menu') || find('.section-chat'))) {
         // let paddingScrollBar = window.getComputedStyle(find('.general-menu')).paddingRight ? 
         // window.getComputedStyle(find('.general-menu')).paddingRight :
         // window.getComputedStyle(find('.section-chat')).paddingRight;
