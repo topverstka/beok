@@ -171,7 +171,7 @@ function defineMarginContent() {
         let widthScrollBar = find('.general-menu') ? find('.general-menu').scrollWidth : find('.section-chat').scrollWidth;
         find('.page-content').style.marginLeft = `${widthScrollBar}px`;
     } else {
-        find('.page-content').style.marginLeft = 0;
+        find('.page-content') ? find('.page-content').style.marginLeft = 0 : '';
     }
 }
 defineMarginContent();
