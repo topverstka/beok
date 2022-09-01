@@ -7523,6 +7523,9 @@ body._active_dropdown main:after {
     height: 16px;
     margin-right: 8px;
   }
+  .guide-section__link--href picture {
+    margin-right: 8px;
+  }
 }
 
 .guide-section__list--arrow--mobile {
