@@ -104,7 +104,7 @@ function myFunction() {
 
     let currentPosition = window.pageYOffset || document.documentElement.scrollTop;
     let positionBottom = !find('[data-custom]') ? window.scrollY + 100 <= document.documentElement.scrollHeight - document.documentElement.clientHeight : 1;
-    if (!find('.section-account__title')) {
+    if (!find('.section-account__title') && !find('.guide-content')) {
         if (window.pageYOffset > sticky && positionBottom) {
             if (!find('.header-top-mobile')) find('body').style.paddingTop = (header.scrollHeight + parseInt(window.getComputedStyle(header).marginBottom)) + 'px';
             header.classList.add("sticky");
