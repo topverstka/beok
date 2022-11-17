@@ -695,6 +695,8 @@ img {
   font-size: 18px;
   background: var(--outline);
   color: #fff;
+  appearance: none;
+  -webkit-appearance: none;
 }
 .btn:hover {
   background: #F29D8E;
@@ -2281,6 +2283,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 }
 @media (max-width: 992px) {
   .dialog__message--text {
+    margin-right: 30px;
     padding-right: 0px;
     width: 80%;
   }
@@ -4142,6 +4145,7 @@ input[type=search]::-webkit-search-decoration, input[type=search]::-webkit-searc
 .reports-all-section__content--indicators {
   display: flex;
   align-items: center;
+  margin-bottom: 16px;
 }
 @media (max-width: 992px) {
   .reports-all-section__content--indicators {
