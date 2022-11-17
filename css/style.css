@@ -7257,7 +7257,7 @@ body._active_dropdown main:after {
     display: block;
   }
   .login-page .header__nav--hide--tablet svg {
-    fill: transparent;
+    fill: #FFFFFF;
   }
   .login-page .header__nav-elem--mobile--logo {
     margin-left: 0;
