@@ -32,6 +32,8 @@ $btn-second-disabled: var(--btn-second-disabled);
     font-size: 18px;
     background: $outline;
     color: #fff;
+    appearance: none;
+    -webkit-appearance: none;
     &:hover {
         background: #F29D8E;
     }
