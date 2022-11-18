@@ -500,7 +500,7 @@ body._active_dropdown {
     }
 }
 
-@media (max-width:$tablet) {
+@media (max-width:$mobile-l) {
     .line-chart {
         &:not(.line-chart__area) {
             .section-chart {
