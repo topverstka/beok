@@ -86,7 +86,6 @@ document.addEventListener('DOMContentLoaded', () => {
             widthContainer = node.closest('.section-chart').scrollWidth;
         }
 
-
         node.closest('.section-chart').querySelectorAll('.ct-grids .ct-grid').forEach(i => {
             i.setAttribute('x1', 30)
             i.setAttribute('x2', widthContainer)
@@ -145,6 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
         axisX: {
             showGrid: false,
         },
+        plugins: [autoWidth()]
     }).on('draw', function(data) {
         if (data.type === 'bar') {
             data.element.attr({
@@ -190,6 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
         axisX: {
             showGrid: false,
         },
+        plugins: [autoWidth()]
     }).on('created', function(e) {
         !e.svg._node.closest('.ct-chart__container').querySelector('.ct-start-text__chart') ? e.svg._node.closest('.ct-chart__container').insertAdjacentHTML('afterbegin', '<div class="ct-start-text__chart"></div>') : '';
 
@@ -221,9 +222,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     new Chartist.Line('.ct-chart-4', {
-        labels: ['20 июля', '20 июля', '20 июля', '20 июля', '20 июля', '20 июля', '20 июля', '20 июля'],
+        labels: ['20 июля', '20 июля', '20 июля', '20 июля', '20 июля', '20 июля', '20 июля', '20 июля', '20 июля', '20 июля', '20 июля', '20 июля', '20 июля', '20 июля', '20 июля', '20 июля', '20 июля', '20 июля', '20 июля', '20 июля', '20 июля', '20 июля', '20 июля', '20 июля'],
         series: [
-            [40, 30, 40, 50, 60, 80, 60, 30]
+            [40, 30, 40, 50, 60, 80, 60, 30, 40, 30, 40, 50, 60, 80, 60, 30, 40, 30, 40, 50, 60, 80, 60, 30]
         ]
     }, {
         low: 0,
@@ -249,8 +250,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 x: -60,
                 y: 0
             },
-        }
-
+        },
+        plugins: [autoWidth(80)]
     }, [
         ['screen and (max-width: 500px)', {
             chartPadding: {
@@ -295,8 +296,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 x: -60,
                 y: 0
             },
-        }
-
+        },
+        plugins: [autoWidth(80)]
     }, [
         ['screen and (max-width: 500px)', {
             chartPadding: {
@@ -346,8 +347,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 x: -60,
                 y: 0
             },
-        }
-
+        },
+        plugins: [autoWidth(80)]
     }, [
         ['screen and (max-width: 500px)', {
             chartPadding: {
@@ -622,3 +623,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
+function autoWidth(width = 40, media = '(max-width: 992px)') {
+    const mql = window.matchMedia(media);
+
+    return function (char) {
+        const length = char.data.series[0].length;
+
+        handleChange();
+        mql.addEventListener("change", handleChange);
+
+        function handleChange() {
+            if (mql.matches) {
+                char.container.style.width = length * width + 'px';
+            } else {
+                char.container.style.width = null;
+            }
+        }
+    };
+}
