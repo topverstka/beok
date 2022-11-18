@@ -7044,6 +7044,7 @@ circle {
 
 .section-chart {
   margin-top: 23px;
+  min-width: 100% !important;
   height: 90%;
   position: relative;
 }
