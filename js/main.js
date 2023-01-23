@@ -198,15 +198,17 @@ function showBtnsMore() {
 
             // i.style = `height: ${lineHeight * lines}px`;
             let offsetCoords = i.offsetHeight - 20;
-            i.insertAdjacentHTML('beforeend', `<div style="top:${offsetCoords}px" class="section-information__tasks-slider-field-btn" data-modal-open="tasks-popup"><button class="section-information__tasks-slider-btn">Подробнее</button></div>`);
+            i.insertAdjacentHTML('beforeend', `<div class="section-information__tasks-slider-field-btn" data-modal-open="tasks-popup"><button class="section-information__tasks-slider-btn">Подробнее</button></div>`);
 
         }
     });
 }
 
+window.addEventListener('DOMContentLoaded', () => showBtnsMore());
+
 
 window.innerWidth > SCREEN_TABLET ? heightSlideTasks() : '';
-showBtnsMore();
+
 
 window.addEventListener('resize', function(e) {
     defineMarginContent();

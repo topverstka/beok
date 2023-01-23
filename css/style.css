@@ -9455,10 +9455,10 @@ body._active_dropdown main:after {
   position: absolute;
   right: 4px;
   bottom: 0;
+  line-height: 1.5;
   padding-left: 0px;
   cursor: pointer;
   background: var(--accent2);
-  line-height: 130%;
 }
 .section-information__tasks-slider-field-btn button {
   color: #467EF3;
