@@ -870,7 +870,7 @@ document.addEventListener('click', function(e) {
     }
 
     if (returnElementDeligitaion(e, '.login-form__view')) {
-
+        e.preventDefault();
         if (e.target.closest('div').querySelector('input[type="password"]')) {
             e.target.closest('div').querySelector('input[type="password"]').setAttribute('type', 'text');
             e.target.closest('div').querySelector('.login-form__view svg use').setAttribute('xlink:href', './img/icons-sprite.svg#password-not');
