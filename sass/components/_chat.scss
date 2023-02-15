@@ -1,4 +1,5 @@
 .chat-page {
+		overflow: hidden;
     .link-pref-page__desctop {
         display: none;
     }
@@ -372,15 +373,14 @@
 }
 
 .message-push {
+		--container-padding-fix: -20px;
+		margin-left: var(--container-padding-fix);
+		width: #{'calc(100% - 2 * var(--container-padding-fix))'};
     padding: 16px 24px;
     background: #F2F2F3;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    z-index: 999;
     form {
         display: flex;
         align-items: center;
@@ -404,14 +404,12 @@
         }
     }
     @media (max-width:$tablet) {
-        width: 100%;
-        min-height: 80px;
+				--container-padding-fix: -12px;
         align-items: flex-start;
         padding: 10px 11px 10px 11px;
-        position: fixed;
         border-top: 0.5px solid #90959E;
         &._active-mess {
-            min-height: 52px;
+            // min-height: 52px; // Это было пока неправильно работало от пересчетов Димы
             border-bottom: 0.5px solid #90959E;
             border-top-color: transparent;
         }
@@ -454,19 +452,20 @@
 @media (max-width: $tablet) {
     body {
         &.keyboard {
-            overflow: hidden;
+            // overflow: hidden;
             main {
                 // height: 100%;
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
+                // position: absolute;
+                // top: 0;
+                // left: 0;
+                // right: 0;
+                // bottom: 0;
             }
         }
         &.Safari .message-push {
-            position: absolute;
+            // position: absolute;
         }
+				//--fix remove this  commented ↓
         // @media (max-height:800px) {
         //     &.Safari.keyboard main {
         //         bottom: 305px
@@ -486,7 +485,7 @@ only screen and ( -o-min-device-pixel-ratio: 2/1),
 only screen and ( min-device-pixel-ratio: 2),
 only screen and ( min-resolution: 2dppx) {
     body.Safari.keyboard main {
-        bottom: 275px
+        // bottom: 275px
     }
 }
 
@@ -496,7 +495,7 @@ only screen and ( -o-min-device-pixel-ratio: 3/1),
 only screen and ( min-device-pixel-ratio: 3),
 only screen and ( min-resolution: 3dppx) {
     body.Safari.keyboard main {
-        bottom: 300px
+        // bottom: 300px
     }
 }
 
@@ -621,4 +620,22 @@ only screen and ( min-resolution: 3dppx) {
             display: block
         }
     }
+}
+
+/*
+ Нужно чтобы закрепленное снизу поле ввода сообщения отображалось верно
+ */
+.chat-page .page-content {
+	display: flex;
+	flex-direction: column;
+	z-index: 1;
+	overflow: hidden;
+}
+.chat-page main {
+	height: 100%;
+	overflow: hidden;
+}
+
+.section-chat {
+	z-index: 2;
 }

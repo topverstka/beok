@@ -165,7 +165,8 @@ function myFunction() {
 
 function defineMarginContent() {
     if ((window.outerWidth || window.screen.width) > SCREEN_TABLET && (find('.general-menu') || find('.section-chat'))) {
-        // let paddingScrollBar = window.getComputedStyle(find('.general-menu')).paddingRight ? 
+				// Временно отключилось само при переделывании чатаотключилось само
+        // let paddingScrollBar = window.getComputedStyle(find('.general-menu')).paddingRight ?
         // window.getComputedStyle(find('.general-menu')).paddingRight :
         // window.getComputedStyle(find('.section-chat')).paddingRight;
         let widthScrollBar = find('.general-menu') ? find('.general-menu').scrollWidth : find('.section-chat').scrollWidth;
@@ -215,7 +216,7 @@ window.addEventListener('resize', function(e) {
 
     //if (window.innerWidth > SCREEN_TABLET) {
     heightSlideTasks();
-    styleElementChat();
+    calculateChatSizes();
     hideArrowSlider('.varios-report__bottom .swiper', '.varios-report__bottom .swiper .swiper-slide', 0.5);
     hideArrowSlider('.swiperTasks', '.swiperTasks .swiper-slide', 0.2);
     hideArrowSlider('.swiperRecommend', '.swiperRecommend .swiper-slide', 0.8);
@@ -329,18 +330,18 @@ document.addEventListener('input', function(e) {
                 e.target.style.height = '1px'; // Для проверки реальной высоты textarea
                 e.target.style.height = e.target.scrollHeight + "px";
                 e.target.closest('form').classList.add('align-end');
-                find('.message-page').style.paddingBottom = e.target.scrollHeight + "px";
+                // find('.message-page').style.paddingBottom = e.target.scrollHeight + "px";
             } else {
                 if (numberTemporary >= e.target.scrollHeight) {
                     e.target.closest('form').classList.remove('align-end');
-                    find('.message-page').style.paddingBottom = null;
+                    // find('.message-page').style.paddingBottom = null;
                 }
             }
 
         } else {
             if (e.target.closest('.message-push').querySelector('.message-send')) {
                 e.target.closest('.message-push').querySelector('.message-send').remove();
-                e.target.closest('form').classList.remove('align-end');
+                // e.target.closest('form').classList.remove('align-end');
                 // e.target.closest('.message-push').classList.remove('_active-mess');
             }
             e.target.style = null;
@@ -1202,22 +1203,23 @@ if (find('.field-range__slide--input')) {
 
 
 
+function calculateChatSizes() {
+	/*
+	Временно отключили после рефакторинга чата за ненадобностью
 
-
-
-function styleElementChat() {
     if (find('.message-push')) {
         let heightHeader = find('.header').scrollHeight;
         let heightMessage = find('.message-push').scrollHeight;
-        find('.message-page').style.height = (window.innerHeight - heightHeader - heightMessage - 20) + 'px';
+				let chatHeight = window.innerHeight - heightHeader - heightMessage - 20 - 10;
+        find('.message-page').style.height = `${chatHeight}px`;
 
         let widthElement = find('.section-chat') ? find('.section-chat').offsetWidth : find('.general-menu').offsetWidth;
 
         find('.message-push').style.width = `calc(100% - ${widthElement}px)`;
     }
+		*/
 }
-
-styleElementChat();
+calculateChatSizes();
 
 
 function customHeaderMobile() {
@@ -1256,19 +1258,22 @@ heightReportsBlock()
 const targetElement = document.querySelector('.message-page');
 
 if (document.querySelector('.message-push--field') && window.screen.width < SCREEN_TABLET) {
+		// Временно отключил при переделывании чата
+		// if (document.querySelector('.message-push--field')) { return };
+
     document.querySelector('.message-push--field').addEventListener('focus', function(e) {
         e.target.closest('.message-push').classList.add('_active-mess');
         if (document.body.classList.contains('Safari')) {
 
             document.body.classList.add('keyboard');
 
-            setTimeout(function() {
-                window.scrollTo(0, 0);
-            }, 200);
+            // setTimeout(function() {
+            //     window.scrollTo(0, 0);
+            // }, 200);
 
             bodyScrollLock.disableBodyScroll(targetElement);
 
-            if (window.screen.width < SCREEN_TABLET) find('.message-page').style.height = (find('.message-page').offsetHeight - 275) + 'px';
+            // if (window.screen.width < SCREEN_TABLET) find('.message-page').style.height = (find('.message-page').offsetHeight - 275) + 'px';
         }
     });
     document.querySelector('.message-push--field').addEventListener('blur', function(e) {
@@ -1278,7 +1283,7 @@ if (document.querySelector('.message-push--field') && window.screen.width < SCRE
             document.body.classList.remove('keyboard');
 
             bodyScrollLock.clearAllBodyScrollLocks();
-            if (window.screen.width < SCREEN_TABLET) find('.message-page').style.height = (find('.message-page').offsetHeight + 275) + 'px';
+            // if (window.screen.width < SCREEN_TABLET) find('.message-page').style.height = (find('.message-page').offsetHeight + 275) + 'px';
         }
     });
 }
@@ -1316,6 +1321,8 @@ function hideArrowSlider(parentSlider, slide, floatRate) {
         let widthParent = find(parentSlider).offsetWidth;
         let widthSlide = find(slide).offsetWidth;
         let countSlide = findAll(slide).length;
+
+				if (!find(parentSlider).parentElement.parentElement.querySelector('[data-arrow')) return;
 
         if ((widthParent / widthSlide) > countSlide + floatRate) {
             find(parentSlider).parentElement.parentElement.querySelector('[data-arrow]').style.display = 'none';

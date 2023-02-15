@@ -2179,6 +2179,9 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   margin-right: 8px;
 }
 
+.chat-page {
+  overflow: hidden;
+}
 .chat-page .link-pref-page__desctop {
   display: none;
 }
@@ -2523,15 +2526,14 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 }
 
 .message-push {
+  --container-padding-fix: -20px;
+  margin-left: var(--container-padding-fix);
+  width: calc(100% - 2 * var(--container-padding-fix));
   padding: 16px 24px;
   background: #F2F2F3;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  z-index: 999;
 }
 .message-push form {
   display: flex;
@@ -2555,15 +2557,12 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 }
 @media (max-width: 992px) {
   .message-push {
-    width: 100%;
-    min-height: 80px;
+    --container-padding-fix: -12px;
     align-items: flex-start;
     padding: 10px 11px 10px 11px;
-    position: fixed;
     border-top: 0.5px solid #90959E;
   }
   .message-push._active-mess {
-    min-height: 52px;
     border-bottom: 0.5px solid #90959E;
     border-top-color: transparent;
   }
@@ -2612,31 +2611,6 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   }
 }
 
-@media (max-width: 992px) {
-  body.keyboard {
-    overflow: hidden;
-  }
-  body.keyboard main {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
-  body.Safari .message-push {
-    position: absolute;
-  }
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
-  body.Safari.keyboard main {
-    bottom: 275px;
-  }
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (min-device-pixel-ratio: 3), only screen and (min-resolution: 3dppx) {
-  body.Safari.keyboard main {
-    bottom: 300px;
-  }
-}
 .message-push--field {
   width: 100%;
   margin: 0 0 0 24px;
@@ -2755,6 +2729,25 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   .test-chat .section-chat {
     display: block;
   }
+}
+
+/*
+ Нужно чтобы закрепленное снизу поле ввода сообщения отображалось верно
+ */
+.chat-page .page-content {
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.chat-page main {
+  height: 100%;
+  overflow: hidden;
+}
+
+.section-chat {
+  z-index: 2;
 }
 
 .section-chat {
