@@ -88,13 +88,13 @@
             }
         }
     }
-    
+
     .general-menu--hide--tablet {
         @media (max-width: $tablet) {
             display: none;
         }
     }
-    
+
     .general-menu__logo {
         width: 110px;
         margin-left: 30px;
@@ -103,7 +103,7 @@
             display: none
         }
     }
-    
+
     .general-menu__nav-elem {
         width: 100%;
         a {
@@ -169,7 +169,7 @@
             }
         }
     }
-    
+
     .general-menu__support {
         margin-left: 30px;
         margin-top: auto;
