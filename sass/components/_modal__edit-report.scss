@@ -329,3 +329,17 @@
         line-height: 21px;
     }
 }
+
+
+.modal#loader._show {
+    @media (max-width: $tablet) {
+        z-index: 9999999;
+		}
+}
+.modal#alert-report._show,
+.modal#alert-week._show,
+.modal#alert-by._show {
+    @media (max-width: $tablet) {
+        z-index: 99999999;
+		}
+}

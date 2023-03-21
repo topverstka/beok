@@ -2100,6 +2100,20 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   }
 }
 
+@media (max-width: 992px) {
+  .modal#loader._show {
+    z-index: 9999999;
+  }
+}
+
+@media (max-width: 992px) {
+  .modal#alert-report._show,
+.modal#alert-week._show,
+.modal#alert-by._show {
+    z-index: 99999999;
+  }
+}
+
 .container-margin {
   margin: 0 0 78px 0;
 }
