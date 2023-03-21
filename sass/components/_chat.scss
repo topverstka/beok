@@ -374,6 +374,7 @@
 
 .message-push {
 		--container-padding-fix: -20px;
+		margin-top: auto;
 		margin-left: var(--container-padding-fix);
 		width: #{'calc(100% - 2 * var(--container-padding-fix))'};
     padding: 16px 24px;
