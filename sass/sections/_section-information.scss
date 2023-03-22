@@ -281,13 +281,15 @@
     line-height: 1.5;
     padding-left: 0px;
     cursor: pointer;
-    background: $accent2;
+    // background: $accent2;
+		// background: linear-gradient(90deg, transparent 0%, rgba(250, 239,221, 0.5) 22.7%, var(--accent2) 42.7%);
+		background: linear-gradient(90deg, transparent 0%, rgba(250, 239, 221, 0.7) 8.7%, var(--accent2) 21.7%);
     button {
         color: #467EF3;
         font-weight: 700;
     }
     &:before {
-        content: '...';
+        content: '';
         // position: absolute;
         // left: 1px;
         z-index: 1;
@@ -295,6 +297,7 @@
         margin-right: 4px;
         font-weight: 500;
         font-size: 14px;
+				padding-left: 2rem
     }
     @media (max-width:$tablet) {
         bottom: 0;
