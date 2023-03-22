@@ -68,6 +68,22 @@ document.addEventListener('mouseout', function(e) {
 
 
 
+function updateCharts(chartsElements) {
+	if (window.innerWidth > 768) return;
+
+	chartsElements.forEach(chart => {
+		if (chart.__chartist__) {
+			const dotsCount = chart.__chartist__.data.labels.length;
+			const singleLabelWidth = chart.getBoundingClientRect().width / 4;//60;
+			console.log(singleLabelWidth);
+			const chartWidth = singleLabelWidth * dotsCount;
+			chart.style.minWidth = `${chartWidth}px`;
+			setTimeout(() => {
+				chart.__chartist__.update();
+			}, 10)
+		}
+	})
+}
 document.addEventListener('DOMContentLoaded', () => {
     function CreateChart(node, isNumberPoints) {
         node.closest('.section-chart').querySelectorAll('.ct-end').forEach((i, index, arr) => {
@@ -268,9 +284,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     new Chartist.Line('.ct-chart-4__all-course', {
-        labels: ['8-14 июл', '15-21 июл', '22-28 июл', '29-4 июл, авг', '5-12 июл', '13-20 июл', '21-28 июл', '29-4 июл, авг'],
+        // labels: ['8-14 июл', '15-21 июл', '22-28 июл', '29-4 июл, авг', '5-12 июл', '13-20 июл', '21-28 июл', '29-4 июл, авг'],
+        labels: ['08.06.23\n14.06.23', '15.06.23\n21.06.23', '22.06.23\n28.06.23','22.06.23\n28.06.23','22.06.23\n28.06.23','22.06.23\n28.06.23','22.06.23\n28.06.23','22.06.23\n28.06.23','22.06.23\n28.06.23','22.06.23\n28.06.23','22.06.23\n28.06.23','22.06.23\n28.06.23',          '22.06.23\n28.06.23', '29.07.23\n04.08.23', '5-12 июл', '13-20 июл', '21-28 июл', '29-4 июл, авг'],
         series: [
-            [40, 30, 40, 50, 60, 80, 60, 30]
+            [40, 30, 40, 50, 60, 80, 60, 30, 10, 20, 30, 40, 50, 60, 70, 80, 90, 80]
         ]
     }, {
         low: 0,
@@ -414,9 +431,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     new Chartist.Line('.ct-chart-2__weeks', {
-        labels: ['1 июл, пн', '2 июл, вт', '3 июл, ср', '4 июл, чт', '5 июл, пт', '6 июл, сб', '7 июл, вс'],
+        labels: ['1 июл, пн','1 июл, пн','1 июл, пн','1 июл, пн','1 июл, пн','1 июл, пн','1 июл, пн','1 июл, пн','1 июл, пн','1 июл, пн',          '1 июл, пн', '2 июл, вт', '3 июл, ср', '4 июл, чт', '5 июл, пт', '6 июл, сб', '7 июл, вс'],
         series: [
-            [60, 50, 40, 50, 30, 80, 40]
+            [60, 50, 40, 50, 30, 80, 40, 10, 20, 30, 40, 50, 60, 70, 80, 90, 80]
         ]
     }, {
         low: 0,
@@ -622,6 +639,13 @@ document.addEventListener('DOMContentLoaded', () => {
         // find('.ct-chart-2').appendChild(tooltipChart);
     });
 
+
+		updateCharts(document.querySelectorAll('.section-chart'));
+		window.addEventListener('resize', () => {
+			setTimeout(() => {
+				updateCharts(document.querySelectorAll('.section-chart'));
+			}, 100)
+		})
 });
 
 function autoWidth(width = 40, media = '(max-width: 992px)') {

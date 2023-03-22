@@ -444,7 +444,7 @@ circle {
 
 .section-chart {
     margin-top: 23px;
-    min-width: 100% !important;
+    // min-width: 100% !important;
     height: 90%;
     position: relative;
     svg {
@@ -504,7 +504,7 @@ body._active_dropdown {
     .line-chart {
         &:not(.line-chart__area) {
             .section-chart {
-                min-width: 500px !important
+                // min-width: 500px !important
             }
         }
     }
