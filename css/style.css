@@ -2597,32 +2597,29 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
     margin-right: 0;
   }
   .message-push .message-push--field {
-    height: 32px;
-    padding: 5px 12.5px;
+    height: 33px;
+    padding: 5px 12.5px 7px;
     border: 1px solid #90959E;
     margin: 0 7px;
   }
   .message-push .message-push--field::-moz-placeholder {
-    font-size: 16px;
-    line-height: 22px;
     color: #ADADB6;
   }
   .message-push .message-push--field:-ms-input-placeholder {
-    font-size: 16px;
-    line-height: 22px;
     color: #ADADB6;
   }
   .message-push .message-push--field::placeholder {
-    font-size: 16px;
-    line-height: 22px;
     color: #ADADB6;
   }
   .message-push button {
-    padding-top: 4px;
-  }
-  .message-push button svg {
+    min-width: 24px;
+    max-width: 24px;
     width: 24px;
     height: 24px;
+  }
+  .message-push button svg {
+    width: 100%;
+    height: 100%;
   }
 }
 
@@ -2677,7 +2674,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 }
 @media (max-width: 992px) {
   .message-send {
-    margin-left: 7px;
+    margin-left: 0;
   }
 }
 

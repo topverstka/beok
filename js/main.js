@@ -293,6 +293,10 @@ const validateEmail = (email) => {
 
 
 
+const messageTextFields = document.querySelectorAll('.message-push--field');
+messageTextFields.forEach(message => {
+	message.rows = "1";
+})
 
 let numberTemporary;
 let flDisabledFalse = false;
@@ -328,7 +332,7 @@ document.addEventListener('input', function(e) {
 
             if (numberTemporary !== e.target.scrollHeight && e.target.scrollHeight <= 125) {
                 e.target.style.height = '1px'; // Для проверки реальной высоты textarea
-                e.target.style.height = e.target.scrollHeight + "px";
+                e.target.style.height = e.target.scrollHeight + 3 + "px";
                 e.target.closest('form').classList.add('align-end');
                 // find('.message-page').style.paddingBottom = e.target.scrollHeight + "px";
             } else {
