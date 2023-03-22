@@ -74,8 +74,8 @@ function updateCharts(chartsElements) {
 	chartsElements.forEach(chart => {
 		if (chart.__chartist__) {
 			const dotsCount = chart.__chartist__.data.labels.length;
-			const singleLabelWidth = chart.getBoundingClientRect().width / 4;//60;
-			console.log(singleLabelWidth);
+			const singleLabelWidth = chart.parentElement.getBoundingClientRect().width / 3;//60;
+			// alert(singleLabelWidth);
 			const chartWidth = singleLabelWidth * dotsCount;
 			chart.style.minWidth = `${chartWidth}px`;
 			setTimeout(() => {
