@@ -384,7 +384,7 @@
     justify-content: space-between;
     form {
         display: flex;
-        align-items: center;
+        align-items: flex-end;
         justify-content: space-between;
         width: 100%;
         &.align-end {
@@ -454,6 +454,16 @@
             }
         }
     }
+}
+.message-push .message-push--file {
+	@media (max-width: $tablet) {
+		margin-bottom: 6px;
+	}
+}
+.message-push .message-send {
+	@media (max-width: $tablet) {
+		margin-bottom: 6px;
+	}
 }
 
 @media (max-width: $tablet) {
