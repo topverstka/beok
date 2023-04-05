@@ -2595,14 +2595,16 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 
 .message-push button svg,
 .message-push .message-push--file svg {
-  min-width: 51px;
-  width: 51px;
-  height: 51px;
+  min-width: 32px;
+  width: 32px;
+  height: 32px;
+  margin-bottom: 9px;
 }
 @media (max-width: 992px) {
   .message-push button svg,
 .message-push .message-push--file svg {
     min-width: initial;
+    margin-bottom: 0;
   }
 }
 
