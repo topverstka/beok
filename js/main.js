@@ -86,7 +86,7 @@ customHeaderMobile();
 
 let previousPosition = window.pageYOffset || document.documentElement.scrollTop;
 // When the user scrolls the page, execute myFunction
-var header = document.querySelector(".header");
+var header = document.querySelector(".header.header--sticky");
 if (header) {
     window.onscroll = function() { myFunction() };
 }
