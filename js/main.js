@@ -298,6 +298,36 @@ messageTextFields.forEach(message => {
 	message.rows = "1";
 })
 
+function shiftHeaderOffset() {
+	const header = document.querySelector('.header')
+	setTimeout(() => {
+		document.querySelector('body').classList.add('is-keyboard')
+		header.style.bottom = window.innerHeight - header.getBoundingClientRect().height  + 'px';
+	}, 350)
+}
+function resetHeaderOffset() {
+	const header = document.querySelector('.header')
+	document.querySelector('body').classList.remove('is-keyboard')
+	header.style.bottom = '';
+}
+
+const messageTextarea = document.querySelector('.message-push--field');
+if (messageTextarea) {
+	messageTextarea.addEventListener('focus', () => {
+		shiftHeaderOffset()
+	})
+	messageTextarea.addEventListener('blur', () => {
+		resetHeaderOffset()
+	})
+}
+
+if (messageTextarea) {
+	window.addEventListener('resize', (e) => {
+			const event = new Event("blur");
+			document.querySelector('.message-push--field').dispatchEvent(event);
+	})
+}
+
 let numberTemporary;
 let flDisabledFalse = false;
 document.addEventListener('input', function(e) {

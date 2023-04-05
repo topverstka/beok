@@ -282,9 +282,9 @@ img {
 
 @media (max-width: 992px) {
   .header--thin {
-    padding-top: 0;
     height: auto;
     padding-bottom: 10px;
+    padding-top: 10px;
     background: #fff;
   }
 }
@@ -2764,6 +2764,11 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   z-index: 1;
   overflow: hidden;
 }
+@media (max-width: 992px) {
+  .chat-page .page-content {
+    height: auto;
+  }
+}
 
 .chat-page main {
   height: 100%;
@@ -2772,6 +2777,40 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 
 .section-chat {
   z-index: 2;
+}
+
+.chat-page .header {
+  transition: all 0.1s ease;
+}
+@media (max-width: 992px) {
+  .chat-page .header {
+    height: auto;
+    top: unset;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 992px) {
+  .is-keyboard.chat-page .header {
+    max-width: calc(100% - 24px);
+  }
+}
+@media (max-width: 425px) {
+  .is-keyboard.chat-page .header {
+    position: absolute;
+  }
+}
+
+@media (max-width: 425px) {
+  .is-keyboard.chat-page .content--page {
+    padding-top: 44px;
+  }
+}
+
+@media (max-width: 992px) {
+  .chat-page .content--page:not(.content--page__visible) {
+    margin-top: 0;
+  }
 }
 
 .section-chat {
@@ -3099,12 +3138,22 @@ input[type=search]::-webkit-search-decoration, input[type=search]::-webkit-searc
     margin-left: auto;
     margin-right: auto;
   }
+}
+
+.header__wrap--chat .name-user {
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 13px;
+}
+@media (max-width: 425px) {
   .header__wrap--chat .name-user {
-    text-align: center;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 13px;
+    position: static;
+    top: unset;
+    left: unset;
+    right: unset;
+    bottom: unset;
   }
 }
 

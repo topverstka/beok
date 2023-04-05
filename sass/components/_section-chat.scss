@@ -293,12 +293,20 @@ input[type="search"] {
     @media (max-width: 992px) {
         margin-left: auto;
         margin-right: auto;
-        .name-user {
-            text-align: center;
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 13px;
-        }
-    }
+		}
+	}
+
+.header__wrap--chat .name-user {
+		text-align: center;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 13px;
+		@media (max-width: $mobile-l) {
+			position: static;
+			top: unset;
+			left: unset;
+			right: unset;
+			bottom: unset;
+		}
 }

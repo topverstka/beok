@@ -647,6 +647,10 @@ only screen and ( min-resolution: 3dppx) {
 	flex-direction: column;
 	z-index: 1;
 	overflow: hidden;
+
+	@media (max-width: $tablet) {
+		height: auto;
+	}
 }
 .chat-page main {
 	height: 100%;
@@ -655,4 +659,35 @@ only screen and ( min-resolution: 3dppx) {
 
 .section-chat {
 	z-index: 2;
+}
+
+.chat-page .header {
+	transition: all 0.1s ease;
+
+	@media (max-width: $tablet) {
+		height: auto;
+		top: unset;
+		padding-right: 0;
+	}
+}
+
+.is-keyboard.chat-page .header {
+	@media (max-width: $tablet) {
+		max-width: calc(100% - 24px);
+	}
+	@media (max-width: $mobile-l) {
+		position: absolute;
+	}
+}
+
+.is-keyboard.chat-page .content--page {
+	@media (max-width: $mobile-l) {
+		padding-top: 44px;
+	}
+}
+
+.chat-page .content--page:not(.content--page__visible) {
+	@media (max-width: $tablet) {
+		margin-top: 0;
+	}
 }
