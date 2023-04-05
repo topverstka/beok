@@ -3158,7 +3158,6 @@ input[type=search]::-webkit-search-decoration, input[type=search]::-webkit-searc
     height: 11px;
   }
   .loader-cyrcle span:nth-of-type(2) {
-    left: 7px;
     top: 7px;
   }
   .loader-cyrcle span:nth-of-type(3) {
@@ -3166,7 +3165,6 @@ input[type=search]::-webkit-search-decoration, input[type=search]::-webkit-searc
   }
   .loader-cyrcle span:nth-of-type(4) {
     top: 41px;
-    left: 7px;
   }
   .loader-cyrcle span:nth-of-type(6) {
     top: 41px;
