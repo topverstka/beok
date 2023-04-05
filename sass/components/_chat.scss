@@ -408,7 +408,6 @@
 	justify-content: space-between;
 	width: 100%;
 }
-
 .message-push form.align-end {
 	align-items: flex-end;
 }
@@ -459,11 +458,6 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-
-		input {
-			width: 35px;
-			height: 35px;
-		}
 	}
 }
 .message-push .message-push--file svg {
@@ -562,8 +556,7 @@ only screen and ( min-resolution: 3dppx) {
 
 .message-push--field {
     width: 100%;
-    margin: 0 0 0 24px;
-    height: 48px;
+    margin: 0 0 0 20px;
     border-radius: 24px;
     padding: 16px 30px;
     resize: none;
