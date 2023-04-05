@@ -283,6 +283,9 @@ img {
 @media (max-width: 992px) {
   .header--thin {
     padding-top: 0;
+    height: auto;
+    padding-bottom: 10px;
+    background: #fff;
   }
 }
 
@@ -294,9 +297,6 @@ img {
   display: none;
 }
 @media (max-width: 992px) {
-  .link-pref-page {
-    transform: translateY(11px);
-  }
   .link-pref-page svg {
     width: 24px;
     height: 24px;
@@ -2552,7 +2552,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 }
 .message-push form {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
   width: 100%;
 }
@@ -2620,6 +2620,18 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   .message-push button svg {
     width: 100%;
     height: 100%;
+  }
+}
+
+@media (max-width: 992px) {
+  .message-push .message-push--file {
+    margin-bottom: 6px;
+  }
+}
+
+@media (max-width: 992px) {
+  .message-push .message-send {
+    margin-bottom: 6px;
   }
 }
 

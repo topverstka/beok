@@ -19,6 +19,9 @@
 .header--thin {
     @media (max-width: $tablet) {
         padding-top: 0;
+				height: auto;
+				padding-bottom: 10px;
+				background: #fff;
     }
 }
 
@@ -31,7 +34,7 @@
         display: none
     }
     @media (max-width:$tablet) {
-        transform: translateY(11px);
+        // transform: translateY(11px);
         svg {
             width: 24px;
             height: 24px;
