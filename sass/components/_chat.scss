@@ -382,92 +382,132 @@
 		--container-padding-fix: -20px;
 		margin-top: auto;
 		margin-left: var(--container-padding-fix);
-		width: #{'calc(100% - 2 * var(--container-padding-fix))'};
+		width: #{'calc(100% - 1 * var(--container-padding-fix))'};
     padding: 16px 24px;
     background: #F2F2F3;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    form {
-        display: flex;
-        align-items: flex-end;
-        justify-content: space-between;
-        width: 100%;
-        &.align-end {
-            align-items: flex-end;
-        }
-    }
-    button,
-    .message-push--file {
-        svg {
-            width: 32px;
-            height: 32px;
-        }
-    }
-    .message-push--field {
-        overflow: auto;
-        &::-webkit-scrollbar {
-            display: none;
-        }
-    }
 
     @media (max-width:$tablet) {
-				--container-padding-fix: -12px;
-        align-items: flex-start;
-        padding: 10px 11px 10px 11px;
-        border-top: 0.5px solid #90959E;
-        &._active-mess {
-            // min-height: 52px; // Это было пока неправильно работало от пересчетов Димы
-            border-bottom: 0.5px solid #90959E;
-            border-top-color: transparent;
-        }
-        .message-push--file {
-            margin-left: 0;
-            padding-top: 0;
-						height: 35px;
-						display: flex;
-						justify-content: center;
-						align-items: center;
-            input {
-                width: 35px;
-                height: 35px;
-            }
-            svg {
-                width: 28px;
-                height: 28px;
-            }
-        }
-        .message-push--audio {
-            margin-right: 0;
-        }
-        .message-push--field {
-            height: auto;
-            // height: 33px;
-            padding: 7px 12.5px 7px;
-            border: 1px solid #90959E;
-            margin: 0 3px;
-            &::placeholder {
-                // font-size: 16px;
-                // line-height: 22px;
-                color: #ADADB6;
-            }
-        }
-        button {
-            // padding-top: 4px;
-						min-width: 35px;
-						max-width: 35px;
-						width: 35px;
-						height: 35px;
-            svg {
-								width: 100%;
-								height: 100%;
-            }
-        }
-    }
+			width: #{'calc(100% - 2 * var(--container-padding-fix))'};
+			--container-padding-fix: -12px;
+			align-items: flex-start;
+			padding: 10px 11px 10px 11px;
+			border-top: 0.5px solid #90959E;
+		}
 
 		@media (max-width: $mobile-l) {
 			padding: 4px;
 		}
+}
+
+.message-push form {
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.message-push form.align-end {
+	align-items: flex-end;
+}
+
+.message-push--file {
+    // margin-left: 28px;
+    position: relative;
+}
+
+.message-push button,
+.message-push .message-push--file {
+	display: flex;
+	align-items: flex-end;
+	justify-content: flex-end;
+}
+
+.message-push button svg,
+.message-push .message-push--file svg {
+	min-width: 51px;
+	width: 51px;
+	height: 51px;
+
+	@media (max-width: $tablet) {
+		min-width: initial;
+	}
+}
+
+.message-push button {
+	@media (max-width:$tablet) {
+		// padding-top: 4px;
+		min-width: 35px;
+		max-width: 35px;
+		width: 35px;
+		height: 35px;
+
+		svg {
+				width: 100%;
+				height: 100%;
+		}
+	}
+}
+
+.message-push .message-push--file {
+	@media (max-width:$tablet) {
+		margin-left: 0;
+		padding-top: 0;
+		height: 35px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		input {
+			width: 35px;
+			height: 35px;
+		}
+	}
+}
+.message-push .message-push--file svg {
+	width: 100%;
+
+	@media (max-width:$tablet) {
+		width: 28px;
+		height: 28px;
+	}
+}
+
+.message-push .message-push--field {
+		overflow: auto;
+		&::-webkit-scrollbar {
+				display: none;
+		}
+
+    @media (max-width:$tablet) {
+			height: auto;
+			padding: 7px 12.5px 7px;
+			border: 1px solid #90959E;
+			margin: 0 3px;
+		}
+}
+
+.message-push .message-push--field::placeholder {
+	@media (max-width:$tablet) {
+		color: #ADADB6;
+	}
+}
+
+
+.message-push._active-mess {
+    @media (max-width:$tablet) {
+			// min-height: 52px; // Это было пока неправильно работало от пересчетов Димы
+			border-bottom: 0.5px solid #90959E;
+			border-top-color: transparent;
+		}
+}
+
+.message-push .message-push--audio {
+	@media (max-width:$tablet) {
+		margin-right: 0;
+	}
 }
 
 @media (max-width: $tablet) {
@@ -531,12 +571,6 @@ only screen and ( min-resolution: 3dppx) {
     font-weight: 400;
     font-size: 16px;
     letter-spacing: -0.2px;
-    &::placeholder {
-        // font-weight: 400;
-        // font-size: 16px;
-        color: $gray;
-        // letter-spacing: -0.2px;
-    }
 
 		@media (max-width: $tablet) {
 			border-radius: 16px;
@@ -545,23 +579,23 @@ only screen and ( min-resolution: 3dppx) {
 		}
 }
 
-.message-push--file {
-    margin-left: 28px;
-    position: relative;
+.message-push--field::placeholder {
+	color: $gray;
 }
 
 .message-push__field-file {
     opacity: 0;
     position: absolute;
-    width: 32px;
-    height: 32px;
+    width: 100%;
+    height: 100%;
     left: 0;
     cursor: pointer;
-    font-size: 0
+    font-size: 0;
 }
 
 .message-send {
-    margin-left: 24px;
+		margin-left: 24px;
+
     @media (max-width: $tablet) {
         margin-left: 0;//7px;
     }
