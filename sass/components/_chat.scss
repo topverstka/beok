@@ -571,6 +571,11 @@ only screen and ( min-resolution: 3dppx) {
 			font-size: 14px;
 			line-height: 1.25;
 		}
+
+		@media (min-width: $tablet + 1) {
+			min-height: 54px;
+
+		}
 }
 
 .message-push--field::placeholder {
