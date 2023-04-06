@@ -2632,9 +2632,6 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   }
 }
 
-.message-push .message-push--file svg {
-  width: 100%;
-}
 @media (max-width: 992px) {
   .message-push .message-push--file svg {
     width: 28px;
