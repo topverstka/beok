@@ -2655,7 +2655,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   .message-push .message-push--field {
     height: auto;
     padding: 7px 12.5px 7px;
-    border: 1px solid #90959E;
+    border: 1px solid #fff;
     margin: 0 3px;
   }
 }
