@@ -397,14 +397,14 @@ document.addEventListener('input', function(e) {
                 }
             }
 
-						// /*
+						/*
 						// Проверка измненеия направления чата
 						if (isLineRemoved(e.target, previosScrollHeight)) {
 							console.log('Уменьшить чат');
 						} else if (isLineAdded(e.target, previosScrollHeight)) {
 							console.log('Увеличить чат');
 						}
-						// */
+						*/
 						changeChatOffset(e.target, previosMessageFieldHeight, messageScreen)
 
         } else {
