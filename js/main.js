@@ -330,6 +330,29 @@ if (messageTextarea) {
 
 let numberTemporary;
 let flDisabledFalse = false;
+let previosMessageFieldHeight = 0;
+let previosScrollHeight = 0;
+const CHAT_MAX_HEIGHT = 165; //9 строк
+const messageScreen = document.querySelector('.message-page');
+
+function isLineRemoved(targetElement, previosScrollHeight) {
+	return targetElement.scrollHeight < previosScrollHeight
+}
+function isLineAdded(targetElement, previosScrollHeight) {
+	return targetElement.scrollHeight > previosScrollHeight
+}
+function getChatOffsetValue(target, previosMessageFieldHeight) {
+	return target.getBoundingClientRect().height - previosMessageFieldHeight;
+}
+function changeChatOffset(target, previosMessageFieldHeight, messageScreen) {
+	messageScreen.scrollTop += getChatOffsetValue(target, previosMessageFieldHeight);
+	// messageScreen.scrollTo({
+	// 	top: messageScreen.scrollTop + getChatOffsetValue(target, previosMessageFieldHeight),
+	// 	left: 0,
+	// 	behavior: 'smooth'
+	// })
+}
+
 document.addEventListener('input', function(e) {
 
     if (e.target.hasAttribute('data-number')) {
@@ -358,9 +381,11 @@ document.addEventListener('input', function(e) {
 
             if (numberTemporary === undefined) numberTemporary = e.target.scrollHeight;
 
-            // console.log(numberTemporary, e.target.scrollHeight)
+						// Снимает размеры до измнения высоты чата перед функцией changeChatOffset()
+						previosScrollHeight = e.target.scrollHeight;
+						previosMessageFieldHeight = e.target.getBoundingClientRect().height
 
-            if (numberTemporary !== e.target.scrollHeight && e.target.scrollHeight <= 125) {
+            if (numberTemporary !== e.target.scrollHeight && e.target.scrollHeight <= CHAT_MAX_HEIGHT) {
                 e.target.style.height = '1px'; // Для проверки реальной высоты textarea
                 e.target.style.height = e.target.scrollHeight + 3 + "px";
                 e.target.closest('form').classList.add('align-end');
@@ -371,6 +396,16 @@ document.addEventListener('input', function(e) {
                     // find('.message-page').style.paddingBottom = null;
                 }
             }
+
+						// /*
+						// Проверка измненеия направления чата
+						if (isLineRemoved(e.target, previosScrollHeight)) {
+							console.log('Уменьшить чат');
+						} else if (isLineAdded(e.target, previosScrollHeight)) {
+							console.log('Увеличить чат');
+						}
+						// */
+						changeChatOffset(e.target, previosMessageFieldHeight, messageScreen)
 
         } else {
             if (e.target.closest('.message-push').querySelector('.message-send')) {
