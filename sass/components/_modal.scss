@@ -54,6 +54,9 @@
     }
 }
 
+[id*="alert"] {
+	z-index: 99999;
+}
 [data-alert-popup] {
     .modal__title {
         width: 225px
@@ -190,6 +193,10 @@
     }
 }
 
+
+[id*="loader"] {
+	z-index: 999999;
+}
 #loader {
     .modal__content {
         max-width: 532px;

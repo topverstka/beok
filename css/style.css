@@ -1024,6 +1024,10 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   height: 16px;
 }
 
+[id*=alert] {
+  z-index: 99999;
+}
+
 [data-alert-popup] .modal__title {
   width: 225px;
 }
@@ -1184,6 +1188,10 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 }
 #confetti._show {
   display: block;
+}
+
+[id*=loader] {
+  z-index: 999999;
 }
 
 #loader .modal__content {
