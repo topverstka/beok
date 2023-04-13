@@ -263,7 +263,7 @@ img {
 .header {
   width: 100%;
   transition: all 0.2s;
-  z-index: 12;
+  z-index: 120;
   padding-top: 42px;
   padding-right: 30px;
   padding-bottom: 21px;
